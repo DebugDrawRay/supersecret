@@ -22,7 +22,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 175890}
-  m_LocalRotation: {x: 1, y: 0, z: 0, w: -0.00000016292068}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -43,6 +43,7 @@ MonoBehaviour:
   xUnits: 5
   yUnits: 5
   point: {fileID: 195712, guid: 81688e8fb75d4a74d8e959c70ccd75a3, type: 2}
+  player: {fileID: 162740, guid: 6fe49bce27193c14b93fa17af7dbf660, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
