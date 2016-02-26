@@ -17,18 +17,35 @@ public class Grid : MonoBehaviour
         private set;
     }
 
+    public static Grid instance;
+
     public class Unit
     {
         public Vector3 position;
         public Unit(Vector3 newPosition, Transform parent)
         {
-            position = parent.transform.TransformPoint(newPosition);
+            position = newPosition;
         }
+    }
+
+    void Awake()
+    {
+        init();
+        BuildGrid();
+    }
+
+    void init()
+    {
+        if(instance != null)
+        {
+            Destroy(gameObject);
+        }
+
+        instance = this;
     }
 
     void Start()
     {
-        BuildGrid();
         SetupPlayer();
     }
 
@@ -48,13 +65,13 @@ public class Grid : MonoBehaviour
             float xPos = (xStart + (unitSize * x));
             float yPos = (yStart + (unitSize * y));
 
-            Vector3 unitPos = new Vector3(xPos, yPos, zStart);
+            Vector3 unitPos = new Vector3(xPos, yPos, 0);
             gridUnits[x,y] = new Unit(unitPos, transform);
 
             GameObject newPoint = Instantiate(point) as GameObject;
             newPoint.transform.SetParent(transform);
 
-            newPoint.transform.position = gridUnits[x,y].position;
+            newPoint.transform.localPosition = gridUnits[x,y].position;
             newPoint.transform.rotation = transform.rotation;
         }
     }

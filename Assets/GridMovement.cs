@@ -40,6 +40,8 @@ public class GridMovement : MonoBehaviour
         {
             MovementListener();
         }
+
+        transform.localPosition = targetGrid.gridUnits[Mathf.RoundToInt(gridPosition.x), Mathf.RoundToInt(gridPosition.y)].position;
     }
 
     void MovementListener()
@@ -49,22 +51,22 @@ public class GridMovement : MonoBehaviour
 
         if (!directionHeld)
         {
-            if (x >= .2f)
+            if (x > .2f)
             {
                 gridPosition.x += 1;
                 directionHeld = true;
             }
-            if (x <= -.2f)
+            if (x < -.2f)
             {
                 gridPosition.x -= 1;
                 directionHeld = true;
             }
-            if (y >= .2f)
+            if (y > .2f)
             {
                 gridPosition.y += 1;
                 directionHeld = true;
             }
-            if (y <= -.2f)
+            if (y < -.2f)
             {
                 gridPosition.y -= 1;
                 directionHeld = true;
@@ -94,8 +96,6 @@ public class GridMovement : MonoBehaviour
         {
             gridPosition.y = targetGrid.yUnits - 1;
         }
-
-        transform.position = transform.position = targetGrid.gridUnits[Mathf.RoundToInt(gridPosition.x), Mathf.RoundToInt(gridPosition.y)].position;
     }
 
 }

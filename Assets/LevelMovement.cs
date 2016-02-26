@@ -4,6 +4,8 @@ using System.Collections;
 public class LevelMovement : MonoBehaviour
 {
     public float maxSpeed;
+    public Vector3 movementDirection;
+
     public bool isMoving;
 
     private Rigidbody rigid;
@@ -17,7 +19,7 @@ public class LevelMovement : MonoBehaviour
     {
         if (isMoving)
         {
-            rigid.velocity = transform.forward * maxSpeed;
+            rigid.velocity = movementDirection * maxSpeed;
         }
     }
 
