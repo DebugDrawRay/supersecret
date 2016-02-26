@@ -62,6 +62,7 @@ public class Grid : MonoBehaviour
     void SetupPlayer()
     {
         GridMovement newPlayer = Instantiate(player).GetComponent<GridMovement>();
+        newPlayer.transform.SetParent(transform);
         newPlayer.Init(this, new Vector2(3,3));
     }
 }

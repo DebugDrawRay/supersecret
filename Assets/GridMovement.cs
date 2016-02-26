@@ -26,6 +26,11 @@ public class GridMovement : MonoBehaviour
         input.Left.AddDefaultBinding(InputControlType.LeftStickLeft);
         input.Right.AddDefaultBinding(InputControlType.LeftStickRight);
 
+        input.Up.AddDefaultBinding(Key.W);
+        input.Down.AddDefaultBinding(Key.S);
+        input.Left.AddDefaultBinding(Key.A);
+        input.Right.AddDefaultBinding(Key.D);
+
         initialized = true;
     }
 
