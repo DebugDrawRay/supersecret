@@ -1,0 +1,110 @@
+
+BD_CENTER.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body back-on
+  rotate: true
+  xy: 480, 412
+  size: 572, 449
+  orig: 572, 449
+  offset: 0, 0
+  index: -1
+handle back-on
+  rotate: false
+  xy: 2, 2
+  size: 194, 147
+  orig: 194, 147
+  offset: 0, 0
+  index: -1
+head back-on
+  rotate: true
+  xy: 480, 2
+  size: 408, 282
+  orig: 408, 282
+  offset: 0, 0
+  index: -1
+left back leg back-on
+  rotate: true
+  xy: 2, 151
+  size: 246, 447
+  orig: 246, 447
+  offset: 0, 0
+  index: -1
+left neck root 2 back-on
+  rotate: false
+  xy: 931, 682
+  size: 30, 133
+  orig: 30, 133
+  offset: 0, 0
+  index: -1
+left neck root back-on
+  rotate: false
+  xy: 931, 817
+  size: 32, 167
+  orig: 32, 167
+  offset: 0, 0
+  index: -1
+pouch back-on
+  rotate: true
+  xy: 764, 13
+  size: 397, 205
+  orig: 397, 205
+  offset: 0, 0
+  index: -1
+right neck root 2 back-on
+  rotate: false
+  xy: 965, 847
+  size: 39, 137
+  orig: 39, 137
+  offset: 0, 0
+  index: -1
+right neck root back-on
+  rotate: false
+  xy: 965, 689
+  size: 32, 156
+  orig: 32, 156
+  offset: 0, 0
+  index: -1
+wheel back-on
+  rotate: false
+  xy: 2, 399
+  size: 476, 585
+  orig: 476, 585
+  offset: 0, 0
+  index: -1
+
+BD_CENTER2.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+left front leg back-on
+  rotate: true
+  xy: 250, 238
+  size: 235, 450
+  orig: 235, 450
+  offset: 0, 0
+  index: -1
+neck track
+  rotate: false
+  xy: 702, 215
+  size: 230, 258
+  orig: 230, 258
+  offset: 0, 0
+  index: -1
+right back leg back-on
+  rotate: false
+  xy: 2, 26
+  size: 246, 447
+  orig: 246, 447
+  offset: 0, 0
+  index: -1
+right front leg back-on
+  rotate: true
+  xy: 250, 2
+  size: 234, 450
+  orig: 234, 450
+  offset: 0, 0
+  index: -1
