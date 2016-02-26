@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using InControl;
-
+using Spine;
 public class GridMovement : MonoBehaviour
 {
     private Grid targetGrid;
@@ -12,8 +12,13 @@ public class GridMovement : MonoBehaviour
 
     public Vector2 gridPosition;
 
+    private SkeletonAnimation anim;
+    private TrackEntry lean;
     public void Init(Grid grid, Vector2 position)
     {
+        anim = GetComponent<SkeletonAnimation>();
+        anim.state.SetAnimation(0, "driving", true);
+        lean = anim.state.AddAnimation(1, "lean_right", false, 0);
         targetGrid = grid;
         gridPosition = position;
 
@@ -40,7 +45,6 @@ public class GridMovement : MonoBehaviour
         {
             MovementListener();
         }
-
         transform.localPosition = targetGrid.gridUnits[Mathf.RoundToInt(gridPosition.x), Mathf.RoundToInt(gridPosition.y)].position;
     }
 
@@ -49,12 +53,18 @@ public class GridMovement : MonoBehaviour
         float x = input.Move.X;
         float y = input.Move.Y;
 
+        float move = Mathf.Clamp(x, 0, 1);
+        float time = Mathf.Clamp(lean.endTime, 0, 1f);
+        Debug.Log(time * move);
+        lean.time = lean.endTime * move;
+
         if (!directionHeld)
         {
             if (x > .2f)
             {
                 gridPosition.x += 1;
                 directionHeld = true;
+
             }
             if (x < -.2f)
             {
