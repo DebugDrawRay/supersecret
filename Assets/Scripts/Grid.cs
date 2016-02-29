@@ -9,7 +9,6 @@ public class Grid : MonoBehaviour
     public int yUnits;
 
     public GameObject point;
-    public GameObject player;
 
     public Unit[,] gridUnits
     {
@@ -30,11 +29,11 @@ public class Grid : MonoBehaviour
 
     void Awake()
     {
-        init();
+        Init();
         BuildGrid();
     }
 
-    void init()
+    void Init()
     {
         if(instance != null)
         {
@@ -44,19 +43,15 @@ public class Grid : MonoBehaviour
         instance = this;
     }
 
-    void Start()
-    {
-        SetupPlayer();
-    }
-
     void BuildGrid()
     {
         float totalUnits = xUnits * yUnits;
         gridUnits = new Unit[xUnits, yUnits];
 
-        float xStart = transform.localPosition.x - (((xUnits / 2) - 0.5f ) * unitSize);
-        float yStart = transform.localPosition.y - (((yUnits / 2) - 0.5f) * unitSize);
+        float xStart = transform.localPosition.x - ((xUnits / 2) * unitSize);
+        float yStart = transform.localPosition.y - ((yUnits / 2) * unitSize);
         float zStart = transform.localPosition.z;
+
         for (int i = 0; i < totalUnits; i++)
         {
             int x = i % xUnits;
@@ -74,12 +69,5 @@ public class Grid : MonoBehaviour
             newPoint.transform.localPosition = gridUnits[x,y].position;
             newPoint.transform.rotation = transform.rotation;
         }
-    }
-
-    void SetupPlayer()
-    {
-        GridMovement newPlayer = Instantiate(player).GetComponent<GridMovement>();
-        newPlayer.transform.SetParent(transform);
-        newPlayer.Init(this, new Vector2(3,3));
     }
 }

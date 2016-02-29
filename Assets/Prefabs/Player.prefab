@@ -12,6 +12,7 @@ GameObject:
   - 23: {fileID: 2323166}
   - 114: {fileID: 11480144}
   - 114: {fileID: 11429758}
+  - 114: {fileID: 11427766}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -66,6 +67,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 130758}
   m_Mesh: {fileID: 0}
+--- !u!114 &11427766
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 130758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bac25c4de9fca249bfa33440266d4cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: 0
+  movement: {fileID: 11429758}
 --- !u!114 &11429758
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -77,7 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caaae11ac5024d94793b79358ead1e69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridPosition: {x: 0, y: 0}
+  startPosition: {x: 2, y: 2}
 --- !u!114 &11480144
 MonoBehaviour:
   m_ObjectHideFlags: 1

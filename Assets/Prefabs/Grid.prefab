@@ -1,17 +1,17 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &150370
+--- !u!1 &135540
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 405402}
-  - 20: {fileID: 2012338}
-  - 92: {fileID: 9293970}
-  - 124: {fileID: 12415326}
-  - 81: {fileID: 8120658}
+  - 4: {fileID: 443038}
+  - 20: {fileID: 2048734}
+  - 92: {fileID: 9241332}
+  - 124: {fileID: 12491970}
+  - 81: {fileID: 8165586}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -37,14 +37,14 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &405402
+--- !u!4 &443038
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 150370}
+  m_GameObject: {fileID: 135540}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071067}
-  m_LocalPosition: {x: 6, y: -50, z: -17.01}
+  m_LocalPosition: {x: 0, y: -50, z: -17.009996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 471872}
@@ -59,15 +59,15 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: -4342}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 405402}
+  - {fileID: 443038}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!20 &2012338
+--- !u!20 &2048734
 Camera:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 150370}
+  m_GameObject: {fileID: 135540}
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
@@ -111,19 +111,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!81 &8120658
+--- !u!81 &8165586
 AudioListener:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 150370}
+  m_GameObject: {fileID: 135540}
   m_Enabled: 1
---- !u!92 &9293970
+--- !u!92 &9241332
 Behaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 150370}
+  m_GameObject: {fileID: 135540}
   m_Enabled: 1
 --- !u!114 &11440234
 MonoBehaviour:
@@ -139,8 +139,7 @@ MonoBehaviour:
   unitSize: 10
   xUnits: 5
   yUnits: 5
-  point: {fileID: 195712, guid: 81688e8fb75d4a74d8e959c70ccd75a3, type: 2}
-  player: {fileID: 130758, guid: 6fe49bce27193c14b93fa17af7dbf660, type: 2}
+  point: {fileID: 155836, guid: e41703504e3068a448dcdb223a00870d, type: 2}
 --- !u!114 &11490106
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -155,12 +154,12 @@ MonoBehaviour:
   maxSpeed: 100
   movementDirection: {x: 0, y: 0, z: 1}
   isMoving: 1
---- !u!124 &12415326
+--- !u!124 &12491970
 Behaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 150370}
+  m_GameObject: {fileID: 135540}
   m_Enabled: 1
 --- !u!1001 &100100000
 Prefab:
