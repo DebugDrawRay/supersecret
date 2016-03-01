@@ -13,6 +13,7 @@ GameObject:
   - 114: {fileID: 11480144}
   - 114: {fileID: 11429758}
   - 114: {fileID: 11427766}
+  - 114: {fileID: 11413378}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -67,6 +68,23 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 130758}
   m_Mesh: {fileID: 0}
+--- !u!114 &11413378
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 130758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7140fc7618b13594f85ac59fea32df55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  speed: 100
+  agility: 1
+  power: 0
+  luck: 0
+  weight: 0
 --- !u!114 &11427766
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -80,6 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 0
   movement: {fileID: 11429758}
+  stats: {fileID: 0}
 --- !u!114 &11429758
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -92,6 +111,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPosition: {x: 2, y: 2}
+  speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 10
+    - time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 10
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  timeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: -0.75
+      outSlope: -0.75
+      tangentMode: 10
+    - time: 1
+      value: 0.25
+      inSlope: -0.75
+      outSlope: -0.75
+      tangentMode: 10
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  minTimeToMove: 0.5
+  maxTimeToMove: 1.5
 --- !u!114 &11480144
 MonoBehaviour:
   m_ObjectHideFlags: 1

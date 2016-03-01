@@ -15,8 +15,9 @@ public class PlayerController : MonoBehaviour
     [Header("States")]
     public State currentState;
 
-    [Header("Actions")]
+    [Header("Components")]
     public GridMovement movement;
+    public Stats stats;
 
     //References
     private Grid gridSystem;
