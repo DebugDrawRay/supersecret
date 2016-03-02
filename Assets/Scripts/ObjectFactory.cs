@@ -16,7 +16,9 @@ public class ObjectFactory : MonoBehaviour
     private Grid grid;
     private float[] gridXPoints;
 
-    void Start()
+    private bool initialized;
+
+    public void Init()
     {
         grid = Grid.instance;
         currentSpawnRate = spawnRate;
@@ -27,15 +29,19 @@ public class ObjectFactory : MonoBehaviour
         {
             gridXPoints[i] = grid.gridUnits[i, 0].position.x;
         }
+        initialized = true;
     }
 
     void Update()
     {
-        currentSpawnRate -= Time.deltaTime;
-        if (currentSpawnRate <= 0)
+        if (initialized)
         {
-            CreateObjects();
-            currentSpawnRate = spawnRate;
+            currentSpawnRate -= Time.deltaTime;
+            if (currentSpawnRate <= 0)
+            {
+                CreateObjects();
+                currentSpawnRate = spawnRate;
+            }
         }
     }
 

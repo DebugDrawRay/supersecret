@@ -23,7 +23,13 @@ public class GameController : MonoBehaviour
 
     [Header("Player Setup")]
     public GameObject playerCharacter;
+    public GameObject mainCamera;
+
     private PlayerController player;
+    private ChaseCam camera;
+
+    [Header("Factories")]
+    public ObjectFactory objectFactory;
 
     void Start()
     {
@@ -36,6 +42,11 @@ public class GameController : MonoBehaviour
 
         player = Instantiate(playerCharacter).GetComponent<PlayerController>();
         player.Init(grid);
+
+        camera = Instantiate(mainCamera).GetComponent<ChaseCam>();
+        camera.Init(grid.transform, player.transform);
+
+        objectFactory.Init();
     }
 
     void Update()

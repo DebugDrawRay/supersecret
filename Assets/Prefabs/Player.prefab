@@ -14,6 +14,7 @@ GameObject:
   - 114: {fileID: 11429758}
   - 114: {fileID: 11427766}
   - 114: {fileID: 11413378}
+  - 65: {fileID: 6503724}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -68,6 +69,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 130758}
   m_Mesh: {fileID: 0}
+--- !u!65 &6503724
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 130758}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 15, y: 21, z: 10}
+  m_Center: {x: 0, y: 10.5, z: 0}
 --- !u!114 &11413378
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -80,8 +93,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  speed: 100
-  agility: 1
+  speed: 90
+  agility: 90
   power: 0
   luck: 0
   weight: 0
@@ -98,7 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 0
   movement: {fileID: 11429758}
-  stats: {fileID: 0}
+  stats: {fileID: 11413378}
 --- !u!114 &11429758
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -116,14 +129,19 @@ MonoBehaviour:
     m_Curve:
     - time: 0
       value: 0
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 10
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 0.5
+      value: 0.5
+      inSlope: 3.1907945
+      outSlope: 3.1907945
+      tangentMode: 0
     - time: 1
       value: 1
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 10
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
@@ -132,13 +150,13 @@ MonoBehaviour:
     m_Curve:
     - time: 0
       value: 1
-      inSlope: -0.75
-      outSlope: -0.75
+      inSlope: -0.8
+      outSlope: -0.8
       tangentMode: 10
     - time: 1
-      value: 0.25
-      inSlope: -0.75
-      outSlope: -0.75
+      value: 0.2
+      inSlope: -0.8
+      outSlope: -0.8
       tangentMode: 10
     m_PreInfinity: 2
     m_PostInfinity: 2
