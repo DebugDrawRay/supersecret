@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcfe57a55411e5e4eb08f1da1253541b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 128396, guid: b79838a1879a944408e0bff5c64ffcb4, type: 2}
+  objectToSpawn: {fileID: 198758, guid: b1eb59d2948f54c4e844670ba81f365a, type: 2}
   spawnDistance: 150
   spawnFrequency: 0.5
   spawnRate: 0.25

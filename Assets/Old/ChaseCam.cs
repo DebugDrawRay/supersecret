@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using DG.Tweening;
 
 public class ChaseCam : MonoBehaviour
 {
@@ -12,6 +13,19 @@ public class ChaseCam : MonoBehaviour
     private Transform target;
 
     private bool initialized;
+
+    [Header("Camera Reaction Shake Properties")]
+    public float duration;
+    public float strength;
+    public int vibrado;
+    public float randomness;
+
+    private Tween currentTween;
+
+    void Awake()
+    {
+        EventManager.CollisionReaction += CameraShake;
+    }
 
     public void Init(Transform parent, Transform chaseTarget)
     {
@@ -46,5 +60,10 @@ public class ChaseCam : MonoBehaviour
             //lookRot = Quaternion.Euler(0, 0, -lookRot.eulerAngles.y);
             //transform.rotation = lookRot;
         }
+    }
+
+    void CameraShake()
+    {
+        currentTween = transform.DOShakePosition(duration, strength, vibrado, randomness);
     }
 }

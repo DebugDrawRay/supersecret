@@ -94,6 +94,10 @@ MonoBehaviour:
   chaseDistance: 50
   chaseFloat: 20
   followResistance: 0.1
+  duration: 0.1
+  strength: 10
+  vibrado: 100
+  randomness: 100
 --- !u!124 &12427000
 Behaviour:
   m_ObjectHideFlags: 1

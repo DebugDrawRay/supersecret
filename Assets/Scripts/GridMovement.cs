@@ -151,6 +151,7 @@ public class GridMovement : MonoBehaviour
         EnvironmentalHazard isEnviro = hit.GetComponent<EnvironmentalHazard>();
         if(isEnviro)
         {
+            EventManager.TriggerCollision();
             float chance = Random.value;
             if(chance >.5)
             {
