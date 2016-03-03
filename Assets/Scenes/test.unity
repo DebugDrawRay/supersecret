@@ -108,7 +108,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 63821014}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fcfe57a55411e5e4eb08f1da1253541b, type: 3}
   m_Name: 
@@ -155,7 +155,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 481980599}
   - 33: {fileID: 481980598}
-  - 64: {fileID: 481980597}
   - 23: {fileID: 481980596}
   m_Layer: 0
   m_Name: Plane
@@ -190,18 +189,6 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!64 &481980597
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 481980595}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &481980598
 MeshFilter:
   m_ObjectHideFlags: 0

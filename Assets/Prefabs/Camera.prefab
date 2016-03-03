@@ -50,7 +50,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 50
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -91,9 +91,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0b251290f8ae7841ba319655dfe86ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chaseDistance: 50
-  chaseFloat: 20
-  followResistance: 0.1
+  chaseDistance: 30
+  chaseFloat: 5
+  minFov: 50
+  maxFov: 70
+  followResistance: 0.05
   duration: 0.1
   strength: 10
   vibrado: 100

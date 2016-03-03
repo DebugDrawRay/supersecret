@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
-using System.Collections;
 using DG.Tweening;
 
 public class ChaseCam : MonoBehaviour
 {
     public float chaseDistance;
     public float chaseFloat;
+    public float minFov;
+    public float maxFov;
 
     public float followResistance;
 
@@ -42,6 +43,7 @@ public class ChaseCam : MonoBehaviour
         Quaternion lookRot = Quaternion.LookRotation(target.position - transform.position);
         transform.rotation = lookRot;
 
+        cam = GetComponent<Camera>();
         initialized = true;
     }
 
@@ -56,9 +58,15 @@ public class ChaseCam : MonoBehaviour
 
             transform.position = Vector3.Lerp(transform.position, targetPos, followResistance);
 
-            //Quaternion lookRot = Quaternion.LookRotation(target.position - transform.position);
-            //lookRot = Quaternion.Euler(0, 0, -lookRot.eulerAngles.y);
-            //transform.rotation = lookRot;
+            Quaternion lookRot = Quaternion.LookRotation(target.position - transform.position);
+            lookRot = Quaternion.Euler(0, 0, -lookRot.eulerAngles.y);
+            Debug.Log(lookRot.eulerAngles);
+            transform.rotation = lookRot;
+
+            //float currentSpeed = Grid.instance.GetComponent<Rigidbody>().velocity.magnitude / 200;
+            //float deltaFov = maxFov - minFov;
+
+            //cam.fieldOfView = minFov + (deltaFov * currentSpeed);
         }
     }
 

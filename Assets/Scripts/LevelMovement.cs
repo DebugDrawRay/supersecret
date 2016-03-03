@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class LevelMovement : MonoBehaviour
 {
@@ -24,7 +23,6 @@ public class LevelMovement : MonoBehaviour
     {
         if (isMoving)
         {
-            Debug.Log(CurrentSpeed());
             rigid.velocity = movementDirection * CurrentSpeed();
         }
     }

@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class GameController : MonoBehaviour
 {
@@ -44,7 +43,7 @@ public class GameController : MonoBehaviour
         player.Init(grid);
 
         camera = Instantiate(mainCamera).GetComponent<ChaseCam>();
-        camera.Init(grid.transform, player.transform);
+        camera.Init(grid.transform, CameraFocal.instance.transform);
 
         objectFactory.Init();
     }

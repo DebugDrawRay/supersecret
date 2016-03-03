@@ -1,0 +1,253 @@
+
+BD_CENTER.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Attachments/Headphones_Test copy
+  rotate: false
+  xy: 2, 2
+  size: 1000, 1000
+  orig: 1000, 1000
+  offset: 0, 0
+  index: -1
+
+BD_CENTER2.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+SKINS/PUKE/handle back-on
+  rotate: true
+  xy: 570, 2
+  size: 194, 147
+  orig: 194, 147
+  offset: 0, 0
+  index: -1
+SKINS/PUKE/head back-on
+  rotate: true
+  xy: 2, 25
+  size: 408, 282
+  orig: 408, 282
+  offset: 0, 0
+  index: -1
+SKINS/PUKE/left front leg back-on
+  rotate: true
+  xy: 570, 198
+  size: 235, 450
+  orig: 235, 450
+  offset: 0, 0
+  index: -1
+SKINS/PUKE/wheel back-on
+  rotate: false
+  xy: 2, 435
+  size: 476, 585
+  orig: 476, 585
+  offset: 0, 0
+  index: -1
+SKINS/RED/handle back-on
+  rotate: true
+  xy: 719, 2
+  size: 194, 147
+  orig: 194, 147
+  offset: 0, 0
+  index: -1
+SKINS/RED/head back-on
+  rotate: true
+  xy: 286, 25
+  size: 408, 282
+  orig: 408, 282
+  offset: 0, 0
+  index: -1
+SKINS/RED/wheel back-on
+  rotate: false
+  xy: 480, 435
+  size: 476, 585
+  orig: 476, 585
+  offset: 0, 0
+  index: -1
+handle back-on
+  rotate: true
+  xy: 868, 2
+  size: 194, 147
+  orig: 194, 147
+  offset: 0, 0
+  index: -1
+right neck root back-on
+  rotate: false
+  xy: 958, 864
+  size: 32, 156
+  orig: 32, 156
+  offset: 0, 0
+  index: -1
+
+BD_CENTER3.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Attachments/Glove_Test
+  rotate: false
+  xy: 2, 34
+  size: 250, 158
+  orig: 250, 158
+  offset: 0, 0
+  index: -1
+Attachments/Horns_Test
+  rotate: false
+  xy: 480, 250
+  size: 500, 192
+  orig: 500, 192
+  offset: 0, 0
+  index: -1
+SKINS/PUKE/body back-on
+  rotate: true
+  xy: 480, 444
+  size: 572, 449
+  orig: 572, 449
+  offset: 0, 0
+  index: -1
+SKINS/PUKE/left back leg back-on
+  rotate: true
+  xy: 454, 2
+  size: 246, 447
+  orig: 246, 447
+  offset: 0, 0
+  index: -1
+SKINS/RED/left front leg back-on
+  rotate: true
+  xy: 2, 194
+  size: 235, 450
+  orig: 235, 450
+  offset: 0, 0
+  index: -1
+wheel back-on
+  rotate: false
+  xy: 2, 431
+  size: 476, 585
+  orig: 476, 585
+  offset: 0, 0
+  index: -1
+
+BD_CENTER4.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Attachments/Spoiler_Test
+  rotate: false
+  xy: 576, 2
+  size: 350, 263
+  orig: 350, 263
+  offset: 0, 0
+  index: -1
+SKINS/PUKE/pouch back-on
+  rotate: false
+  xy: 576, 474
+  size: 397, 205
+  orig: 397, 205
+  offset: 0, 0
+  index: -1
+SKINS/RED/body back-on
+  rotate: false
+  xy: 2, 514
+  size: 572, 449
+  orig: 572, 449
+  offset: 0, 0
+  index: -1
+body back-on
+  rotate: false
+  xy: 2, 63
+  size: 572, 449
+  orig: 572, 449
+  offset: 0, 0
+  index: -1
+head back-on
+  rotate: false
+  xy: 576, 681
+  size: 408, 282
+  orig: 408, 282
+  offset: 0, 0
+  index: -1
+pouch back-on
+  rotate: false
+  xy: 576, 267
+  size: 397, 205
+  orig: 397, 205
+  offset: 0, 0
+  index: -1
+
+BD_CENTER5.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+SKINS/PUKE/right back leg back-on
+  rotate: false
+  xy: 2, 457
+  size: 246, 447
+  orig: 246, 447
+  offset: 0, 0
+  index: -1
+SKINS/PUKE/right front leg back-on
+  rotate: false
+  xy: 746, 454
+  size: 234, 450
+  orig: 234, 450
+  offset: 0, 0
+  index: -1
+SKINS/RED/left back leg back-on
+  rotate: false
+  xy: 2, 8
+  size: 246, 447
+  orig: 246, 447
+  offset: 0, 0
+  index: -1
+SKINS/RED/right back leg back-on
+  rotate: false
+  xy: 250, 457
+  size: 246, 447
+  orig: 246, 447
+  offset: 0, 0
+  index: -1
+SKINS/RED/right front leg back-on
+  rotate: false
+  xy: 735, 2
+  size: 234, 450
+  orig: 234, 450
+  offset: 0, 0
+  index: -1
+left back leg back-on
+  rotate: false
+  xy: 250, 8
+  size: 246, 447
+  orig: 246, 447
+  offset: 0, 0
+  index: -1
+left front leg back-on
+  rotate: false
+  xy: 498, 5
+  size: 235, 450
+  orig: 235, 450
+  offset: 0, 0
+  index: -1
+right back leg back-on
+  rotate: false
+  xy: 498, 457
+  size: 246, 447
+  orig: 246, 447
+  offset: 0, 0
+  index: -1
+
+BD_CENTER6.png
+size: 512,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+right front leg back-on
+  rotate: true
+  xy: 2, 2
+  size: 234, 450
+  orig: 234, 450
+  offset: 0, 0
+  index: -1

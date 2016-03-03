@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class Grid : MonoBehaviour
 {
@@ -15,6 +14,8 @@ public class Grid : MonoBehaviour
         get;
         private set;
     }
+
+    private GameObject[] units;
 
     public static Grid instance;
 
@@ -43,16 +44,31 @@ public class Grid : MonoBehaviour
         instance = this;
     }
 
+    public bool CheckIfValidUnit(Vector2 unit)
+    {
+        if (unit.x < 0 || 
+            unit.x >= xUnits || 
+            unit.y < 0 || 
+            unit.y >= yUnits)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
     void BuildGrid()
     {
         float totalUnits = xUnits * yUnits;
         gridUnits = new Unit[xUnits, yUnits];
+        units = new GameObject[xUnits * yUnits];
 
         float xStart = transform.localPosition.x - ((xUnits / 2) * unitSize);
         float yStart = transform.localPosition.y - ((yUnits / 2) * unitSize);
         float zStart = transform.localPosition.z;
 
-        for (int i = 0; i < totalUnits; i++)
+        for (int i = 0; i < totalUnits; ++i)
         {
             int x = i % xUnits;
             int y = (i - x) / xUnits;
@@ -68,6 +84,20 @@ public class Grid : MonoBehaviour
 
             newPoint.transform.localPosition = gridUnits[x,y].position;
             newPoint.transform.rotation = transform.rotation;
+
+            units[i] = newPoint;
         }
+
+       /* CombineInstance[] combine = new CombineInstance[units.Length];
+
+        for (int i = 0; i < units.Length; ++i)
+        {
+            Debug.Log(i);
+            MeshFilter mesh = units[i].GetComponentInChildren<MeshFilter>();
+            combine[i].mesh = mesh.sharedMesh;
+            units[i].SetActive(false);
+        }
+        transform.GetComponent<MeshFilter>().mesh = new Mesh();
+        transform.GetComponent<MeshFilter>().mesh.CombineMeshes(combine);*/
     }
 }
