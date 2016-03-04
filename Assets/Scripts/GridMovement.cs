@@ -89,20 +89,20 @@ public class GridMovement : MonoBehaviour
                     newPosition.y = currentPosition.y;
                     StartCoroutine(Move(EvaluateTime(stats.agility), newPosition));
                 }
-                if (x < -.2f)
+                else if (x < -.2f)
                 {
                     newPosition.x = currentPosition.x - 1;
                     newPosition.y = currentPosition.y;
                     StartCoroutine(Move(EvaluateTime(stats.agility), newPosition));
 
                 }
-                if (y > .2f)
+                else if (y > .2f)
                 {
                     newPosition.x = currentPosition.x;
                     newPosition.y = currentPosition.y + 1;
                     StartCoroutine(Move(EvaluateTime(stats.speed), newPosition));
                 }
-                if (y < -.2f)
+                else if (y < -.2f)
                 {
                     newPosition.x = currentPosition.x;
                     newPosition.y = currentPosition.y - 1;

@@ -25,7 +25,7 @@ public class GameController : MonoBehaviour
     public GameObject mainCamera;
 
     private PlayerController player;
-    private ChaseCam camera;
+    private QuadCam camera;
 
     [Header("Factories")]
     public ObjectFactory objectFactory;
@@ -42,8 +42,8 @@ public class GameController : MonoBehaviour
         player = Instantiate(playerCharacter).GetComponent<PlayerController>();
         player.Init(grid);
 
-        camera = Instantiate(mainCamera).GetComponent<ChaseCam>();
-        camera.Init(grid.transform, CameraFocal.instance.transform);
+        camera = Instantiate(mainCamera).GetComponent<QuadCam>();
+        camera.Init(grid.transform, player.transform);
 
         objectFactory.Init();
     }
