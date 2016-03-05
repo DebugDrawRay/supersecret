@@ -57,11 +57,11 @@ public class GridMovement : MonoBehaviour
         stats = GetComponent<Stats>();
         targetGrid = Grid.instance;
         currentGridPosition = startGridPosition;
-        currentTargetPosition = GridToWorldPoisiton(targetGrid, startGridPosition);
 
         if (targetGrid)
         {
-            transform.position = GridToWorldPoisiton(targetGrid, currentGridPosition);
+            currentTargetPosition = GridToWorldPoisiton(targetGrid, startGridPosition);
+            transform.localPosition = currentTargetPosition;
             initialized = true;
         }
         else
@@ -134,7 +134,6 @@ public class GridMovement : MonoBehaviour
             {
                 currentGridPosition = destinationGridPosition;
             }
-            Debug.Log(currentGridPosition);
 
             Vector3 newPos = GridToWorldPoisiton(targetGrid, currentGridPosition);
 
@@ -258,6 +257,7 @@ public class GridMovement : MonoBehaviour
         EnvironmentalHazard isEnviro = hit.GetComponent<EnvironmentalHazard>();
         if(isEnviro  && !moving)
         {
+            Debug.Log("isHit");
             EventManager.TriggerCollision();
 
             Vector3 newPosition = currentGridPosition;

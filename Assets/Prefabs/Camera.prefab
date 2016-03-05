@@ -98,6 +98,10 @@ MonoBehaviour:
   chaseDistance: 32.5
   moveSpeed: 100
   moveAcceleration: 0.1
+  duration: 0.1
+  strength: 10
+  vibrado: 100
+  randomness: 100
 --- !u!124 &12427000
 Behaviour:
   m_ObjectHideFlags: 1

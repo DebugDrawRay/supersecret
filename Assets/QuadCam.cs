@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+using DG.Tweening;
 
 public class QuadCam : MonoBehaviour
 {
@@ -19,9 +19,17 @@ public class QuadCam : MonoBehaviour
     private PlayerActions input;
     private Transform targetPoint;
 
+    [Header("Camera Reaction Shake Properties")]
+    public float duration;
+    public float strength;
+    public int vibrado;
+    public float randomness;
+
+    private Tween currentTween;
+
     void Awake()
     {
-        //rigid = GetComponent<Rigidbody>();
+        EventManager.CollisionReaction += CameraShake;
     }
 
     public void Init(Transform parent, Transform chaseTarget)
@@ -68,5 +76,10 @@ public class QuadCam : MonoBehaviour
         direction = direction.normalized;
         Quaternion targetRot = Quaternion.Euler(tiltLimit * direction.z, 0, tiltLimit * -direction.x);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, tiltSpeed);
+    }
+
+    void CameraShake()
+    {
+        currentTween = transform.DOShakePosition(duration, strength, vibrado, randomness);
     }
 }
