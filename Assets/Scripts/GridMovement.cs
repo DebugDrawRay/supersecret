@@ -14,7 +14,7 @@ public class GridMovement : MonoBehaviour
     private State currentState = State.InControl;
 
     [Header("Movement Properties")]
-    public Vector2 startPosition;
+    public Vector2 startGridPosition;
     public AnimationCurve speedCurve;
     public AnimationCurve timeCurve;
     public float minTimeToMove;
@@ -27,10 +27,19 @@ public class GridMovement : MonoBehaviour
 
     private float timeToNextSpace;
 
-    private Vector2 currentPosition;
+    //positioning control
+    private Vector2 currentGridPosition;
+    private Vector2 destinationGridPosition;
+
+    private Vector3 currentTargetPosition;
 
     private Grid targetGrid;
     private bool initialized;
+
+    private const float DESTINATIONUPDATEPERIOD = .15f;
+    private const float SMOOTHING = .1f;
+    private const float STATRANGE = .075f;
+    private float currentDestinationUpdate;
 
     //input control
     private PlayerActions input;
@@ -44,13 +53,15 @@ public class GridMovement : MonoBehaviour
 
     void Start()
     {
+        currentDestinationUpdate = DESTINATIONUPDATEPERIOD;
         stats = GetComponent<Stats>();
         targetGrid = Grid.instance;
-        currentPosition = startPosition;
+        currentGridPosition = startGridPosition;
+        currentTargetPosition = GridToWorldPoisiton(targetGrid, startGridPosition);
 
         if (targetGrid)
         {
-            transform.position = GridPostion(targetGrid, currentPosition.x, currentPosition.y);
+            transform.position = GridToWorldPoisiton(targetGrid, currentGridPosition);
             initialized = true;
         }
         else
@@ -59,12 +70,19 @@ public class GridMovement : MonoBehaviour
         }
     }
 
-    Vector3 GridPostion(Grid grid, float xPos, float yPos)
+    Vector3 GridToWorldPoisiton(Grid grid, Vector2 position)
     {
-        int newX = Mathf.RoundToInt(xPos);
-        int newY = Mathf.RoundToInt(yPos);
+        int newX = Mathf.RoundToInt(position.x);
+        int newY = Mathf.RoundToInt(position.y);
 
-        return grid.gridUnits[newX, newY].position;
+        if (targetGrid.CheckIfValidUnit(new Vector2(newX, newY)))
+        {
+            return grid.gridUnits[newX, newY].position;
+        }
+        else
+        {
+            return transform.localPosition;
+        }
     }
 
     float EvaluateTime(float stat)
@@ -72,60 +90,128 @@ public class GridMovement : MonoBehaviour
         float adjStat = stat / 100;
         return timeCurve.Evaluate(adjStat);
     }
+    float EvaluateStat(float stat)
+    {
+        return STATRANGE * Mathf.Abs(1 - (stat / 100));
+    }
 
     public void MovementListener(Vector2 axis)
     {
-        if (stats)
+        if (!moving)
         {
             float x = axis.x;
             float y = axis.y;
-
-            if (!moving)
+            currentDestinationUpdate -= Time.deltaTime;
+            if (currentDestinationUpdate <= 0)
             {
-                Vector2 newPosition = new Vector2();
                 if (x > .2f)
                 {
-                    newPosition.x = currentPosition.x + 1;
-                    newPosition.y = currentPosition.y;
-                    StartCoroutine(Move(EvaluateTime(stats.agility), newPosition));
+                    currentDestinationUpdate = DESTINATIONUPDATEPERIOD + EvaluateStat(stats.agility);
+                    destinationGridPosition.x = currentGridPosition.x + 1;
+                    destinationGridPosition.y = currentGridPosition.y;
                 }
                 else if (x < -.2f)
                 {
-                    newPosition.x = currentPosition.x - 1;
-                    newPosition.y = currentPosition.y;
-                    StartCoroutine(Move(EvaluateTime(stats.agility), newPosition));
-
+                    currentDestinationUpdate = DESTINATIONUPDATEPERIOD + EvaluateStat(stats.agility);
+                    destinationGridPosition.x = currentGridPosition.x - 1;
+                    destinationGridPosition.y = currentGridPosition.y;
                 }
                 else if (y > .2f)
                 {
-                    newPosition.x = currentPosition.x;
-                    newPosition.y = currentPosition.y + 1;
-                    StartCoroutine(Move(EvaluateTime(stats.speed), newPosition));
+                    currentDestinationUpdate = DESTINATIONUPDATEPERIOD + EvaluateStat(stats.speed);
+                    destinationGridPosition.x = currentGridPosition.x;
+                    destinationGridPosition.y = currentGridPosition.y + 1;
                 }
                 else if (y < -.2f)
                 {
-                    newPosition.x = currentPosition.x;
-                    newPosition.y = currentPosition.y - 1;
-                    StartCoroutine(Move(EvaluateTime(stats.speed), newPosition));
+                    currentDestinationUpdate = DESTINATIONUPDATEPERIOD + EvaluateStat(stats.speed);
+                    destinationGridPosition.x = currentGridPosition.x;
+                    destinationGridPosition.y = currentGridPosition.y - 1;
                 }
             }
-        }
-        else
-        {
-            Debug.LogError("No Stats Component Attached");
+
+            if (targetGrid.CheckIfValidUnit(destinationGridPosition))
+            {
+                currentGridPosition = destinationGridPosition;
+            }
+            Debug.Log(currentGridPosition);
+
+            Vector3 newPos = GridToWorldPoisiton(targetGrid, currentGridPosition);
+
+            currentTargetPosition.x = Mathf.Lerp(currentTargetPosition.x, newPos.x, SMOOTHING - EvaluateStat(stats.agility));
+            currentTargetPosition.y = Mathf.Lerp(currentTargetPosition.y, newPos.y, SMOOTHING - EvaluateStat(stats.speed));
+
+            transform.localPosition = Vector3.Lerp(transform.localPosition, currentTargetPosition, SMOOTHING);
+
+            /*if (stats)
+            {
+                float x = axis.x;
+                float y = axis.y;
+
+                if (!moving)
+                {
+                    Vector2 newPosition = new Vector2();
+                    if (x > .2f)
+                    {
+                        newPosition.x = currentGridPosition.x + 1;
+                        newPosition.y = currentGridPosition.y;
+                        StartCoroutine(Move(EvaluateTime(stats.agility), newPosition));
+                    }
+                    else if (x < -.2f)
+                    {
+                        newPosition.x = currentGridPosition.x - 1;
+                        newPosition.y = currentGridPosition.y;
+                        StartCoroutine(Move(EvaluateTime(stats.agility), newPosition));
+
+                    }
+                    else if (y > .2f)
+                    {
+                        newPosition.x = currentGridPosition.x;
+                        newPosition.y = currentGridPosition.y + 1;
+                        StartCoroutine(Move(EvaluateTime(stats.speed), newPosition));
+                    }
+                    else if (y < -.2f)
+                    {
+                        newPosition.x = currentGridPosition.x;
+                        newPosition.y = currentGridPosition.y - 1;
+                        StartCoroutine(Move(EvaluateTime(stats.speed), newPosition));
+                    }
+                }
+            }
+            else
+            {
+                Debug.LogError("No Stats Component Attached");
+            }*/
         }
 
     }
 
-    IEnumerator Move(float time, Vector2 toPosition)
+    IEnumerator Move(float time)
+    {
+        moving = true;
+        lerpStartPostion = transform.localPosition;
+
+        Vector3 newPosition = GridToWorldPoisiton(targetGrid, currentGridPosition);
+
+        for (float i = 0; i <= time; i += Time.deltaTime)
+        {
+            float moveTime = i / time;
+            transform.localPosition = Vector3.Lerp(lerpStartPostion, newPosition, moveTime);
+            yield return null;
+        }
+        destinationGridPosition = currentGridPosition; 
+        currentTargetPosition = transform.localPosition;
+        moving = false;
+    }
+    /*IEnumerator Move(float time, Vector2 toPosition)
     {
         if (targetGrid.CheckIfValidUnit(toPosition))
         {
             moving = true;
             lerpStartPostion = transform.localPosition;
-            currentPosition = toPosition;
+            currentGridPosition = toPosition;
 
-            Vector3 newPosition = GridPostion(targetGrid, currentPosition.x, currentPosition.y);
+            Vector3 newPosition = GridToWorldPoisiton(targetGrid, currentGridPosition);
 
             for (float i = 0; i <= time; i += Time.deltaTime)
             {
@@ -133,6 +219,7 @@ public class GridMovement : MonoBehaviour
                 transform.localPosition = Vector3.Lerp(lerpStartPostion, newPosition, speedCurve.Evaluate(moveTime));
                 yield return null;
             }
+            currentTargetPosition = transform.localPosition;
             moving = false;
         }
         else
@@ -140,10 +227,10 @@ public class GridMovement : MonoBehaviour
             moving = true;
             lerpStartPostion = transform.localPosition;
 
-            Vector3 newPosition = GridPostion(targetGrid, currentPosition.x, currentPosition.y);
+            Vector3 newPosition = GridToWorldPoisiton(targetGrid, currentGridPosition);
 
-            float deltaX = toPosition.x - currentPosition.x;
-            float deltaY = toPosition.y - currentPosition.y;
+            float deltaX = toPosition.x - currentGridPosition.x;
+            float deltaY = toPosition.y - currentGridPosition.y;
 
             newPosition.x += (targetGrid.unitSize * 0.65f) * deltaX;
             newPosition.y += (targetGrid.unitSize * 0.65f) * deltaY;
@@ -164,36 +251,37 @@ public class GridMovement : MonoBehaviour
 
             moving = false;
         }
-    }
+    }*/
 
     void OnTriggerEnter(Collider hit)
     {
         EnvironmentalHazard isEnviro = hit.GetComponent<EnvironmentalHazard>();
-        if(isEnviro)
+        if(isEnviro  && !moving)
         {
-            Vector3 newPosition = new Vector3();
-            newPosition.y = currentPosition.y;
             EventManager.TriggerCollision();
+
+            Vector3 newPosition = currentGridPosition;
             float chance = Random.value;
 
             if(chance >.5)
             {
-                newPosition.x = currentPosition.x + 1;
+                newPosition.x = currentGridPosition.x + 1;
                 if(!targetGrid.CheckIfValidUnit(newPosition))
                 {
-                    newPosition.x = currentPosition.x - 1;
+                    newPosition.x = currentGridPosition.x - 1;
                 }
             }
             else
             {
-                newPosition.x = currentPosition.x - 1;
+                newPosition.x = currentGridPosition.x - 1;
                 if (!targetGrid.CheckIfValidUnit(newPosition))
                 {
-                    newPosition.x = currentPosition.x + 1;
+                    newPosition.x = currentGridPosition.x + 1;
                 }
             }
-            
-            StartCoroutine(Move(.1f, newPosition));
+            currentGridPosition = newPosition;
+
+            StartCoroutine(Move(.1f));
         }
     }
 

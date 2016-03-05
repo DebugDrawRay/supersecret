@@ -108,7 +108,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 15, y: 21, z: 10}
+  m_Size: {x: 11, y: 21, z: 2}
   m_Center: {x: 0, y: 10.5, z: 0}
 --- !u!114 &11413378
 MonoBehaviour:
@@ -122,8 +122,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  speed: 90
-  agility: 90
+  speed: 100
+  agility: 100
   power: 0
   luck: 0
   weight: 0
@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caaae11ac5024d94793b79358ead1e69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPosition: {x: 2, y: 2}
+  startGridPosition: {x: 0, y: 0}
   speedCurve:
     serializedVersion: 2
     m_Curve:
