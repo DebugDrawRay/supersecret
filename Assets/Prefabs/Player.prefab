@@ -127,6 +127,7 @@ MonoBehaviour:
   power: 0
   luck: 0
   weight: 0
+  invulTime: 2
 --- !u!114 &11427766
 MonoBehaviour:
   m_ObjectHideFlags: 1

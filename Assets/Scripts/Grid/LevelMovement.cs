@@ -2,6 +2,7 @@
 
 public class LevelMovement : MonoBehaviour
 {
+    public float minSpeed;
     public float maxSpeed;
     public float maxAccelTime;
 
@@ -36,6 +37,6 @@ public class LevelMovement : MonoBehaviour
     }
     void ResetSpeed()
     {
-        accelTime = 0;
+        accelTime = minSpeed;
     }
 }

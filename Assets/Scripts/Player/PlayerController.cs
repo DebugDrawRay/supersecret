@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
     {
         gridSystem = grid;
         transform.SetParent(gridSystem.transform);
+        movement.Init(stats, grid);
         SetupInput();
         initialized = true;
     }

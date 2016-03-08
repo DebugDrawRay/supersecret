@@ -51,13 +51,17 @@ public class GridMovement : MonoBehaviour
     //components
     private Stats stats;
 
-    void Start()
+    private bool invul;
+    private float invulTime;
+
+    public void Init(Stats statsComponent, Grid grid)
     {
         currentDestinationUpdate = DESTINATIONUPDATEPERIOD;
-        stats = GetComponent<Stats>();
-        targetGrid = Grid.instance;
+        stats = statsComponent;
+        targetGrid = grid;
         currentGridPosition = startGridPosition;
-
+        invulTime = stats.invulTime;
+        EventManager.CollisionReaction += Invulnerable;
         if (targetGrid)
         {
             currentTargetPosition = GridToWorldPoisiton(targetGrid, startGridPosition);
@@ -97,7 +101,7 @@ public class GridMovement : MonoBehaviour
 
     public void MovementListener(Vector2 axis)
     {
-        if (!moving)
+        if (initialized && !moving)
         {
             float x = axis.x;
             float y = axis.y;
@@ -252,36 +256,55 @@ public class GridMovement : MonoBehaviour
         }
     }*/
 
+    void Invulnerable()
+    {
+        StartCoroutine(InvulnerableRoutine());
+    }
+    IEnumerator InvulnerableRoutine()
+    {
+        invul = true;
+
+        for (float i = 0; i <= invulTime; i += Time.deltaTime)
+        {
+            GetComponent<MeshRenderer>().enabled = !GetComponent<MeshRenderer>().enabled;
+            yield return null;
+        }
+        GetComponent<MeshRenderer>().enabled = true;
+        invul = false;
+    }
+
     void OnTriggerEnter(Collider hit)
     {
-        EnvironmentalHazard isEnviro = hit.GetComponent<EnvironmentalHazard>();
-        if(isEnviro  && !moving)
+        if (!invul)
         {
-            Debug.Log("isHit");
-            EventManager.TriggerCollision();
-
-            Vector3 newPosition = currentGridPosition;
-            float chance = Random.value;
-
-            if(chance >.5)
+            EnvironmentalHazard isEnviro = hit.GetComponent<EnvironmentalHazard>();
+            if (isEnviro && !moving)
             {
-                newPosition.x = currentGridPosition.x + 1;
-                if(!targetGrid.CheckIfValidUnit(newPosition))
-                {
-                    newPosition.x = currentGridPosition.x - 1;
-                }
-            }
-            else
-            {
-                newPosition.x = currentGridPosition.x - 1;
-                if (!targetGrid.CheckIfValidUnit(newPosition))
+                Debug.Log("isHit");
+
+                Vector3 newPosition = currentGridPosition;
+                float chance = Random.value;
+
+                if (chance > .5)
                 {
                     newPosition.x = currentGridPosition.x + 1;
+                    if (!targetGrid.CheckIfValidUnit(newPosition))
+                    {
+                        newPosition.x = currentGridPosition.x - 1;
+                    }
                 }
-            }
-            currentGridPosition = newPosition;
+                else
+                {
+                    newPosition.x = currentGridPosition.x - 1;
+                    if (!targetGrid.CheckIfValidUnit(newPosition))
+                    {
+                        newPosition.x = currentGridPosition.x + 1;
+                    }
+                }
+                currentGridPosition = newPosition;
 
-            StartCoroutine(Move(.1f));
+                StartCoroutine(Move(.1f));
+            }
         }
     }
 
