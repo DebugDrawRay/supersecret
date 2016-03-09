@@ -98,6 +98,9 @@ MonoBehaviour:
   chaseDistance: 32.5
   moveSpeed: 100
   moveAcceleration: 0.1
+  minFov: 50
+  maxFov: 60
+  fovSmooth: 0.1
   duration: 0.1
   strength: 10
   vibrado: 100

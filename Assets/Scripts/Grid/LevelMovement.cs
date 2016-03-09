@@ -39,4 +39,9 @@ public class LevelMovement : MonoBehaviour
     {
         accelTime = minSpeed;
     }
+
+    public float GetNormalizedSpeed()
+    {
+        return accelerationCurve.Evaluate(accelTime / maxAccelTime);
+    }
 }

@@ -1,0 +1,27 @@
+
+head.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+_Head
+  rotate: false
+  xy: 2, 173
+  size: 409, 284
+  orig: 409, 284
+  offset: 0, 0
+  index: -1
+_Neck_L
+  rotate: false
+  xy: 2, 2
+  size: 34, 169
+  orig: 34, 169
+  offset: 0, 0
+  index: -1
+_Neck_R
+  rotate: false
+  xy: 413, 299
+  size: 34, 158
+  orig: 34, 158
+  offset: 0, 0
+  index: -1

@@ -7,6 +7,7 @@ public class BiomeSet : ScriptableObject
     public string name = "New Biome Set";
     public Material roadMaterial;
     public Material wallMaterial;
+    public Material groundMaterial;
 
     public GameObject[] wallProps;
     public GameObject[] groundProps;

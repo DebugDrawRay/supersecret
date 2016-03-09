@@ -3,6 +3,7 @@ using DG.Tweening;
 
 public class QuadCam : MonoBehaviour
 {
+    [Header("Camera Movement Properties")]
     public float tiltLimit;
     public float tiltSpeed;
 
@@ -15,9 +16,15 @@ public class QuadCam : MonoBehaviour
 
     private Vector3 currentPosition;
 
-    private Rigidbody rigid;
+    private Camera cam;
+    private LevelMovement levelMove;
     private PlayerActions input;
     private Transform targetPoint;
+
+    [Header("Camera Fov Control")]
+    public float minFov;
+    public float maxFov;
+    public float fovSmooth;
 
     [Header("Camera Reaction Shake Properties")]
     public float duration;
@@ -30,6 +37,7 @@ public class QuadCam : MonoBehaviour
     void Awake()
     {
         EventManager.CollisionReaction += CameraShake;
+        cam = GetComponent<Camera>();
     }
 
     public void Init(Transform parent, Transform chaseTarget)
@@ -42,6 +50,8 @@ public class QuadCam : MonoBehaviour
         newPos.y = newPos.y + hoverHeight;
 
         transform.position = newPos;
+
+        levelMove = Grid.instance.GetComponent<LevelMovement>();
     }
 
     void Update()
@@ -52,15 +62,14 @@ public class QuadCam : MonoBehaviour
 
         transform.position = Vector3.Lerp(transform.position, newPos, moveAcceleration);
 
-
         TiltEngine(newPos);
+        CurrentFov();
     }
 
     float CalculateHoverHeight(Vector3 target)
     {
         float deltaZ = target.z - transform.position.z;
         float newDeviation = hoverHeightDeviation * (deltaZ / target.z);
-        Debug.Log(newDeviation);
         float newHeight = hoverHeight + newDeviation;
         return newHeight;
     }
@@ -81,5 +90,15 @@ public class QuadCam : MonoBehaviour
     void CameraShake()
     {
         currentTween = transform.DOShakePosition(duration, strength, vibrado, randomness);
+    }
+
+    void CurrentFov()
+    {
+        if (levelMove)
+        {
+            float deltaFov = maxFov - minFov;
+            float targetFov = minFov + (deltaFov * levelMove.GetNormalizedSpeed());
+            cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, targetFov, fovSmooth);
+        }
     }
 }
