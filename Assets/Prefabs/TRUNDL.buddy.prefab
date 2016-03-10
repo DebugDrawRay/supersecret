@@ -50,6 +50,7 @@ GameObject:
   - 114: {fileID: 11426790}
   - 114: {fileID: 11429210}
   - 114: {fileID: 11455174}
+  - 65: {fileID: 6596944}
   m_Layer: 0
   m_Name: TRUNDL.buddy
   m_TagString: Untagged
@@ -65,7 +66,7 @@ Transform:
   m_GameObject: {fileID: 197394}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 478802}
   - {fileID: 488902}
@@ -194,6 +195,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 135530}
   m_Mesh: {fileID: 0}
+--- !u!65 &6596944
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 197394}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11, y: 21, z: 2}
+  m_Center: {x: 0, y: 10.5, z: 0}
 --- !u!114 &11426790
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -257,8 +270,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
-  movement: {fileID: 11429758, guid: 6fe49bce27193c14b93fa17af7dbf660, type: 2}
-  stats: {fileID: 11413378, guid: 6fe49bce27193c14b93fa17af7dbf660, type: 2}
+  movement: {fileID: 11426790}
+  stats: {fileID: 11455174}
 --- !u!114 &11455174
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -298,8 +311,8 @@ MonoBehaviour:
   frontFacing: 0
   logErrors: 0
   submeshSeparators: []
-  _animationName: 
-  loop: 0
+  _animationName: idle
+  loop: 1
   timeScale: 1
 --- !u!114 &11460768
 MonoBehaviour:
@@ -322,8 +335,8 @@ MonoBehaviour:
   frontFacing: 0
   logErrors: 0
   submeshSeparators: []
-  _animationName: 
-  loop: 0
+  _animationName: idle
+  loop: 1
   timeScale: 1
 --- !u!114 &11471836
 MonoBehaviour:
@@ -346,8 +359,8 @@ MonoBehaviour:
   frontFacing: 0
   logErrors: 0
   submeshSeparators: []
-  _animationName: 
-  loop: 0
+  _animationName: idle
+  loop: 1
   timeScale: 1
 --- !u!1001 &100100000
 Prefab:

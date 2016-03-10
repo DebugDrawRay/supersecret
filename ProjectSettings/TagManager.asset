@@ -13,7 +13,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Ground
   - 
   - 
   - 
@@ -40,6 +40,15 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player Head
+    uniqueID: 3308966331
+    locked: 0
+  - name: Player Bike
+    uniqueID: 3909648967
+    locked: 0
+  - name: Player Body
+    uniqueID: 3824085505
     locked: 0
   - name: Background
     uniqueID: 1219591853

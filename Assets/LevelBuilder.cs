@@ -16,6 +16,7 @@ public class LevelBuilder : MonoBehaviour
     private Material roadMat;
     private Material wallMat;
     private Material groundMat;
+    private GameObject horizonObj;
     private GameObject[] wallProps;
     private GameObject[] groundProps;
     private GameObject[] obstacles;
@@ -26,13 +27,35 @@ public class LevelBuilder : MonoBehaviour
 
     [Header("Level Properties")]
     public float levelLength;
+
+    [Header("Road Properties")]
+    public bool generateRoad = true;
     public float roadWidth;
+    public float roadWidthBuffer;
+
+    [Header("Wall Properties")]
+    public bool generateWalls;
+
+    [Header("Ground Properties")]
+    public bool generateGround;
+
+    [Header("Horizon Object Properties")]
+    public bool generateHorizon;
+    public float horizonZPos;
 
     [Header("Wall Prop Properties")]
-    public float wallPropsSpacing;
+    public bool generateWallProps;
+    public float wallPropSpacing;
     public float wallPropOffset;
 
+    [Header("Ground Prop Properties")]
+    public bool generateGroundProps;
+    public float groundPropSpacing;
+    public float minGroundPropOffset;
+    public float maxGroundPropOffset;
+
     [Header("Obstacle Properties")]
+    public bool generateObstacles;
     public int obstacleSpawnBuffer;
     [Range(0, 1)]
     public float obstacleSpawnRate;
@@ -41,7 +64,6 @@ public class LevelBuilder : MonoBehaviour
     void Start()
     {
         Init();
-        BuildLevel(levelLength, roadWidth, Grid.instance);
     }
     void Init()
     {
@@ -50,26 +72,30 @@ public class LevelBuilder : MonoBehaviour
         roadMat = biomeSet.roadMaterial;
         wallMat = biomeSet.wallMaterial;
         groundMat = biomeSet.groundMaterial;
+        horizonObj = biomeSet.horizonObject;
         wallProps = biomeSet.wallProps;
         groundProps = biomeSet.groundProps;
         obstacles = biomeSet.obstacles;
         enemies = biomeSet.enemies;
+
+        BuildLevel(levelLength, roadWidth, Grid.instance);
     }
 
     void BuildLevel(float levelLength, float roadWidth, Grid targetGrid)
     {
         BuildRoad(levelLength, roadWidth);
         BuildGround(levelLength);
-        //BuildWalls(levelLength, roadWidth);
-        //SpawnWallProps(levelLength, roadWidth);
-        SpawnGroundProps();
+        BuildWalls(levelLength, roadWidth + roadWidthBuffer);
+        SpawnWallProps(levelLength, roadWidth + roadWidthBuffer);
+        SpawnGroundProps(levelLength, roadWidth + roadWidthBuffer);
+        SpawnHorizonObject(levelLength, targetGrid);
         SpawnObstacles(levelLength, targetGrid);
         SpawnEnemies();
     }
 
     void BuildRoad(float length, float width)
     {
-        if(roadMat)
+        if(roadMat && generateRoad)
         {
             GameObject newRoad = Instantiate(blankPlane);
 
@@ -83,27 +109,29 @@ public class LevelBuilder : MonoBehaviour
             newRoadMat.mainTextureScale = texScale;
 
             newRoad.GetComponent<MeshRenderer>().material = newRoadMat;
-
         }
         else
         {
-            Debug.LogError("No Road Material Selected");
+            Debug.LogError("No Road Material Selected, Robot Be Flyin'");
         }
     }
 
     void BuildGround(float length)
     {
-        GameObject newGround = Instantiate(blankPlane);
+        if (groundMat && generateGround)
+        {
+            GameObject newGround = Instantiate(blankPlane);
 
-        Vector3 scale = new Vector3(length, length, length);
-        newGround.transform.localScale = scale;
-        newGround.transform.position = new Vector3(0, -0.5f, 0);
+            Vector3 scale = new Vector3(length, length, length);
+            newGround.transform.localScale = scale;
+            newGround.transform.position = new Vector3(0, -0.5f, 0);
 
-        newGround.GetComponent<MeshRenderer>().material = groundMat;
+            newGround.GetComponent<MeshRenderer>().material = groundMat;
+        }
     }
     void BuildWalls(float length, float roadWidth)
     {
-        if(wallMat)
+        if(wallMat && generateWalls)
         {
             GameObject leftWall = Instantiate(blankPlane);
             GameObject rightWall = Instantiate(blankPlane);
@@ -127,73 +155,107 @@ public class LevelBuilder : MonoBehaviour
 
         }
     }
-    void SpawnWallProps(float length, float roadWidth)
+    void SpawnHorizonObject(float length, Grid grid)
     {
-        int total = Mathf.RoundToInt(levelLength * 5 / wallPropsSpacing);
-
-        for(int i = 0; i <= total; ++i)
+        if(horizonObj && generateHorizon)
         {
-            int select = Random.Range(0, wallProps.Length);
-            GameObject left = Instantiate(wallProps[select]);
-            float xPos = -roadWidth * 5;
-            float offset = xPos + Random.Range(-wallPropOffset, wallPropOffset);
-            left.transform.position = new Vector3(offset, 20, wallPropsSpacing * i);
-            left.transform.rotation = Quaternion.Euler(0, 180, 0);
-
-            select = Random.Range(0, wallProps.Length);
-            GameObject right = Instantiate(wallProps[select]);
-            xPos = roadWidth * 5;
-            offset = xPos + Random.Range(-wallPropOffset, wallPropOffset);
-            right.transform.position = new Vector3(offset, 20, wallPropsSpacing * i);
-
+            GameObject horizon = Instantiate(horizonObj);
+            Vector3 startPosition = new Vector3(0, 100, horizonZPos);
+            horizon.GetComponent<HorizonController>().Init(startPosition, grid.transform);
         }
     }
-    void SpawnGroundProps()
+    void SpawnWallProps(float length, float roadWidth)
     {
-       
+        if (wallProps.Length > 0 && generateWallProps)
+        {
+            int total = Mathf.RoundToInt(levelLength * 5 / wallPropSpacing);
+
+            for (int i = 0; i <= total; ++i)
+            {
+                int select = Random.Range(0, wallProps.Length);
+                GameObject left = Instantiate(wallProps[select]);
+                float xPos = -roadWidth * 5;
+                float offset = xPos + Random.Range(-wallPropOffset, wallPropOffset);
+                left.transform.position = new Vector3(offset, 20, wallPropSpacing * i);
+                left.transform.rotation = Quaternion.Euler(0, 180, 0);
+
+                select = Random.Range(0, wallProps.Length);
+                GameObject right = Instantiate(wallProps[select]);
+                xPos = roadWidth * 5;
+                offset = xPos + Random.Range(-wallPropOffset, wallPropOffset);
+                right.transform.position = new Vector3(offset, 20, wallPropSpacing * i);
+
+            }
+        }
+    }
+    void SpawnGroundProps(float length, float width)
+    {
+       if(groundProps.Length > 0 && generateGroundProps)
+        {
+            int total = Mathf.RoundToInt(levelLength * 5 / groundPropSpacing);
+
+            for (int i = 0; i <= total; ++i)
+            {
+                int select = Random.Range(0, groundProps.Length);
+                GameObject left = Instantiate(groundProps[select]);
+                float xPos = -roadWidth * 5;
+                float offset = xPos + Random.Range(-maxGroundPropOffset, -minGroundPropOffset);
+                left.transform.position = new Vector3(offset, 0, groundPropSpacing * i);
+
+                select = Random.Range(0, groundProps.Length);
+                GameObject right = Instantiate(groundProps[select]);
+                xPos = roadWidth * 5;
+                offset = xPos + Random.Range(minGroundPropOffset, maxGroundPropOffset);
+                right.transform.position = new Vector3(offset, 0, groundPropSpacing * i);
+            }
+        }
 
     }
     void SpawnObstacles(float length, Grid grid)
     {
-        float[] gridXPoints = new float[grid.xUnits];
-
-        for (int i = 0; i < gridXPoints.Length; i++)
+        if (obstacles.Length > 0 && generateObstacles)
         {
-            gridXPoints[i] = grid.gridUnits[i, 0].position.x;
-        }
+            float[] gridXPoints = new float[grid.xUnits];
 
-        int totalRows = Mathf.RoundToInt((length * 5) / grid.unitSize);
-
-        for (int i = 0; i < totalRows; ++i)
-        {
-            float canSpawn = i % obstacleSpawnBuffer;
-
-            if (canSpawn == 0)
+            for (int i = 0; i < gridXPoints.Length; i++)
             {
-                float chance = Random.value;
-                if (chance <= obstacleSpawnRate)
+                gridXPoints[i] = grid.gridUnits[i, 0].position.x;
+            }
+
+            int totalRows = Mathf.RoundToInt((length * 5) / grid.unitSize);
+
+            for (int i = 0; i < totalRows; ++i)
+            {
+                float canSpawn = i % obstacleSpawnBuffer;
+
+                if (canSpawn == 0)
                 {
-                    int amount = Random.Range(1, maxObstaclesPerRow + 1);
-                    int[] slots = new int[amount];
-                    for (int j = 0; j < slots.Length; ++j)
+                    float chance = Random.value;
+                    if (chance <= obstacleSpawnRate)
                     {
-                        int pos = Random.Range(1, 6);
-                        for (int k = 0; k < slots.Length; ++k)
+                        int amount = Random.Range(1, maxObstaclesPerRow + 1);
+                        int[] slots = new int[amount];
+                        for (int j = 0; j < slots.Length; ++j)
                         {
-                            if (slots[k] == pos)
+                            int pos = Random.Range(1, 6);
+                            for (int k = 0; k < slots.Length; ++k)
                             {
-                                pos = Random.Range(1, 6);
-                                k = -1;
+                                if (slots[k] == pos)
+                                {
+                                    pos = Random.Range(1, 6);
+                                    k = -1;
+                                }
                             }
+                            slots[j] = pos;
                         }
-                        slots[j] = pos;
-                    }
-                    for (int l = 0; l < slots.Length; ++l)
-                    {
-                        GameObject newObs = Instantiate(obstacles[0]);
-                        float xPos = gridXPoints[slots[l] - 1];
-                        float zPos = grid.unitSize * i;
-                        newObs.transform.position = new Vector3(xPos, 2, zPos);
+                        for (int l = 0; l < slots.Length; ++l)
+                        {
+                            int select = Random.Range(0, obstacles.Length);
+                            GameObject newObs = Instantiate(obstacles[select]);
+                            float xPos = gridXPoints[slots[l] - 1];
+                            float zPos = grid.unitSize * i;
+                            newObs.transform.position = new Vector3(xPos, 2, zPos);
+                        }
                     }
                 }
             }

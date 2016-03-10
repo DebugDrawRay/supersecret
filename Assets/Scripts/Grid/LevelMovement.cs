@@ -20,7 +20,7 @@ public class LevelMovement : MonoBehaviour
         EventManager.CollisionReaction += ResetSpeed;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (isMoving)
         {

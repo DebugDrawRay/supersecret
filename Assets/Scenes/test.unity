@@ -132,7 +132,7 @@ MonoBehaviour:
   currentState: 0
   gridSystem: {fileID: 175890, guid: 8c2ce00b53dd6f2469cca5f00e527104, type: 2}
   startPosition: {x: 0, y: 0, z: 0}
-  playerCharacter: {fileID: 130758, guid: 6fe49bce27193c14b93fa17af7dbf660, type: 2}
+  playerCharacter: {fileID: 197394, guid: acef4599d7c31f942a256eb73468ef20, type: 2}
   mainCamera: {fileID: 165910, guid: 880d436596e2a4b49aead0cf214d9390, type: 2}
   objectFactory: {fileID: 63821015}
 --- !u!4 &63821017
@@ -163,9 +163,21 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a4086dd94920a134bba7bd0530786333, type: 2}
   blankPlane: {fileID: 115408, guid: cde66e77013d37e49a70d52093188632, type: 2}
   levelLength: 2000
-  roadWidth: 15
-  wallPropsSpacing: 50
+  generateRoad: 0
+  roadWidth: 8
+  roadWidthBuffer: 10
+  generateWalls: 0
+  generateGround: 1
+  generateHorizon: 0
+  horizonZPos: 900
+  generateWallProps: 1
+  wallPropSpacing: 25
   wallPropOffset: 3
+  generateGroundProps: 0
+  groundPropSpacing: 50
+  minGroundPropOffset: 10
+  maxGroundPropOffset: 100
+  generateObstacles: 0
   obstacleSpawnBuffer: 10
   obstacleSpawnRate: 1
   maxObstaclesPerRow: 2
