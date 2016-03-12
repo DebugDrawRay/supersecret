@@ -14,6 +14,8 @@ public class LevelMovement : MonoBehaviour
 
     private Rigidbody rigid;
 
+    private bool topSpeed;
+
     void Start()
     {
         rigid = GetComponent<Rigidbody>();
@@ -26,6 +28,12 @@ public class LevelMovement : MonoBehaviour
         {
             rigid.velocity = movementDirection * CurrentSpeed();
         }
+
+        if (GetNormalizedSpeed() >= 1 && !topSpeed)
+        {
+            EventManager.TopSpeed();
+            topSpeed = true;
+        }
     }
 
     float CurrentSpeed()
@@ -37,6 +45,7 @@ public class LevelMovement : MonoBehaviour
     }
     void ResetSpeed()
     {
+        topSpeed = false;
         accelTime = minSpeed;
     }
 

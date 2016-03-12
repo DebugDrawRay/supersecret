@@ -37,6 +37,7 @@ public class QuadCam : MonoBehaviour
     void Awake()
     {
         EventManager.CollisionReaction += CameraShake;
+        //EventManager.TopSpeedEvent += MaxFov;
         cam = GetComponent<Camera>();
     }
 
@@ -90,6 +91,12 @@ public class QuadCam : MonoBehaviour
     void CameraShake()
     {
         currentTween = transform.DOShakePosition(duration, strength, vibrado, randomness);
+        maxFov = 60;
+    }
+
+    void MaxFov()
+    {
+        maxFov = 90;
     }
 
     void CurrentFov()

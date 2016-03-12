@@ -82,7 +82,6 @@ public class MotorcycleEngine : MonoBehaviour
         {
             Quaternion zero = Quaternion.Euler(new Vector3(0, eulers.y, 0));
             playerSprite.transform.rotation = Quaternion.RotateTowards(playerSprite.transform.rotation, zero, recenterForce);
-            
         }
         rigid.velocity = (direction * lateralSpeed * tiltAmount) + forwardSpeed;
     }

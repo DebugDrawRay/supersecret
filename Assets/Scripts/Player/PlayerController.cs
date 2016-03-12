@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Spine.Unity;
 using System.Collections;
 
 public class PlayerController : MonoBehaviour
@@ -18,6 +19,7 @@ public class PlayerController : MonoBehaviour
     [Header("Components")]
     public GridMovement movement;
     public Stats stats;
+    public PlayerAnimationController animation;
 
     //References
     private Grid gridSystem;
@@ -27,18 +29,19 @@ public class PlayerController : MonoBehaviour
 
     private bool initialized;
 
-    void SetupInput()
-    {
-        input = PlayerActions.BindKeyboardAndJoystick();
-    }
-
     public void Init(Grid grid)
     {
         gridSystem = grid;
         transform.SetParent(gridSystem.transform);
-        movement.Init(stats, grid);
+        movement.Init(stats, grid, animation);
         SetupInput();
+        animation.Init();
         initialized = true;
+    }
+
+    void SetupInput()
+    {
+        input = PlayerActions.BindKeyboardAndJoystick();
     }
 
     void Update()
