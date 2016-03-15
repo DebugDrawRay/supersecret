@@ -56,7 +56,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5c44a56415fcee48920d3da14143e9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitSize: 10
+  unitSize: 12
   xUnits: 5
   yUnits: 5
   point: {fileID: 155836, guid: e41703504e3068a448dcdb223a00870d, type: 2}

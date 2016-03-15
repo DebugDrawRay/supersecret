@@ -7,6 +7,12 @@ public class Grid : MonoBehaviour
     public int xUnits;
     public int yUnits;
 
+    public Vector2 gridSize
+    {
+        get;
+        set;
+    }
+
     public GameObject point;
 
     public Unit[,] gridUnits
@@ -30,6 +36,7 @@ public class Grid : MonoBehaviour
 
     void Awake()
     {
+        gridSize = new Vector2(xUnits, yUnits);
         Init();
         BuildGrid();
     }
@@ -99,5 +106,20 @@ public class Grid : MonoBehaviour
         }
         transform.GetComponent<MeshFilter>().mesh = new Mesh();
         transform.GetComponent<MeshFilter>().mesh.CombineMeshes(combine);*/
+    }
+
+    public Vector3 GridToWorldPoisiton(Vector2 position)
+    {
+        int newX = Mathf.RoundToInt(position.x);
+        int newY = Mathf.RoundToInt(position.y);
+
+        if (CheckIfValidUnit(new Vector2(newX, newY)))
+        {
+            return gridUnits[newX, newY].position;
+        }
+        else
+        {
+            return transform.localPosition;
+        }
     }
 }

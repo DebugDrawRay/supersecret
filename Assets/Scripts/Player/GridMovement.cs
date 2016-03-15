@@ -67,7 +67,7 @@ public class GridMovement : MonoBehaviour
         EventManager.CollisionReaction += Invulnerable;
         if (targetGrid)
         {
-            currentTargetPosition = GridToWorldPoisiton(targetGrid, startGridPosition);
+            currentTargetPosition = targetGrid.GridToWorldPoisiton(startGridPosition);
             transform.localPosition = currentTargetPosition;
             initialized = true;
         }
@@ -77,20 +77,7 @@ public class GridMovement : MonoBehaviour
         }
     }
 
-    Vector3 GridToWorldPoisiton(Grid grid, Vector2 position)
-    {
-        int newX = Mathf.RoundToInt(position.x);
-        int newY = Mathf.RoundToInt(position.y);
 
-        if (targetGrid.CheckIfValidUnit(new Vector2(newX, newY)))
-        {
-            return grid.gridUnits[newX, newY].position;
-        }
-        else
-        {
-            return transform.localPosition;
-        }
-    }
 
     float EvaluateTime(float stat)
     {
@@ -154,7 +141,7 @@ public class GridMovement : MonoBehaviour
                 }
             }
 
-            Vector3 newPos = GridToWorldPoisiton(targetGrid, currentGridPosition);
+            Vector3 newPos = targetGrid.GridToWorldPoisiton(currentGridPosition);
 
             currentTargetPosition.x = Mathf.Lerp(currentTargetPosition.x, newPos.x, SMOOTHING - EvaluateStat(stats.agility));
             currentTargetPosition.y = Mathf.Lerp(currentTargetPosition.y, newPos.y, SMOOTHING - EvaluateStat(stats.speed));
@@ -170,7 +157,7 @@ public class GridMovement : MonoBehaviour
         moving = true;
         lerpStartPostion = transform.localPosition;
 
-        Vector3 newPosition = GridToWorldPoisiton(targetGrid, currentGridPosition);
+        Vector3 newPosition = targetGrid.GridToWorldPoisiton(currentGridPosition);
 
         for (float i = 0; i <= time; i += Time.deltaTime)
         {

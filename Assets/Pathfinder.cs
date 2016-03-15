@@ -3,8 +3,11 @@ using System.Collections.Generic;
 
 public class Pathfinder
 {
-    public static List<Vector2> FindPath(Vector2 start, Vector2 goal, float gridXSize, float gridYSize)
+    public static List<Vector2> FindPath(Vector2 start, Vector2 goal, Vector2 gridSize)
     {
+        float gridXSize = gridSize.x;
+        float gridYSize = gridSize.y;
+
         Dictionary<Vector2, Vector2> visitedPoints = new Dictionary<Vector2, Vector2>();
         List<Vector2> searchPoints = new List<Vector2>();
         List<Vector2> newPath = new List<Vector2>();
