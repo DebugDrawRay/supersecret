@@ -28,7 +28,11 @@ public class GridMovement : MonoBehaviour
     private float timeToNextSpace;
 
     //positioning control
-    private Vector2 currentGridPosition;
+    public Vector2 currentGridPosition
+    {
+        get;
+        private set;
+    }
     private Vector2 destinationGridPosition;
 
     private Vector3 currentTargetPosition;
@@ -190,6 +194,7 @@ public class GridMovement : MonoBehaviour
 
     void OnTriggerEnter(Collider hit)
     {
+        Debug.Log("Got hit");
         if (!invul)
         {
             EnvironmentalHazard isEnviro = hit.GetComponent<EnvironmentalHazard>();
@@ -222,6 +227,4 @@ public class GridMovement : MonoBehaviour
             }
         }
     }
-
-
 }

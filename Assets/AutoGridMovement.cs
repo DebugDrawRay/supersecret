@@ -10,69 +10,92 @@ public class AutoGridMovement : MonoBehaviour
     public float speed;
 
     //Grid properties
-    public Vector2 currentPoint;
-    public Vector2 goalPoint;
+    public Vector2 startPoint;
 
+    private Vector2 currentPoint;
     private Vector3 currentPosition;
     private Vector3 goalPosition;
 
     private Grid targetGrid;
     private bool initialized;
 
-    [InspectorButton("OnButtonClicked")]
-    public bool Move;
+    private bool isMoving;
 
-    private void OnButtonClicked()
+    void Awake()
     {
-        MoveToDestination(goalPoint);
+        EventManager.EnterGridEvent += EnterGrid;
     }
 
-    [InspectorButton("Init")]
-    public bool Initialize;
-
-
-    void Init()
+    public void Init(Grid grid)
     {
-        targetGrid = Grid.instance;
-        transform.SetParent(targetGrid.transform);
-        currentPosition = targetGrid.GridToWorldPoisiton(currentPoint);
-        goalPosition = targetGrid.GridToWorldPoisiton(goalPoint);
-
-        transform.localPosition = currentPosition;
+        targetGrid = grid;
         initialized = true;
     }
 
-    void Update()
+    public void MoveToDestination(Vector2 goal)
     {
-        if(initialized)
+        if (!isMoving)
+        {
+            List<Vector2> path = Pathfinder.FindPath(currentPoint, goal, targetGrid.gridSize);
+            StartCoroutine(MoveAcrossPath(path, speed));
+        }
+    }
+
+    public void MoveToRandomDestination()
+    {
+        if (!isMoving)
         {
             currentDelay -= Time.deltaTime;
-            if(currentDelay <= 0)
+            if (currentDelay <= 0)
             {
-                MoveToRandomDestination();
+                int ranX = Random.Range(0, targetGrid.xUnits);
+                int ranY = Random.Range(0, targetGrid.yUnits);
+
+                Vector2 goal = new Vector2(ranX, ranY);
+                List<Vector2> path = Pathfinder.FindPath(currentPoint, goal, targetGrid.gridSize);
+                StartCoroutine(MoveAcrossPath(path, speed));
                 currentDelay = delay;
             }
         }
     }
-    void MoveToDestination(Vector2 goal)
-    {
-        List<Vector2> path = Pathfinder.FindPath(currentPoint, goal, targetGrid.gridSize);
-        StartCoroutine(MoveAcrossPath(path, speed));
-    }
 
-    void MoveToRandomDestination()
+    public void EnterGrid()
     {
-        int ranX = Random.Range(0, targetGrid.xUnits);
-        int ranY = Random.Range(0, targetGrid.yUnits);
+        if (!isMoving)
+        {
+            transform.SetParent(targetGrid.transform);
+            Vector2 enterPoint = Vector2.zero;
+            if (targetGrid.transform.position.x > transform.position.x)
+            {
+                int yPos = Random.Range(0, targetGrid.yUnits);
+                int xPos = 0;
 
-        Vector2 goal = new Vector2(ranX, ranY);
-        Debug.Log(ranX + " " + ranY);
-        List<Vector2> path = Pathfinder.FindPath(currentPoint, goal, targetGrid.gridSize);
-        StartCoroutine(MoveAcrossPath(path, speed));
+                if (yPos == 0)
+                {
+                    xPos = Random.Range(0, targetGrid.xUnits);
+                }
+
+                enterPoint = new Vector2(xPos, yPos);
+            }
+            else if (targetGrid.transform.position.x < transform.position.x)
+            {
+                int yPos = Random.Range(0, targetGrid.yUnits);
+                int xPos = targetGrid.xUnits - 1;
+
+                if(yPos == 0)
+                {
+                    xPos = Random.Range(0, targetGrid.xUnits);
+                }
+
+                enterPoint = new Vector2(xPos, yPos);
+            }
+            StartCoroutine(MoveToPoint(1, enterPoint));
+        }
     }
 
     IEnumerator MoveAcrossPath(List<Vector2> path, float time)
     {
+        isMoving = true;
         time = time / path.Count;
         for(int i = 1; i < path.Count; ++i)
         {
@@ -86,5 +109,22 @@ public class AutoGridMovement : MonoBehaviour
             }
             currentPoint = path[i];
         }
+        isMoving = false;
+    }
+
+    IEnumerator MoveToPoint(float time, Vector2 point)
+    {
+        isMoving = true;
+        Vector3 startPosition = transform.localPosition;
+        Vector3 nextPosition = targetGrid.GridToWorldPoisiton(point);
+        for (float t = 0; t <= time; t += Time.deltaTime)
+        {
+            float moveTime = t / time;
+            transform.localPosition = Vector3.Lerp(startPosition, nextPosition, moveTime);
+            yield return null;
+        }
+        currentPoint = point;
+        isMoving = false;
+
     }
 }

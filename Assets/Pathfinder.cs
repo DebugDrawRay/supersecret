@@ -20,7 +20,6 @@ public class Pathfinder
 
             if (currentPoint == goal)
             {
-                Debug.Log("Reached goal");
                 Vector2 lastPoint = currentPoint;
                 while(lastPoint != start)
                 {
@@ -45,7 +44,6 @@ public class Pathfinder
             }
             searchPoints.RemoveAt(0);
         }
-        Debug.Log("Search Complete");
         return newPath;
     }
 

@@ -21,7 +21,6 @@ public class PlayerAnimationController : MonoBehaviour
     [Range(0,1)]
     public float lean;
 
-    private float FUCKYOU = 0f;
     void Start()
     {
         EventManager.CollisionReaction += CollisionAnim;

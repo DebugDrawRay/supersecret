@@ -61,11 +61,15 @@ public class LevelBuilder : MonoBehaviour
     public float obstacleSpawnRate;
     public int maxObstaclesPerRow;
 
-    void Start()
-    {
-        Init();
-    }
-    void Init()
+    [Header("Enemy Properties")]
+    public bool generateEnemies;
+    public int enemySpawnBuffer;
+    public float enemySpawnXOffset;
+    [Range(0, 1)]
+    public float enemySpawnRate;
+
+
+    public void Init()
     {
         biomeSet = availableBiomes[selectBiomeSet];
 
@@ -90,7 +94,7 @@ public class LevelBuilder : MonoBehaviour
         SpawnGroundProps(levelLength, roadWidth + roadWidthBuffer);
         SpawnHorizonObject(levelLength, targetGrid);
         SpawnObstacles(levelLength, targetGrid);
-        SpawnEnemies();
+        SpawnEnemies(levelLength, roadWidth, targetGrid);
     }
 
     void BuildRoad(float length, float width)
@@ -99,13 +103,13 @@ public class LevelBuilder : MonoBehaviour
         {
             GameObject newRoad = Instantiate(blankPlane);
 
-            Vector3 scale = new Vector3(length, 0, width);
+            Vector3 scale = new Vector3(length, width, 1);
             newRoad.transform.localScale = scale;
             newRoad.transform.position = Vector3.zero;
-            newRoad.transform.rotation = Quaternion.Euler(0, 90, 0);
+            newRoad.transform.rotation = Quaternion.Euler(90, 90, 0);
 
             Material newRoadMat = roadMat;
-            Vector2 texScale = new Vector2(scale.x / 20, 1);
+            Vector2 texScale = new Vector2(scale.x / 100, 1);
             newRoadMat.mainTextureScale = texScale;
 
             newRoad.GetComponent<MeshRenderer>().material = newRoadMat;
@@ -125,6 +129,7 @@ public class LevelBuilder : MonoBehaviour
             Vector3 scale = new Vector3(length, length, length);
             newGround.transform.localScale = scale;
             newGround.transform.position = new Vector3(0, -0.5f, 0);
+            newGround.transform.rotation = Quaternion.Euler(90, 0, 0);
 
             newGround.GetComponent<MeshRenderer>().material = groundMat;
         }
@@ -136,18 +141,18 @@ public class LevelBuilder : MonoBehaviour
             GameObject leftWall = Instantiate(blankPlane);
             GameObject rightWall = Instantiate(blankPlane);
 
-            Vector3 scale = new Vector3(length, 0, 5);
+            Vector3 scale = new Vector3(length, 45, 1);
 
             leftWall.transform.localScale = scale;
             rightWall.transform.localScale = scale;
 
-            leftWall.transform.rotation = Quaternion.Euler(90, 90, 0);
-            rightWall.transform.rotation = Quaternion.Euler(90, 270, 0);
+            leftWall.transform.rotation = Quaternion.Euler(0, -90, 0);
+            rightWall.transform.rotation = Quaternion.Euler(0, 90, 0);
 
-            leftWall.transform.position = new Vector3(-roadWidth * 5, 22, 0);
-            rightWall.transform.position = new Vector3(roadWidth * 5, 22, 0);
+            leftWall.transform.position = new Vector3(-roadWidth / 2, 22, 0);
+            rightWall.transform.position = new Vector3(roadWidth / 2, 22, 0);
             Material newWallMat = wallMat;
-            Vector2 texScale = new Vector2(scale.x / 20, 1);
+            Vector2 texScale = new Vector2(scale.x / 100, 1);
             newWallMat.mainTextureScale = texScale;
 
             leftWall.GetComponent<MeshRenderer>().material = newWallMat;
@@ -168,20 +173,20 @@ public class LevelBuilder : MonoBehaviour
     {
         if (wallProps.Length > 0 && generateWallProps)
         {
-            int total = Mathf.RoundToInt(levelLength * 5 / wallPropSpacing);
+            int total = Mathf.RoundToInt(levelLength / wallPropSpacing);
 
             for (int i = 0; i <= total; ++i)
             {
                 int select = Random.Range(0, wallProps.Length);
                 GameObject left = Instantiate(wallProps[select]);
-                float xPos = -roadWidth * 5;
+                float xPos = -roadWidth / 2;
                 float offset = xPos + Random.Range(-wallPropOffset, wallPropOffset);
                 left.transform.position = new Vector3(offset, 20, wallPropSpacing * i);
                 left.transform.rotation = Quaternion.Euler(0, 180, 0);
 
                 select = Random.Range(0, wallProps.Length);
                 GameObject right = Instantiate(wallProps[select]);
-                xPos = roadWidth * 5;
+                xPos = roadWidth / 2;
                 offset = xPos + Random.Range(-wallPropOffset, wallPropOffset);
                 right.transform.position = new Vector3(offset, 20, wallPropSpacing * i);
 
@@ -192,19 +197,19 @@ public class LevelBuilder : MonoBehaviour
     {
        if(groundProps.Length > 0 && generateGroundProps)
         {
-            int total = Mathf.RoundToInt(levelLength * 5 / groundPropSpacing);
+            int total = Mathf.RoundToInt(levelLength / groundPropSpacing);
 
             for (int i = 0; i <= total; ++i)
             {
                 int select = Random.Range(0, groundProps.Length);
                 GameObject left = Instantiate(groundProps[select]);
-                float xPos = -roadWidth * 5;
+                float xPos = -roadWidth / 2;
                 float offset = xPos + Random.Range(-maxGroundPropOffset, -minGroundPropOffset);
                 left.transform.position = new Vector3(offset, 0, groundPropSpacing * i);
 
                 select = Random.Range(0, groundProps.Length);
                 GameObject right = Instantiate(groundProps[select]);
-                xPos = roadWidth * 5;
+                xPos = roadWidth / 2;
                 offset = xPos + Random.Range(minGroundPropOffset, maxGroundPropOffset);
                 right.transform.position = new Vector3(offset, 0, groundPropSpacing * i);
             }
@@ -222,7 +227,7 @@ public class LevelBuilder : MonoBehaviour
                 gridXPoints[i] = grid.gridUnits[i, 0].position.x;
             }
 
-            int totalRows = Mathf.RoundToInt((length * 5) / grid.unitSize);
+            int totalRows = Mathf.RoundToInt(length / grid.unitSize);
 
             for (int i = 0; i < totalRows; ++i)
             {
@@ -261,8 +266,40 @@ public class LevelBuilder : MonoBehaviour
             }
         }
     }
-    void SpawnEnemies()
+    void SpawnEnemies(float length, float width, Grid grid)
     {
+        if (enemies.Length > 0 && generateEnemies)
+        {
+            int totalRows = Mathf.RoundToInt(length / grid.unitSize);
 
+            for (int i = 0; i < totalRows; ++i)
+            {
+                float canSpawn = i % enemySpawnBuffer;
+
+                if (canSpawn == 0)
+                {
+                    float chance = Random.value;
+                    if (chance <= enemySpawnRate)
+                    {
+                        float side = Random.value;
+                        float xPos = width / 2;
+                        if (side <= .5f)
+                        {
+                            xPos = -xPos - enemySpawnXOffset;
+                        }
+                        else
+                        {
+                            xPos = xPos + enemySpawnXOffset;
+                        }
+
+                        int select = Random.Range(0, enemies.Length);
+                        GameObject newEne = Instantiate(enemies[select]);
+                        float zPos = grid.unitSize * i;
+                        newEne.transform.position = new Vector3(xPos, 2, zPos);
+                        newEne.GetComponent<Enemy>().Init();
+                    }
+                }
+            }
+        }
     }
 }

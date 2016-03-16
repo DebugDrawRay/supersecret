@@ -29,6 +29,21 @@ public class PlayerController : MonoBehaviour
 
     private bool initialized;
 
+    public static PlayerController instance
+    {
+        get;
+        private set;
+    }
+
+    void Awake()
+    {
+        if(instance != null)
+        {
+            Destroy(gameObject);
+        }
+        instance = this;
+    }
+
     public void Init(Grid grid)
     {
         gridSystem = grid;

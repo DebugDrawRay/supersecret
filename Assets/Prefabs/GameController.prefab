@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &111842
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 461974}
+  - 114: {fileID: 11414132}
+  - 114: {fileID: 11422248}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &461974
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 111842}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11414132
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 111842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55d144d3017d7fa45b4e660256a8c9cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: 0
+  gridSystem: {fileID: 175890, guid: 8c2ce00b53dd6f2469cca5f00e527104, type: 2}
+  startPosition: {x: 0, y: 0, z: 0}
+  playerCharacter: {fileID: 197394, guid: acef4599d7c31f942a256eb73468ef20, type: 2}
+  mainCamera: {fileID: 165910, guid: 880d436596e2a4b49aead0cf214d9390, type: 2}
+  builder: {fileID: 11422248}
+--- !u!114 &11422248
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 111842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 530ec475d73fedc4796e43b171b958a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectBiomeSet: 0
+  availableBiomes:
+  - {fileID: 11400000, guid: a4086dd94920a134bba7bd0530786333, type: 2}
+  blankPlane: {fileID: 179626, guid: 728af7f3c33c70340aa7c4c7b7ea3c61, type: 2}
+  levelLength: 5000
+  generateRoad: 1
+  roadWidth: 80
+  roadWidthBuffer: 115
+  generateWalls: 1
+  generateGround: 1
+  generateHorizon: 1
+  horizonZPos: 900
+  generateWallProps: 1
+  wallPropSpacing: 25
+  wallPropOffset: 3
+  generateGroundProps: 0
+  groundPropSpacing: 50
+  minGroundPropOffset: 10
+  maxGroundPropOffset: 100
+  generateObstacles: 0
+  obstacleSpawnBuffer: 10
+  obstacleSpawnRate: 1
+  maxObstaclesPerRow: 2
+  generateEnemies: 1
+  enemySpawnBuffer: 100
+  enemySpawnXOffset: 2
+  enemySpawnRate: 1
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 111842}
+  m_IsPrefabParent: 1

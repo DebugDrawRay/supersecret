@@ -38,12 +38,12 @@ public class ManeuveringEnemy : Enemy
         inactiveTime = Random.Range(minInactiveTime, maxInactiveTime);
         maneuverTime = Random.Range(minManeuverTime, maxManeuverTime);
         chaseTime = Random.Range(minChaseTime, maxChaseTime);
-
-        initialized = true;
     }
+
     void Update()
     {
-        if (initialized)
+        CheckGridPosition();
+        if (initialized && enteredGrid)
         {
             RunStates();
         }
@@ -63,6 +63,7 @@ public class ManeuveringEnemy : Enemy
                 break;
             case state.Maneuvering:
                 maneuverTime -= Time.deltaTime;
+                movement.MoveToRandomDestination();
                 if (maneuverTime <= 0)
                 {
                     maneuverTime = Random.Range(minManeuverTime, maxManeuverTime);
@@ -71,6 +72,8 @@ public class ManeuveringEnemy : Enemy
                 break;
             case state.Chasing:
                 chaseTime -= Time.deltaTime;
+                Vector2 targetPos = target.movement.currentGridPosition;
+                movement.MoveToDestination(targetPos);
                 if (chaseTime <= 0)
                 {
                     chaseTime = Random.Range(minChaseTime, maxChaseTime);

@@ -5,6 +5,7 @@ public class EventManager
     public delegate void Trigger();
     public static event Trigger CollisionReaction;
     public static event Trigger TopSpeedEvent;
+    public static event Trigger EnterGridEvent;
 
     public static void TriggerCollision()
     {
@@ -15,4 +16,5 @@ public class EventManager
     {
         TopSpeedEvent();
     }
+
 }

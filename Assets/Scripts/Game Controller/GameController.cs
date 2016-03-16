@@ -27,13 +27,14 @@ public class GameController : MonoBehaviour
     private PlayerController player;
     private QuadCam camera;
 
-    [Header("Factories")]
-    public ObjectFactory objectFactory;
+    [Header("Level Setup")]
+    public LevelBuilder builder;
 
-    void Start()
+    void Awake()
     {
         Setup();
     }
+
     void Setup()
     {
         grid = Instantiate(gridSystem).GetComponent<Grid>();
@@ -45,7 +46,8 @@ public class GameController : MonoBehaviour
         camera = Instantiate(mainCamera).GetComponent<QuadCam>();
         camera.Init(grid.transform, player.transform);
 
-        objectFactory.Init();
+        builder.Init();
+
     }
 
     void Update()

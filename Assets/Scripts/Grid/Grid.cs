@@ -23,7 +23,11 @@ public class Grid : MonoBehaviour
 
     private GameObject[] units;
 
-    public static Grid instance;
+    public static Grid instance
+    {
+        get;
+        private set;
+    }
 
     public class Unit
     {
@@ -47,7 +51,6 @@ public class Grid : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
         instance = this;
     }
 

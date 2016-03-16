@@ -7,21 +7,25 @@ public class Enemy : MonoBehaviour
     public AutoGridMovement movement;
     public Stats stat;
 
-    private PlayerController target;
-
+    protected Grid targetGrid;
+    protected PlayerController target;
     protected bool initialized;
+    protected bool enteredGrid;
 
-    void Init(PlayerController player)
+    public void Init()
     {
-        if (movement && stat)
-        {
-            target = player;
-            initialized = true;
-        }
-        else
-        {
-            Debug.LogError("No components found, check GameObject references");
-        }
+        targetGrid = Grid.instance;
+        target = PlayerController.instance;
+        movement.Init(targetGrid);
+        initialized = true;
     }
 
+    protected void CheckGridPosition()
+    {
+        if (targetGrid.transform.position.z >= transform.position.z + 50 && !enteredGrid)
+        {
+            movement.EnterGrid();
+            enteredGrid = true;
+        }
+    }
 }

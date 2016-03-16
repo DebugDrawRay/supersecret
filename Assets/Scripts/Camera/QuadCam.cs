@@ -34,11 +34,13 @@ public class QuadCam : MonoBehaviour
 
     private Tween currentTween;
 
+    public TransparencySortMode sort;
     void Awake()
     {
         EventManager.CollisionReaction += CameraShake;
         //EventManager.TopSpeedEvent += MaxFov;
         cam = GetComponent<Camera>();
+        cam.transparencySortMode = sort;
     }
 
     public void Init(Transform parent, Transform chaseTarget)
@@ -65,6 +67,7 @@ public class QuadCam : MonoBehaviour
 
         TiltEngine(newPos);
         CurrentFov();
+
     }
 
     float CalculateHoverHeight(Vector3 target)
