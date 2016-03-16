@@ -108,8 +108,9 @@ public class LevelBuilder : MonoBehaviour
             newRoad.transform.position = Vector3.zero;
             newRoad.transform.rotation = Quaternion.Euler(90, 90, 0);
 
-            Material newRoadMat = roadMat;
-            Vector2 texScale = new Vector2(scale.x / 100, 1);
+            Material newRoadMat = new Material(roadMat);
+            Vector2 texScale = newRoadMat.mainTextureScale;
+            texScale.x *= length;
             newRoadMat.mainTextureScale = texScale;
 
             newRoad.GetComponent<MeshRenderer>().material = newRoadMat;
@@ -131,7 +132,11 @@ public class LevelBuilder : MonoBehaviour
             newGround.transform.position = new Vector3(0, -0.5f, 0);
             newGround.transform.rotation = Quaternion.Euler(90, 0, 0);
 
-            newGround.GetComponent<MeshRenderer>().material = groundMat;
+            Material newGroundMat = new Material(groundMat);
+            Vector2 texScale = newGroundMat.mainTextureScale;
+            texScale *= length;
+            newGroundMat.mainTextureScale = texScale;
+            newGround.GetComponent<MeshRenderer>().material = newGroundMat;
         }
     }
     void BuildWalls(float length, float roadWidth)
@@ -151,8 +156,9 @@ public class LevelBuilder : MonoBehaviour
 
             leftWall.transform.position = new Vector3(-roadWidth / 2, 22, 0);
             rightWall.transform.position = new Vector3(roadWidth / 2, 22, 0);
-            Material newWallMat = wallMat;
-            Vector2 texScale = new Vector2(scale.x / 100, 1);
+            Material newWallMat = new Material(wallMat);
+            Vector2 texScale = newWallMat.mainTextureScale;
+            texScale.x *= length;
             newWallMat.mainTextureScale = texScale;
 
             leftWall.GetComponent<MeshRenderer>().material = newWallMat;

@@ -59,7 +59,7 @@ MonoBehaviour:
   unitSize: 12
   xUnits: 5
   yUnits: 5
-  point: {fileID: 155836, guid: e41703504e3068a448dcdb223a00870d, type: 2}
+  gridQuad: {fileID: 178678, guid: 2c44e1f18c6200a49b3e576d8bc6cbb3, type: 2}
 --- !u!114 &11490106
 MonoBehaviour:
   m_ObjectHideFlags: 1

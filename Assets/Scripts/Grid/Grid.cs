@@ -13,15 +13,13 @@ public class Grid : MonoBehaviour
         set;
     }
 
-    public GameObject point;
+    public GameObject gridQuad;
 
     public Unit[,] gridUnits
     {
         get;
         private set;
     }
-
-    private GameObject[] units;
 
     public static Grid instance
     {
@@ -72,7 +70,6 @@ public class Grid : MonoBehaviour
     {
         float totalUnits = xUnits * yUnits;
         gridUnits = new Unit[xUnits, yUnits];
-        units = new GameObject[xUnits * yUnits];
 
         float xStart = transform.localPosition.x - ((xUnits / 2) * unitSize);
         float yStart = transform.localPosition.y - ((yUnits / 2) * unitSize);
@@ -88,15 +85,21 @@ public class Grid : MonoBehaviour
 
             Vector3 unitPos = new Vector3(xPos, yPos, 0);
             gridUnits[x,y] = new Unit(unitPos, transform);
-
-            GameObject newPoint = Instantiate(point) as GameObject;
-            newPoint.transform.SetParent(transform);
-
-            newPoint.transform.localPosition = gridUnits[x,y].position;
-            newPoint.transform.rotation = transform.rotation;
-
-            units[i] = newPoint;
         }
+
+        GameObject visual = Instantiate(gridQuad);
+        Vector2 texScale = visual.GetComponent<MeshRenderer>().material.mainTextureScale;
+        texScale.x *= xUnits;
+        texScale.y *= yUnits;
+        visual.GetComponent<MeshRenderer>().material.mainTextureScale = texScale;
+
+        Vector3 scale = new Vector3(xUnits * unitSize, yUnits * unitSize, 1);
+
+        visual.transform.localScale = scale;
+        visual.transform.SetParent(transform);
+        visual.transform.localPosition = new Vector3(0,0,-0.1f);
+
+
 
        /* CombineInstance[] combine = new CombineInstance[units.Length];
 
