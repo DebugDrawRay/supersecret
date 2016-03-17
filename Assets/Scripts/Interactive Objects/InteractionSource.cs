@@ -3,10 +3,29 @@ using System.Collections;
 
 public class InteractionSource : MonoBehaviour
 {
-    public string targetStat;
+    public enum stats
+    {
+        health = 0,
+        maxHealth,
+        speed,
+        agility,
+        power,
+        luck
+    }
+    public stats targetStat;
+
+    private string[] availableStats = new string[]{"health", "maxHealth", "speed", "agility", "power", "luck"};
+    private string stat;
+
+    [Range(-1,1)]
     public float modValue;
+
     public float modTime;
 
+    void Awake()
+    {
+        stat = availableStats[(int)targetStat];
+    }
     void OnTriggerEnter(Collider hit)
     {
         Stats hasStats = hit.GetComponent<Stats>();
@@ -14,14 +33,12 @@ public class InteractionSource : MonoBehaviour
         {
             if (modTime > 0)
             {
-                hasStats.ModStat(targetStat, modValue, modTime);
+                hasStats.ModStat(stat, modValue, modTime);
             }
             else
             {
-                hasStats.ModStat(targetStat, modValue);
+                hasStats.ModStat(stat, modValue);
             }
-            EventManager.TriggerCollision();
-
         }
     }
 }

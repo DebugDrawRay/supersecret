@@ -27,26 +27,25 @@ public class LevelBuilder : MonoBehaviour
 
     [Header("Level Properties")]
     public float levelLength;
+    public float startLevelBuffer;
+    public float endLevelBuffer;
 
     [Header("Road Properties")]
     public bool generateRoad = true;
     public float roadWidth;
     public float roadWidthBuffer;
 
-    [Header("Wall Properties")]
-    public bool generateWalls;
-
     [Header("Ground Properties")]
     public bool generateGround;
+
+    [Header("Wall Properties")]
+    public bool generateWalls;
+    public float wallPropSpacing;
+    public float wallPropOffset;
 
     [Header("Horizon Object Properties")]
     public bool generateHorizon;
     public float horizonZPos;
-
-    [Header("Wall Prop Properties")]
-    public bool generateWallProps;
-    public float wallPropSpacing;
-    public float wallPropOffset;
 
     [Header("Ground Prop Properties")]
     public bool generateGroundProps;
@@ -87,10 +86,9 @@ public class LevelBuilder : MonoBehaviour
 
     void BuildLevel(float levelLength, float roadWidth, Grid targetGrid)
     {
-        BuildRoad(levelLength, roadWidth);
-        BuildGround(levelLength);
-        BuildWalls(levelLength, roadWidth + roadWidthBuffer);
-        SpawnWallProps(levelLength, roadWidth + roadWidthBuffer);
+        BuildRoad(levelLength + startLevelBuffer + endLevelBuffer, roadWidth);
+        BuildGround(levelLength + startLevelBuffer + endLevelBuffer);
+        SpawnWallProps(levelLength + startLevelBuffer + endLevelBuffer, roadWidth + roadWidthBuffer);
         SpawnGroundProps(levelLength, roadWidth + roadWidthBuffer);
         SpawnHorizonObject(levelLength, targetGrid);
         SpawnObstacles(levelLength, targetGrid);
@@ -171,13 +169,13 @@ public class LevelBuilder : MonoBehaviour
         if(horizonObj && generateHorizon)
         {
             GameObject horizon = Instantiate(horizonObj);
-            Vector3 startPosition = new Vector3(0, 100, horizonZPos);
+            Vector3 startPosition = new Vector3(0, 0, horizonZPos);
             horizon.GetComponent<HorizonController>().Init(startPosition, grid.transform);
         }
     }
     void SpawnWallProps(float length, float roadWidth)
     {
-        if (wallProps.Length > 0 && generateWallProps)
+        if (wallProps.Length > 0 && generateWalls)
         {
             int total = Mathf.RoundToInt(levelLength / wallPropSpacing);
 
@@ -197,6 +195,7 @@ public class LevelBuilder : MonoBehaviour
                 right.transform.position = new Vector3(offset, 20, wallPropSpacing * i);
 
             }
+            BuildWalls(length, roadWidth);
         }
     }
     void SpawnGroundProps(float length, float width)
@@ -217,7 +216,7 @@ public class LevelBuilder : MonoBehaviour
                 GameObject right = Instantiate(groundProps[select]);
                 xPos = roadWidth / 2;
                 offset = xPos + Random.Range(minGroundPropOffset, maxGroundPropOffset);
-                right.transform.position = new Vector3(offset, 0, groundPropSpacing * i);
+                right.transform.position = new Vector3(offset, 0, startLevelBuffer + groundPropSpacing * i);
             }
         }
 
@@ -264,7 +263,7 @@ public class LevelBuilder : MonoBehaviour
                             int select = Random.Range(0, obstacles.Length);
                             GameObject newObs = Instantiate(obstacles[select]);
                             float xPos = gridXPoints[slots[l] - 1];
-                            float zPos = grid.unitSize * i;
+                            float zPos = startLevelBuffer + grid.unitSize * i;
                             newObs.transform.position = new Vector3(xPos, 2, zPos);
                         }
                     }
@@ -300,7 +299,7 @@ public class LevelBuilder : MonoBehaviour
 
                         int select = Random.Range(0, enemies.Length);
                         GameObject newEne = Instantiate(enemies[select]);
-                        float zPos = grid.unitSize * i;
+                        float zPos = startLevelBuffer + grid.unitSize * i;
                         newEne.transform.position = new Vector3(xPos, 2, zPos);
                         newEne.GetComponent<Enemy>().Init();
                     }

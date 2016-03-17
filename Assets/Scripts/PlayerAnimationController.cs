@@ -23,9 +23,9 @@ public class PlayerAnimationController : MonoBehaviour
 
     void Start()
     {
-        EventManager.CollisionReaction += CollisionAnim;
+        PlayerEventManager.CollisionReaction += CollisionAnim;
 
-        EventManager.TopSpeedEvent += TopSpeed;
+        PlayerEventManager.TopSpeedEvent += TopSpeed;
     }
 
     public void Init()
@@ -42,9 +42,12 @@ public class PlayerAnimationController : MonoBehaviour
     {
         for (int i = 0; i < allAnim.Length; ++i)
         {
-            allAnim[i].state.GetCurrent(2).time = 0;
+            allAnim[i].state.ClearTrack(2);
+            allAnim[i].skeleton.SetToSetupPose();
             allAnim[i].state.SetAnimation(1, "collide_front", false);
-            allAnim[i].state.SetAnimation(0, "idle", true);
+
+            leanLeft = false;
+            leanRight = false;
         }
     }
 
@@ -73,7 +76,6 @@ public class PlayerAnimationController : MonoBehaviour
                 {
                     leanLeft = true;
                     leanRight = false;
-                    allAnim[i].state.ClearTrack(2);
                     allAnim[i].state.SetAnimation(2, "turn_left", false);
                 }
             }
@@ -86,7 +88,6 @@ public class PlayerAnimationController : MonoBehaviour
                 {
                     leanLeft = false;
                     leanRight = true;
-                    allAnim[i].state.ClearTrack(2);
                     allAnim[i].state.SetAnimation(2, "turn_right", false);
                 }
             }
@@ -98,6 +99,13 @@ public class PlayerAnimationController : MonoBehaviour
                 float newTime = allAnim[i].skeleton.data.FindAnimation("turn_right").duration * leanAmount;
                 float currentTime = allAnim[i].state.GetCurrent(2).Time;
                 allAnim[i].state.GetCurrent(2).Time = Mathf.Clamp(Mathf.Abs(newTime), 0, .99f);
+                if(allAnim[i].state.GetCurrent(2).Time <= .02f)
+                {
+                    leanLeft = false;
+                    leanRight = false;
+                    allAnim[i].state.ClearTrack(2);
+                    allAnim[i].skeleton.SetToSetupPose();
+                }
             }
         }
     }

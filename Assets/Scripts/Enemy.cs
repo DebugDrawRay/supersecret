@@ -16,13 +16,13 @@ public class Enemy : MonoBehaviour
     {
         targetGrid = Grid.instance;
         target = PlayerController.instance;
-        movement.Init(targetGrid);
+        movement.Init(targetGrid, stat);
         initialized = true;
     }
 
     protected void CheckGridPosition()
     {
-        if (targetGrid.transform.position.z >= transform.position.z + 50 && !enteredGrid)
+        if (targetGrid.transform.position.z >= transform.position.z + 100 && !enteredGrid)
         {
             movement.EnterGrid();
             enteredGrid = true;

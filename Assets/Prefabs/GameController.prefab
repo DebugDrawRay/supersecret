@@ -62,27 +62,28 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a4086dd94920a134bba7bd0530786333, type: 2}
   blankPlane: {fileID: 179626, guid: 728af7f3c33c70340aa7c4c7b7ea3c61, type: 2}
   levelLength: 50000
+  startLevelBuffer: 1000
+  endLevelBuffer: 1000
   generateRoad: 1
   roadWidth: 115
-  roadWidthBuffer: 100
-  generateWalls: 1
+  roadWidthBuffer: 75
   generateGround: 1
-  generateHorizon: 1
-  horizonZPos: 900
-  generateWallProps: 1
+  generateWalls: 1
   wallPropSpacing: 25
   wallPropOffset: 3
-  generateGroundProps: 0
+  generateHorizon: 1
+  horizonZPos: 900
+  generateGroundProps: 1
   groundPropSpacing: 50
   minGroundPropOffset: 10
   maxGroundPropOffset: 100
-  generateObstacles: 0
+  generateObstacles: 1
   obstacleSpawnBuffer: 10
   obstacleSpawnRate: 1
   maxObstaclesPerRow: 2
   generateEnemies: 1
   enemySpawnBuffer: 100
-  enemySpawnXOffset: 2
+  enemySpawnXOffset: 5
   enemySpawnRate: 1
 --- !u!1001 &100100000
 Prefab:

@@ -318,13 +318,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7140fc7618b13594f85ac59fea32df55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  speed: 100
-  agility: 100
+  maxHealth: 1
+  speed: 1
+  agility: 1
   power: 0
   luck: 0
   weight: 0
-  invulTime: 2
 --- !u!114 &11457916
 MonoBehaviour:
   m_ObjectHideFlags: 1

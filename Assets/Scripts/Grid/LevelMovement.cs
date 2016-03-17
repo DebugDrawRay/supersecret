@@ -19,7 +19,7 @@ public class LevelMovement : MonoBehaviour
     void Start()
     {
         rigid = GetComponent<Rigidbody>();
-        EventManager.CollisionReaction += ResetSpeed;
+        PlayerEventManager.CollisionReaction += ResetSpeed;
     }
 
     void FixedUpdate()
@@ -31,7 +31,7 @@ public class LevelMovement : MonoBehaviour
 
         if (GetNormalizedSpeed() >= 1 && !topSpeed)
         {
-            EventManager.TopSpeed();
+            PlayerEventManager.TopSpeed();
             topSpeed = true;
         }
     }

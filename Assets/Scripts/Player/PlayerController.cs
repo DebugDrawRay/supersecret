@@ -21,6 +21,9 @@ public class PlayerController : MonoBehaviour
     public Stats stats;
     public PlayerAnimationController animation;
 
+    //Health Control
+    private float currentHealth;
+
     //References
     private Grid gridSystem;
 
@@ -48,10 +51,21 @@ public class PlayerController : MonoBehaviour
     {
         gridSystem = grid;
         transform.SetParent(gridSystem.transform);
+
         movement.Init(stats, grid, animation);
+
         SetupInput();
+
         animation.Init();
+
+        SetupHealth();
+
         initialized = true;
+    }
+
+    void SetupHealth()
+    {
+        currentHealth = stats.maxHealth;
     }
 
     void SetupInput()
@@ -89,6 +103,24 @@ public class PlayerController : MonoBehaviour
         if(movement)
         {
             movement.MovementListener(input.Move.Value);
+        }
+    }
+
+    public void DeathEvent()
+    {
+        Debug.Log(gameObject.GetInstanceID() + " is ded, :c");
+    }
+    void OnTriggerEnter(Collider hit)
+    {
+        InteractionSource isInteraction = hit.GetComponent<InteractionSource>();
+        Enemy isEnemy = hit.GetComponent<Enemy>();
+        if(isInteraction)
+        {
+            PlayerEventManager.TriggerCollision();
+        }
+        if(isEnemy)
+        {
+            movement.CollisionMove(isEnemy.transform.localPosition);
         }
     }
 }

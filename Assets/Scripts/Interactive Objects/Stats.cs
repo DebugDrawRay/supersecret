@@ -3,28 +3,33 @@ using System.Collections;
 
 public class Stats : MonoBehaviour
 {
-    public float health;
-    private float defaultHealth;
+    [Range(0,1)]
+    public float maxHealth;
+    private float defaultMaxHealth;
 
+    private float currentHealth;
+
+    [Range(0,1)]
     public float speed;
     private float defaultSpeed;
 
+    [Range(0,1)]
     public float agility;
     private float defaultAgility;
 
+    [Range(0,1)]
     public float power;
     private float defaultPower;
 
+    [Range(0,1)]
     public float luck;
     private float defaultLuck;
 
+    [Range(0,1)]
     public float weight;
     private float defaultWeight;
 
     private Timer currentTimer;
-
-    private bool invul;
-    public float invulTime;
 
     public class Timer
     {
@@ -51,14 +56,13 @@ public class Stats : MonoBehaviour
 
     void Awake()
     {
-        defaultHealth = health;
+        currentHealth = maxHealth;
+        defaultMaxHealth = maxHealth;
         defaultSpeed = speed;
         defaultAgility = agility;
         defaultPower = power;
         defaultLuck = luck;
         defaultWeight = weight;
-
-        EventManager.CollisionReaction += Invulnerable;
     }
 
     void Update()
@@ -75,88 +79,82 @@ public class Stats : MonoBehaviour
 
     public void ModStat(string stat, float value)
     {
-        if (!invul)
+        value = Mathf.Clamp(value, -1, 1);
+        switch (stat)
         {
-            switch (stat)
+            case "health":
+                currentHealth += value;
+                break;
+            case "maxhealth":
+                maxHealth = defaultMaxHealth + value;
+                break;
+            case "speed":
+                speed = defaultSpeed + value;
+                break;
+            case "agility":
+                agility = defaultAgility + value;
+                break;
+            case "power":
+                power = defaultPower + value;
+                break;
+            case "luck":
+                luck = defaultLuck + value;
+                break;
+            default:
+                Debug.LogError("No stat of name " + stat + " found, check spelling?");
+                break;
+        }
+
+        if(currentHealth <= 0)
+        {
+            PlayerController isPlayer = GetComponent<PlayerController>();
+            Enemy isEnemy = GetComponent<Enemy>();
+
+            if(isPlayer)
             {
-                case "health":
-                    health = defaultHealth + value;
-                    break;
-                case "speed":
-                    speed = defaultSpeed + value;
-                    break;
-                case "agility":
-                    agility = defaultAgility + value;
-                    break;
-                case "power":
-                    power = defaultPower + value;
-                    break;
-                case "luck":
-                    luck = defaultLuck + value;
-                    break;
-                default:
-                    Debug.LogError("No stat of name " + stat + " found, check spelling?");
-                    break;
+                isPlayer.DeathEvent();
             }
         }
     }
 
     public void ModStat(string stat, float value, float time)
     {
-        if (!invul)
+        value = Mathf.Clamp(value, -1, 1);
+        switch (stat)
         {
-            switch (stat)
-            {
-                case "health":
-                    health = defaultHealth + value;
-                    currentTimer = new Timer(time);
-                    break;
-                case "speed":
-                    speed = defaultSpeed + value;
-                    currentTimer = new Timer(time);
-                    break;
-                case "agility":
-                    agility = defaultAgility + value;
-                    currentTimer = new Timer(time);
-                    break;
-                case "power":
-                    power = defaultPower + value;
-                    currentTimer = new Timer(time);
-                    break;
-                case "luck":
-                    luck = defaultLuck + value;
-                    currentTimer = new Timer(time);
-                    break;
-                default:
-                    Debug.LogError("No stat of name " + stat + " found, check spelling?");
-                    break;
-            }
+            case "maxhealth":
+                maxHealth = defaultMaxHealth + value;
+                currentTimer = new Timer(time);
+                break;
+            case "speed":
+                speed = defaultSpeed + value;
+                currentTimer = new Timer(time);
+                break;
+            case "agility":
+                agility = defaultAgility + value;
+                currentTimer = new Timer(time);
+                break;
+            case "power":
+                power = defaultPower + value;
+                currentTimer = new Timer(time);
+                break;
+            case "luck":
+                luck = defaultLuck + value;
+                currentTimer = new Timer(time);
+                break;
+            default:
+                Debug.LogError("No stat of name " + stat + " found, check spelling?");
+                break;
         }
     }
 
     void ResetStats()
     {
-        health = defaultHealth;
+        maxHealth = defaultMaxHealth;
         speed = defaultSpeed;
         agility = defaultAgility;
         power = defaultPower;
         luck = defaultLuck;
     }
 
-    void Invulnerable()
-    {
-        StartCoroutine(InvulnerableRoutine());
-    }
-
-    IEnumerator InvulnerableRoutine()
-    {
-        invul = true;
-
-        for(float i = 0; i <= invulTime; i += Time.deltaTime)
-        {
-            yield return null;
-        }
-
-        invul = false;
-    }
 }

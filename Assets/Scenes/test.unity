@@ -124,7 +124,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 3322736, guid: acef4599d7c31f942a256eb73468ef20, type: 2}
+    - target: {fileID: 3397670, guid: acef4599d7c31f942a256eb73468ef20, type: 2}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
@@ -132,7 +132,7 @@ Prefab:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 3397670, guid: acef4599d7c31f942a256eb73468ef20, type: 2}
+    - target: {fileID: 3322736, guid: acef4599d7c31f942a256eb73468ef20, type: 2}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
@@ -329,6 +329,10 @@ Prefab:
     - target: {fileID: 461974, guid: ae402ccce10e3834e95d01b4c71c598c, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11422248, guid: ae402ccce10e3834e95d01b4c71c598c, type: 2}
+      propertyPath: generateObstacles
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ae402ccce10e3834e95d01b4c71c598c, type: 2}

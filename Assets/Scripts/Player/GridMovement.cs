@@ -34,15 +34,14 @@ public class GridMovement : MonoBehaviour
         private set;
     }
     private Vector2 destinationGridPosition;
-
     private Vector3 currentTargetPosition;
 
     private Grid targetGrid;
     private bool initialized;
 
-    private const float DESTINATIONUPDATEPERIOD = .15f;
-    private const float SMOOTHING = .1f;
-    private const float STATRANGE = .075f;
+    private float destinationUpdatePeriod = .15f;
+    private float baseMoveTime = .05f;
+    private float moveTimeRange = .025f;
     private float currentDestinationUpdate;
     private float destinationDistance;
     private Vector3 destinationDirection;
@@ -57,22 +56,18 @@ public class GridMovement : MonoBehaviour
     //components
     private Stats stats;
     private PlayerAnimationController animation;
-    private bool invul;
-    private float invulTime;
 
     public void Init(Stats statsComponent, Grid grid, PlayerAnimationController animationComponent)
     {
-        currentDestinationUpdate = DESTINATIONUPDATEPERIOD;
+        currentDestinationUpdate = destinationUpdatePeriod;
         stats = statsComponent;
         animation = animationComponent;
         targetGrid = grid;
         currentGridPosition = startGridPosition;
-        invulTime = stats.invulTime;
-        EventManager.CollisionReaction += Invulnerable;
+        //PlayerEventManager.CollisionReaction += Invulnerable;
         if (targetGrid)
         {
-            currentTargetPosition = targetGrid.GridToWorldPoisiton(startGridPosition);
-            transform.localPosition = currentTargetPosition;
+            transform.localPosition = targetGrid.GridToWorldPoisiton(startGridPosition);
             initialized = true;
         }
         else
@@ -81,16 +76,10 @@ public class GridMovement : MonoBehaviour
         }
     }
 
-
-
-    float EvaluateTime(float stat)
+    float MoveTime(float stat)
     {
-        float adjStat = stat / 100;
-        return timeCurve.Evaluate(adjStat);
-    }
-    float EvaluateStat(float stat)
-    {
-        return STATRANGE * Mathf.Abs(1 - (stat / 100));
+        float rawTime = baseMoveTime - (moveTimeRange * (1 - stat));
+        return rawTime;
     }
 
     public void MovementListener(Vector2 axis)
@@ -99,12 +88,13 @@ public class GridMovement : MonoBehaviour
         {
             float x = axis.x;
             float y = axis.y;
+
             currentDestinationUpdate -= Time.deltaTime;
             if (currentDestinationUpdate <= 0)
             {
                 if (x > .2f)
                 {
-                    currentDestinationUpdate = DESTINATIONUPDATEPERIOD + EvaluateStat(stats.agility);
+                    currentDestinationUpdate = destinationUpdatePeriod;
                     destinationGridPosition.x = currentGridPosition.x + 1;
                     destinationGridPosition.y = currentGridPosition.y;
                     destinationDistance = Vector3.Distance(transform.localPosition, destinationGridPosition);
@@ -115,7 +105,7 @@ public class GridMovement : MonoBehaviour
                 }
                 else if (x < -.2f)
                 {
-                    currentDestinationUpdate = DESTINATIONUPDATEPERIOD + EvaluateStat(stats.agility);
+                    currentDestinationUpdate = destinationUpdatePeriod;
                     destinationGridPosition.x = currentGridPosition.x - 1;
                     destinationGridPosition.y = currentGridPosition.y;
                     if (targetGrid.CheckIfValidUnit(destinationGridPosition))
@@ -125,7 +115,7 @@ public class GridMovement : MonoBehaviour
                 }
                 else if (y > .2f)
                 {
-                    currentDestinationUpdate = DESTINATIONUPDATEPERIOD + EvaluateStat(stats.speed);
+                    currentDestinationUpdate = destinationUpdatePeriod;
                     destinationGridPosition.x = currentGridPosition.x;
                     destinationGridPosition.y = currentGridPosition.y + 1;
                     if (targetGrid.CheckIfValidUnit(destinationGridPosition))
@@ -135,7 +125,7 @@ public class GridMovement : MonoBehaviour
                 }
                 else if (y < -.2f)
                 {
-                    currentDestinationUpdate = DESTINATIONUPDATEPERIOD + EvaluateStat(stats.speed);
+                    currentDestinationUpdate = destinationUpdatePeriod;
                     destinationGridPosition.x = currentGridPosition.x;
                     destinationGridPosition.y = currentGridPosition.y - 1;
                     if (targetGrid.CheckIfValidUnit(destinationGridPosition))
@@ -147,13 +137,56 @@ public class GridMovement : MonoBehaviour
 
             Vector3 newPos = targetGrid.GridToWorldPoisiton(currentGridPosition);
 
-            currentTargetPosition.x = Mathf.Lerp(currentTargetPosition.x, newPos.x, SMOOTHING - EvaluateStat(stats.agility));
-            currentTargetPosition.y = Mathf.Lerp(currentTargetPosition.y, newPos.y, SMOOTHING - EvaluateStat(stats.speed));
-            transform.localPosition = Vector3.Lerp(transform.localPosition, currentTargetPosition, SMOOTHING);
-            Vector3 direction = currentTargetPosition - transform.localPosition;
+            currentTargetPosition.x = Mathf.Lerp(transform.localPosition.x, newPos.x, MoveTime(stats.agility));
+            currentTargetPosition.y = Mathf.Lerp(transform.localPosition.y, newPos.y, MoveTime(stats.speed));
+
+            transform.localPosition = currentTargetPosition;
+
+            Vector3 direction = newPos - transform.localPosition;
             animation.AnimateLean(direction);
         }
 
+    }
+
+    public void CollisionMove(Vector3 from)
+    {
+        Vector3 direction = from - transform.localPosition;
+
+        float zDir = -direction.normalized.z;
+        float xDir = -direction.normalized.x;
+
+        if(currentGridPosition.x + Mathf.Sign(xDir) * Mathf.Abs(Mathf.Ceil(xDir)) < 0 ||
+           currentGridPosition.x + Mathf.Sign(xDir) * Mathf.Abs(Mathf.Ceil(xDir)) >= targetGrid.xUnits )
+        {
+            xDir = 0;
+        }
+        else
+        {
+            zDir = 0;
+        }
+
+        StartCoroutine(ForceMove(xDir, zDir, .25f));
+    }
+
+    IEnumerator ForceMove(float xDirection, float zDirection, float time)
+    {
+        moving = true;
+        lerpStartPostion = transform.localPosition;
+
+        Vector2 newPoint = currentGridPosition;
+        newPoint.x += Mathf.Sign(xDirection) * Mathf.Abs(Mathf.Ceil(xDirection));
+        newPoint.y += Mathf.Sign(zDirection) * Mathf.Abs(Mathf.Ceil(zDirection));
+        Vector3 newPosition = targetGrid.GridToWorldPoisiton(newPoint);
+
+        for (float i = 0; i <= time; i += Time.deltaTime)
+        {
+            float moveTime = i / time;
+            transform.localPosition = Vector3.Lerp(lerpStartPostion, newPosition, moveTime);
+            yield return null;
+        }
+        currentGridPosition = newPoint;
+        currentTargetPosition = newPosition;
+        moving = false;
     }
 
     IEnumerator Move(float time)
@@ -174,7 +207,7 @@ public class GridMovement : MonoBehaviour
         moving = false;
     }
 
-    void Invulnerable()
+    /*void Invulnerable()
     {
         StartCoroutine(InvulnerableRoutine());
     }
@@ -190,41 +223,38 @@ public class GridMovement : MonoBehaviour
         }
         GetComponent<MeshRenderer>().enabled = true;
         invul = false;
-    }
+    }*/
 
     void OnTriggerEnter(Collider hit)
     {
-        Debug.Log("Got hit");
-        if (!invul)
+        /*EnvironmentalHazard isEnviro = hit.GetComponent<EnvironmentalHazard>();
+        if (isEnviro && !moving)
         {
-            EnvironmentalHazard isEnviro = hit.GetComponent<EnvironmentalHazard>();
-            if (isEnviro && !moving)
+            Debug.Log("isHit");
+
+            Vector3 newPosition = currentGridPosition;
+            float chance = Random.value;
+
+            if (chance > .5)
             {
-                Debug.Log("isHit");
-
-                Vector3 newPosition = currentGridPosition;
-                float chance = Random.value;
-
-                if (chance > .5)
-                {
-                    newPosition.x = currentGridPosition.x + 1;
-                    if (!targetGrid.CheckIfValidUnit(newPosition))
-                    {
-                        newPosition.x = currentGridPosition.x - 1;
-                    }
-                }
-                else
+                newPosition.x = currentGridPosition.x + 1;
+                if (!targetGrid.CheckIfValidUnit(newPosition))
                 {
                     newPosition.x = currentGridPosition.x - 1;
-                    if (!targetGrid.CheckIfValidUnit(newPosition))
-                    {
-                        newPosition.x = currentGridPosition.x + 1;
-                    }
                 }
-                currentGridPosition = newPosition;
-
-                StartCoroutine(Move(.1f));
             }
-        }
+            else
+            {
+                newPosition.x = currentGridPosition.x - 1;
+                if (!targetGrid.CheckIfValidUnit(newPosition))
+                {
+                    newPosition.x = currentGridPosition.x + 1;
+                }
+            }
+            currentGridPosition = newPosition;
+
+            StartCoroutine(Move(.1f));
+        }*/
+        
     }
 }
