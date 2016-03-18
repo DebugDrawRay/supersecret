@@ -1,0 +1,167 @@
+
+ui_earth_forExport.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body_left_patch
+  rotate: false
+  xy: 879, 647
+  size: 135, 192
+  orig: 135, 192
+  offset: 0, 0
+  index: -1
+body_right
+  rotate: false
+  xy: 387, 334
+  size: 221, 225
+  orig: 221, 225
+  offset: 0, 0
+  index: -1
+city
+  rotate: true
+  xy: 684, 841
+  size: 176, 292
+  orig: 176, 292
+  offset: 0, 0
+  index: -1
+earth
+  rotate: false
+  xy: 2, 242
+  size: 383, 377
+  orig: 383, 377
+  offset: 0, 0
+  index: -1
+headlines
+  rotate: false
+  xy: 698, 641
+  size: 179, 198
+  orig: 179, 198
+  offset: 0, 0
+  index: -1
+inner_circle_color
+  rotate: false
+  xy: 2, 621
+  size: 418, 396
+  orig: 418, 396
+  offset: 0, 0
+  index: -1
+inner_circle_outline
+  rotate: false
+  xy: 422, 749
+  size: 260, 268
+  orig: 260, 268
+  offset: 0, 0
+  index: -1
+l_eye
+  rotate: false
+  xy: 767, 600
+  size: 40, 39
+  orig: 40, 39
+  offset: 0, 0
+  index: -1
+l_eye_shimmer_1
+  rotate: false
+  xy: 73, 3
+  size: 40, 39
+  orig: 40, 39
+  offset: 0, 0
+  index: -1
+l_eye_shimmer_2
+  rotate: false
+  xy: 978, 926
+  size: 40, 39
+  orig: 40, 39
+  offset: 0, 0
+  index: -1
+l_neck_bot
+  rotate: false
+  xy: 698, 584
+  size: 67, 55
+  orig: 67, 55
+  offset: 0, 0
+  index: -1
+l_neck_top
+  rotate: true
+  xy: 2, 2
+  size: 40, 69
+  orig: 40, 69
+  offset: 0, 0
+  index: -1
+mountains
+  rotate: true
+  xy: 387, 192
+  size: 140, 214
+  orig: 140, 214
+  offset: 0, 0
+  index: -1
+mouth
+  rotate: false
+  xy: 311, 112
+  size: 47, 37
+  orig: 47, 37
+  offset: 0, 0
+  index: -1
+r_eye
+  rotate: false
+  xy: 387, 583
+  size: 33, 36
+  orig: 33, 36
+  offset: 0, 0
+  index: -1
+r_eye_shimmer_1
+  rotate: false
+  xy: 610, 336
+  size: 33, 36
+  orig: 33, 36
+  offset: 0, 0
+  index: -1
+r_eye_shimmer_2
+  rotate: false
+  xy: 311, 74
+  size: 33, 36
+  orig: 33, 36
+  offset: 0, 0
+  index: -1
+r_neck_bot
+  rotate: true
+  xy: 978, 967
+  size: 50, 43
+  orig: 50, 43
+  offset: 0, 0
+  index: -1
+r_neck_top
+  rotate: false
+  xy: 610, 374
+  size: 46, 73
+  orig: 46, 73
+  offset: 0, 0
+  index: -1
+track
+  rotate: false
+  xy: 610, 449
+  size: 80, 110
+  orig: 80, 110
+  offset: 0, 0
+  index: -1
+track_mid_patch
+  rotate: false
+  xy: 311, 151
+  size: 55, 89
+  orig: 55, 89
+  offset: 0, 0
+  index: -1
+trees
+  rotate: false
+  xy: 422, 561
+  size: 274, 186
+  orig: 274, 186
+  offset: 0, 0
+  index: -1
+wifi_world
+  rotate: false
+  xy: 2, 44
+  size: 307, 196
+  orig: 307, 196
+  offset: 0, 0
+  index: -1

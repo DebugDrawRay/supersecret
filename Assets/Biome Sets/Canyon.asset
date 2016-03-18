@@ -17,12 +17,12 @@ MonoBehaviour:
   groundMaterial: {fileID: 2100000, guid: 7e59c5b9da40bd949bf589c2f0512a0f, type: 2}
   horizonObject: {fileID: 117070, guid: 4c8454ad41e8a6447b76852f5c5e88fa, type: 2}
   wallProps:
-  - {fileID: 169756, guid: 8e0a51b8d87ac2f4c8af536f955e6e10, type: 2}
-  - {fileID: 155420, guid: ca3309e4ba9b00c4c9c2d20225cc15ec, type: 2}
-  - {fileID: 165416, guid: 2c69e85cc13beff469a2c681dd5ec8dd, type: 2}
-  - {fileID: 146308, guid: 39cf17e596cc34a42bb6fb58964f1fbb, type: 2}
-  - {fileID: 195244, guid: e80c510cb453ad04c8a2fdc2cc9178f5, type: 2}
-  - {fileID: 138852, guid: abf25486f641ae344a126efa625a25db, type: 2}
+  - {fileID: 140716, guid: 814feccd355c4d04fb43dc3586905533, type: 2}
+  - {fileID: 177592, guid: ca118f1e96efb68469a18ff1ade93216, type: 2}
+  - {fileID: 111182, guid: ab11e1763cfa59f4bb125cb4b9702055, type: 2}
+  - {fileID: 114514, guid: b43f341534cdc774d95275e85b30046b, type: 2}
+  - {fileID: 176594, guid: 76b801243d723454f8ed2cb7bf6f1146, type: 2}
+  - {fileID: 198964, guid: fc9da535f62954545a5593d5cfff4e6e, type: 2}
   groundProps: []
   obstacles:
   - {fileID: 137750, guid: 9ed4ef8c4a7b9c1499a6e3f2e75c39c4, type: 2}

@@ -151,14 +151,19 @@ public class GridMovement : MonoBehaviour
     public void CollisionMove(Vector3 from)
     {
         Vector3 direction = from - transform.localPosition;
-
-        float zDir = -direction.normalized.z;
+        Debug.Log(direction);
+        float zDir = 1;
         float xDir = -direction.normalized.x;
 
         if(currentGridPosition.x + Mathf.Sign(xDir) * Mathf.Abs(Mathf.Ceil(xDir)) < 0 ||
            currentGridPosition.x + Mathf.Sign(xDir) * Mathf.Abs(Mathf.Ceil(xDir)) >= targetGrid.xUnits )
         {
-            xDir = 0;
+            xDir = -xDir;
+            if (currentGridPosition.y + Mathf.Sign(zDir) * Mathf.Abs(Mathf.Ceil(zDir)) < 0 ||
+                currentGridPosition.y + Mathf.Sign(zDir) * Mathf.Abs(Mathf.Ceil(zDir)) >= targetGrid.yUnits)
+            {
+                zDir = -zDir;
+            }
         }
         else
         {

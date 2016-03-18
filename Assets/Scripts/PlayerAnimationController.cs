@@ -51,6 +51,26 @@ public class PlayerAnimationController : MonoBehaviour
         }
     }
 
+    public void StartInvulAnim(float time)
+    {
+        StartCoroutine(InvulAnim(time));
+    }
+
+    IEnumerator InvulAnim(float time)
+    {
+        for(float i = 0; i <= time; i += Time.deltaTime)
+        {
+            for (int j = 0; j < allAnim.Length; ++j)
+            {
+                allAnim[j].GetComponent<MeshRenderer>().enabled = !allAnim[j].GetComponent<MeshRenderer>().enabled;
+            }
+            yield return null;
+        }
+        for (int j = 0; j < allAnim.Length; ++j)
+        {
+            allAnim[j].GetComponent<MeshRenderer>().enabled = true;
+        }
+    }
     void TopSpeed()
     {
         /*for (int i = 0; i < allAnim.Length; ++i)

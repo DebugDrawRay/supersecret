@@ -1,0 +1,48 @@
+
+wifi_meter.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+wifi_1st
+  rotate: false
+  xy: 2, 2
+  size: 156, 139
+  orig: 156, 139
+  offset: 0, 0
+  index: -1
+wifi_2nd
+  rotate: false
+  xy: 815, 778
+  size: 203, 235
+  orig: 203, 235
+  offset: 0, 0
+  index: -1
+wifi_3rd
+  rotate: false
+  xy: 496, 724
+  size: 317, 289
+  orig: 317, 289
+  offset: 0, 0
+  index: -1
+wifi_4th
+  rotate: false
+  xy: 2, 143
+  size: 360, 427
+  orig: 360, 427
+  offset: 0, 0
+  index: -1
+wifi_5th
+  rotate: false
+  xy: 2, 572
+  size: 492, 441
+  orig: 492, 441
+  offset: 0, 0
+  index: -1
+wifi_core
+  rotate: false
+  xy: 364, 486
+  size: 82, 84
+  orig: 82, 84
+  offset: 0, 0
+  index: -1

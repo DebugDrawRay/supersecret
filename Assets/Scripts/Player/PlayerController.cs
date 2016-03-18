@@ -21,6 +21,10 @@ public class PlayerController : MonoBehaviour
     public Stats stats;
     public PlayerAnimationController animation;
 
+    [Header("Collision Properties")]
+    public float invulTime;
+    private bool invulnerable;
+
     //Health Control
     private float currentHealth;
 
@@ -39,6 +43,12 @@ public class PlayerController : MonoBehaviour
     }
 
     void Awake()
+    {
+        PlayerEventManager.CollisionReaction += InvulEvent;
+        InitializeInstance();
+    }
+
+    void InitializeInstance()
     {
         if(instance != null)
         {
@@ -110,17 +120,37 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log(gameObject.GetInstanceID() + " is ded, :c");
     }
+
+    void InvulEvent()
+    {
+        animation.StartInvulAnim(invulTime);
+        StartCoroutine(Invul());
+    }
+
+    IEnumerator Invul()
+    {
+        invulnerable = true;
+        for(float i = 0; i <= invulTime; i += Time.deltaTime)
+        {
+            yield return null;
+        }
+        invulnerable = false;
+    }
+
     void OnTriggerEnter(Collider hit)
     {
-        InteractionSource isInteraction = hit.GetComponent<InteractionSource>();
-        Enemy isEnemy = hit.GetComponent<Enemy>();
-        if(isInteraction)
+        if (!invulnerable)
         {
-            PlayerEventManager.TriggerCollision();
-        }
-        if(isEnemy)
-        {
-            movement.CollisionMove(isEnemy.transform.localPosition);
+            InteractionSource isInteraction = hit.GetComponent<InteractionSource>();
+            Enemy isEnemy = hit.GetComponent<Enemy>();
+            if (isInteraction)
+            {
+                PlayerEventManager.TriggerCollision();
+            }
+            if (isEnemy)
+            {
+                movement.CollisionMove(isEnemy.transform.localPosition);
+            }
         }
     }
 }

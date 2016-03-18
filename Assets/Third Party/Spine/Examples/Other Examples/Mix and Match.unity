@@ -177,11 +177,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skinSource: {fileID: 11400000, guid: 44691b56ed7d1f04da0cbc2a52a91b8d, type: 2}
-  skinItems:
-  - sourceAttachmentPath: 64656661756c742f686561642f68656164
+  skinning:
+  - sourceAttachment: 64656661756c742f686561642f68656164
     targetSlot: 68656164
     targetAttachment: 68656164
-  - sourceAttachmentPath: 64656661756c742f67756e2f67756e
+  - sourceAttachment: 64656661756c742f67756e2f67756e
     targetSlot: 72696768742068616e64206974656d2032
     targetAttachment: 736869656c64
 --- !u!114 &376395957
@@ -190,13 +190,13 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 376395955}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   skeletonDataAsset: {fileID: 11400000, guid: 066917a2cc5e8824b9b7e2944feee6f1, type: 2}
-  initialSkinName: default
+  initialSkinName: 676f626c696e
   calculateNormals: 1
   calculateTangents: 0
   zSpacing: 0
@@ -292,13 +292,13 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 686004282}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   skeletonDataAsset: {fileID: 11400000, guid: 066917a2cc5e8824b9b7e2944feee6f1, type: 2}
-  initialSkinName: default
+  initialSkinName: 676f626c696e
   calculateNormals: 1
   calculateTangents: 0
   zSpacing: 0

@@ -292,6 +292,7 @@ MonoBehaviour:
   movement: {fileID: 11426790}
   stats: {fileID: 11455174}
   animation: {fileID: 11429330}
+  invulTime: 5
 --- !u!114 &11429330
 MonoBehaviour:
   m_ObjectHideFlags: 1

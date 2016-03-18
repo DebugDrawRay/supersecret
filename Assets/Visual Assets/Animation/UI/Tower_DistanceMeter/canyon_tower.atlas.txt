@@ -1,0 +1,194 @@
+
+canyon_tower.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Fill Animation/FILL STAGE 1
+  rotate: false
+  xy: 723, 498
+  size: 19, 61
+  orig: 19, 61
+  offset: 0, 0
+  index: -1
+Fill Animation/FILL STAGE 10
+  rotate: true
+  xy: 374, 268
+  size: 76, 388
+  orig: 76, 388
+  offset: 0, 0
+  index: -1
+Fill Animation/FILL STAGE 11
+  rotate: true
+  xy: 599, 92
+  size: 83, 421
+  orig: 83, 421
+  offset: 0, 0
+  index: -1
+Fill Animation/FILL STAGE 12
+  rotate: true
+  xy: 558, 177
+  size: 89, 443
+  orig: 89, 443
+  offset: 0, 0
+  index: -1
+Fill Animation/FILL STAGE 15
+  rotate: true
+  xy: 2, 172
+  size: 94, 554
+  orig: 94, 554
+  offset: 0, 0
+  index: -1
+Fill Animation/FILL STAGE 16
+  rotate: true
+  xy: 2, 76
+  size: 94, 595
+  orig: 94, 595
+  offset: 0, 0
+  index: -1
+Fill Animation/FILL STAGE 18
+  rotate: false
+  xy: 868, 373
+  size: 94, 647
+  orig: 94, 647
+  offset: 0, 0
+  index: -1
+Fill Animation/FILL STAGE 2
+  rotate: true
+  xy: 764, 318
+  size: 26, 91
+  orig: 26, 91
+  offset: 0, 0
+  index: -1
+Fill Animation/FILL STAGE 3
+  rotate: true
+  xy: 655, 23
+  size: 26, 141
+  orig: 26, 141
+  offset: 0, 0
+  index: -1
+Fill Animation/FILL STAGE 4
+  rotate: true
+  xy: 374, 350
+  size: 29, 179
+  orig: 29, 179
+  offset: 0, 0
+  index: -1
+Fill Animation/FILL STAGE 5
+  rotate: true
+  xy: 655, 51
+  size: 39, 219
+  orig: 39, 219
+  offset: 0, 0
+  index: -1
+Fill Animation/FILL STAGE 6
+  rotate: true
+  xy: 374, 381
+  size: 55, 264
+  orig: 55, 264
+  offset: 0, 0
+  index: -1
+Fill Animation/FILL STAGE 7
+  rotate: true
+  xy: 374, 381
+  size: 55, 264
+  orig: 55, 264
+  offset: 0, 0
+  index: -1
+Fill Animation/FILL STAGE 8
+  rotate: true
+  xy: 374, 438
+  size: 55, 303
+  orig: 55, 303
+  offset: 0, 0
+  index: -1
+Fill Animation/FILL STAGE 9
+  rotate: true
+  xy: 374, 495
+  size: 64, 347
+  orig: 64, 347
+  offset: 0, 0
+  index: -1
+LIGHTNING
+  rotate: false
+  xy: 374, 561
+  size: 382, 459
+  orig: 382, 459
+  offset: 0, 0
+  index: -1
+Shadow Animation/ts4
+  rotate: true
+  xy: 2, 2
+  size: 72, 651
+  orig: 72, 651
+  offset: 0, 0
+  index: -1
+TOWER
+  rotate: false
+  xy: 2, 268
+  size: 370, 752
+  orig: 370, 752
+  offset: 0, 0
+  index: -1
+TUBE
+  rotate: false
+  xy: 758, 346
+  size: 108, 674
+  orig: 108, 674
+  offset: 0, 0
+  index: -1
+tube highlights
+  rotate: false
+  xy: 964, 411
+  size: 44, 609
+  orig: 44, 609
+  offset: 0, 0
+  index: -1
+
+canyon_tower2.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Fill Animation/FILL STAGE 13
+  rotate: true
+  xy: 526, 2
+  size: 89, 496
+  orig: 89, 496
+  offset: 0, 0
+  index: -1
+Fill Animation/FILL STAGE 14
+  rotate: true
+  xy: 2, 2
+  size: 89, 522
+  orig: 89, 522
+  offset: 0, 0
+  index: -1
+Fill Animation/FILL STAGE 17
+  rotate: true
+  xy: 2, 93
+  size: 94, 618
+  orig: 94, 618
+  offset: 0, 0
+  index: -1
+Shadow Animation/ts2
+  rotate: true
+  xy: 2, 268
+  size: 80, 654
+  orig: 80, 654
+  offset: 0, 0
+  index: -1
+Shadow Animation/ts3
+  rotate: true
+  xy: 2, 189
+  size: 77, 653
+  orig: 77, 653
+  offset: 0, 0
+  index: -1
+tube shadows
+  rotate: true
+  xy: 2, 350
+  size: 83, 658
+  orig: 83, 658
+  offset: 0, 0
+  index: -1
