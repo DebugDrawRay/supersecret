@@ -151,7 +151,6 @@ public class GridMovement : MonoBehaviour
     public void CollisionMove(Vector3 from)
     {
         Vector3 direction = from - transform.localPosition;
-        Debug.Log(direction);
         float zDir = 1;
         float xDir = -direction.normalized.x;
 

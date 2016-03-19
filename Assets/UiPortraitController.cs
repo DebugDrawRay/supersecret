@@ -7,7 +7,7 @@ public class UiPortraitController : MonoBehaviour
 
     void Start()
     {
-        anim.AnimationState.SetAnimation(0, "shake", true);
-        anim.AnimationState.SetAnimation(1, "world_rotate", true);
+        anim.AnimationState.SetAnimation(0, "trundle_shake", true);
+        anim.AnimationState.SetAnimation(1, "biomes_rotate", true);
     }
 }

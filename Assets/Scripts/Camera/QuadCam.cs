@@ -59,14 +59,17 @@ public class QuadCam : MonoBehaviour
 
     void Update()
     {
-        Vector3 newPos = targetPoint.position;
-        newPos.z = newPos.z - chaseDistance;
-        newPos.y = newPos.y + hoverHeight;
+        if (targetPoint.gameObject != null)
+        {
+            Vector3 newPos = targetPoint.position;
+            newPos.z = newPos.z - chaseDistance;
+            newPos.y = newPos.y + hoverHeight;
 
-        transform.position = Vector3.Lerp(transform.position, newPos, moveAcceleration);
+            transform.position = Vector3.Lerp(transform.position, newPos, moveAcceleration);
 
-        TiltEngine(newPos);
-        CurrentFov();
+            TiltEngine(newPos);
+            CurrentFov();
+        }
 
     }
 

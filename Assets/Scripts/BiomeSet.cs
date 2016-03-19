@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 [System.Serializable]
 public class BiomeSet : ScriptableObject
@@ -12,6 +11,7 @@ public class BiomeSet : ScriptableObject
     public GameObject horizonObject;
 
     public GameObject[] wallProps;
+    public GameObject[] archProps;
     public GameObject[] groundProps;
     public GameObject[] obstacles;
     public GameObject[] enemies;

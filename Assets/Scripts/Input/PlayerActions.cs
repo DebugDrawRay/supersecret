@@ -9,6 +9,8 @@ public class PlayerActions : PlayerActionSet
     public PlayerAction Right;
     public PlayerTwoAxisAction Move;
 
+    public PlayerAction Pause;
+
     public PlayerActions()
     {
         Up = CreatePlayerAction("Up");
@@ -16,6 +18,8 @@ public class PlayerActions : PlayerActionSet
         Left = CreatePlayerAction("Left");
         Right = CreatePlayerAction("Right");
         Move = CreateTwoAxisPlayerAction(Left, Right, Down, Up);
+
+        Pause = CreatePlayerAction("Pause");
     }
 
     public static PlayerActions BindActionsWithJoystick()
@@ -27,6 +31,7 @@ public class PlayerActions : PlayerActionSet
         newActions.Left.AddDefaultBinding(InputControlType.LeftStickLeft);
         newActions.Right.AddDefaultBinding(InputControlType.LeftStickRight);
 
+        newActions.Pause.AddDefaultBinding(InputControlType.Start);
         return newActions;
     }
 
@@ -38,6 +43,8 @@ public class PlayerActions : PlayerActionSet
         newActions.Down.AddDefaultBinding(Key.S);
         newActions.Left.AddDefaultBinding(Key.A);
         newActions.Right.AddDefaultBinding(Key.D);
+
+        newActions.Pause.AddDefaultBinding(Key.Escape);
 
         return newActions;
     }
@@ -54,6 +61,9 @@ public class PlayerActions : PlayerActionSet
         newActions.Down.AddDefaultBinding(Key.S);
         newActions.Left.AddDefaultBinding(Key.A);
         newActions.Right.AddDefaultBinding(Key.D);
+
+        newActions.Pause.AddDefaultBinding(Key.Escape);
+        newActions.Pause.AddDefaultBinding(InputControlType.Start);
 
         return newActions;
     }

@@ -18,6 +18,7 @@ public class LevelBuilder : MonoBehaviour
     private Material groundMat;
     private GameObject horizonObj;
     private GameObject[] wallProps;
+    private GameObject[] archProps;
     private GameObject[] groundProps;
     private GameObject[] obstacles;
     private GameObject[] enemies;
@@ -42,6 +43,8 @@ public class LevelBuilder : MonoBehaviour
     public bool generateWalls;
     public float wallPropSpacing;
     public float wallPropOffset;
+    [Range(0, 1)]
+    public float archToWallRatio;
 
     [Header("Horizon Object Properties")]
     public bool generateHorizon;
@@ -77,6 +80,7 @@ public class LevelBuilder : MonoBehaviour
         groundMat = biomeSet.groundMaterial;
         horizonObj = biomeSet.horizonObject;
         wallProps = biomeSet.wallProps;
+        archProps = biomeSet.archProps;
         groundProps = biomeSet.groundProps;
         obstacles = biomeSet.obstacles;
         enemies = biomeSet.enemies;
@@ -103,7 +107,7 @@ public class LevelBuilder : MonoBehaviour
 
             Vector3 scale = new Vector3(length, width, 1);
             newRoad.transform.localScale = scale;
-            newRoad.transform.position = Vector3.zero;
+            newRoad.transform.position = new Vector3(0, -0.25f, 0);
             newRoad.transform.rotation = Quaternion.Euler(90, 90, 0);
 
             Material newRoadMat = new Material(roadMat);
@@ -181,18 +185,49 @@ public class LevelBuilder : MonoBehaviour
 
             for (int i = 0; i <= total; ++i)
             {
-                int select = Random.Range(0, wallProps.Length);
-                GameObject left = Instantiate(wallProps[select]);
-                float xPos = -roadWidth / 2;
-                float offset = xPos + Random.Range(-wallPropOffset, wallPropOffset);
-                left.transform.position = new Vector3(offset, 20, wallPropSpacing * i);
-                left.transform.rotation = Quaternion.Euler(0, 180, 0);
+                if (archProps.Length > 0)
+                {
+                    float type = Random.value;
+                    if (type > archToWallRatio)
+                    {
+                        int select = Random.Range(0, wallProps.Length);
+                        GameObject left = Instantiate(wallProps[select]);
+                        float xPos = -roadWidth / 2;
+                        float offset = xPos + Random.Range(-wallPropOffset, wallPropOffset);
+                        left.transform.position = new Vector3(offset, 20, wallPropSpacing * i);
+                        left.transform.rotation = Quaternion.Euler(0, 180, 0);
 
-                select = Random.Range(0, wallProps.Length);
-                GameObject right = Instantiate(wallProps[select]);
-                xPos = roadWidth / 2;
-                offset = xPos + Random.Range(-wallPropOffset, wallPropOffset);
-                right.transform.position = new Vector3(offset, 20, wallPropSpacing * i);
+                        select = Random.Range(0, wallProps.Length);
+                        GameObject right = Instantiate(wallProps[select]);
+                        xPos = roadWidth / 2;
+                        offset = xPos + Random.Range(-wallPropOffset, wallPropOffset);
+                        right.transform.position = new Vector3(offset, 20, wallPropSpacing * i);
+                    }
+                    else
+                    {
+                        int select = Random.Range(0, archProps.Length);
+                        GameObject arch = Instantiate(archProps[select]);
+                        Vector3 newScale = arch.transform.localScale;
+                        newScale.x = roadWidth/2;
+                        arch.transform.localScale = newScale;
+                        arch.transform.position = new Vector3(0, 0, wallPropSpacing * i);
+                    }
+                }
+                else
+                {
+                    int select = Random.Range(0, wallProps.Length);
+                    GameObject left = Instantiate(wallProps[select]);
+                    float xPos = -roadWidth / 2;
+                    float offset = xPos + Random.Range(-wallPropOffset, wallPropOffset);
+                    left.transform.position = new Vector3(offset, 20, wallPropSpacing * i);
+                    left.transform.rotation = Quaternion.Euler(0, 180, 0);
+
+                    select = Random.Range(0, wallProps.Length);
+                    GameObject right = Instantiate(wallProps[select]);
+                    xPos = roadWidth / 2;
+                    offset = xPos + Random.Range(-wallPropOffset, wallPropOffset);
+                    right.transform.position = new Vector3(offset, 20, wallPropSpacing * i);
+                }
 
             }
             BuildWalls(length, roadWidth);

@@ -205,7 +205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetStat: 0
-  modValue: -0.1
+  modValue: -0.25
   modTime: 0
 --- !u!114 &11497816
 MonoBehaviour:
@@ -224,6 +224,7 @@ MonoBehaviour:
   power: 0
   luck: 0
   weight: 0
+  invulnerable: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

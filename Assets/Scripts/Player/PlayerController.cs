@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using Spine.Unity;
 using System.Collections;
 
@@ -45,6 +46,7 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         PlayerEventManager.CollisionReaction += InvulEvent;
+        PlayerEventManager.DeathEvent += DeathEvent;
         InitializeInstance();
     }
 
@@ -103,6 +105,7 @@ public class PlayerController : MonoBehaviour
                 RunActions();
                 break;
             case State.Dead:
+                Destroy(gameObject);
                 break;
             case State.LevelComplete:
                 break;
@@ -118,7 +121,8 @@ public class PlayerController : MonoBehaviour
 
     public void DeathEvent()
     {
-        Debug.Log(gameObject.GetInstanceID() + " is ded, :c");
+        Debug.Log("trigger");
+        currentState = State.Dead;
     }
 
     void InvulEvent()
@@ -130,23 +134,20 @@ public class PlayerController : MonoBehaviour
     IEnumerator Invul()
     {
         invulnerable = true;
+        stats.invulnerable = true;
         for(float i = 0; i <= invulTime; i += Time.deltaTime)
         {
             yield return null;
         }
         invulnerable = false;
+        stats.invulnerable = false;
     }
 
     void OnTriggerEnter(Collider hit)
     {
         if (!invulnerable)
         {
-            InteractionSource isInteraction = hit.GetComponent<InteractionSource>();
             Enemy isEnemy = hit.GetComponent<Enemy>();
-            if (isInteraction)
-            {
-                PlayerEventManager.TriggerCollision();
-            }
             if (isEnemy)
             {
                 movement.CollisionMove(isEnemy.transform.localPosition);

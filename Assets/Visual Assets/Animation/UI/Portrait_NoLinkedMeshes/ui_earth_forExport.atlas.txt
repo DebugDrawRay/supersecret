@@ -55,28 +55,28 @@ inner_circle_outline
   index: -1
 l_eye
   rotate: false
-  xy: 767, 600
+  xy: 663, 279
   size: 40, 39
   orig: 40, 39
   offset: 0, 0
   index: -1
 l_eye_shimmer_1
   rotate: false
-  xy: 73, 3
+  xy: 978, 926
   size: 40, 39
   orig: 40, 39
   offset: 0, 0
   index: -1
 l_eye_shimmer_2
   rotate: false
-  xy: 978, 926
+  xy: 122, 3
   size: 40, 39
   orig: 40, 39
   offset: 0, 0
   index: -1
 l_neck_bot
-  rotate: false
-  xy: 698, 584
+  rotate: true
+  xy: 311, 82
   size: 67, 55
   orig: 67, 55
   offset: 0, 0
@@ -97,7 +97,7 @@ mountains
   index: -1
 mouth
   rotate: false
-  xy: 311, 112
+  xy: 603, 222
   size: 47, 37
   orig: 47, 37
   offset: 0, 0
@@ -111,14 +111,14 @@ r_eye
   index: -1
 r_eye_shimmer_1
   rotate: false
-  xy: 610, 336
+  xy: 722, 364
   size: 33, 36
   orig: 33, 36
   offset: 0, 0
   index: -1
 r_eye_shimmer_2
   rotate: false
-  xy: 311, 74
+  xy: 311, 44
   size: 33, 36
   orig: 33, 36
   offset: 0, 0
@@ -131,15 +131,36 @@ r_neck_bot
   offset: 0, 0
   index: -1
 r_neck_top
-  rotate: false
-  xy: 610, 374
+  rotate: true
+  xy: 766, 593
   size: 46, 73
   orig: 46, 73
   offset: 0, 0
   index: -1
-track
+silhouette
   rotate: false
-  xy: 610, 449
+  xy: 698, 571
+  size: 66, 68
+  orig: 66, 68
+  offset: 0, 0
+  index: -1
+tower
+  rotate: false
+  xy: 610, 402
+  size: 146, 157
+  orig: 146, 157
+  offset: 0, 0
+  index: -1
+tower_light
+  rotate: false
+  xy: 603, 261
+  size: 58, 57
+  orig: 58, 57
+  offset: 0, 0
+  index: -1
+track
+  rotate: true
+  xy: 610, 320
   size: 80, 110
   orig: 80, 110
   offset: 0, 0
@@ -156,6 +177,13 @@ trees
   xy: 422, 561
   size: 274, 186
   orig: 274, 186
+  offset: 0, 0
+  index: -1
+wheel
+  rotate: true
+  xy: 73, 2
+  size: 40, 47
+  orig: 40, 47
   offset: 0, 0
   index: -1
 wifi_world

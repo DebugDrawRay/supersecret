@@ -23,6 +23,8 @@ MonoBehaviour:
   - {fileID: 114514, guid: b43f341534cdc774d95275e85b30046b, type: 2}
   - {fileID: 176594, guid: 76b801243d723454f8ed2cb7bf6f1146, type: 2}
   - {fileID: 198964, guid: fc9da535f62954545a5593d5cfff4e6e, type: 2}
+  archProps:
+  - {fileID: 101948, guid: 2350a860ab04c6b4d87446bef796a604, type: 2}
   groundProps: []
   obstacles:
   - {fileID: 137750, guid: 9ed4ef8c4a7b9c1499a6e3f2e75c39c4, type: 2}

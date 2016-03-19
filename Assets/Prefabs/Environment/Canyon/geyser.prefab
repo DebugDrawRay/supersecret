@@ -27,8 +27,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 453176}
   - 212: {fileID: 21269050}
-  - 111: {fileID: 11142098}
-  - 95: {fileID: 9588920}
   m_Layer: 0
   m_Name: geyser_01
   m_TagString: Untagged
@@ -43,7 +41,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 137750}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.48477, y: 194.48247, z: -1816.5753}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children:
   - {fileID: 453176}
@@ -56,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 158318}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.892, z: 0}
+  m_LocalPosition: {x: 0, y: 2.237, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 438918}
@@ -73,38 +71,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.28, y: 4.32, z: 3}
   m_Center: {x: 0, y: 2.15, z: 0}
---- !u!95 &9588920
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 158318}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b41052eddebbfb44ebe727e2e4f7c6b7, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
---- !u!111 &11142098
-Animation:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 158318}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: e058e41b966ce2143a48ee60560599ea, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: e058e41b966ce2143a48ee60560599ea, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!114 &11402292
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -116,7 +82,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eb9a11abd1b67948984651b22c7bee0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetStat: agility
+  targetStat: 0
   modValue: 0
   modTime: 0
 --- !u!114 &11424002
@@ -156,7 +122,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1403347663
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 05a3c12dc5a9f714ca02d94dd183d958, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3376983fee5b7fa44b16e1776b875a50, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -30,6 +31,7 @@ public class GameController : MonoBehaviour
     [Header("Level Setup")]
     public LevelBuilder builder;
 
+    private PlayerActions input;
     void Awake()
     {
         Setup();
@@ -37,6 +39,9 @@ public class GameController : MonoBehaviour
 
     void Setup()
     {
+        input = PlayerActions.BindKeyboardAndJoystick();
+        PlayerEventManager.DeathEvent += PlayerDeath;
+
         grid = Instantiate(gridSystem).GetComponent<Grid>();
         grid.transform.position = startPosition;
 
@@ -63,14 +68,22 @@ public class GameController : MonoBehaviour
                 currentState = State.InGame;
                 break;
             case State.InGame:
-                player.currentState = PlayerController.State.InGame;
                 break;
             case State.Pause:
                 break;
             case State.NextLevel:
                 break;
             case State.GameOver:
+                if (input.Pause.WasPressed)
+                {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                }
                 break;
         }
+    }
+
+    void PlayerDeath()
+    {
+        currentState = State.GameOver;
     }
 }

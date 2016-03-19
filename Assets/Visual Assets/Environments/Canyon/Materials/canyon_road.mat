@@ -20,7 +20,7 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: 4cb9eb1a356f97c4eb0cbef0a3d2293c, type: 3}
+          m_Texture: {fileID: 2800000, guid: b36d5fe06bca9764dbcaf8a7e59c8980, type: 3}
           m_Scale: {x: 0.005, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -134,10 +134,6 @@ Material:
         second: 0
       data:
         first:
-          name: _Dist
-        second: 100
-      data:
-        first:
           name: _InvFade
         second: 1
       data:
@@ -168,6 +164,18 @@ Material:
         first:
           name: _UseUIAlphaClip
         second: 0
+      data:
+        first:
+          name: _V_CW_Rim_Bias
+        second: 0.2
+      data:
+        first:
+          name: _V_CW_Rim_Power
+        second: 3
+      data:
+        first:
+          name: _Dist
+        second: 100
     m_Colors:
       data:
         first:
@@ -177,6 +185,18 @@ Material:
         first:
           name: _Color
         second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _V_CW_MainTex_Scroll
+        second: {r: 0, g: 0, b: 0, a: 0}
+      data:
+        first:
+          name: _V_CW_Rim_Color
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _V_CW_DetailTex_Scroll
+        second: {r: 0, g: 0, b: 0, a: 0}
       data:
         first:
           name: _QOffset
