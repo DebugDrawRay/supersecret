@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="10" SoundbankVersion="113">
+	<RootPaths>
+		<ProjectRoot>/Users/soundtracks/Library/Application Support/Wwise/Bottles/wwise/dosdevices/z:/Volumes/Projects/Repositories/supersecret/Wwise/</ProjectRoot>
+		<SourceFilesRoot>/Users/soundtracks/Library/Application Support/Wwise/Bottles/wwise/dosdevices/z:/Volumes/Projects/Repositories/supersecret/Wwise/.cache/Mac/</SourceFilesRoot>
+		<SoundBanksRoot>/Users/soundtracks/Library/Application Support/Wwise/Bottles/wwise/dosdevices/z:/Volumes/Projects/Repositories/supersecret/Wwise/GeneratedSoundBanks/Mac/</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>/Users/soundtracks/Library/Application Support/Wwise/Bottles/wwise/dosdevices/z:/Volumes/Projects/Repositories/supersecret/Wwise/GeneratedSoundBanks/Mac/</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Language="SFX">
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="3161908922" Language="SFX">
+			<ShortName>MAIN</ShortName>
+			<Path>MAIN.bnk</Path>
+			<IncludedEvents>
+				<Event Id="1122283870" Name="musicStart"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="508092721" Language="SFX">
+					<ShortName>IntroLullaby_chorus_v2.wav</ShortName>
+					<Path>SFX/IntroLullaby_chorus_v2_4B8CC0C5.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1122283870	musicStart			\Default Work Unit\musicStart	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	508092721	IntroLullaby_chorus_v2	Z:\Volumes\Projects\Repositories\supersecret\Wwise\.cache\Mac\SFX\IntroLullaby_chorus_v2_4B8CC0C5.wem		\Interactive Music Hierarchy\Default Work Unit\mus_IntroLullaby\IntroLullaby_chorus_v2\IntroLullaby_chorus_v2		6518252
+
