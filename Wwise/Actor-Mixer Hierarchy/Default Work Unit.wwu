@@ -1,6 +1,309 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{FFDDB849-0196-4EA1-AB43-0B400A594E4C}" SchemaVersion="70">
 	<AudioObjects>
-		<WorkUnit Name="Default Work Unit" ID="{FFDDB849-0196-4EA1-AB43-0B400A594E4C}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{FFDDB849-0196-4EA1-AB43-0B400A594E4C}" PersistMode="Standalone">
+			<ChildrenList>
+				<Folder Name="TB" ID="{0CEA720B-284E-4912-B8D4-6DC2D00B48F7}" ShortID="84479888">
+					<ChildrenList>
+						<Sound Name="TB_death_01" ID="{C8C17D7E-759F-4CCB-B669-520A34B8DA9F}" ShortID="390108879" Type="SoundFX">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+								</Reference>
+							</ReferenceList>
+						</Sound>
+						<Sound Name="TB_engineLoop_01" ID="{A7068037-CE30-435F-9A75-F4DAD76D3933}" ShortID="824098953" Type="SoundFX">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+								</Reference>
+							</ReferenceList>
+						</Sound>
+						<Sound Name="TB_engineStop_01" ID="{DA7763B3-0468-4C18-BE9C-90A5941A1931}" ShortID="1059126076" Type="SoundFX">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+								</Reference>
+							</ReferenceList>
+						</Sound>
+						<Sound Name="TB_collision_metal_01" ID="{6C3A4298-75C1-4523-9FCB-62537693C630}" ShortID="685252285" Type="SoundFX">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+								</Reference>
+							</ReferenceList>
+						</Sound>
+						<Folder Name="Movement" ID="{3E1C753D-8772-412D-A087-83DD9BF2E709}" ShortID="129050584">
+							<ChildrenList>
+								<Sound Name="TB_movement_dirt_01" ID="{B70BC00E-F674-45AC-925F-D432DD2B76D1}" ShortID="123653257" Type="SoundFX">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+								<Sound Name="TB_movement_water_01" ID="{B2CB87A0-2025-4C54-830E-B547D55A92CE}" ShortID="108182297" Type="SoundFX">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+								<Sound Name="TB_movement_mud_01" ID="{3B706794-1A02-447E-B7CA-19B63D3023B8}" ShortID="261975022" Type="SoundFX">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+								<Sound Name="TB_movement_snow_01" ID="{839942FB-980B-4E8C-9F40-5B5B0351C3F4}" ShortID="679135942" Type="SoundFX">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+								<Sound Name="TB_movement_asphalt_01" ID="{42ECB08B-42EF-42F3-81AF-F4673A7A21A6}" ShortID="40492169" Type="SoundFX">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+								<Sound Name="TB_movement_gravel_01" ID="{094D9B24-9AEC-4E8A-9F1D-FD446FAE81E0}" ShortID="783136498" Type="SoundFX">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+								<Sound Name="TB_movement_grass_01" ID="{912BE862-A6E4-4173-A275-2580EDC84A3A}" ShortID="374337659" Type="SoundFX">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+								<Sound Name="TB_movement_inner_01" ID="{30A27A0C-51C1-46C7-988E-8C19535092F9}" ShortID="874597040" Type="SoundFX">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+								<Sound Name="TB_movement_wifi_01" ID="{E4DD44C5-D20B-416E-A06A-8623C54873E7}" ShortID="819353566" Type="SoundFX">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+							</ChildrenList>
+						</Folder>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Ambience" ID="{F8C20090-E6D2-469D-AC72-511BF050EF04}" ShortID="194996149">
+					<ChildrenList>
+						<Sound Name="amb_canyon_01" ID="{9764E477-A211-43FD-8FD8-4F3CD4B04360}" ShortID="498478712" Type="SoundFX">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+								</Reference>
+							</ReferenceList>
+						</Sound>
+						<Sound Name="amb_swamp_01" ID="{4A12A61B-219B-42B3-AC24-FFCC22728461}" ShortID="591574767" Type="SoundFX">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+								</Reference>
+							</ReferenceList>
+						</Sound>
+						<Sound Name="amb_city_01" ID="{80483C84-9DDE-439E-9102-C440B2C2D144}" ShortID="998146062" Type="SoundFX">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+								</Reference>
+							</ReferenceList>
+						</Sound>
+						<Sound Name="amb_innerspace_01" ID="{DBF3AC8B-C0F8-49A9-B686-D69D891EEE42}" ShortID="335329658" Type="SoundFX">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+								</Reference>
+							</ReferenceList>
+						</Sound>
+						<Sound Name="amb_wifiworld_01" ID="{02337135-050E-4A4F-B95A-C1AF5ECFC032}" ShortID="858515548" Type="SoundFX">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+								</Reference>
+							</ReferenceList>
+						</Sound>
+						<Sound Name="amb_mountain_01" ID="{967E44E8-FDF1-40FE-8848-58269F941EA2}" ShortID="421378774" Type="SoundFX">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+								</Reference>
+							</ReferenceList>
+						</Sound>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Petman" ID="{C1C48070-A0BE-4C71-B233-A0F5EE10B941}" ShortID="738266618">
+					<ChildrenList>
+						<Sound Name="petman_attack_01" ID="{A74F77FE-E939-456C-917F-3537BEF121A3}" ShortID="884046172" Type="SoundFX">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+								</Reference>
+							</ReferenceList>
+						</Sound>
+						<Sound Name="petman_death_01" ID="{117E0E70-9452-4745-919C-39DFFD71E367}" ShortID="985804530" Type="SoundFX">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+								</Reference>
+							</ReferenceList>
+						</Sound>
+						<Folder Name="Movement" ID="{559CA78F-48DF-4165-AAA5-0EABA9226E32}" ShortID="69577670">
+							<ChildrenList>
+								<Sound Name="petman_movement_water_01" ID="{5A89F0B6-122D-4350-BA0F-EDF5F2D3FFA1}" ShortID="623850420" Type="SoundFX">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+								<Sound Name="petman_movement_mud_01" ID="{794BF079-0C58-41AB-81D9-B7165332C35C}" ShortID="444873058" Type="SoundFX">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+								<Sound Name="petman_movement_dirt_01" ID="{0F836C6A-02BF-45E4-9E1C-A414EC0B8ACF}" ShortID="281943952" Type="SoundFX">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+								<Sound Name="petman_movement_snow_01" ID="{4E559C6D-6805-4897-B6DF-7AA0834950A2}" ShortID="451586428" Type="SoundFX">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+								<Sound Name="petman_movement_asphalt_01" ID="{3A343339-1A4C-47C0-BF58-F2B89854C094}" ShortID="533565246" Type="SoundFX">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+								<Sound Name="petman_movement_gravel_01" ID="{2D9A4267-E20D-4174-BD1C-9B452055A252}" ShortID="584251055" Type="SoundFX">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+								<Sound Name="petman_movement_grass_01" ID="{47A18B77-2A69-464E-9442-066539CECAB0}" ShortID="1021888409" Type="SoundFX">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+							</ChildrenList>
+						</Folder>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
 	</AudioObjects>
 </WwiseDocument>
