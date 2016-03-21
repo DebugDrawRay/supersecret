@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{74B9A0D2-85A8-4D60-9ABF-41805C2B50A7}" SchemaVersion="70">
 	<SoundcasterSessions>
-		<WorkUnit Name="Default Work Unit" ID="{74B9A0D2-85A8-4D60-9ABF-41805C2B50A7}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{74B9A0D2-85A8-4D60-9ABF-41805C2B50A7}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundcasterSession Name="New Soundcaster Session" ID="{BA2F7C45-5371-4858-A6E9-60C0C138A520}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="musicStart" ID="{18E0E630-4F37-4749-8712-A2C05703BBB4}" WorkUnitID="{B8A46AB6-2F4D-4D8E-9966-0D58756EA65B}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="TB_engineStart" ID="{E9049DC1-6368-461B-8EE3-608AFA527DFE}" WorkUnitID="{B8A46AB6-2F4D-4D8E-9966-0D58756EA65B}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true">
+						<RTPCValue>
+							<GameParameterRef Name="TB_Speed" ID="{D150D977-91B4-4C5B-864A-FFB5F6F3DC5E}"/>
+							<Value>0.18</Value>
+						</RTPCValue>
+					</RTPCValueList>
+					<CurrentStateList ShowAll="true"/>
+					<CurrentSwitchList ShowAll="true"/>
+				</SoundcasterSession>
+			</ChildrenList>
+		</WorkUnit>
 	</SoundcasterSessions>
 </WwiseDocument>

@@ -20,11 +20,16 @@
 			<Path>MAIN.bnk</Path>
 			<IncludedEvents>
 				<Event Id="1122283870" Name="musicStart"/>
+				<Event Id="2710852396" Name="TB_engineStart"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
 				<File Id="508092721" Language="SFX">
 					<ShortName>IntroLullaby_chorus_v2.wav</ShortName>
 					<Path>SFX/IntroLullaby_chorus_v2_4B8CC0C5.wem</Path>
+				</File>
+				<File Id="760794695" Language="SFX">
+					<ShortName>bigDog_engineLoop_02.wav</ShortName>
+					<Path>SFX/bigDog_engineLoop_02_4B8CC0C5.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 		</SoundBank>

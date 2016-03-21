@@ -14,6 +14,20 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="TB_engineStart" ID="{E9049DC1-6368-461B-8EE3-608AFA527DFE}">
+					<ChildrenList>
+						<Action Name="Play" ID="{9BDEC195-66B8-4074-872F-1F8661CC3AD1}" ShortID="1028050170" Type="Play" Scope="One" Global="false">
+							<PropertyList>
+								<Property Name="FadeTime" Type="Real64" Value="0.1"/>
+							</PropertyList>
+							<ElementList>
+								<Element ID="{49C9EAE7-ED45-4DEC-96DD-7B360C48BB26}" Global="false">
+									<ObjectRef Name="TB_engineLoop_01" ID="{A7068037-CE30-435F-9A75-F4DAD76D3933}" WorkUnitID="{FFDDB849-0196-4EA1-AB43-0B400A594E4C}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

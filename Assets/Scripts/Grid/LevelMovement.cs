@@ -20,6 +20,7 @@ public class LevelMovement : MonoBehaviour
     {
         rigid = GetComponent<Rigidbody>();
         PlayerEventManager.CollisionReaction += ResetSpeed;
+		AkSoundEngine.PostEvent("TB_engineStart", this.gameObject);
     }
 
     void FixedUpdate()
@@ -27,6 +28,7 @@ public class LevelMovement : MonoBehaviour
         if (isMoving)
         {
             rigid.velocity = movementDirection * CurrentSpeed();
+			AkSoundEngine.SetRTPCValue("TB_Speed", GetNormalizedSpeed());
         }
 
         if (GetNormalizedSpeed() >= 1 && !topSpeed)

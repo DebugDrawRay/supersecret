@@ -16,14 +16,107 @@
 							</ReferenceList>
 						</Sound>
 						<Sound Name="TB_engineLoop_01" ID="{A7068037-CE30-435F-9A75-F4DAD76D3933}" ShortID="824098953" Type="SoundFX">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Pitch" Type="int32">
+									<RTPCList>
+										<RTPC Name="" ID="{AA2B36EA-AB60-4B05-8646-8D2CCCE6B312}" ShortID="858396948">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<ObjectRef Name="TB_Speed" ID="{D150D977-91B4-4C5B-864A-FFB5F6F3DC5E}" WorkUnitID="{C2507867-FA30-457D-855B-6184727B5731}"/>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{F020CDBA-9151-4E16-9588-10E636DC31EC}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="65537"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>-3296</YPos>
+														<Flags>5</Flags>
+													</Point>
+													<Point>
+														<XPos>0.02128</XPos>
+														<YPos>-1778</YPos>
+														<Flags>0</Flags>
+													</Point>
+													<Point>
+														<XPos>0.33978</XPos>
+														<YPos>-20</YPos>
+														<Flags>0</Flags>
+													</Point>
+													<Point>
+														<XPos>0.89599</XPos>
+														<YPos>1014</YPos>
+														<Flags>0</Flags>
+													</Point>
+													<Point>
+														<XPos>1</XPos>
+														<YPos>1364</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
+									</RTPCList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<RTPCList>
+										<RTPC Name="" ID="{87DFE547-FF91-44B5-AA04-5DC5D52933EB}" ShortID="626379300">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<ObjectRef Name="TB_Speed" ID="{D150D977-91B4-4C5B-864A-FFB5F6F3DC5E}" WorkUnitID="{C2507867-FA30-457D-855B-6184727B5731}"/>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{CA3275BD-D437-473A-B691-FC9C3CDB4406}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="3"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>-200</YPos>
+														<Flags>5</Flags>
+													</Point>
+													<Point>
+														<XPos>0.02244</XPos>
+														<YPos>-4.08308</YPos>
+														<Flags>0</Flags>
+													</Point>
+													<Point>
+														<XPos>0.8188482</XPos>
+														<YPos>-2.34251</YPos>
+														<Flags>0</Flags>
+													</Point>
+													<Point>
+														<XPos>1</XPos>
+														<YPos>0</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
+									</RTPCList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+									<ObjectRef Name="Engine" ID="{0D067620-32A2-4402-AE6C-B677883AE1B8}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
 								</Reference>
 							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="bigDog_engineLoop_02" ID="{02B0B2A4-8329-42F7-873D-0B117ED60EA3}" ShortID="760794695">
+									<Language>SFX</Language>
+									<AudioFile>bigDog_engineLoop_02.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="bigDog_engineLoop_02" ID="{02B0B2A4-8329-42F7-873D-0B117ED60EA3}" Platform="Linked"/>
+							</ActiveSourceList>
 						</Sound>
 						<Sound Name="TB_engineStop_01" ID="{DA7763B3-0468-4C18-BE9C-90A5941A1931}" ShortID="1059126076" Type="SoundFX">
 							<ReferenceList>
@@ -34,6 +127,15 @@
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
 								</Reference>
 							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="bigDog_engineStop_01" ID="{CE25D162-602A-42C3-807D-ADF66061274A}" ShortID="456602285">
+									<Language>SFX</Language>
+									<AudioFile>bigDog_engineStop_01.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="bigDog_engineStop_01" ID="{CE25D162-602A-42C3-807D-ADF66061274A}" Platform="Linked"/>
+							</ActiveSourceList>
 						</Sound>
 						<Sound Name="TB_collision_metal_01" ID="{6C3A4298-75C1-4523-9FCB-62537693C630}" ShortID="685252285" Type="SoundFX">
 							<ReferenceList>
