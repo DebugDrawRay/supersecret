@@ -16,15 +16,25 @@ MonoBehaviour:
   - PhysicalPath: Events/Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{B8A46AB6-2F4D-4D8E-9966-0D58756EA65B}'
-    m_lastTimePsrt1: 860024704
-    m_lastTimePart2: -1999416897
-    List: []
+    m_lastTimePsrt1: 1540220928
+    m_lastTimePart2: -1999416891
+    List:
+    - Name: musicStart
+      Path: Default Work Unit/musicStart
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: musicStart
+        ObjectType: 3
+      ID: 1122283870
+      Guid: 30e6e018374f49478712a2c05703bbb4
+      maxAttenuation: 0
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy/Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{F69B6880-7A98-480E-A1F8-155013E2E0EB}'
-    m_lastTimePsrt1: 860024704
-    m_lastTimePart2: -1999416897
+    m_lastTimePsrt1: 890220928
+    m_lastTimePart2: -1999416891
     List: []
   StateWwu:
   - PhysicalPath: States/Default Work Unit.wwu
@@ -44,10 +54,22 @@ MonoBehaviour:
   - PhysicalPath: SoundBanks/Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{DE2F07D6-4163-45D8-ACD9-5B43F8C99311}'
-    m_lastTimePsrt1: 860024704
-    m_lastTimePart2: -1999416897
-    List: []
-  ExpandedItems: []
+    m_lastTimePsrt1: 1540220928
+    m_lastTimePart2: -1999416891
+    List:
+    - Name: MAIN
+      Path: Default Work Unit/MAIN
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: MAIN
+        ObjectType: 7
+      ID: -1133058374
+      Guid: 486f85446b54bc41b2674d123b2e8653
+  ExpandedItems:
+  - /Wwise
+  - /Wwise/Events
+  - /Wwise/Events/Default Work Unit
   m_lastPopulateTimePsrt1: 0
   m_lastPopulateTimePart2: 0
   autoPopulateEnabled: 1
