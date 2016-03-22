@@ -4,17 +4,11 @@ using System.Collections.Generic;
 [System.Serializable]
 public class PlayerAttachment : ScriptableObject
 {
-    public enum slots
-    {
-        Head,
-        Body,
-        Bike,
-        Left,
-        Right
-    }
-
-    public slots slotType;
-    public Material[] spriteMaterials;
+    public PlayerSkins.Bike bikeSkin;
+    public PlayerSkins.Body bodySkin;
+    public PlayerSkins.Head headSkin;
+    public PlayerSkins.Left leftSkin;
+    public PlayerSkins.Right rightSkin;
 
     [System.Serializable]
     public class InteractionProperties
