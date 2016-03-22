@@ -31,11 +31,7 @@
 								</Property>
 							</PropertyList>
 						</Bus>
-						<Bus Name="Enemies" ID="{F1AE47E9-F9FF-4A4B-B2EB-C91842F800A6}">
-							<ChildrenList>
-								<Bus Name="EnemyMovement" ID="{47119CE7-7753-4134-9BDC-1AF559061AD9}"/>
-							</ChildrenList>
-						</Bus>
+						<Bus Name="Enemies" ID="{F1AE47E9-F9FF-4A4B-B2EB-C91842F800A6}"/>
 					</ChildrenList>
 				</Bus>
 				<Bus Name="Master Secondary Bus" ID="{D2E0BC7E-7B3F-4FFE-A670-FAE02761B631}"/>
