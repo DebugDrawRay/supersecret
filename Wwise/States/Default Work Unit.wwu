@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{207383B9-622B-4140-AD2D-542630167912}" SchemaVersion="70">
 	<States>
-		<WorkUnit Name="Default Work Unit" ID="{207383B9-622B-4140-AD2D-542630167912}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{207383B9-622B-4140-AD2D-542630167912}" PersistMode="Standalone">
+			<ChildrenList>
+				<StateGroup Name="Skid" ID="{6AF8762B-B5D6-4D0C-B6FD-E109A94CCB93}">
+					<PropertyList>
+						<Property Name="DefaultTransitionTime" Type="Real64" Value="0.2"/>
+					</PropertyList>
+					<ChildrenList>
+						<State Name="None" ID="{90FFBD9E-F048-4447-B40E-63532BE38CCE}"/>
+						<State Name="On" ID="{C77A1EBD-D495-48D4-B55A-D0AB1D441AFD}"/>
+						<State Name="Off" ID="{02B33C46-BF0F-4A37-8670-578344187EFF}"/>
+					</ChildrenList>
+					<TransitionList>
+						<Transition>
+							<StartState Name="Off" ID="{02B33C46-BF0F-4A37-8670-578344187EFF}"/>
+							<EndState Name="On" ID="{C77A1EBD-D495-48D4-B55A-D0AB1D441AFD}"/>
+							<Time>0.01</Time>
+							<IsShared>false</IsShared>
+						</Transition>
+					</TransitionList>
+				</StateGroup>
+			</ChildrenList>
+		</WorkUnit>
 	</States>
 </WwiseDocument>

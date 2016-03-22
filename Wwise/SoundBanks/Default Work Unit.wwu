@@ -6,7 +6,8 @@
 				<SoundBank Name="MAIN" ID="{44856F48-546B-41BC-B267-4D123B2E8653}">
 					<ObjectInclusionList>
 						<ObjectRef Name="musicStart" ID="{18E0E630-4F37-4749-8712-A2C05703BBB4}" WorkUnitID="{B8A46AB6-2F4D-4D8E-9966-0D58756EA65B}" Filter="7" Origin="Manual"/>
-						<ObjectRef Name="TB_tireSkid" ID="{96DEEA96-4BDE-4D3F-BE17-9F735AB6155A}" WorkUnitID="{B8A46AB6-2F4D-4D8E-9966-0D58756EA65B}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="TB_tireSkidShort" ID="{F3855633-0FFB-47F0-BD40-1930D02FE602}" WorkUnitID="{B8A46AB6-2F4D-4D8E-9966-0D58756EA65B}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="TB_tireSkidLong" ID="{96DEEA96-4BDE-4D3F-BE17-9F735AB6155A}" WorkUnitID="{B8A46AB6-2F4D-4D8E-9966-0D58756EA65B}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="TB_collisionMetal" ID="{67F34E9C-EAC6-4690-B76A-74078F3974F6}" WorkUnitID="{B8A46AB6-2F4D-4D8E-9966-0D58756EA65B}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="TB_engineStart" ID="{E9049DC1-6368-461B-8EE3-608AFA527DFE}" WorkUnitID="{B8A46AB6-2F4D-4D8E-9966-0D58756EA65B}" Filter="7" Origin="Manual"/>
 					</ObjectInclusionList>
