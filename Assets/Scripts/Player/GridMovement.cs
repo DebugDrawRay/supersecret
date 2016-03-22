@@ -203,6 +203,7 @@ public class GridMovement : MonoBehaviour
         for (float i = 0; i <= time; i += Time.deltaTime)
         {
             float moveTime = i / time;
+			Debug.Log(time);
             transform.localPosition = Vector3.Lerp(lerpStartPostion, newPosition, moveTime);
             yield return null;
         }

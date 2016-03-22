@@ -62,6 +62,9 @@
 									</RTPCList>
 								</Property>
 								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-15</Value>
+									</ValueList>
 									<RTPCList>
 										<RTPC Name="" ID="{87DFE547-FF91-44B5-AA04-5DC5D52933EB}" ShortID="626379300">
 											<ReferenceList>
@@ -105,7 +108,7 @@
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="Engine" ID="{0D067620-32A2-4402-AE6C-B677883AE1B8}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+									<ObjectRef Name="TB" ID="{74978DFD-AF83-4176-872B-7EE307C48D2A}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -136,16 +139,6 @@
 							<ActiveSourceList>
 								<ActiveSource Name="bigDog_engineStop_01" ID="{CE25D162-602A-42C3-807D-ADF66061274A}" Platform="Linked"/>
 							</ActiveSourceList>
-						</Sound>
-						<Sound Name="TB_collision_metal_01" ID="{6C3A4298-75C1-4523-9FCB-62537693C630}" ShortID="685252285" Type="SoundFX">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
-								</Reference>
-							</ReferenceList>
 						</Sound>
 						<Folder Name="Movement" ID="{3E1C753D-8772-412D-A087-83DD9BF2E709}" ShortID="129050584">
 							<ChildrenList>
@@ -241,6 +234,246 @@
 								</Sound>
 							</ChildrenList>
 						</Folder>
+						<RandomSequenceContainer Name="TB_collisionMetal" ID="{3AF77206-A869-42CB-AAE0-B3B6D7F5635A}" ShortID="828547634">
+							<PropertyList>
+								<Property Name="HdrActiveRange" Type="Real64">
+									<ValueList>
+										<Value>20</Value>
+									</ValueList>
+								</Property>
+								<Property Name="HdrEnableEnvelope" Type="bool" Value="True"/>
+								<Property Name="HdrEnvelopeSensitivity" Type="Real64" Value="63"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>10</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="TB" ID="{74978DFD-AF83-4176-872B-7EE307C48D2A}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="TB_collision_metal_01" ID="{6C3A4298-75C1-4523-9FCB-62537693C630}" ShortID="685252285" Type="SoundFX">
+									<PropertyList>
+										<Property Name="Highpass" Type="int16">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{AA8B47BE-C823-406A-A88C-600216554141}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="35"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="Lowpass" Type="int16">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{E7C7B31E-46EB-442E-8609-30B4F20F4050}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="20"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{07B2EF34-5C0D-4334-8287-8C8E60271927}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="300"/>
+															<Property Name="Min" Type="Real64" Value="-400"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{9FEA00D3-210E-400C-A69E-7C18E842FFBF}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Min" Type="Real64" Value="-2"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="TB" ID="{74978DFD-AF83-4176-872B-7EE307C48D2A}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="bigDog_collision_02" ID="{292DE340-EA7E-4A4D-855C-8E5D97C08642}" ShortID="3956943">
+											<Language>SFX</Language>
+											<AudioFile>bigDog_collision_02.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="bigDog_collision_02" ID="{292DE340-EA7E-4A4D-855C-8E5D97C08642}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="TB_collision_metal_02" ID="{E7390C69-7B3E-4A74-AE99-2F77224860B7}" ShortID="680625528" Type="SoundFX">
+									<PropertyList>
+										<Property Name="Highpass" Type="int16">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{C47F265D-1C2F-4340-B740-FF6D4F58477B}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="35"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="Lowpass" Type="int16">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{D7CAB655-5A38-494A-A7A1-894C563ED857}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="20"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{6F4C5D9C-9BA7-47FA-A6CC-3D870550001A}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="300"/>
+															<Property Name="Min" Type="Real64" Value="-400"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{7254F3C6-F840-4661-BEFA-DFA8ECBF6506}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Min" Type="Real64" Value="-2"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="bigDog_collision_01" ID="{34188D72-A7EA-4F4F-A289-B11C3FD4CBA5}" ShortID="828596493">
+											<Language>SFX</Language>
+											<AudioFile>bigDog_collision_01.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="bigDog_collision_01" ID="{34188D72-A7EA-4F4F-A289-B11C3FD4CBA5}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="TB_collision_metal_03" ID="{A387E6FA-8316-45F3-923D-09AD8F031754}" ShortID="837641211" Type="SoundFX">
+									<PropertyList>
+										<Property Name="Highpass" Type="int16">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{5579135F-61F0-4C54-A71B-11E07650E4B8}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="35"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="Lowpass" Type="int16">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{CAD4743A-8CC2-4D5D-B141-C436A21BD44E}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="20"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{D50E0028-B228-4E9E-9B51-539F3C40292E}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="300"/>
+															<Property Name="Min" Type="Real64" Value="-400"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{A02B6F5C-AC1C-4DFB-BC2A-656AB477F200}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Min" Type="Real64" Value="-2"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="bigDog_collision_04" ID="{57F88687-3ACC-4813-9D07-D66508EDD3D0}" ShortID="333088022">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.574094583128656"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.737063368016791"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>bigDog_collision_04.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="bigDog_collision_04" ID="{57F88687-3ACC-4813-9D07-D66508EDD3D0}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Ambience" ID="{F8C20090-E6D2-469D-AC72-511BF050EF04}" ShortID="194996149">

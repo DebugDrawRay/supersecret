@@ -28,6 +28,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="TB_collisionMetal" ID="{67F34E9C-EAC6-4690-B76A-74078F3974F6}">
+					<ChildrenList>
+						<Action Name="Play" ID="{0DA8C738-F773-497C-9893-3A76DBDFE15A}" ShortID="121355024" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{4631E712-84A5-4D45-8419-7F13728481AC}" Global="false">
+									<ObjectRef Name="TB_collisionMetal" ID="{3AF77206-A869-42CB-AAE0-B3B6D7F5635A}" WorkUnitID="{FFDDB849-0196-4EA1-AB43-0B400A594E4C}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

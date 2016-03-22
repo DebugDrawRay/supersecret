@@ -9,7 +9,7 @@
 							<PropertyList>
 								<Property Name="BusVolume" Type="Real64">
 									<ValueList>
-										<Value>-4</Value>
+										<Value>-9</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -23,19 +23,13 @@
 						</Bus>
 						<Bus Name="Ambience" ID="{DD6BF400-5C0D-44A8-BAEC-4938921ACAFC}"/>
 						<Bus Name="TB" ID="{74978DFD-AF83-4176-872B-7EE307C48D2A}">
-							<ChildrenList>
-								<Bus Name="Engine" ID="{0D067620-32A2-4402-AE6C-B677883AE1B8}">
-									<PropertyList>
-										<Property Name="BusVolume" Type="Real64">
-											<ValueList>
-												<Value>-5</Value>
-											</ValueList>
-										</Property>
-									</PropertyList>
-								</Bus>
-								<Bus Name="Collisions" ID="{9890496C-55A8-4A9B-8451-3AF58B62F971}"/>
-								<Bus Name="TBMovement" ID="{A7F6DC85-2E54-4B22-99CF-B45B21E29504}"/>
-							</ChildrenList>
+							<PropertyList>
+								<Property Name="HdrEnable" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 						</Bus>
 						<Bus Name="Enemies" ID="{F1AE47E9-F9FF-4A4B-B2EB-C91842F800A6}">
 							<ChildrenList>
