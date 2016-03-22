@@ -10,18 +10,30 @@
 							<Position X="0" Y="0"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Music" ID="{CFF6FC16-89F0-41CC-97D5-A4407E0CDCE1}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="TB_engineStart" ID="{E9049DC1-6368-461B-8EE3-608AFA527DFE}" WorkUnitID="{B8A46AB6-2F4D-4D8E-9966-0D58756EA65B}"/>
 							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="TB" ID="{74978DFD-AF83-4176-872B-7EE307C48D2A}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+							<Position X="1" Y="1"/>
 						</Module>
 						<Module>
 							<ObjectRef Name="TB_collisionMetal" ID="{67F34E9C-EAC6-4690-B76A-74078F3974F6}" WorkUnitID="{B8A46AB6-2F4D-4D8E-9966-0D58756EA65B}"/>
 							<Position X="2" Y="0"/>
 						</Module>
+						<Module>
+							<ObjectRef Name="TB_engineLoop_01" ID="{A7068037-CE30-435F-9A75-F4DAD76D3933}" WorkUnitID="{FFDDB849-0196-4EA1-AB43-0B400A594E4C}"/>
+							<Position X="2" Y="1"/>
+						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
 						<RTPCValue>
 							<GameParameterRef Name="TB_Speed" ID="{D150D977-91B4-4C5B-864A-FFB5F6F3DC5E}"/>
-							<Value>1</Value>
+							<Value>0</Value>
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true"/>

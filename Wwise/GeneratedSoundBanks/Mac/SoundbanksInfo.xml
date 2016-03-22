@@ -30,19 +30,19 @@
 				</File>
 				<File Id="333088022" Language="SFX">
 					<ShortName>bigDog_collision_04.wav</ShortName>
-					<Path>SFX/bigDog_collision_04_C1FFB4DB.wem</Path>
+					<Path>SFX/bigDog_collision_04_69E86630.wem</Path>
 				</File>
 				<File Id="508092721" Language="SFX">
 					<ShortName>IntroLullaby_chorus_v2.wav</ShortName>
 					<Path>SFX/IntroLullaby_chorus_v2_4B8CC0C5.wem</Path>
 				</File>
-				<File Id="760794695" Language="SFX">
-					<ShortName>bigDog_engineLoop_02.wav</ShortName>
-					<Path>SFX/bigDog_engineLoop_02_4B8CC0C5.wem</Path>
-				</File>
 				<File Id="828596493" Language="SFX">
 					<ShortName>bigDog_collision_01.wav</ShortName>
 					<Path>SFX/bigDog_collision_01_22DF8E55.wem</Path>
+				</File>
+				<File Id="840237749" Language="SFX">
+					<ShortName>TB_EngineLoop_v01.wav</ShortName>
+					<Path>SFX/TB_EngineLoop_v01_4B8CC0C5.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 		</SoundBank>
