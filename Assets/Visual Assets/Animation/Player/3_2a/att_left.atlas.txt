@@ -1,0 +1,55 @@
+
+att_left.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+att_health_r_1
+  rotate: false
+  xy: 444, 32
+  size: 159, 476
+  orig: 159, 476
+  offset: 0, 0
+  index: -1
+att_health_r_2
+  rotate: false
+  xy: 605, 115
+  size: 133, 393
+  orig: 133, 393
+  offset: 0, 0
+  index: -1
+att_health_r_3
+  rotate: false
+  xy: 740, 168
+  size: 139, 340
+  orig: 139, 340
+  offset: 0, 0
+  index: -1
+att_health_r_4
+  rotate: false
+  xy: 881, 200
+  size: 139, 308
+  orig: 139, 308
+  offset: 0, 0
+  index: -1
+att_health_r_5
+  rotate: true
+  xy: 740, 49
+  size: 117, 248
+  orig: 117, 248
+  offset: 0, 0
+  index: -1
+att_hubcap
+  rotate: false
+  xy: 2, 2
+  size: 219, 506
+  orig: 219, 506
+  offset: 0, 0
+  index: -1
+att_hubcap_s2
+  rotate: false
+  xy: 223, 2
+  size: 219, 506
+  orig: 219, 506
+  offset: 0, 0
+  index: -1

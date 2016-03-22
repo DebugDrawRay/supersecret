@@ -97,7 +97,7 @@ public class AutoGridMovement : MonoBehaviour
         for(int i = 1; i < path.Count; ++i)
         {
             Vector3 startPosition = transform.localPosition;
-            Vector3 nextPosition = targetGrid.GridToWorldPoisiton(path[i]);
+            Vector3 nextPosition = targetGrid.GridToWorldPosition(path[i]);
             for (float t = 0; t <= time; t += Time.deltaTime)
             {
                 float moveTime = t / time;
@@ -113,7 +113,7 @@ public class AutoGridMovement : MonoBehaviour
     {
         isMoving = true;
         Vector3 startPosition = transform.localPosition;
-        Vector3 nextPosition = targetGrid.GridToWorldPoisiton(point);
+        Vector3 nextPosition = targetGrid.GridToWorldPosition(point);
         for (float t = 0; t <= time; t += Time.deltaTime)
         {
             float moveTime = t / time;

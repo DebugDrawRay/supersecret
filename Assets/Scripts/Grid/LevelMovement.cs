@@ -22,7 +22,7 @@ public class LevelMovement : MonoBehaviour
         PlayerEventManager.CollisionReaction += ResetSpeed;
     }
 
-    void FixedUpdate()
+    void Update()
     {
         if (isMoving)
         {
