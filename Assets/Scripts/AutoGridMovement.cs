@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class AutoGridMovement : MonoBehaviour
 {
     [Header("Base Movement Properties")]
-    public float baseSpeed = .25f;
+    public float baseSpeed = .5f;
     public float baseAgility = .5f;
     public float speedRange = .5f;
     public float agilityRange = .5f;
@@ -94,7 +94,6 @@ public class AutoGridMovement : MonoBehaviour
     IEnumerator MoveAcrossPath(List<Vector2> path, float time)
     {
         isMoving = true;
-        time = time * path.Count;
         for(int i = 1; i < path.Count; ++i)
         {
             Vector3 startPosition = transform.localPosition;
