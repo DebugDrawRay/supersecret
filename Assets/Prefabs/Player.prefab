@@ -127,6 +127,7 @@ MonoBehaviour:
   power: 0
   luck: 0
   weight: 0
+  invulnerable: 0
 --- !u!114 &11427766
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -142,6 +143,8 @@ MonoBehaviour:
   movement: {fileID: 11429758}
   stats: {fileID: 11413378}
   animation: {fileID: 0}
+  equipment: {fileID: 0}
+  invulTime: 0
 --- !u!114 &11429758
 MonoBehaviour:
   m_ObjectHideFlags: 1

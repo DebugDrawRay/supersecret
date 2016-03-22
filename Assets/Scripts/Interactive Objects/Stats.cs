@@ -3,6 +3,16 @@ using System.Collections;
 
 public class Stats : MonoBehaviour
 {
+    public enum stats
+    {
+        health = 0,
+        maxHealth,
+        speed,
+        agility,
+        power,
+        luck
+    }
+
     [Range(0,1)]
     public float maxHealth;
     private float defaultMaxHealth;

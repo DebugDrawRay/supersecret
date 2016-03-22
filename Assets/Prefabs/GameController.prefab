@@ -43,7 +43,7 @@ MonoBehaviour:
   currentState: 0
   gridSystem: {fileID: 175890, guid: 8c2ce00b53dd6f2469cca5f00e527104, type: 2}
   startPosition: {x: 0, y: 0, z: 0}
-  playerCharacter: {fileID: 197394, guid: acef4599d7c31f942a256eb73468ef20, type: 2}
+  playerCharacter: {fileID: 193790, guid: 175175dc273078e479955695d18f512a, type: 2}
   mainCamera: {fileID: 165910, guid: 880d436596e2a4b49aead0cf214d9390, type: 2}
   builder: {fileID: 11422248}
 --- !u!114 &11422248

@@ -3,16 +3,7 @@ using System.Collections;
 
 public class InteractionSource : MonoBehaviour
 {
-    public enum stats
-    {
-        health = 0,
-        maxHealth,
-        speed,
-        agility,
-        power,
-        luck
-    }
-    public stats targetStat;
+    public Stats.stats targetStat;
 
     private string[] availableStats = new string[]{"health", "maxHealth", "speed", "agility", "power", "luck"};
     private string stat;

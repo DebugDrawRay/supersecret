@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     public GridMovement movement;
     public Stats stats;
     public PlayerAnimationController animation;
+    public EquipmentController equipment;
 
     [Header("Collision Properties")]
     public float invulTime;
@@ -63,6 +64,7 @@ public class PlayerController : MonoBehaviour
     {
         gridSystem = grid;
         transform.SetParent(gridSystem.transform);
+        equipment.Init();
 
         movement.Init(stats, grid, animation);
 
