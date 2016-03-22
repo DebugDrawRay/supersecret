@@ -36,6 +36,10 @@
 					<ShortName>IntroLullaby_chorus_v2.wav</ShortName>
 					<Path>SFX/IntroLullaby_chorus_v2_4B8CC0C5.wem</Path>
 				</File>
+				<File Id="771707133" Language="SFX">
+					<ShortName>tires_rolling_on_dirt_03_loop.wav</ShortName>
+					<Path>SFX/tires_rolling_on_dirt_03_loop_4B8CC0C5.wem</Path>
+				</File>
 				<File Id="828596493" Language="SFX">
 					<ShortName>bigDog_collision_01.wav</ShortName>
 					<Path>SFX/bigDog_collision_01_22DF8E55.wem</Path>
