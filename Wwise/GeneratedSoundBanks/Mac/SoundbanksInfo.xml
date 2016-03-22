@@ -22,11 +22,16 @@
 				<Event Id="1122283870" Name="musicStart"/>
 				<Event Id="832369107" Name="TB_collisionMetal"/>
 				<Event Id="2710852396" Name="TB_engineStart"/>
+				<Event Id="1343887229" Name="TB_tireSkid"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
 				<File Id="3956943" Language="SFX">
 					<ShortName>bigDog_collision_02.wav</ShortName>
 					<Path>SFX/bigDog_collision_02_22DF8E55.wem</Path>
+				</File>
+				<File Id="189355334" Language="SFX">
+					<ShortName>tire_skid_dirt03.wav</ShortName>
+					<Path>SFX/tire_skid_dirt03_7E669585.wem</Path>
 				</File>
 				<File Id="333088022" Language="SFX">
 					<ShortName>bigDog_collision_04.wav</ShortName>

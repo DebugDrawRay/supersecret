@@ -1,6 +1,7 @@
 Event	ID	Name			Wwise Object Path	Notes
 	832369107	TB_collisionMetal			\Default Work Unit\TB_collisionMetal	
 	1122283870	musicStart			\Default Work Unit\musicStart	
+	1343887229	TB_tireSkid			\Default Work Unit\TB_tireSkid	
 	2710852396	TB_engineStart			\Default Work Unit\TB_engineStart	
 
 Switch Group	ID	Name			Wwise Object Path	Notes
@@ -15,6 +16,7 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	3956943	TB_collision_metal_01	Z:\Volumes\Projects\Repositories\supersecret\Wwise\.cache\Mac\SFX\bigDog_collision_02_22DF8E55.wem		\Actor-Mixer Hierarchy\Default Work Unit\TB\TB_collisionMetal\TB_collision_metal_01		171224
+	189355334	TB_skid_dirt_01	Z:\Volumes\Projects\Repositories\supersecret\Wwise\.cache\Mac\SFX\tire_skid_dirt03_7E669585.wem		\Actor-Mixer Hierarchy\Default Work Unit\TB\TireSkids\TB_skid_dirt_01		70426
 	333088022	TB_collision_metal_03	Z:\Volumes\Projects\Repositories\supersecret\Wwise\.cache\Mac\SFX\bigDog_collision_04_69E86630.wem		\Actor-Mixer Hierarchy\Default Work Unit\TB\TB_collisionMetal\TB_collision_metal_03		130224
 	508092721	IntroLullaby_chorus_v2	Z:\Volumes\Projects\Repositories\supersecret\Wwise\.cache\Mac\SFX\IntroLullaby_chorus_v2_4B8CC0C5.wem		\Interactive Music Hierarchy\Default Work Unit\mus_IntroLullaby\IntroLullaby_chorus_v2\IntroLullaby_chorus_v2		6518252
 	771707133	TB_tireLoop_dirt_01	Z:\Volumes\Projects\Repositories\supersecret\Wwise\.cache\Mac\SFX\tires_rolling_on_dirt_03_loop_4B8CC0C5.wem		\Actor-Mixer Hierarchy\Default Work Unit\TB\TireLoops\tireLoopSwitch\TB_tireLoop_dirt_01		312332

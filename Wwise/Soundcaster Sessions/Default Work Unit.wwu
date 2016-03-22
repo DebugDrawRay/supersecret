@@ -29,11 +29,15 @@
 							<ObjectRef Name="TB_engineLoop_01" ID="{A7068037-CE30-435F-9A75-F4DAD76D3933}" WorkUnitID="{FFDDB849-0196-4EA1-AB43-0B400A594E4C}"/>
 							<Position X="2" Y="1"/>
 						</Module>
+						<Module>
+							<ObjectRef Name="TB_tireSkid" ID="{96DEEA96-4BDE-4D3F-BE17-9F735AB6155A}" WorkUnitID="{B8A46AB6-2F4D-4D8E-9966-0D58756EA65B}"/>
+							<Position X="3" Y="1"/>
+						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
 						<RTPCValue>
 							<GameParameterRef Name="TB_Speed" ID="{D150D977-91B4-4C5B-864A-FFB5F6F3DC5E}"/>
-							<Value>1</Value>
+							<Value>0.93</Value>
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true"/>

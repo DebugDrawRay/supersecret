@@ -46,6 +46,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="TB_tireSkid" ID="{96DEEA96-4BDE-4D3F-BE17-9F735AB6155A}">
+					<ChildrenList>
+						<Action Name="Play" ID="{BEF2B75E-5FB0-4DF2-80A0-8F542AE29727}" ShortID="684083981" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{C84E6CFE-0BB0-49FA-87EF-1CD0DDFF51B0}" Global="false">
+									<ObjectRef Name="TB_skid_dirt_01" ID="{86527D30-B6A4-492B-B514-65E9A14BC181}" WorkUnitID="{FFDDB849-0196-4EA1-AB43-0B400A594E4C}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
