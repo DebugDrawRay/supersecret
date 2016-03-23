@@ -114,7 +114,7 @@ public class Grid : MonoBehaviour
         transform.GetComponent<MeshFilter>().mesh.CombineMeshes(combine);*/
     }
 
-    public Vector3 GridToWorldPoisiton(Vector2 position)
+    public Vector3 GridToWorldPosition(Vector2 position)
     {
         int newX = Mathf.RoundToInt(position.x);
         int newY = Mathf.RoundToInt(position.y);

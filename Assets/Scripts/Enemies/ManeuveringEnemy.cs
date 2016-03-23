@@ -72,7 +72,7 @@ public class ManeuveringEnemy : Enemy
                 break;
             case state.Chasing:
                 chaseTime -= Time.deltaTime;
-                Vector2 targetPos = target.movement.currentGridPosition;
+                Vector2 targetPos = target.movement.targetGridPosition;
                 movement.MoveToDestination(targetPos);
                 if (chaseTime <= 0)
                 {

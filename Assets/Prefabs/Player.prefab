@@ -196,6 +196,7 @@ MonoBehaviour:
     m_RotationOrder: 0
   minTimeToMove: 0.5
   maxTimeToMove: 1.5
+  destinationUpdatePeriod: 0
 --- !u!114 &11457598
 MonoBehaviour:
   m_ObjectHideFlags: 1

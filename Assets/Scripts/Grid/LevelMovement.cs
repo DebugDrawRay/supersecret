@@ -23,7 +23,7 @@ public class LevelMovement : MonoBehaviour
 		AkSoundEngine.PostEvent("TB_engineStart", this.gameObject);
     }
 
-    void FixedUpdate()
+    void Update()
     {
         if (isMoving)
         {
