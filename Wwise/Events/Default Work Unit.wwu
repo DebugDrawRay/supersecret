@@ -46,35 +46,9 @@
 						<Action Name="Play" ID="{0DA8C738-F773-497C-9893-3A76DBDFE15A}" ShortID="121355024" Type="Play" Scope="One" Global="false">
 							<ElementList>
 								<Element ID="{4631E712-84A5-4D45-8419-7F13728481AC}" Global="false">
-									<ObjectRef Name="TB_collisionMetal" ID="{3AF77206-A869-42CB-AAE0-B3B6D7F5635A}" WorkUnitID="{FFDDB849-0196-4EA1-AB43-0B400A594E4C}"/>
+									<ObjectRef Name="TB_collisionMetal" ID="{6DAA812D-B6F3-4890-874A-F770270F2214}" WorkUnitID="{FFDDB849-0196-4EA1-AB43-0B400A594E4C}"/>
 								</Element>
 							</ElementList>
-						</Action>
-					</ChildrenList>
-				</Event>
-				<Event Name="TB_tireSkidLong" ID="{96DEEA96-4BDE-4D3F-BE17-9F735AB6155A}">
-					<ChildrenList>
-						<Action Name="Play" ID="{BEF2B75E-5FB0-4DF2-80A0-8F542AE29727}" ShortID="684083981" Type="Play" Scope="One" Global="false">
-							<ElementList>
-								<Element ID="{C84E6CFE-0BB0-49FA-87EF-1CD0DDFF51B0}" Global="false">
-									<ObjectRef Name="TB_skid_dirt_long" ID="{BC72F2FB-7442-44E2-9EC7-6B14C2D69264}" WorkUnitID="{FFDDB849-0196-4EA1-AB43-0B400A594E4C}"/>
-								</Element>
-							</ElementList>
-						</Action>
-						<Action Name="Set State" ID="{1519758A-696B-4E84-A5AA-F8E9675E41AA}" ShortID="388316840" Type="SetState" Scope="All" Global="true">
-							<SetItemParam>
-								<Group Name="Skid" ID="{6AF8762B-B5D6-4D0C-B6FD-E109A94CCB93}"/>
-								<GroupItem Name="On" ID="{C77A1EBD-D495-48D4-B55A-D0AB1D441AFD}"/>
-							</SetItemParam>
-						</Action>
-						<Action Name="Set State" ID="{3CF9DF4E-FC64-4CD9-84A8-ECE05DF67AB6}" ShortID="861632736" Type="SetState" Scope="All" Global="true">
-							<PropertyList>
-								<Property Name="Delay" Type="Real64" Value="0.5"/>
-							</PropertyList>
-							<SetItemParam>
-								<Group Name="Skid" ID="{6AF8762B-B5D6-4D0C-B6FD-E109A94CCB93}"/>
-								<GroupItem Name="Off" ID="{02B33C46-BF0F-4A37-8670-578344187EFF}"/>
-							</SetItemParam>
 						</Action>
 					</ChildrenList>
 				</Event>
@@ -104,6 +78,47 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="TB_collisionRocks" ID="{292488E9-415A-4849-BE81-68D8C2650C49}">
+					<ChildrenList>
+						<Action Name="Play" ID="{1C337594-3C7C-4296-B071-DBFA814CF9F9}" ShortID="675476426" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{B5687A34-4C76-46F7-BB7A-01836CD95044}" Global="false">
+									<ObjectRef Name="TB_collisionRocks" ID="{39AF6222-B3D5-4573-9B0C-F4E5B6E5F77E}" WorkUnitID="{FFDDB849-0196-4EA1-AB43-0B400A594E4C}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Folder Name="_OLD" ID="{144DF3BB-568B-4748-827F-F393BBE16A5A}" ShortID="564735080">
+					<ChildrenList>
+						<Event Name="TB_tireSkidLong" ID="{96DEEA96-4BDE-4D3F-BE17-9F735AB6155A}">
+							<ChildrenList>
+								<Action Name="Play" ID="{BEF2B75E-5FB0-4DF2-80A0-8F542AE29727}" ShortID="684083981" Type="Play" Scope="One" Global="false">
+									<ElementList>
+										<Element ID="{C84E6CFE-0BB0-49FA-87EF-1CD0DDFF51B0}" Global="false">
+											<ObjectRef Name="TB_skid_dirt_long" ID="{BC72F2FB-7442-44E2-9EC7-6B14C2D69264}" WorkUnitID="{FFDDB849-0196-4EA1-AB43-0B400A594E4C}"/>
+										</Element>
+									</ElementList>
+								</Action>
+								<Action Name="Set State" ID="{1519758A-696B-4E84-A5AA-F8E9675E41AA}" ShortID="388316840" Type="SetState" Scope="All" Global="true">
+									<SetItemParam>
+										<Group Name="Skid" ID="{6AF8762B-B5D6-4D0C-B6FD-E109A94CCB93}"/>
+										<GroupItem Name="On" ID="{C77A1EBD-D495-48D4-B55A-D0AB1D441AFD}"/>
+									</SetItemParam>
+								</Action>
+								<Action Name="Set State" ID="{3CF9DF4E-FC64-4CD9-84A8-ECE05DF67AB6}" ShortID="861632736" Type="SetState" Scope="All" Global="true">
+									<PropertyList>
+										<Property Name="Delay" Type="Real64" Value="0.5"/>
+									</PropertyList>
+									<SetItemParam>
+										<Group Name="Skid" ID="{6AF8762B-B5D6-4D0C-B6FD-E109A94CCB93}"/>
+										<GroupItem Name="Off" ID="{02B33C46-BF0F-4A37-8670-578344187EFF}"/>
+									</SetItemParam>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
