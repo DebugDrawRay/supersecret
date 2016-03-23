@@ -22,7 +22,7 @@
 							</ReferenceList>
 						</Bus>
 						<Bus Name="Ambience" ID="{DD6BF400-5C0D-44A8-BAEC-4938921ACAFC}"/>
-						<Bus Name="TB" ID="{74978DFD-AF83-4176-872B-7EE307C48D2A}">
+						<Bus Name="TB_HDR" ID="{74978DFD-AF83-4176-872B-7EE307C48D2A}">
 							<PropertyList>
 								<Property Name="HdrEnable" Type="bool">
 									<ValueList>
@@ -32,6 +32,15 @@
 							</PropertyList>
 						</Bus>
 						<Bus Name="Enemies" ID="{F1AE47E9-F9FF-4A4B-B2EB-C91842F800A6}"/>
+						<Bus Name="TB_Movement" ID="{CBB0A1C8-958F-471E-BC69-0C1EBC115624}">
+							<PropertyList>
+								<Property Name="BusVolume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+						</Bus>
 					</ChildrenList>
 				</Bus>
 				<Bus Name="Master Secondary Bus" ID="{D2E0BC7E-7B3F-4FFE-A670-FAE02761B631}"/>

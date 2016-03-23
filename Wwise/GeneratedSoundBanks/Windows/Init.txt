@@ -8,10 +8,10 @@ State	ID	Name	State Group			Notes
 
 Audio Bus	ID	Name			Wwise Object Path	Notes
 	85412153	Ambience			\Default Work Unit\Master Audio Bus\Ambience	
-	223964144	EnemyMovement			\Default Work Unit\Master Audio Bus\Enemies\EnemyMovement	
 	805203703	Master Secondary Bus			\Default Work Unit\Master Secondary Bus	
-	1568083731	TB			\Default Work Unit\Master Audio Bus\TB	
+	1732220529	TB_Movement			\Default Work Unit\Master Audio Bus\TB_Movement	
 	2242381963	Enemies			\Default Work Unit\Master Audio Bus\Enemies	
+	3454891836	TB_HDR			\Default Work Unit\Master Audio Bus\TB_HDR	
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
 	3991942870	Music			\Default Work Unit\Master Audio Bus\Music	
 

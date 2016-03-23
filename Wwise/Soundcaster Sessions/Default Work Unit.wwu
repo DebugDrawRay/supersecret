@@ -38,7 +38,7 @@
 							<Position X="3" Y="1"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="TB" ID="{74978DFD-AF83-4176-872B-7EE307C48D2A}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+							<ObjectRef Name="TB_HDR" ID="{74978DFD-AF83-4176-872B-7EE307C48D2A}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
 							<Position X="3" Y="10"/>
 						</Module>
 					</ModuleList>

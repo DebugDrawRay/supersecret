@@ -30,33 +30,29 @@
 					<ShortName>bigDog_collision_02.wav</ShortName>
 					<Path>SFX/bigDog_collision_02_22DF8E55.wem</Path>
 				</File>
-				<File Id="35507947" Language="SFX">
-					<ShortName>tire_skid_dirt_detail.wav</ShortName>
-					<Path>SFX/tire_skid_dirt_detail_74343EFE.wem</Path>
-				</File>
 				<File Id="39581297" Language="SFX">
 					<ShortName>tire_skid_dirt_detail.wav</ShortName>
 					<Path>SFX/tire_skid_dirt_detail_50D5698E.wem</Path>
 				</File>
 				<File Id="54837830" Language="SFX">
 					<ShortName>tire_skid_dirt03.wav</ShortName>
-					<Path>SFX/tire_skid_dirt03_0EEA8F11.wem</Path>
+					<Path>SFX/tire_skid_dirt03_0CE8064A.wem</Path>
 				</File>
 				<File Id="189355334" Language="SFX">
 					<ShortName>tire_skid_dirt03.wav</ShortName>
 					<Path>SFX/tire_skid_dirt03_7E669585.wem</Path>
 				</File>
+				<File Id="241640635" Language="SFX">
+					<ShortName>tire_skid_dirt_detail_02.wav</ShortName>
+					<Path>SFX/tire_skid_dirt_detail_02_BA949CD2.wem</Path>
+				</File>
 				<File Id="283517202" Language="SFX">
 					<ShortName>tire_skid_dirt03.wav</ShortName>
-					<Path>SFX/tire_skid_dirt03_E8245BD1.wem</Path>
+					<Path>SFX/tire_skid_dirt03_9970FAA8.wem</Path>
 				</File>
 				<File Id="333088022" Language="SFX">
 					<ShortName>bigDog_collision_04.wav</ShortName>
 					<Path>SFX/bigDog_collision_04_69E86630.wem</Path>
-				</File>
-				<File Id="489050802" Language="SFX">
-					<ShortName>tire_skid_dirt_detail.wav</ShortName>
-					<Path>SFX/tire_skid_dirt_detail_8271DE85.wem</Path>
 				</File>
 				<File Id="508092721" Language="SFX">
 					<ShortName>IntroLullaby_chorus_v2.wav</ShortName>
@@ -66,10 +62,6 @@
 					<ShortName>tire_skid_dirt_detail_01.wav</ShortName>
 					<Path>SFX/tire_skid_dirt_detail_01_A5B00F59.wem</Path>
 				</File>
-				<File Id="672009246" Language="SFX">
-					<ShortName>tire_skid_dirt_detail_01.wav</ShortName>
-					<Path>SFX/tire_skid_dirt_detail_01_A5561432.wem</Path>
-				</File>
 				<File Id="697409659" Language="SFX">
 					<ShortName>tire_skid_dirt_detail.wav</ShortName>
 					<Path>SFX/tire_skid_dirt_detail_F1722B50.wem</Path>
@@ -77,6 +69,10 @@
 				<File Id="771707133" Language="SFX">
 					<ShortName>tires_rolling_on_dirt_03_loop.wav</ShortName>
 					<Path>SFX/tires_rolling_on_dirt_03_loop_4B8CC0C5.wem</Path>
+				</File>
+				<File Id="796289240" Language="SFX">
+					<ShortName>tire_skid_dirt_detail_02.wav</ShortName>
+					<Path>SFX/tire_skid_dirt_detail_02_EFDFF3B7.wem</Path>
 				</File>
 				<File Id="828596493" Language="SFX">
 					<ShortName>bigDog_collision_01.wav</ShortName>
@@ -88,7 +84,7 @@
 				</File>
 				<File Id="854569473" Language="SFX">
 					<ShortName>tire_skid_dirt03.wav</ShortName>
-					<Path>SFX/tire_skid_dirt03_5000B505.wem</Path>
+					<Path>SFX/tire_skid_dirt03_7289E5C5.wem</Path>
 				</File>
 				<File Id="901980060" Language="SFX">
 					<ShortName>tire_skid_dirt03.wav</ShortName>
@@ -97,6 +93,10 @@
 				<File Id="943461444" Language="SFX">
 					<ShortName>tire_skid_dirt03.wav</ShortName>
 					<Path>SFX/tire_skid_dirt03_65CCCA32.wem</Path>
+				</File>
+				<File Id="1020474679" Language="SFX">
+					<ShortName>tire_skid_dirt_detail_02.wav</ShortName>
+					<Path>SFX/tire_skid_dirt_detail_02_FE4A78F6.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 		</SoundBank>
