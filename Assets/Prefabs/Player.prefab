@@ -178,22 +178,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
-  timeCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: -0.8
-      outSlope: -0.8
-      tangentMode: 10
-    - time: 1
-      value: 0.2
-      inSlope: -0.8
-      outSlope: -0.8
-      tangentMode: 10
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
   minTimeToMove: 0.5
   maxTimeToMove: 1.5
   destinationUpdatePeriod: 0
