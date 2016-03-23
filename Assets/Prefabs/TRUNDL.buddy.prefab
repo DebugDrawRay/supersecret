@@ -291,7 +291,10 @@ MonoBehaviour:
   bodyAnim: {fileID: 11460768}
   bikeAnim: {fileID: 11471836}
   headAnim: {fileID: 11457916}
+  leftAnim: {fileID: 0}
+  rightAnim: {fileID: 0}
   lean: 0.57
+  inTopSpeed: 0
 --- !u!114 &11455174
 MonoBehaviour:
   m_ObjectHideFlags: 1

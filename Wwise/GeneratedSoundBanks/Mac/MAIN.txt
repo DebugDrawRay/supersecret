@@ -1,7 +1,9 @@
 Event	ID	Name			Wwise Object Path	Notes
+	300766571	wooshBig			\Default Work Unit\wooshBig	
 	789866735	canyon_GeyserLoop			\Default Work Unit\canyon_GeyserLoop	
 	832369107	TB_collisionMetal			\Default Work Unit\TB_collisionMetal	
 	1122283870	musicStart			\Default Work Unit\musicStart	
+	1224784748	wooshSmall			\Default Work Unit\wooshSmall	
 	2710852396	TB_engineStart			\Default Work Unit\TB_engineStart	
 	3576966165	TB_tireSkidShort			\Default Work Unit\TB_tireSkidShort	
 	3628795728	TB_collisionRocks			\Default Work Unit\TB_collisionRocks	
@@ -31,19 +33,20 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 	1401221111	TB_Speed			\Default Work Unit\TB_Speed	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	3956943	TB_collision_metal_01	Z:\Volumes\Projects\Repositories\supersecret\Wwise\.cache\Mac\SFX\bigDog_collision_02_F3F18DD6.wem		\Actor-Mixer Hierarchy\Default Work Unit\TB\Collisions\TB_collisionMetal\TB_collision_metal_01		171048
+	3956943	TB_collision_metal_01	Z:\Volumes\Projects\Repositories\supersecret\Wwise\.cache\Mac\SFX\bigDog_collision_02_FC2ED978.wem		\Actor-Mixer Hierarchy\Default Work Unit\TB\Collisions\TB_collisionMetal\TB_collision_metal_01		171048
 	7722295	TB_collision_rocks_01	Z:\Volumes\Projects\Repositories\supersecret\Wwise\.cache\Mac\SFX\TB_collision_rocks_01_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\TB\Collisions\TB_collisionRocks\TB_collision_rocks_01		402636
-	54837830	TB_skid_dirt01	Z:\Volumes\Projects\Repositories\supersecret\Wwise\.cache\Mac\SFX\tire_skid_dirt03_0CE8064A.wem		\Actor-Mixer Hierarchy\Default Work Unit\TB\Movement\TireSkids\TB_skid_dirt_short\TB_skid_dirt_wDetail_02\TB_skid_dirt01		36898
-	241640635	TB_skid_dirt_detail_01	Z:\Volumes\Projects\Repositories\supersecret\Wwise\.cache\Mac\SFX\tire_skid_dirt_detail_02_BA949CD2.wem		\Actor-Mixer Hierarchy\Default Work Unit\TB\Movement\TireSkids\TB_skid_dirt_short\TB_skid_dirt_wDetail_01\TB_skid_dirt_detail_01		199088
+	54837830	TB_skid_dirt01	Z:\Volumes\Projects\Repositories\supersecret\Wwise\.cache\Mac\SFX\tire_skid_dirt03_B1028579.wem		\Actor-Mixer Hierarchy\Default Work Unit\TB\Movement\TireSkids\TB_skid_dirt_short\TB_skid_dirt_wDetail_02\TB_skid_dirt01		36898
+	241640635	TB_skid_dirt_detail_01	Z:\Volumes\Projects\Repositories\supersecret\Wwise\.cache\Mac\SFX\tire_skid_dirt_detail_02_5950E099.wem		\Actor-Mixer Hierarchy\Default Work Unit\TB\Movement\TireSkids\TB_skid_dirt_short\TB_skid_dirt_wDetail_01\TB_skid_dirt_detail_01		199088
 	246687455	TB_collision_rocks_02	Z:\Volumes\Projects\Repositories\supersecret\Wwise\.cache\Mac\SFX\TB_collision_rocks_02_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\TB\Collisions\TB_collisionRocks\TB_collision_rocks_02		396924
-	283517202	TB_skid_dirt01	Z:\Volumes\Projects\Repositories\supersecret\Wwise\.cache\Mac\SFX\tire_skid_dirt03_9970FAA8.wem		\Actor-Mixer Hierarchy\Default Work Unit\TB\Movement\TireSkids\TB_skid_dirt_short\TB_skid_dirt_wDetail_01\TB_skid_dirt01		34538
+	283517202	TB_skid_dirt01	Z:\Volumes\Projects\Repositories\supersecret\Wwise\.cache\Mac\SFX\tire_skid_dirt03_957010B4.wem		\Actor-Mixer Hierarchy\Default Work Unit\TB\Movement\TireSkids\TB_skid_dirt_short\TB_skid_dirt_wDetail_01\TB_skid_dirt01		34538
 	336171348	canyon_geyser_loop_01	Z:\Volumes\Projects\Repositories\supersecret\Wwise\.cache\Mac\SFX\canyon_geyser_loop_01_4B8CC0C5.wem		\Actor-Mixer Hierarchy\Default Work Unit\canyon_geyser_loop_01		788764
 	337733320	TB_collision_rocks_03	Z:\Volumes\Projects\Repositories\supersecret\Wwise\.cache\Mac\SFX\TB_collision_rocks_03_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\TB\Collisions\TB_collisionRocks\TB_collision_rocks_03		408192
 	508092721	IntroLullaby_chorus_v2	Z:\Volumes\Projects\Repositories\supersecret\Wwise\.cache\Mac\SFX\IntroLullaby_chorus_v2_4B8CC0C5.wem		\Interactive Music Hierarchy\Default Work Unit\mus_IntroLullaby\IntroLullaby_chorus_v2\IntroLullaby_chorus_v2		6518252
+	754492438	woosh_rumble_big	Z:\Volumes\Projects\Repositories\supersecret\Wwise\.cache\Mac\SFX\woosh_rumble_01_4B8CC0C5.wem		\Actor-Mixer Hierarchy\Default Work Unit\woosh_rumble_big		1469932
 	771707133	TB_tireLoop_dirt_01	Z:\Volumes\Projects\Repositories\supersecret\Wwise\.cache\Mac\SFX\tires_rolling_on_dirt_03_loop_4B8CC0C5.wem		\Actor-Mixer Hierarchy\Default Work Unit\TB\Movement\TireLoops\tireLoopSwitch\TB_tireLoop_dirt_01		312332
-	796289240	TB_skid_dirt_detail_02	Z:\Volumes\Projects\Repositories\supersecret\Wwise\.cache\Mac\SFX\tire_skid_dirt_detail_02_EFDFF3B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\TB\Movement\TireSkids\TB_skid_dirt_short\TB_skid_dirt_wDetail_02\TB_skid_dirt_detail_02		144352
-	828596493	TB_collision_metal_02	Z:\Volumes\Projects\Repositories\supersecret\Wwise\.cache\Mac\SFX\bigDog_collision_01_507C021B.wem		\Actor-Mixer Hierarchy\Default Work Unit\TB\Collisions\TB_collisionMetal\TB_collision_metal_02		74616
+	796289240	TB_skid_dirt_detail_02	Z:\Volumes\Projects\Repositories\supersecret\Wwise\.cache\Mac\SFX\tire_skid_dirt_detail_02_DCEB5BA2.wem		\Actor-Mixer Hierarchy\Default Work Unit\TB\Movement\TireSkids\TB_skid_dirt_short\TB_skid_dirt_wDetail_02\TB_skid_dirt_detail_02		144352
+	828596493	TB_collision_metal_02	Z:\Volumes\Projects\Repositories\supersecret\Wwise\.cache\Mac\SFX\bigDog_collision_01_D4B252A9.wem		\Actor-Mixer Hierarchy\Default Work Unit\TB\Collisions\TB_collisionMetal\TB_collision_metal_02		74616
 	840237749	TB_engineLoop_01	Z:\Volumes\Projects\Repositories\supersecret\Wwise\.cache\Mac\SFX\TB_EngineLoop_v01_4B8CC0C5.wem		\Actor-Mixer Hierarchy\Default Work Unit\TB\TB_engineLoop_01		1177788
-	854569473	TB_skid_dirt01	Z:\Volumes\Projects\Repositories\supersecret\Wwise\.cache\Mac\SFX\tire_skid_dirt03_7289E5C5.wem		\Actor-Mixer Hierarchy\Default Work Unit\TB\Movement\TireSkids\TB_skid_dirt_short\TB_skid_dirt_wDetail_03\TB_skid_dirt01		41936
-	1020474679	TB_skid_dirt_detail_03	Z:\Volumes\Projects\Repositories\supersecret\Wwise\.cache\Mac\SFX\tire_skid_dirt_detail_02_FE4A78F6.wem		\Actor-Mixer Hierarchy\Default Work Unit\TB\Movement\TireSkids\TB_skid_dirt_short\TB_skid_dirt_wDetail_03\TB_skid_dirt_detail_03		180428
+	854569473	TB_skid_dirt01	Z:\Volumes\Projects\Repositories\supersecret\Wwise\.cache\Mac\SFX\tire_skid_dirt03_C14F4271.wem		\Actor-Mixer Hierarchy\Default Work Unit\TB\Movement\TireSkids\TB_skid_dirt_short\TB_skid_dirt_wDetail_03\TB_skid_dirt01		41936
+	1020474679	TB_skid_dirt_detail_03	Z:\Volumes\Projects\Repositories\supersecret\Wwise\.cache\Mac\SFX\tire_skid_dirt_detail_02_A5F51F88.wem		\Actor-Mixer Hierarchy\Default Work Unit\TB\Movement\TireSkids\TB_skid_dirt_short\TB_skid_dirt_wDetail_03\TB_skid_dirt_detail_03		180428
 

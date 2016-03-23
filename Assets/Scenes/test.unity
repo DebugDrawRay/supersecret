@@ -441,6 +441,10 @@ Prefab:
       propertyPath: playerCharacter
       value: 
       objectReference: {fileID: 193790, guid: 175175dc273078e479955695d18f512a, type: 2}
+    - target: {fileID: 11422248, guid: ae402ccce10e3834e95d01b4c71c598c, type: 2}
+      propertyPath: generateEnemies
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ae402ccce10e3834e95d01b4c71c598c, type: 2}
   m_IsPrefabParent: 0
