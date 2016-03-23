@@ -19,6 +19,7 @@
 			<ShortName>MAIN</ShortName>
 			<Path>MAIN.bnk</Path>
 			<IncludedEvents>
+				<Event Id="789866735" Name="canyon_GeyserLoop"/>
 				<Event Id="1122283870" Name="musicStart"/>
 				<Event Id="832369107" Name="TB_collisionMetal"/>
 				<Event Id="3628795728" Name="TB_collisionRocks"/>
@@ -49,6 +50,10 @@
 				<File Id="283517202" Language="SFX">
 					<ShortName>tire_skid_dirt03.wav</ShortName>
 					<Path>SFX/tire_skid_dirt03_9970FAA8.wem</Path>
+				</File>
+				<File Id="336171348" Language="SFX">
+					<ShortName>canyon_geyser_loop_01.wav</ShortName>
+					<Path>SFX/canyon_geyser_loop_01_4B8CC0C5.wem</Path>
 				</File>
 				<File Id="337733320" Language="SFX">
 					<ShortName>TB_collision_rocks_03.wav</ShortName>

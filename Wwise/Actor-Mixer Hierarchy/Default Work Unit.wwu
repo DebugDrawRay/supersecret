@@ -1371,6 +1371,53 @@
 								</Property>
 							</PropertyList>
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<Custom>
+										<Attenuation Name="Attenuation (Custom)" ID="{B2F3EC20-1B40-470A-802F-6B6C360BB8A6}" ShortID="212810047">
+											<CurveUsageInfoList>
+												<VolumeDryUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="Custom">
+														<Curve Name="VolumeDry" ID="{416600C5-190D-4D75-9F55-8EA2524B0565}">
+															<PropertyList>
+																<Property Name="Flags" Type="int32" Value="3"/>
+															</PropertyList>
+															<PointList>
+																<Point>
+																	<XPos>0</XPos>
+																	<YPos>0</YPos>
+																	<Flags>5</Flags>
+																</Point>
+																<Point>
+																	<XPos>100</XPos>
+																	<YPos>-200</YPos>
+																	<Flags>37</Flags>
+																</Point>
+															</PointList>
+														</Curve>
+													</CurveUsageInfo>
+												</VolumeDryUsage>
+												<VolumeWetGameUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
+												</VolumeWetGameUsage>
+												<VolumeWetUserUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
+												</VolumeWetUserUsage>
+												<LowPassFilterUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+												</LowPassFilterUsage>
+												<HighPassFilterUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+												</HighPassFilterUsage>
+												<SpreadUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+												</SpreadUsage>
+												<FocusUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+												</FocusUsage>
+											</CurveUsageInfoList>
+										</Attenuation>
+									</Custom>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
 								</Reference>
@@ -1380,7 +1427,19 @@
 							</ReferenceList>
 							<ChildrenList>
 								<RandomSequenceContainer Name="TB_collisionRocks" ID="{39AF6222-B3D5-4573-9B0C-F4E5B6E5F77E}" ShortID="414677988">
+									<PropertyList>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
+										<Property Name="PositioningType" Type="int16" Value="1"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-14</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="Obstacles" ID="{3A693E00-D804-4FCD-80CD-AE4E87DB935C}" WorkUnitID="{ED77F3DA-CCF1-4956-9E7B-FE83D3E5BB4C}"/>
+										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
 										</Reference>
@@ -1494,7 +1553,14 @@
 									</ChildrenList>
 								</RandomSequenceContainer>
 								<BlendContainer Name="TB_collisionMetal" ID="{6DAA812D-B6F3-4890-874A-F770270F2214}" ShortID="336210390">
+									<PropertyList>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
+										<Property Name="PositioningType" Type="int16" Value="1"/>
+									</PropertyList>
 									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="Obstacles" ID="{3A693E00-D804-4FCD-80CD-AE4E87DB935C}" WorkUnitID="{ED77F3DA-CCF1-4956-9E7B-FE83D3E5BB4C}"/>
+										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
 										</Reference>
@@ -1957,6 +2023,35 @@
 						</Sound>
 					</ChildrenList>
 				</Folder>
+				<Sound Name="canyon_geyser_loop_01" ID="{D8F1DE6D-814E-4BB4-A96A-C0E983025E4D}" ShortID="780964003" Type="SoundFX">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="PositioningType" Type="int16" Value="1"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Obstacles" ID="{3A693E00-D804-4FCD-80CD-AE4E87DB935C}" WorkUnitID="{ED77F3DA-CCF1-4956-9E7B-FE83D3E5BB4C}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Ambience" ID="{DD6BF400-5C0D-44A8-BAEC-4938921ACAFC}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+						</Reference>
+						<Reference Name="UserAuxSend0">
+							<ObjectRef Name="New_Auxiliary_Bus" ID="{AB311E90-C6E0-491A-AEA1-3F40EEF40EAA}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="canyon_geyser_loop_01" ID="{3666D171-A746-4EAB-97A4-EF856C3316AE}" ShortID="336171348">
+							<Language>SFX</Language>
+							<AudioFile>canyon_geyser_loop_01.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="canyon_geyser_loop_01" ID="{3666D171-A746-4EAB-97A4-EF856C3316AE}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

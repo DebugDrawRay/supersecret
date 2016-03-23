@@ -1,4 +1,5 @@
 Event	ID	Name			Wwise Object Path	Notes
+	789866735	canyon_GeyserLoop			\Default Work Unit\canyon_GeyserLoop	
 	832369107	TB_collisionMetal			\Default Work Unit\TB_collisionMetal	
 	1122283870	musicStart			\Default Work Unit\musicStart	
 	2710852396	TB_engineStart			\Default Work Unit\TB_engineStart	
@@ -36,6 +37,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	241640635	TB_skid_dirt_detail_01	Z:\Volumes\Projects\Repositories\supersecret\Wwise\.cache\Windows\SFX\tire_skid_dirt_detail_02_BA949CD2.wem		\Actor-Mixer Hierarchy\Default Work Unit\TB\Movement\TireSkids\TB_skid_dirt_short\TB_skid_dirt_wDetail_01\TB_skid_dirt_detail_01		199088
 	246687455	TB_collision_rocks_02	Z:\Volumes\Projects\Repositories\supersecret\Wwise\.cache\Windows\SFX\TB_collision_rocks_02_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\TB\Collisions\TB_collisionRocks\TB_collision_rocks_02		396924
 	283517202	TB_skid_dirt01	Z:\Volumes\Projects\Repositories\supersecret\Wwise\.cache\Windows\SFX\tire_skid_dirt03_9970FAA8.wem		\Actor-Mixer Hierarchy\Default Work Unit\TB\Movement\TireSkids\TB_skid_dirt_short\TB_skid_dirt_wDetail_01\TB_skid_dirt01		34538
+	336171348	canyon_geyser_loop_01	Z:\Volumes\Projects\Repositories\supersecret\Wwise\.cache\Windows\SFX\canyon_geyser_loop_01_4B8CC0C5.wem		\Actor-Mixer Hierarchy\Default Work Unit\canyon_geyser_loop_01		788764
 	337733320	TB_collision_rocks_03	Z:\Volumes\Projects\Repositories\supersecret\Wwise\.cache\Windows\SFX\TB_collision_rocks_03_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\TB\Collisions\TB_collisionRocks\TB_collision_rocks_03		408192
 	508092721	IntroLullaby_chorus_v2	Z:\Volumes\Projects\Repositories\supersecret\Wwise\.cache\Windows\SFX\IntroLullaby_chorus_v2_4B8CC0C5.wem		\Interactive Music Hierarchy\Default Work Unit\mus_IntroLullaby\IntroLullaby_chorus_v2\IntroLullaby_chorus_v2		6518252
 	771707133	TB_tireLoop_dirt_01	Z:\Volumes\Projects\Repositories\supersecret\Wwise\.cache\Windows\SFX\tires_rolling_on_dirt_03_loop_4B8CC0C5.wem		\Actor-Mixer Hierarchy\Default Work Unit\TB\Movement\TireLoops\tireLoopSwitch\TB_tireLoop_dirt_01		312332

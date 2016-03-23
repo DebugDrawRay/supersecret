@@ -7,6 +7,7 @@
 					<ObjectInclusionList>
 						<ObjectRef Name="musicStart" ID="{18E0E630-4F37-4749-8712-A2C05703BBB4}" WorkUnitID="{B8A46AB6-2F4D-4D8E-9966-0D58756EA65B}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="TB_tireSkidShort" ID="{F3855633-0FFB-47F0-BD40-1930D02FE602}" WorkUnitID="{B8A46AB6-2F4D-4D8E-9966-0D58756EA65B}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="canyon_GeyserLoop" ID="{42D1A646-E1F9-4B60-80F3-449AC8BA651F}" WorkUnitID="{B8A46AB6-2F4D-4D8E-9966-0D58756EA65B}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="TB_collisionMetal" ID="{67F34E9C-EAC6-4690-B76A-74078F3974F6}" WorkUnitID="{B8A46AB6-2F4D-4D8E-9966-0D58756EA65B}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="TB_engineStart" ID="{E9049DC1-6368-461B-8EE3-608AFA527DFE}" WorkUnitID="{B8A46AB6-2F4D-4D8E-9966-0D58756EA65B}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="TB_collisionRocks" ID="{292488E9-415A-4849-BE81-68D8C2650C49}" WorkUnitID="{B8A46AB6-2F4D-4D8E-9966-0D58756EA65B}" Filter="7" Origin="Manual"/>

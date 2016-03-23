@@ -119,6 +119,17 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
+				<Event Name="canyon_GeyserLoop" ID="{42D1A646-E1F9-4B60-80F3-449AC8BA651F}">
+					<ChildrenList>
+						<Action Name="Play" ID="{52D239F4-57ED-4C8C-9B39-B34CCAEABCF7}" ShortID="819523841" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{C5FF241E-467E-450A-BF49-33899DC7D23A}" Global="false">
+									<ObjectRef Name="canyon_geyser_loop_01" ID="{D8F1DE6D-814E-4BB4-A96A-C0E983025E4D}" WorkUnitID="{FFDDB849-0196-4EA1-AB43-0B400A594E4C}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

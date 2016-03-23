@@ -15,6 +15,10 @@ Audio Bus	ID	Name			Wwise Object Path	Notes
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
 	3991942870	Music			\Default Work Unit\Master Audio Bus\Music	
 
+Auxiliary Bus	ID	Name			Wwise Object Path	Notes
+	373392551	New_Auxiliary_Bus			\Default Work Unit\Master Audio Bus\Ambience\New_Auxiliary_Bus	
+
 Effect plug-ins	ID	Name	Type				Notes
+	448392540	Have_U_Ever_Been_Outside (Custom)	Wwise RoomVerb			
 	483865026	Wwise Peak Limiter (Custom)	Wwise Peak Limiter			
 

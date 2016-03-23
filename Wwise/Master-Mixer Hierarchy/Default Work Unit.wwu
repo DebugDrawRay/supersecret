@@ -21,7 +21,39 @@
 								</Reference>
 							</ReferenceList>
 						</Bus>
-						<Bus Name="Ambience" ID="{DD6BF400-5C0D-44A8-BAEC-4938921ACAFC}"/>
+						<Bus Name="Ambience" ID="{DD6BF400-5C0D-44A8-BAEC-4938921ACAFC}">
+							<ChildrenList>
+								<AuxBus Name="New_Auxiliary_Bus" ID="{AB311E90-C6E0-491A-AEA1-3F40EEF40EAA}">
+									<ReferenceList>
+										<Reference Name="Effect0">
+											<Custom CreatedFrom="{FE29AE8D-FD86-4652-A95D-68D32F5760EC}">
+												<Effect Name="Have_U_Ever_Been_Outside (Custom)" ID="{257E1D07-662B-48F7-9FAA-6655B1CC2FE5}" ShortID="448392540" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+													<PropertyList>
+														<Property Name="DecayTime" Type="Real32" Value="1"/>
+														<Property Name="Density" Type="Real32" Value="50"/>
+														<Property Name="ERLevel" Type="Real32" Value="-18"/>
+														<Property Name="ERPattern" Type="int32" Value="29"/>
+														<Property Name="Filter1Freq" Type="Real32" Value="210"/>
+														<Property Name="Filter1Gain" Type="Real32" Value="1.5"/>
+														<Property Name="Filter2Freq" Type="Real32" Value="6830"/>
+														<Property Name="Filter2Gain" Type="Real32" Value="-7.5"/>
+														<Property Name="Filter2Q" Type="Real32" Value="0.65"/>
+														<Property Name="Filter3Freq" Type="Real32" Value="8440"/>
+														<Property Name="Filter3Gain" Type="Real32" Value="-4"/>
+														<Property Name="HFDamping" Type="Real32" Value="5.05"/>
+														<Property Name="PreDelay" Type="Real32" Value="145"/>
+														<Property Name="Quality" Type="int32" Value="12"/>
+														<Property Name="ReverbLevel" Type="Real32" Value="-37"/>
+														<Property Name="RoomSize" Type="Real32" Value="73"/>
+														<Property Name="StereoWidth" Type="Real32" Value="28"/>
+													</PropertyList>
+												</Effect>
+											</Custom>
+										</Reference>
+									</ReferenceList>
+								</AuxBus>
+							</ChildrenList>
+						</Bus>
 						<Bus Name="TB_HDR" ID="{74978DFD-AF83-4176-872B-7EE307C48D2A}">
 							<PropertyList>
 								<Property Name="HdrEnable" Type="bool">
