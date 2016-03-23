@@ -122,14 +122,14 @@ public class GridMovement : MonoBehaviour
                 }
             }
 
-
-            //Vector3 direction = targetGridPosition - transform.localPosition;
-            //animation.AnimateLean(direction);
         }
     }
 
     void MoveAction()
     {
+        Vector3 direction = targetLocalPosition - transform.localPosition;
+        animation.AnimateLean(direction);
+
         moveTime = Time.time - startTime;
 
         xPercentageComplete = moveTime / MoveTime(stats.agility);

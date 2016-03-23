@@ -8,6 +8,8 @@ public class PlayerAnimationController : MonoBehaviour
     public SkeletonAnimation bodyAnim;
     public SkeletonAnimation bikeAnim;
     public SkeletonAnimation headAnim;
+    public SkeletonAnimation leftAnim;
+    public SkeletonAnimation rightAnim;
 
     private bool initialized;
 
@@ -21,6 +23,7 @@ public class PlayerAnimationController : MonoBehaviour
     [Range(0,1)]
     public float lean;
 
+    public bool inTopSpeed;
     void Start()
     {
         PlayerEventManager.CollisionReaction += CollisionAnim;
@@ -30,7 +33,7 @@ public class PlayerAnimationController : MonoBehaviour
 
     public void Init()
     {
-        allAnim = new SkeletonAnimation[3] { headAnim, bodyAnim, bikeAnim };
+        allAnim = new SkeletonAnimation[5] { headAnim, bodyAnim, bikeAnim, leftAnim, rightAnim };
         for (int i = 0; i < allAnim.Length; ++i)
         {
             allAnim[i].state.SetAnimation(0, "idle", true);
@@ -73,13 +76,14 @@ public class PlayerAnimationController : MonoBehaviour
     }
     void TopSpeed()
     {
-        /*for (int i = 0; i < allAnim.Length; ++i)
+        inTopSpeed = true;
+        for (int i = 0; i < allAnim.Length; ++i)
         {
             allAnim[i].state.ClearTracks();
             allAnim[i].state.SetAnimation(0, "idle_to_fast", true);
             allAnim[i].state.GetCurrent(0).time = 0;
             allAnim[i].state.GetCurrent(0).next = allAnim[i].state.SetAnimation(0, "fast", true);
-        }*/
+        }
     }
 
     public void AnimateLean(Vector3 direction)
@@ -88,6 +92,14 @@ public class PlayerAnimationController : MonoBehaviour
         leanAmount = xdir / 8.5f;
         leanAmount = Mathf.Round(leanAmount * 1000) / 1000;
 
+        string left = "turn_left";
+        string right = "turn_right";
+
+        if(inTopSpeed)
+        {
+            left = "turn_left_fast";
+            right = "turn_right_fast";
+        }
         if (leanAmount < 0)
         {
             if (!leanLeft)
@@ -96,7 +108,7 @@ public class PlayerAnimationController : MonoBehaviour
                 {
                     leanLeft = true;
                     leanRight = false;
-                    allAnim[i].state.SetAnimation(2, "turn_left", false);
+                    allAnim[i].state.SetAnimation(2, left, false);
                 }
             }
         }
@@ -108,7 +120,7 @@ public class PlayerAnimationController : MonoBehaviour
                 {
                     leanLeft = false;
                     leanRight = true;
-                    allAnim[i].state.SetAnimation(2, "turn_right", false);
+                    allAnim[i].state.SetAnimation(2, right, false);
                 }
             }
         }
@@ -116,7 +128,7 @@ public class PlayerAnimationController : MonoBehaviour
         {
             if (allAnim[i].state.GetCurrent(2) != null)
             {
-                float newTime = allAnim[i].skeleton.data.FindAnimation("turn_right").duration * leanAmount;
+                float newTime = allAnim[i].skeleton.data.FindAnimation(right).duration * leanAmount;
                 float currentTime = allAnim[i].state.GetCurrent(2).Time;
                 allAnim[i].state.GetCurrent(2).Time = Mathf.Clamp(Mathf.Abs(newTime), 0, .99f);
                 if(allAnim[i].state.GetCurrent(2).Time <= .02f)

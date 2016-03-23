@@ -6,91 +6,78 @@ filter: Linear,Linear
 repeat: none
 _Body
   rotate: false
-  xy: 2, 560
+  xy: 2, 517
   size: 573, 451
   orig: 573, 451
   offset: 0, 0
   index: -1
+_Body_Ass
+  rotate: true
+  xy: 730, 118
+  size: 399, 207
+  orig: 399, 207
+  offset: 0, 0
+  index: -1
 _Body_Top_L_1
   rotate: true
-  xy: 223, 73
+  xy: 730, 82
   size: 34, 149
   orig: 34, 149
   offset: 0, 0
   index: -1
 _Body_Top_L_2
-  rotate: true
-  xy: 2, 2
+  rotate: false
+  xy: 827, 831
   size: 48, 137
   orig: 48, 137
   offset: 0, 0
   index: -1
 _Body_Top_R_1
   rotate: false
-  xy: 828, 738
+  xy: 827, 683
   size: 34, 146
   orig: 34, 146
   offset: 0, 0
   index: -1
 _Body_Top_R_2
-  rotate: true
-  xy: 892, 958
+  rotate: false
+  xy: 877, 838
   size: 53, 130
   orig: 53, 130
   offset: 0, 0
   index: -1
 _Handle
-  rotate: false
-  xy: 828, 886
+  rotate: true
+  xy: 2, 2
   size: 62, 125
   orig: 62, 125
   offset: 0, 0
   index: -1
 _Leg_Back_L
   rotate: false
-  xy: 577, 562
+  xy: 2, 66
   size: 249, 449
   orig: 249, 449
   offset: 0, 0
   index: -1
 _Leg_Back_R
   rotate: false
-  xy: 223, 109
+  xy: 577, 519
   size: 248, 449
   orig: 248, 449
   offset: 0, 0
   index: -1
 _Leg_Front_L
   rotate: false
-  xy: 473, 106
+  xy: 253, 63
   size: 237, 452
   orig: 237, 452
   offset: 0, 0
   index: -1
 _Leg_Front_R
   rotate: false
-  xy: 712, 108
+  xy: 492, 63
   size: 236, 452
   orig: 236, 452
-  offset: 0, 0
-  index: -1
-att_hubcap
-  rotate: false
-  xy: 2, 52
-  size: 219, 506
-  orig: 219, 506
-  offset: 0, 0
-  index: -1
-
-body2.png
-size: 512,256
-format: RGBA8888
-filter: Linear,Linear
-repeat: none
-_Body_Ass
-  rotate: false
-  xy: 2, 2
-  size: 399, 207
-  orig: 399, 207
   offset: 0, 0
   index: -1
