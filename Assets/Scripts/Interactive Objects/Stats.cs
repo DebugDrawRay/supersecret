@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Stats : MonoBehaviour
 {
-    public enum stats
+    public enum stat
     {
         health = 0,
         maxHealth,
@@ -89,68 +89,66 @@ public class Stats : MonoBehaviour
         }
     }
 
-    public void ModStat(string stat, float value)
+    public void ModStat(stat stat, float value)
     {
         if (!invulnerable)
         {
             value = Mathf.Clamp(value, -1, 1);
             switch (stat)
             {
-                case "health":
+                case stat.health:
                     currentHealth += value;
                     break;
-                case "maxhealth":
+                case stat.maxHealth:
                     maxHealth = defaultMaxHealth + value;
                     break;
-                case "speed":
+                case stat.speed:
                     speed = defaultSpeed + value;
                     break;
-                case "agility":
+                case stat.agility:
                     agility = defaultAgility + value;
                     break;
-                case "power":
+                case stat.power:
                     power = defaultPower + value;
                     break;
-                case "luck":
+                case stat.luck:
                     luck = defaultLuck + value;
                     break;
                 default:
-                    Debug.LogError("No stat of name " + stat + " found, check spelling?");
                     break;
             }
             CheckStats();
         }
     }
 
-    public void ModStat(string stat, float value, float time)
+    public void ModStat(stat stat, float value, float time)
     {
         if (!invulnerable)
         {
             value = Mathf.Clamp(value, -1, 1);
             switch (stat)
             {
-                case "maxhealth":
+                case stat.maxHealth:
                     maxHealth = defaultMaxHealth + value;
                     currentTimer = new Timer(time);
                     break;
-                case "speed":
+                case stat.speed:
                     speed = defaultSpeed + value;
                     currentTimer = new Timer(time);
                     break;
-                case "agility":
+                case stat.agility:
                     agility = defaultAgility + value;
                     currentTimer = new Timer(time);
                     break;
-                case "power":
+                case stat.power:
                     power = defaultPower + value;
                     currentTimer = new Timer(time);
                     break;
-                case "luck":
+                case stat.luck:
                     luck = defaultLuck + value;
                     currentTimer = new Timer(time);
                     break;
                 default:
-                    Debug.LogError("No stat of name " + stat + " found, check spelling?");
                     break;
             }
             CheckStats();
@@ -171,6 +169,30 @@ public class Stats : MonoBehaviour
             }
         }
     }
+    
+    public void ContestSpace(Stats aggressor, Stats challenger)
+    {
+        float attack = aggressor.speed + aggressor.agility + aggressor.weight;
+        float defense = challenger.speed + challenger.agility + challenger.weight;
+        PlayerController isPlayer = GetComponent<PlayerController>();
+        Enemy isEnemy = GetComponent<Enemy>();
+        if (attack < defense)
+        {
+            Debug.Log(gameObject.name + " Loses");
+            if (isPlayer)
+            {
+                PlayerEventManager.TriggerCollision();
+            }
+            else if (isEnemy)
+            {
+                isEnemy.TriggerCollision(transform.localPosition);
+            }
+        }
+        else
+        {
+            Debug.Log(gameObject.name + " Wins");
+        }
+    }
 
     void ResetStats()
     {
@@ -180,5 +202,4 @@ public class Stats : MonoBehaviour
         power = defaultPower;
         luck = defaultLuck;
     }
-
 }

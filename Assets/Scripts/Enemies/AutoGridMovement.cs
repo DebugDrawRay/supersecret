@@ -54,6 +54,30 @@ public class AutoGridMovement : MonoBehaviour
         }
     }
 
+    public void ForcedMove(Vector3 from)
+    {
+            Vector3 direction = from - transform.localPosition;
+            float xDir = -direction.normalized.x;
+            float zDir = 1;
+            if (currentPoint.x + Mathf.Sign(xDir) * Mathf.Abs(Mathf.Ceil(xDir)) < 0 ||
+                currentPoint.x + Mathf.Sign(xDir) * Mathf.Abs(Mathf.Ceil(xDir)) >= targetGrid.xUnits)
+            {
+                xDir = -xDir;
+                if (currentPoint.y + Mathf.Sign(zDir) * Mathf.Abs(Mathf.Ceil(zDir)) < 0 ||
+                    currentPoint.y + Mathf.Sign(zDir) * Mathf.Abs(Mathf.Ceil(zDir)) >= targetGrid.yUnits)
+                {
+                    zDir = -zDir;
+                }
+            }
+            else
+            {
+                zDir = 0;
+            }
+
+            Vector2 newPoint = new Vector2(currentPoint.x + xDir, currentPoint.y + zDir);
+            StartCoroutine(MoveToPoint(.25f, newPoint));
+    }
+
     public void EnterGrid()
     {
         if (!isMoving)
@@ -84,7 +108,7 @@ public class AutoGridMovement : MonoBehaviour
                     xPos = Random.Range(0, targetGrid.xUnits);
                 }
 
-                enterPoint = new Vector2(xPos, yPos);
+                enterPoint = new Vector2(currentPoint.x + xPos, currentPoint.y + yPos);
             }
             currentPoint = enterPoint;
             StartCoroutine(MoveToPoint(3, enterPoint));

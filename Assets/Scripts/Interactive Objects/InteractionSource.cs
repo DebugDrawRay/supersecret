@@ -1,35 +1,32 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class InteractionSource : MonoBehaviour
 {
-    public Stats.stats targetStat;
+    [SerializeField]
+    public InteractionProperty[] interactions;
 
-    private string[] availableStats = new string[]{"health", "maxHealth", "speed", "agility", "power", "luck"};
-    private string stat;
-
-    [Range(-1,1)]
-    public float modValue;
-
-    public float modTime;
-
-    void Awake()
-    {
-        stat = availableStats[(int)targetStat];
-    }
     void OnTriggerEnter(Collider hit)
     {
+        Stats thisStats = transform.parent.GetComponent<Stats>();
         Stats hasStats = hit.GetComponent<Stats>();
         if (hasStats)
         {
-            if (modTime > 0)
+            for (int i = 0; i < interactions.Length; i++)
             {
-                hasStats.ModStat(stat, modValue, modTime);
+                InteractionProperty inter = interactions[i];
+
+                if (inter.permanent)
+                {
+                    hasStats.ModStat(inter.statToAffect, inter.affectAmount);
+                }
+                else
+                {
+                    hasStats.ModStat(inter.statToAffect, inter.affectAmount, inter.modTime);
+                }
             }
-            else
-            {
-                hasStats.ModStat(stat, modValue);
-            }
+            hasStats.ContestSpace(hasStats);
+
         }
     }
+
 }

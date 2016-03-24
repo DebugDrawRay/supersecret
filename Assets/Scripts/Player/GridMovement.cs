@@ -136,7 +136,6 @@ public class GridMovement : MonoBehaviour
         yPercentageComplete = moveTime / MoveTime(stats.speed);
 
         Vector3 newPosition = transform.localPosition;
-        Debug.Log(newPosition);
         newPosition.x = Mathf.Lerp(lerpStartPostion.x, targetLocalPosition.x, speedCurve.Evaluate(xPercentageComplete));
         newPosition.y = Mathf.Lerp(lerpStartPostion.y, targetLocalPosition.y, speedCurve.Evaluate(yPercentageComplete));
         transform.localPosition = newPosition;

@@ -34,6 +34,7 @@ public class EquipmentController : MonoBehaviour
                 skin = "default";
             }
             headAttachment.GetComponent<SkeletonAnimation>().skeleton.SetSkin(skin);
+            headAttachment.GetComponent<InteractionSource>().interactions = equippedHead.interactions;
         }
         if (bodyAttachment)
         {
@@ -43,6 +44,7 @@ public class EquipmentController : MonoBehaviour
                 skin = "default";
             }
             bodyAttachment.GetComponent<SkeletonAnimation>().skeleton.SetSkin(skin);
+            bodyAttachment.GetComponent<InteractionSource>().interactions = equippedBody.interactions;
         }
         if (bikeAttachment)
         {
@@ -52,6 +54,7 @@ public class EquipmentController : MonoBehaviour
                 skin = "default";
             }
             bikeAttachment.GetComponent<SkeletonAnimation>().skeleton.SetSkin(skin);
+            bikeAttachment.GetComponent<InteractionSource>().interactions = equippedBike.interactions;
         }
         if (leftAttachment)
         {
@@ -61,6 +64,7 @@ public class EquipmentController : MonoBehaviour
                 skin = "default";
             }
             leftAttachment.GetComponent<SkeletonAnimation>().skeleton.SetSkin(skin);
+            leftAttachment.GetComponent<InteractionSource>().interactions = equippedLeft.interactions;
         }
         if (rightAttachment)
         {
@@ -70,7 +74,7 @@ public class EquipmentController : MonoBehaviour
                 skin = "default";
             }
             rightAttachment.GetComponent<SkeletonAnimation>().skeleton.SetSkin(skin);
+            rightAttachment.GetComponent<InteractionSource>().interactions = equippedRight.interactions;
         }
     }
-
 }

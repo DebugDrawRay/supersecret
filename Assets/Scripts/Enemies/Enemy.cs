@@ -28,4 +28,9 @@ public class Enemy : MonoBehaviour
             enteredGrid = true;
         }
     }
+    
+    public void TriggerCollision(Vector3 from)
+    {
+        movement.ForcedMove(from);
+    }
 }

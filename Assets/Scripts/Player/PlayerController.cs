@@ -161,16 +161,4 @@ public class PlayerController : MonoBehaviour
         invulnerable = false;
         stats.invulnerable = false;
     }
-
-    void OnTriggerEnter(Collider hit)
-    {
-        if (!invulnerable)
-        {
-            Enemy isEnemy = hit.GetComponent<Enemy>();
-            if (isEnemy)
-            {
-                movement.CollisionMove(isEnemy.transform.localPosition);
-            }
-        }
-    }
 }
