@@ -45,6 +45,15 @@ public class GridMovement : MonoBehaviour
     }
     private Vector3 targetLocalPosition;
 
+    //Distance tracking
+    private bool startPositionSet;
+    private Vector3 distanceTrackStart;
+    public float distanceTraveled
+    {
+        get;
+        private set;
+    }
+
     //References
     private Grid targetGrid;
 
@@ -83,11 +92,24 @@ public class GridMovement : MonoBehaviour
             currentDestinationUpdate -= Time.deltaTime;
         }
 
-        if(isMoving)
+        if (isMoving)
         {
+            if(!startPositionSet)
+            {
+                distanceTrackStart = transform.localPosition;
+                startPositionSet = true;
+            }
+            distanceTraveled = Vector3.Distance(transform.localPosition, distanceTrackStart);
             MoveAction();
         }
+        else
+        {
+            distanceTraveled = 0;
+            startPositionSet = false;
+        }
+        stats.distanceTraveled = distanceTraveled;
     }
+
     float MoveTime(float stat)
     {
         float deltaTime = maxTimeToMove - minTimeToMove;
@@ -149,25 +171,43 @@ public class GridMovement : MonoBehaviour
     public void CollisionMove(Vector3 from)
     {
         Vector3 direction = from - transform.localPosition;
-        float zDir = 1;
         float xDir = -direction.normalized.x;
+        float yDir = -direction.normalized.y;
 
-        if(targetGridPosition.x + Mathf.Sign(xDir) * Mathf.Abs(Mathf.Ceil(xDir)) < 0 ||
-           targetGridPosition.x + Mathf.Sign(xDir) * Mathf.Abs(Mathf.Ceil(xDir)) >= targetGrid.xUnits )
+        if (Mathf.Abs(direction.x) >= Mathf.Abs(direction.y))
         {
-            xDir = -xDir;
-            if (targetGridPosition.y + Mathf.Sign(zDir) * Mathf.Abs(Mathf.Ceil(zDir)) < 0 ||
-                targetGridPosition.y + Mathf.Sign(zDir) * Mathf.Abs(Mathf.Ceil(zDir)) >= targetGrid.yUnits)
+            xDir = -direction.normalized.x;
+            yDir = 0;
+
+            float newX = targetGridPosition.x + xDir;
+            if (newX < 0 || newX >= targetGrid.xUnits)
             {
-                zDir = -zDir;
+                yDir = -direction.normalized.x;
+                float newY = targetGridPosition.y + yDir;
+                if (newY < 0 || newY >= targetGrid.yUnits)
+                {
+                    yDir = -yDir;
+                }
             }
         }
         else
         {
-            zDir = 0;
+            yDir = -direction.normalized.y;
+            xDir = 0;
+
+            float newY = targetGridPosition.y + yDir;
+            if (newY < 0 || newY >= targetGrid.yUnits)
+            {
+                xDir = -direction.normalized.y;
+                float newX = targetGridPosition.x + xDir;
+                if (newX < 0 || newX >= targetGrid.xUnits)
+                {
+                    xDir = -xDir;
+                }
+            }
         }
 
-        StartCoroutine(ForceMove(xDir, zDir, .25f));
+        StartCoroutine(ForceMove(xDir, yDir, .25f));
     }
 
     IEnumerator ForceMove(float xDirection, float zDirection, float time)

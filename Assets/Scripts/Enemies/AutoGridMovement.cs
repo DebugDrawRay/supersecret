@@ -13,6 +13,7 @@ public class AutoGridMovement : MonoBehaviour
     public AnimationCurve movementSmoothing;
     private float speed;
     private float agility;
+
     //Grid properties
     private Vector2 currentPoint;
 
@@ -22,16 +23,43 @@ public class AutoGridMovement : MonoBehaviour
 
     private bool isMoving;
 
-    public void Init(Grid grid, Stats stat)
+    //Distance tracking
+    private bool startPositionSet;
+    public Vector3 distanceTrackStart
+    {
+        get;
+        private set;
+    }
+    private float distanceTraveled;
+
+    public void Init(Grid grid, Stats status)
     {
         targetGrid = grid;
-        stats = stat;
+        stats = status;
         initialized = true;
 
         speed = baseSpeed + (speedRange - (speedRange * stats.speed));
         agility = baseAgility + (agilityRange - (agilityRange * stats.agility));
     }
 
+    void Update()
+    {
+        if (isMoving)
+        {
+            if (!startPositionSet)
+            {
+                distanceTrackStart = transform.localPosition;
+                startPositionSet = true;
+            }
+            distanceTraveled = Vector3.Distance(transform.localPosition, distanceTrackStart);
+        }
+        else
+        {
+            distanceTraveled = 0;
+            startPositionSet = false;
+        }
+        stats.distanceTraveled = distanceTraveled;
+    }
     public void MoveToDestination(Vector2 goal)
     {
         if (!isMoving)
@@ -56,26 +84,49 @@ public class AutoGridMovement : MonoBehaviour
 
     public void ForcedMove(Vector3 from)
     {
-            Vector3 direction = from - transform.localPosition;
-            float xDir = -direction.normalized.x;
-            float zDir = 1;
-            if (currentPoint.x + Mathf.Sign(xDir) * Mathf.Abs(Mathf.Ceil(xDir)) < 0 ||
-                currentPoint.x + Mathf.Sign(xDir) * Mathf.Abs(Mathf.Ceil(xDir)) >= targetGrid.xUnits)
+        StopAllCoroutines();
+        Vector3 direction = from - transform.localPosition;
+        Debug.Log(name + " " + direction.normalized);
+        float xDir = 0;
+        float yDir = 0;
+
+        if(Mathf.Abs(direction.x) >= Mathf.Abs(direction.y))
+        {
+            xDir = -direction.normalized.x;
+            yDir = 0;
+
+            float newX = currentPoint.x + xDir;
+            if(newX < 0 || newX >= targetGrid.xUnits)
             {
-                xDir = -xDir;
-                if (currentPoint.y + Mathf.Sign(zDir) * Mathf.Abs(Mathf.Ceil(zDir)) < 0 ||
-                    currentPoint.y + Mathf.Sign(zDir) * Mathf.Abs(Mathf.Ceil(zDir)) >= targetGrid.yUnits)
+                xDir = 0;
+                yDir = -direction.normalized.x;
+                float newY = currentPoint.y + yDir;
+                if (newY < 0 || newY >= targetGrid.yUnits)
                 {
-                    zDir = -zDir;
+                    yDir = -yDir;
                 }
             }
-            else
-            {
-                zDir = 0;
-            }
+        }
+        else if(Mathf.Abs(direction.x) < Mathf.Abs(direction.y))
+        {
 
-            Vector2 newPoint = new Vector2(currentPoint.x + xDir, currentPoint.y + zDir);
-            StartCoroutine(MoveToPoint(.25f, newPoint));
+            yDir = -direction.normalized.y;
+            xDir = 0;
+
+            float newY = currentPoint.y + yDir;
+            if (newY < 0 || newY >= targetGrid.yUnits)
+            {
+                yDir = 0;
+                xDir = -direction.normalized.y;
+                float newX = currentPoint.x + xDir;
+                if (newX < 0 || newX >= targetGrid.xUnits)
+                {
+                    xDir = -xDir;
+                }
+            }
+        }
+        Vector2 newPoint = new Vector2(currentPoint.x + xDir, currentPoint.y + yDir);
+        StartCoroutine(MoveToPoint(.1f, newPoint));
     }
 
     public void EnterGrid()

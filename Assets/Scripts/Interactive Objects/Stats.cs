@@ -39,6 +39,9 @@ public class Stats : MonoBehaviour
     public float weight;
     private float defaultWeight;
 
+    public float distanceTraveled;
+    public float minRequiredDistanceTraveled;
+
     private Timer currentTimer;
 
     public bool invulnerable;
@@ -161,36 +164,10 @@ public class Stats : MonoBehaviour
         Enemy isEnemy = GetComponent<Enemy>();
         if (isPlayer)
         {
-            PlayerEventManager.TriggerCollision();
-
             if (currentHealth <= 0)
             {
                 PlayerEventManager.PlayerDeath();
             }
-        }
-    }
-    
-    public void ContestSpace(Stats aggressor, Stats challenger)
-    {
-        float attack = aggressor.speed + aggressor.agility + aggressor.weight;
-        float defense = challenger.speed + challenger.agility + challenger.weight;
-        PlayerController isPlayer = GetComponent<PlayerController>();
-        Enemy isEnemy = GetComponent<Enemy>();
-        if (attack < defense)
-        {
-            Debug.Log(gameObject.name + " Loses");
-            if (isPlayer)
-            {
-                PlayerEventManager.TriggerCollision();
-            }
-            else if (isEnemy)
-            {
-                isEnemy.TriggerCollision(transform.localPosition);
-            }
-        }
-        else
-        {
-            Debug.Log(gameObject.name + " Wins");
         }
     }
 

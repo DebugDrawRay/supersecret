@@ -7,8 +7,8 @@ public class InteractionSource : MonoBehaviour
 
     void OnTriggerEnter(Collider hit)
     {
-        Stats thisStats = transform.parent.GetComponent<Stats>();
         Stats hasStats = hit.GetComponent<Stats>();
+
         if (hasStats)
         {
             for (int i = 0; i < interactions.Length; i++)
@@ -24,8 +24,6 @@ public class InteractionSource : MonoBehaviour
                     hasStats.ModStat(inter.statToAffect, inter.affectAmount, inter.modTime);
                 }
             }
-            hasStats.ContestSpace(hasStats);
-
         }
     }
 

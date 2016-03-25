@@ -7,7 +7,9 @@ public class ManeuveringEnemy : Enemy
     {
         Inactive,
         Maneuvering,
-        Chasing
+        Chasing,
+        Stunned,
+        Dead
     }
     [Header("States")]
     public state currentState;
@@ -33,11 +35,19 @@ public class ManeuveringEnemy : Enemy
     [Range(0, 1)]
     public float chanceToChase;
 
+    [Header("Collision")]
+    public float stunTime;
+    private float currentStunTime;
+
     void Start()
     {
         inactiveTime = Random.Range(minInactiveTime, maxInactiveTime);
         maneuverTime = Random.Range(minManeuverTime, maxManeuverTime);
         chaseTime = Random.Range(minChaseTime, maxChaseTime);
+
+        currentStunTime = stunTime;
+
+        collision += TriggerStun;
     }
 
     void Update()
@@ -80,6 +90,14 @@ public class ManeuveringEnemy : Enemy
                     currentState = SelectState();
                 }
                 break;
+            case state.Stunned:
+                currentStunTime -= Time.deltaTime;
+                if(stunTime <= 0)
+                {
+                    currentStunTime = stunTime;
+                    currentState = SelectState();
+                }
+                break;
         }
     }
 
@@ -100,5 +118,11 @@ public class ManeuveringEnemy : Enemy
         {
             return state.Inactive;
         }
+    }
+    
+    void TriggerStun(Vector3 from)
+    {
+        movement.ForcedMove(from);
+        currentState = state.Stunned;
     }
 }

@@ -161,4 +161,32 @@ public class PlayerController : MonoBehaviour
         invulnerable = false;
         stats.invulnerable = false;
     }
+
+    void OnTriggerEnter(Collider hit)
+    {
+        Enemy isEnemy = GetComponent<Enemy>();
+        if(isEnemy)
+        {
+            ContestSpace(isEnemy.GetComponent<Stats>());
+        }
+    }
+
+    public void ContestSpace(Stats challenger)
+    {
+        float attack = stats.speed + stats.agility + stats.weight + stats.distanceTraveled;
+        float defense = challenger.speed + challenger.agility + challenger.weight + challenger.distanceTraveled;
+
+        if (attack < defense)
+        {
+            if (challenger.distanceTraveled > challenger.minRequiredDistanceTraveled)
+            {
+                PlayerEventManager.TriggerCollision();
+            }
+        }
+        else
+        {
+            Debug.Log(gameObject.name + " Wins");
+        }
+
+    }
 }

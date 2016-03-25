@@ -57,7 +57,7 @@ public class QuadCam : MonoBehaviour
         levelMove = Grid.instance.GetComponent<LevelMovement>();
     }
 
-    void Update()
+    void LateUpdate()
     {
         if (targetPoint.gameObject != null)
         {
@@ -65,7 +65,7 @@ public class QuadCam : MonoBehaviour
             newPos.z = newPos.z - chaseDistance;
             newPos.y = newPos.y + hoverHeight;
 
-            transform.position = Vector3.Lerp(transform.position, newPos, moveAcceleration);
+            transform.position = Vector3.Lerp(transform.position, newPos, moveAcceleration * Time.deltaTime);
 
             TiltEngine(newPos);
             CurrentFov();
@@ -111,7 +111,7 @@ public class QuadCam : MonoBehaviour
         {
             float deltaFov = maxFov - minFov;
             float targetFov = minFov + (deltaFov * levelMove.GetNormalizedSpeed());
-            cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, targetFov, fovSmooth);
+            cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, targetFov, fovSmooth * Time.deltaTime);
         }
     }
 }

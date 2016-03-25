@@ -22,12 +22,17 @@ public class LevelMovement : MonoBehaviour
         PlayerEventManager.CollisionReaction += ResetSpeed;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (isMoving)
         {
             rigid.velocity = movementDirection * CurrentSpeed();
         }
+    }
+
+    void Update()
+    {
+
 
         if (GetNormalizedSpeed() >= 1 && !topSpeed)
         {
@@ -38,7 +43,7 @@ public class LevelMovement : MonoBehaviour
 
     float CurrentSpeed()
     {
-        accelTime += Time.deltaTime;
+        accelTime += Time.fixedDeltaTime;
         float time = accelerationCurve.Evaluate(accelTime / maxAccelTime);
         return maxSpeed * time;
         

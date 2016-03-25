@@ -45,7 +45,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 161982}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.960712, y: 1.804419, z: 1386.5706}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 471750}
@@ -108,7 +108,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 20, z: 1}
+  m_Size: {x: 10, y: 20, z: 3}
   m_Center: {x: 0, y: 10, z: 0}
 --- !u!114 &11416936
 MonoBehaviour:
@@ -122,17 +122,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: {fileID: 11436308}
-  stat: {fileID: 11497816}
+  stats: {fileID: 11497816}
   currentState: 0
   minInactiveTime: 2
   maxInactiveTime: 4
-  chanceToInactive: 0.1
+  chanceToInactive: 1
   minManeuverTime: 2
   maxManeuverTime: 4
-  chanceToManeuver: 0.6
+  chanceToManeuver: 0
   minChaseTime: 2
   maxChaseTime: 3
-  chanceToChase: 0.3
+  chanceToChase: 0
+  stunTime: 3
 --- !u!114 &11422734
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -204,7 +205,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eb9a11abd1b67948984651b22c7bee0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactions: []
+  interactions:
+  - statToAffect: 0
+    affectAmount: 0
+    permanent: 0
+    modTime: 0
 --- !u!114 &11497816
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -221,7 +226,9 @@ MonoBehaviour:
   agility: 0
   power: 0
   luck: 0
-  weight: 1
+  weight: 0
+  distanceTraveled: 0
+  minRequiredDistanceTraveled: 6
   invulnerable: 0
 --- !u!1001 &100100000
 Prefab:

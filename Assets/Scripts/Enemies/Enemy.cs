@@ -5,18 +5,20 @@ public class Enemy : MonoBehaviour
 {
     [Header("Components")]
     public AutoGridMovement movement;
-    public Stats stat;
+    public Stats stats;
 
     protected Grid targetGrid;
     protected PlayerController target;
     protected bool initialized;
     protected bool enteredGrid;
 
+    protected delegate void CollisionTrigger(Vector3 from);
+    protected CollisionTrigger collision;
     public void Init()
     {
         targetGrid = Grid.instance;
         target = PlayerController.instance;
-        movement.Init(targetGrid, stat);
+        movement.Init(targetGrid, stats);
         initialized = true;
     }
 
@@ -28,9 +30,32 @@ public class Enemy : MonoBehaviour
             enteredGrid = true;
         }
     }
-    
+
+    void OnTriggerEnter(Collider hit)
+    {
+        PlayerController isPlayer = hit.GetComponent<PlayerController>();
+        if(isPlayer)
+        {
+            ContestSpace(isPlayer.GetComponent<Stats>());
+        }
+    }
+
+    public void ContestSpace(Stats challenger)
+    {
+        float attack = stats.speed + stats.agility + stats.weight + stats.distanceTraveled;
+        float defense = challenger.speed + challenger.agility + challenger.weight + challenger.distanceTraveled;
+
+        if (attack < defense)
+        {
+            if (challenger.distanceTraveled > challenger.minRequiredDistanceTraveled)
+            {
+                Debug.Log(gameObject.name + " Loses");
+                TriggerCollision(challenger.transform.localPosition);
+            }
+        }
+    }
     public void TriggerCollision(Vector3 from)
     {
-        movement.ForcedMove(from);
+        collision(from);
     }
 }
