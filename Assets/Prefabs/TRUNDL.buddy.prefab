@@ -567,7 +567,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactions: []
-  parentStats: {fileID: 11434282}
 --- !u!114 &11415406
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -580,7 +579,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactions: []
-  parentStats: {fileID: 11434282}
 --- !u!114 &11425336
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -613,6 +611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20c2f23568dce35439bb296820106d16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 11464754}
   bodyAnim: {fileID: 11456010}
   bikeAnim: {fileID: 11454574}
   headAnim: {fileID: 11438272}
@@ -636,9 +635,9 @@ MonoBehaviour:
   agility: 0
   power: 0
   luck: 0
-  weight: 1
+  weight: 0
   distanceTraveled: 0
-  minRequiredDistanceTraveled: 6
+  minRequiredDistanceTraveled: 15
   invulnerable: 0
 --- !u!114 &11438272
 MonoBehaviour:
@@ -676,7 +675,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactions: []
-  parentStats: {fileID: 11434282}
 --- !u!114 &11452834
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -766,6 +764,7 @@ MonoBehaviour:
   animation: {fileID: 11426106}
   equipment: {fileID: 11425336}
   invulTime: 2
+  stunTime: 1
 --- !u!114 &11485652
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -778,7 +777,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactions: []
-  parentStats: {fileID: 11434282}
 --- !u!114 &11487600
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -791,7 +789,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactions: []
-  parentStats: {fileID: 11434282}
 --- !u!114 &11493630
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -823,6 +820,7 @@ MonoBehaviour:
   minTimeToMove: 0.5
   maxTimeToMove: 1
   destinationUpdatePeriod: 0.1
+  currentGridPosition: {x: 0, y: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

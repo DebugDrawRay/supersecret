@@ -45,7 +45,11 @@ public class Stats : MonoBehaviour
     private Timer currentTimer;
 
     public bool invulnerable;
-
+    public bool isDead
+    {
+        get;
+        private set;
+    }
     public class Timer
     {
         float currentTime;
@@ -160,14 +164,9 @@ public class Stats : MonoBehaviour
 
     void CheckStats()
     {
-        PlayerController isPlayer = GetComponent<PlayerController>();
-        Enemy isEnemy = GetComponent<Enemy>();
-        if (isPlayer)
+        if (currentHealth <= 0)
         {
-            if (currentHealth <= 0)
-            {
-                PlayerEventManager.PlayerDeath();
-            }
+            isDead = true;
         }
     }
 

@@ -47,15 +47,17 @@ public class Enemy : MonoBehaviour
 
         if (attack < defense)
         {
+            Debug.Log(name + " loses!");
+
             if (challenger.distanceTraveled > challenger.minRequiredDistanceTraveled)
             {
-                Debug.Log(gameObject.name + " Loses");
-                TriggerCollision(challenger.transform.localPosition);
+                collision(challenger.transform.localPosition);
             }
         }
+        else
+        {
+            Debug.Log(name + " wins!");
+        }
     }
-    public void TriggerCollision(Vector3 from)
-    {
-        collision(from);
-    }
+
 }

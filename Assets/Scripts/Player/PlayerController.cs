@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
         Inactive,
         StartGame,
         InGame,
+        Stunned,
         Dead,
         LevelComplete
     }
@@ -25,8 +26,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Collision Properties")]
     public float invulTime;
-    private bool invulnerable;
-
+    public float stunTime;
     //Health Control
     private float currentHealth;
 
@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
-        PlayerEventManager.CollisionReaction += InvulEvent;
+        PlayerEventManager.StunReaction += StunEvent;
         PlayerEventManager.DeathEvent += DeathEvent;
         InitializeInstance();
     }
@@ -109,6 +109,8 @@ public class PlayerController : MonoBehaviour
             case State.Dead:
                 Destroy(gameObject);
                 break;
+            case State.Stunned:
+                break;
             case State.LevelComplete:
                 break;
         }
@@ -144,31 +146,42 @@ public class PlayerController : MonoBehaviour
         currentState = State.Dead;
     }
 
-    void InvulEvent()
+    void StunEvent()
     {
-        animation.StartInvulAnim(invulTime);
-        StartCoroutine(Invul());
+        StartCoroutine(Stunned());
+    }
+
+    IEnumerator Stunned()
+    {
+        currentState = State.Stunned;
+        for (float i = 0; i <= stunTime; i += Time.deltaTime)
+        {
+            yield return null;
+        }
+        currentState = State.InGame;
     }
 
     IEnumerator Invul()
     {
-        invulnerable = true;
         stats.invulnerable = true;
         for(float i = 0; i <= invulTime; i += Time.deltaTime)
         {
             yield return null;
         }
-        invulnerable = false;
         stats.invulnerable = false;
     }
 
     void OnTriggerEnter(Collider hit)
     {
-        Enemy isEnemy = GetComponent<Enemy>();
+        Enemy isEnemy = hit.GetComponent<Enemy>();
         if(isEnemy)
         {
+            PlayerEventManager.TriggerStun();
             ContestSpace(isEnemy.GetComponent<Stats>());
+            PlayerEventManager.TriggerCollision(hit.transform.localPosition);
+
         }
+
     }
 
     public void ContestSpace(Stats challenger)
@@ -178,15 +191,17 @@ public class PlayerController : MonoBehaviour
 
         if (attack < defense)
         {
+            Debug.Log(name + " loses!");
             if (challenger.distanceTraveled > challenger.minRequiredDistanceTraveled)
             {
-                PlayerEventManager.TriggerCollision();
             }
         }
         else
         {
-            Debug.Log(gameObject.name + " Wins");
+            Debug.Log(name + " wins!");
+            if(stats.distanceTraveled < stats.minRequiredDistanceTraveled)
+            {
+            }
         }
-
     }
 }

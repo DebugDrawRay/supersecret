@@ -22,6 +22,7 @@ public class AutoGridMovement : MonoBehaviour
     private bool initialized;
 
     private bool isMoving;
+    private bool isForcedMoving;
 
     //Distance tracking
     private bool startPositionSet;
@@ -84,49 +85,55 @@ public class AutoGridMovement : MonoBehaviour
 
     public void ForcedMove(Vector3 from)
     {
-        StopAllCoroutines();
-        Vector3 direction = from - transform.localPosition;
-        Debug.Log(name + " " + direction.normalized);
-        float xDir = 0;
-        float yDir = 0;
-
-        if(Mathf.Abs(direction.x) >= Mathf.Abs(direction.y))
+        if (!isForcedMoving)
         {
-            xDir = -direction.normalized.x;
-            yDir = 0;
+            Vector3 direction = from - transform.localPosition;
+            direction = direction.normalized;
+            direction.x = Mathf.Sign(direction.x) * Mathf.Ceil(Mathf.Abs(direction.x));
+            direction.y = Mathf.Sign(direction.y) * Mathf.Ceil(Mathf.Abs(direction.y));
 
-            float newX = currentPoint.x + xDir;
-            if(newX < 0 || newX >= targetGrid.xUnits)
+            float xDir = 0;
+            float yDir = 0;
+
+            if (Mathf.Abs(direction.x) >= Mathf.Abs(direction.y))
             {
-                xDir = 0;
-                yDir = -direction.normalized.x;
-                float newY = currentPoint.y + yDir;
-                if (newY < 0 || newY >= targetGrid.yUnits)
-                {
-                    yDir = -yDir;
-                }
-            }
-        }
-        else if(Mathf.Abs(direction.x) < Mathf.Abs(direction.y))
-        {
-
-            yDir = -direction.normalized.y;
-            xDir = 0;
-
-            float newY = currentPoint.y + yDir;
-            if (newY < 0 || newY >= targetGrid.yUnits)
-            {
+                xDir = -direction.x;
                 yDir = 0;
-                xDir = -direction.normalized.y;
+
                 float newX = currentPoint.x + xDir;
                 if (newX < 0 || newX >= targetGrid.xUnits)
                 {
-                    xDir = -xDir;
+                    xDir = 0;
+                    yDir = -direction.x;
+                    float newY = currentPoint.y + yDir;
+                    if (newY < 0 || newY >= targetGrid.yUnits)
+                    {
+                        yDir = -yDir;
+                    }
                 }
             }
+            else if (Mathf.Abs(direction.x) < Mathf.Abs(direction.y))
+            {
+
+                yDir = -direction.y;
+                xDir = 0;
+
+                float newY = currentPoint.y + yDir;
+                if (newY < 0 || newY >= targetGrid.yUnits)
+                {
+                    yDir = 0;
+                    xDir = -direction.y;
+                    float newX = currentPoint.x + xDir;
+                    if (newX < 0 || newX >= targetGrid.xUnits)
+                    {
+                        xDir = -xDir;
+                    }
+                }
+            }
+
+            Vector2 newDirection = new Vector2(xDir, yDir);
+            StartCoroutine(ForcedMove(.1f, newDirection));
         }
-        Vector2 newPoint = new Vector2(currentPoint.x + xDir, currentPoint.y + yDir);
-        StartCoroutine(MoveToPoint(.1f, newPoint));
     }
 
     public void EnterGrid()
@@ -173,13 +180,20 @@ public class AutoGridMovement : MonoBehaviour
         {
             Vector3 startPosition = transform.localPosition;
             Vector3 nextPosition = targetGrid.GridToWorldPosition(path[i]);
+            currentPoint = path[i];
             for (float t = 0; t <= time; t += Time.deltaTime)
             {
                 float moveTime = t / time;
                 transform.localPosition = Vector3.Lerp(startPosition, nextPosition, movementSmoothing.Evaluate(moveTime));
-                yield return null;
+                if (isForcedMoving)
+                {
+                    break;
+                }
+                else
+                {
+                    yield return null;
+                }
             }
-            currentPoint = path[i];
         }
         isMoving = false;
     }
@@ -189,14 +203,42 @@ public class AutoGridMovement : MonoBehaviour
         isMoving = true;
         Vector3 startPosition = transform.localPosition;
         Vector3 nextPosition = targetGrid.GridToWorldPosition(point);
+        currentPoint = point;
         for (float t = 0; t <= time; t += Time.deltaTime)
         {
             float moveTime = t / time;
             transform.localPosition = Vector3.Lerp(startPosition, nextPosition, movementSmoothing.Evaluate(moveTime));
-            yield return null;
+            if (isForcedMoving)
+            {
+                break;
+            }
+            else
+            {
+                yield return null;
+            }
         }
-        currentPoint = point;
         isMoving = false;
+    }
 
+    IEnumerator ForcedMove(float time, Vector2 direction)
+    {
+        if (targetGrid.CheckIfValidUnit(direction + currentPoint))
+        {
+            currentPoint = direction + currentPoint;
+
+            isForcedMoving = true;
+            isMoving = true;
+            Vector3 startPosition = transform.localPosition;
+            Vector3 nextPosition = targetGrid.GridToWorldPosition(currentPoint);
+
+            for (float t = 0; t <= time; t += Time.deltaTime)
+            {
+                float moveTime = t / time;
+                transform.localPosition = Vector3.Lerp(startPosition, nextPosition, movementSmoothing.Evaluate(moveTime));
+                yield return null;
+            }
+            isMoving = false;
+            isForcedMoving = false;
+        }
     }
 }

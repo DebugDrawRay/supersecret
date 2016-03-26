@@ -37,7 +37,7 @@ public class QuadCam : MonoBehaviour
     public TransparencySortMode sort;
     void Awake()
     {
-        PlayerEventManager.CollisionReaction += CameraShake;
+        PlayerEventManager.StunReaction += CameraShake;
         PlayerEventManager.TopSpeedEvent += MaxFov;
         cam = GetComponent<Camera>();
         cam.transparencySortMode = sort;

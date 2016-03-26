@@ -38,11 +38,7 @@ public class GridMovement : MonoBehaviour
     private bool isHit;
 
     //positioning control
-    public Vector2 targetGridPosition
-    {
-        get;
-        private set;
-    }
+    public Vector2 currentGridPosition;
     private Vector3 targetLocalPosition;
 
     //Distance tracking
@@ -57,9 +53,6 @@ public class GridMovement : MonoBehaviour
     //References
     private Grid targetGrid;
 
-    private float destinationDistance;
-    private Vector3 destinationDirection;
-
     //components
     private Stats stats;
     private PlayerAnimationController animation;
@@ -68,12 +61,14 @@ public class GridMovement : MonoBehaviour
 
     public void Init(Stats statsComponent, Grid grid, PlayerAnimationController animationComponent)
     {
+        
+        PlayerEventManager.CollisionReaction += CollisionMove;
+
         currentDestinationUpdate = destinationUpdatePeriod;
         stats = statsComponent;
         animation = animationComponent;
         targetGrid = grid;
-
-        targetGridPosition = startGridPosition;
+        currentGridPosition = startGridPosition;
         if (targetGrid)
         {
             transform.localPosition = targetGrid.GridToWorldPosition(startGridPosition);
@@ -92,7 +87,7 @@ public class GridMovement : MonoBehaviour
             currentDestinationUpdate -= Time.deltaTime;
         }
 
-        if (isMoving)
+        if (isMoving && !isHit)
         {
             if(!startPositionSet)
             {
@@ -124,16 +119,16 @@ public class GridMovement : MonoBehaviour
             if (currentDestinationUpdate <= 0)
             {
                 Vector2 destinationGridPosition = Vector2.zero;
-                destinationGridPosition.x = targetGridPosition.x + x;
-                destinationGridPosition.y = targetGridPosition.y + y;
+                destinationGridPosition.x = currentGridPosition.x + x;
+                destinationGridPosition.y = currentGridPosition.y + y;
 
                 if (targetGrid.CheckIfValidUnit(destinationGridPosition))
                 {
-                    targetGridPosition = destinationGridPosition;
+                    currentGridPosition = destinationGridPosition;
 
                     startTime = Time.time;
                     lerpStartPostion = transform.localPosition;
-                    targetLocalPosition = targetGrid.GridToWorldPosition(targetGridPosition);
+                    targetLocalPosition = targetGrid.GridToWorldPosition(destinationGridPosition);
 
                     moveTime = 0;
                     xPercentageComplete = 0;
@@ -143,7 +138,6 @@ public class GridMovement : MonoBehaviour
                     currentDestinationUpdate = destinationUpdatePeriod;
                 }
             }
-
         }
     }
 
@@ -171,53 +165,59 @@ public class GridMovement : MonoBehaviour
     public void CollisionMove(Vector3 from)
     {
         Vector3 direction = from - transform.localPosition;
-        float xDir = -direction.normalized.x;
-        float yDir = -direction.normalized.y;
+        direction = direction.normalized;
+        direction.x = Mathf.Sign(direction.x) * Mathf.Ceil(Mathf.Abs(direction.x));
+        direction.y = Mathf.Sign(direction.y) * Mathf.Ceil(Mathf.Abs(direction.y));
+
+        float xDir = 0;
+        float yDir = 0;
 
         if (Mathf.Abs(direction.x) >= Mathf.Abs(direction.y))
         {
-            xDir = -direction.normalized.x;
+            xDir = -direction.x;
             yDir = 0;
 
-            float newX = targetGridPosition.x + xDir;
+            float newX = targetGrid.GetClosestUnit(transform.localPosition).x + xDir;
             if (newX < 0 || newX >= targetGrid.xUnits)
             {
-                yDir = -direction.normalized.x;
-                float newY = targetGridPosition.y + yDir;
+                xDir = 0;
+                yDir = -direction.x;
+                float newY = targetGrid.GetClosestUnit(transform.localPosition).y + yDir;
                 if (newY < 0 || newY >= targetGrid.yUnits)
                 {
                     yDir = -yDir;
                 }
             }
         }
-        else
+        else if (Mathf.Abs(direction.x) < Mathf.Abs(direction.y))
         {
-            yDir = -direction.normalized.y;
+
+            yDir = -direction.y;
             xDir = 0;
 
-            float newY = targetGridPosition.y + yDir;
+            float newY = targetGrid.GetClosestUnit(transform.localPosition).y + yDir;
             if (newY < 0 || newY >= targetGrid.yUnits)
             {
-                xDir = -direction.normalized.y;
-                float newX = targetGridPosition.x + xDir;
+                yDir = 0;
+                xDir = -direction.y;
+                float newX = targetGrid.GetClosestUnit(transform.localPosition).x + xDir;
                 if (newX < 0 || newX >= targetGrid.xUnits)
                 {
                     xDir = -xDir;
                 }
             }
         }
-
-        StartCoroutine(ForceMove(xDir, yDir, .25f));
+        Vector2 newDirection = new Vector2(xDir, yDir);
+        StartCoroutine(ForceMove(.1f, newDirection));
     }
 
-    IEnumerator ForceMove(float xDirection, float zDirection, float time)
+    IEnumerator ForceMove(float time, Vector2 direction)
     {
         isHit = true;
         lerpStartPostion = transform.localPosition;
 
-        Vector2 newPoint = targetGridPosition;
-        newPoint.x += Mathf.Sign(xDirection) * Mathf.Abs(Mathf.Ceil(xDirection));
-        newPoint.y += Mathf.Sign(zDirection) * Mathf.Abs(Mathf.Ceil(zDirection));
+        Vector2 newPoint = targetGrid.GetClosestUnit(transform.localPosition) + direction;
+        Debug.Log(newPoint);
         Vector3 newPosition = targetGrid.GridToWorldPosition(newPoint);
 
         for (float i = 0; i <= time; i += Time.deltaTime)
@@ -226,7 +226,7 @@ public class GridMovement : MonoBehaviour
             transform.localPosition = Vector3.Lerp(lerpStartPostion, newPosition, moveTime);
             yield return null;
         }
-        targetGridPosition = newPoint;
+        currentGridPosition = newPoint;
         targetLocalPosition = newPosition;
         isHit = false;
     }

@@ -82,7 +82,7 @@ public class ManeuveringEnemy : Enemy
                 break;
             case state.Chasing:
                 chaseTime -= Time.deltaTime;
-                Vector2 targetPos = target.movement.targetGridPosition;
+                Vector2 targetPos = target.movement.currentGridPosition;
                 movement.MoveToDestination(targetPos);
                 if (chaseTime <= 0)
                 {
@@ -123,6 +123,10 @@ public class ManeuveringEnemy : Enemy
     void TriggerStun(Vector3 from)
     {
         movement.ForcedMove(from);
+        inactiveTime = Random.Range(minInactiveTime, maxInactiveTime);
+        maneuverTime = Random.Range(minManeuverTime, maxManeuverTime);
+        chaseTime = Random.Range(minChaseTime, maxChaseTime);
+        currentStunTime = stunTime;
         currentState = state.Stunned;
     }
 }
