@@ -61,6 +61,7 @@ public class AutoGridMovement : MonoBehaviour
         }
         stats.distanceTraveled = distanceTraveled;
     }
+
     public void MoveToDestination(Vector2 goal)
     {
         if (!isMoving)
@@ -132,7 +133,7 @@ public class AutoGridMovement : MonoBehaviour
             }
 
             Vector2 newDirection = new Vector2(xDir, yDir);
-            StartCoroutine(ForcedMove(.1f, newDirection));
+            StartCoroutine(ForcedMove(.25f, newDirection));
         }
     }
 

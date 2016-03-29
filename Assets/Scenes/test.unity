@@ -368,42 +368,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 11414132, guid: ae402ccce10e3834e95d01b4c71c598c, type: 2}
-      propertyPath: playerCharacter
-      value: 
-      objectReference: {fileID: 193790, guid: 175175dc273078e479955695d18f512a, type: 2}
-    - target: {fileID: 11422248, guid: ae402ccce10e3834e95d01b4c71c598c, type: 2}
-      propertyPath: generateEnemies
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11422248, guid: ae402ccce10e3834e95d01b4c71c598c, type: 2}
-      propertyPath: enemySpawnRate
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11422248, guid: ae402ccce10e3834e95d01b4c71c598c, type: 2}
-      propertyPath: generateObstacles
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11422248, guid: ae402ccce10e3834e95d01b4c71c598c, type: 2}
-      propertyPath: generateHorizon
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11422248, guid: ae402ccce10e3834e95d01b4c71c598c, type: 2}
-      propertyPath: generateWalls
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11422248, guid: ae402ccce10e3834e95d01b4c71c598c, type: 2}
-      propertyPath: generateGround
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11422248, guid: ae402ccce10e3834e95d01b4c71c598c, type: 2}
-      propertyPath: generateRoad
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11422248, guid: ae402ccce10e3834e95d01b4c71c598c, type: 2}
-      propertyPath: obstacleSpawnRate
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ae402ccce10e3834e95d01b4c71c598c, type: 2}
   m_IsPrefabParent: 0
@@ -446,15 +410,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 3374244, guid: 175175dc273078e479955695d18f512a, type: 2}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3379866, guid: 175175dc273078e479955695d18f512a, type: 2}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3356070, guid: 175175dc273078e479955695d18f512a, type: 2}
+    - target: {fileID: 3343980, guid: 175175dc273078e479955695d18f512a, type: 2}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
@@ -462,7 +418,15 @@ Prefab:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 3343980, guid: 175175dc273078e479955695d18f512a, type: 2}
+    - target: {fileID: 3356070, guid: 175175dc273078e479955695d18f512a, type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3379866, guid: 175175dc273078e479955695d18f512a, type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3374244, guid: 175175dc273078e479955695d18f512a, type: 2}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}

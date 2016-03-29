@@ -12,7 +12,6 @@ GameObject:
   - 23: {fileID: 2379838}
   - 114: {fileID: 11438272}
   - 114: {fileID: 11439678}
-  - 65: {fileID: 6594904}
   - 54: {fileID: 5422646}
   m_Layer: 9
   m_Name: head
@@ -33,7 +32,6 @@ GameObject:
   - 23: {fileID: 2399326}
   - 114: {fileID: 11456010}
   - 114: {fileID: 11485652}
-  - 65: {fileID: 6555580}
   - 54: {fileID: 5478204}
   m_Layer: 9
   m_Name: body
@@ -54,7 +52,6 @@ GameObject:
   - 23: {fileID: 2349588}
   - 114: {fileID: 11402354}
   - 114: {fileID: 11412906}
-  - 65: {fileID: 6584372}
   - 54: {fileID: 5408636}
   m_Layer: 9
   m_Name: left
@@ -75,7 +72,6 @@ GameObject:
   - 23: {fileID: 2398218}
   - 114: {fileID: 11454574}
   - 114: {fileID: 11415406}
-  - 65: {fileID: 6540954}
   - 54: {fileID: 5460868}
   m_Layer: 9
   m_Name: bike
@@ -96,7 +92,6 @@ GameObject:
   - 23: {fileID: 2345840}
   - 114: {fileID: 11452834}
   - 114: {fileID: 11487600}
-  - 65: {fileID: 6594060}
   - 54: {fileID: 5414566}
   m_Layer: 9
   m_Name: right
@@ -469,68 +464,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 17.75, y: 21, z: 8.5}
+  m_Size: {x: 17, y: 21, z: 17}
   m_Center: {x: 0, y: 10, z: 1.25}
---- !u!65 &6540954
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 168054}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 9.550056, y: 10.02, z: 3}
-  m_Center: {x: 0.09549141, y: 4.82, z: 0}
---- !u!65 &6555580
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 116864}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 8.44, y: 10, z: 3}
-  m_Center: {x: 0.058091164, y: 13.4, z: -1.53}
---- !u!65 &6584372
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 141062}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 5.2917633, y: 10.257282, z: 3}
-  m_Center: {x: -6.270897, y: 13.570044, z: 0}
---- !u!65 &6594060
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 193692}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 4.9802465, y: 10.121779, z: 3}
-  m_Center: {x: 6.3188534, y: 13.4636135, z: 0}
---- !u!65 &6594904
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 108926}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 8.169943, y: 5.6729965, z: 3}
-  m_Center: {x: 0.103633165, y: 17.67244, z: 1.5}
 --- !u!114 &11402354
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -761,7 +696,7 @@ MonoBehaviour:
   currentState: 2
   movement: {fileID: 11493630}
   stats: {fileID: 11434282}
-  animation: {fileID: 11426106}
+  anim: {fileID: 11426106}
   equipment: {fileID: 11425336}
   invulTime: 2
   stunTime: 1

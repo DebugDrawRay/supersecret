@@ -216,7 +216,7 @@ public class GridMovement : MonoBehaviour
         isHit = true;
         lerpStartPostion = transform.localPosition;
 
-        Vector2 newPoint = targetGrid.GetClosestUnit(transform.localPosition) + direction;
+        Vector2 newPoint = targetGrid.GetClosestUnit(transform.localPosition);
         Debug.Log(newPoint);
         Vector3 newPosition = targetGrid.GridToWorldPosition(newPoint);
 

@@ -47,7 +47,7 @@ public class ManeuveringEnemy : Enemy
 
         currentStunTime = stunTime;
 
-        collision += TriggerStun;
+        Collision += TriggerStun;
     }
 
     void Update()
@@ -92,7 +92,7 @@ public class ManeuveringEnemy : Enemy
                 break;
             case state.Stunned:
                 currentStunTime -= Time.deltaTime;
-                if(stunTime <= 0)
+                if(currentStunTime <= 0)
                 {
                     currentStunTime = stunTime;
                     currentState = SelectState();
@@ -120,9 +120,10 @@ public class ManeuveringEnemy : Enemy
         }
     }
     
-    void TriggerStun(Vector3 from)
+    void TriggerStun()
     {
-        movement.ForcedMove(from);
+        movement.StopAllCoroutines();
+
         inactiveTime = Random.Range(minInactiveTime, maxInactiveTime);
         maneuverTime = Random.Range(minManeuverTime, maxManeuverTime);
         chaseTime = Random.Range(minChaseTime, maxChaseTime);

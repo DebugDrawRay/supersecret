@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     [Header("Components")]
     public GridMovement movement;
     public Stats stats;
-    public PlayerAnimationController animation;
+    public PlayerAnimationController anim;
     public EquipmentController equipment;
 
     [Header("Collision Properties")]
@@ -66,11 +66,11 @@ public class PlayerController : MonoBehaviour
         transform.SetParent(gridSystem.transform);
         equipment.Init();
 
-        movement.Init(stats, grid, animation);
+        movement.Init(stats, grid, anim);
 
         SetupInput();
 
-        animation.Init();
+        anim.Init();
 
         SetupHealth();
 
@@ -173,15 +173,19 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter(Collider hit)
     {
-        Enemy isEnemy = hit.GetComponent<Enemy>();
-        if(isEnemy)
+        InteractionSource isInteraction = hit.GetComponent<InteractionSource>();
+
+        if(isInteraction)
         {
             PlayerEventManager.TriggerStun();
-            ContestSpace(isEnemy.GetComponent<Stats>());
             PlayerEventManager.TriggerCollision(hit.transform.localPosition);
 
+            Stats hasStats = isInteraction.GetComponent<Stats>();
+            if(hasStats)
+            {
+                ContestSpace(hasStats);
+            }
         }
-
     }
 
     public void ContestSpace(Stats challenger)

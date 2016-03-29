@@ -12,8 +12,9 @@ public class Enemy : MonoBehaviour
     protected bool initialized;
     protected bool enteredGrid;
 
-    protected delegate void CollisionTrigger(Vector3 from);
-    protected CollisionTrigger collision;
+    protected delegate void CollisionTrigger();
+    protected CollisionTrigger Collision;
+
     public void Init()
     {
         targetGrid = Grid.instance;
@@ -36,6 +37,7 @@ public class Enemy : MonoBehaviour
         PlayerController isPlayer = hit.GetComponent<PlayerController>();
         if(isPlayer)
         {
+            Collision();
             ContestSpace(isPlayer.GetComponent<Stats>());
         }
     }
@@ -51,11 +53,12 @@ public class Enemy : MonoBehaviour
 
             if (challenger.distanceTraveled > challenger.minRequiredDistanceTraveled)
             {
-                collision(challenger.transform.localPosition);
+                movement.ForcedMove(challenger.transform.localPosition);
             }
         }
         else
         {
+            movement.ForcedMove(targetGrid.GetClosestUnit(transform.localPosition));
             Debug.Log(name + " wins!");
         }
     }

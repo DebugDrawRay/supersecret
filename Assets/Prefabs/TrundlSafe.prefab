@@ -31,6 +31,7 @@ GameObject:
   - 114: {fileID: 11497816}
   - 65: {fileID: 6538032}
   - 114: {fileID: 11452764}
+  - 114: {fileID: 11479708}
   m_Layer: 0
   m_Name: TrundlSafe
   m_TagString: Untagged
@@ -133,13 +134,13 @@ MonoBehaviour:
   currentState: 0
   minInactiveTime: 2
   maxInactiveTime: 4
-  chanceToInactive: 1
+  chanceToInactive: 0.2
   minManeuverTime: 2
   maxManeuverTime: 4
-  chanceToManeuver: 0
+  chanceToManeuver: 0.6
   minChaseTime: 2
   maxChaseTime: 3
-  chanceToChase: 0
+  chanceToChase: 0.2
   stunTime: 3
 --- !u!114 &11436308
 MonoBehaviour:
@@ -190,8 +191,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactions:
   - statToAffect: 0
-    affectAmount: 0
-    permanent: 0
+    affectAmount: -0.1
+    permanent: 1
     modTime: 0
 --- !u!114 &11466178
 MonoBehaviour:
@@ -217,6 +218,22 @@ MonoBehaviour:
   _animationName: idle_open
   loop: 1
   timeScale: 1
+--- !u!114 &11479708
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 161982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46bb615027bea6a4186b4dfc3946f64d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 11466178}
+  idleAnim: idle_open
+  collisionAnimLeft: hit_left_open
+  collisionAnimRight: hit_right_open
+  universalTimeScale: 2
 --- !u!114 &11497816
 MonoBehaviour:
   m_ObjectHideFlags: 1

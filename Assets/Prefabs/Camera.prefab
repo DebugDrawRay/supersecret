@@ -95,7 +95,7 @@ MonoBehaviour:
   tiltSpeed: 4
   hoverHeight: 14
   hoverHeightDeviation: 14
-  chaseDistance: 32.5
+  chaseDistance: 45
   moveSpeed: 100
   moveAcceleration: 4
   minFov: 50
