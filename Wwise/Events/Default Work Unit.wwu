@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{B8A46AB6-2F4D-4D8E-9966-0D58756EA65B}" SchemaVersion="70">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{B8A46AB6-2F4D-4D8E-9966-0D58756EA65B}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="musicStart" ID="{18E0E630-4F37-4749-8712-A2C05703BBB4}">
+					<ChildrenList>
+						<Action Name="Play" ID="{4BED1968-34AC-4CCB-B3FD-2E971BF102BC}" ShortID="831155307" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{DAB065FB-3C66-4655-8F9F-506B05E0D2F0}" Global="false">
+									<ObjectRef Name="mus_IntroLullaby" ID="{8E4E8E77-6B95-40BA-B8BF-CD97C1929AB3}" WorkUnitID="{F4D6CB59-2D66-4956-9054-AA8F03BEA1E0}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="TB_engineStart" ID="{E9049DC1-6368-461B-8EE3-608AFA527DFE}">
+					<ChildrenList>
+						<Action Name="Play" ID="{9BDEC195-66B8-4074-872F-1F8661CC3AD1}" ShortID="1028050170" Type="Play" Scope="One" Global="false">
+							<PropertyList>
+								<Property Name="FadeTime" Type="Real64" Value="0.1"/>
+							</PropertyList>
+							<ElementList>
+								<Element ID="{49C9EAE7-ED45-4DEC-96DD-7B360C48BB26}" Global="false">
+									<ObjectRef Name="TB_engineLoop_01" ID="{A7068037-CE30-435F-9A75-F4DAD76D3933}" WorkUnitID="{FFDDB849-0196-4EA1-AB43-0B400A594E4C}"/>
+								</Element>
+							</ElementList>
+						</Action>
+						<Action Name="Play" ID="{39411DB1-589E-41BD-BE8E-A163FA39C7F6}" ShortID="136497062" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{D8E194FB-51D6-4622-8E3D-67909ADF129D}" Global="false">
+									<ObjectRef Name="tireLoopSwitch" ID="{775E10B0-70BD-42B2-ACF2-381DD95A5566}" WorkUnitID="{FFDDB849-0196-4EA1-AB43-0B400A594E4C}"/>
+								</Element>
+							</ElementList>
+						</Action>
+						<Action Name="Set State" ID="{BD77D3E5-2622-4F2E-982E-27740DBDDE4A}" ShortID="46666502" Type="SetState" Scope="All" Global="true">
+							<SetItemParam>
+								<Group Name="Skid" ID="{6AF8762B-B5D6-4D0C-B6FD-E109A94CCB93}"/>
+								<GroupItem Name="Off" ID="{02B33C46-BF0F-4A37-8670-578344187EFF}"/>
+							</SetItemParam>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="TB_collisionMetal" ID="{67F34E9C-EAC6-4690-B76A-74078F3974F6}">
+					<ChildrenList>
+						<Action Name="Play" ID="{0DA8C738-F773-497C-9893-3A76DBDFE15A}" ShortID="121355024" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{4631E712-84A5-4D45-8419-7F13728481AC}" Global="false">
+									<ObjectRef Name="TB_collisionMetal" ID="{6DAA812D-B6F3-4890-874A-F770270F2214}" WorkUnitID="{FFDDB849-0196-4EA1-AB43-0B400A594E4C}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="TB_tireSkidShort" ID="{F3855633-0FFB-47F0-BD40-1930D02FE602}">
+					<ChildrenList>
+						<Action Name="Play" ID="{D418D215-00FE-4F94-9BE6-87E043704CEA}" ShortID="227290294" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{1A0EF1FB-DE18-4634-95CC-B8C6F99B5034}" Global="false">
+									<ObjectRef Name="TB_skid_dirt_short" ID="{52CE8AB5-323B-4363-BFD1-5F6A93D79106}" WorkUnitID="{FFDDB849-0196-4EA1-AB43-0B400A594E4C}"/>
+								</Element>
+							</ElementList>
+						</Action>
+						<Action Name="Set State" ID="{CF943CD8-173B-45DE-9FA5-C403D63F20FE}" ShortID="365572919" Type="SetState" Scope="All" Global="true">
+							<SetItemParam>
+								<Group Name="Skid" ID="{6AF8762B-B5D6-4D0C-B6FD-E109A94CCB93}"/>
+								<GroupItem Name="On" ID="{C77A1EBD-D495-48D4-B55A-D0AB1D441AFD}"/>
+							</SetItemParam>
+						</Action>
+						<Action Name="Set State" ID="{9D3CD2C8-ACFB-4361-9B1C-37C342B63A62}" ShortID="481174376" Type="SetState" Scope="All" Global="true">
+							<PropertyList>
+								<Property Name="Delay" Type="Real64" Value="0.4"/>
+							</PropertyList>
+							<SetItemParam>
+								<Group Name="Skid" ID="{6AF8762B-B5D6-4D0C-B6FD-E109A94CCB93}"/>
+								<GroupItem Name="Off" ID="{02B33C46-BF0F-4A37-8670-578344187EFF}"/>
+							</SetItemParam>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="TB_collisionRocks" ID="{292488E9-415A-4849-BE81-68D8C2650C49}">
+					<ChildrenList>
+						<Action Name="Play" ID="{1C337594-3C7C-4296-B071-DBFA814CF9F9}" ShortID="675476426" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{B5687A34-4C76-46F7-BB7A-01836CD95044}" Global="false">
+									<ObjectRef Name="TB_collisionRocks" ID="{39AF6222-B3D5-4573-9B0C-F4E5B6E5F77E}" WorkUnitID="{FFDDB849-0196-4EA1-AB43-0B400A594E4C}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Folder Name="_OLD" ID="{144DF3BB-568B-4748-827F-F393BBE16A5A}" ShortID="564735080">
+					<ChildrenList>
+						<Event Name="TB_tireSkidLong" ID="{96DEEA96-4BDE-4D3F-BE17-9F735AB6155A}">
+							<ChildrenList>
+								<Action Name="Play" ID="{BEF2B75E-5FB0-4DF2-80A0-8F542AE29727}" ShortID="684083981" Type="Play" Scope="One" Global="false">
+									<ElementList>
+										<Element ID="{C84E6CFE-0BB0-49FA-87EF-1CD0DDFF51B0}" Global="false">
+											<ObjectRef Name="TB_skid_dirt_long" ID="{BC72F2FB-7442-44E2-9EC7-6B14C2D69264}" WorkUnitID="{FFDDB849-0196-4EA1-AB43-0B400A594E4C}"/>
+										</Element>
+									</ElementList>
+								</Action>
+								<Action Name="Set State" ID="{1519758A-696B-4E84-A5AA-F8E9675E41AA}" ShortID="388316840" Type="SetState" Scope="All" Global="true">
+									<SetItemParam>
+										<Group Name="Skid" ID="{6AF8762B-B5D6-4D0C-B6FD-E109A94CCB93}"/>
+										<GroupItem Name="On" ID="{C77A1EBD-D495-48D4-B55A-D0AB1D441AFD}"/>
+									</SetItemParam>
+								</Action>
+								<Action Name="Set State" ID="{3CF9DF4E-FC64-4CD9-84A8-ECE05DF67AB6}" ShortID="861632736" Type="SetState" Scope="All" Global="true">
+									<PropertyList>
+										<Property Name="Delay" Type="Real64" Value="0.5"/>
+									</PropertyList>
+									<SetItemParam>
+										<Group Name="Skid" ID="{6AF8762B-B5D6-4D0C-B6FD-E109A94CCB93}"/>
+										<GroupItem Name="Off" ID="{02B33C46-BF0F-4A37-8670-578344187EFF}"/>
+									</SetItemParam>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Event Name="canyon_GeyserLoop" ID="{42D1A646-E1F9-4B60-80F3-449AC8BA651F}">
+					<ChildrenList>
+						<Action Name="Play" ID="{52D239F4-57ED-4C8C-9B39-B34CCAEABCF7}" ShortID="819523841" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{C5FF241E-467E-450A-BF49-33899DC7D23A}" Global="false">
+									<ObjectRef Name="canyon_geyser_loop_01" ID="{D8F1DE6D-814E-4BB4-A96A-C0E983025E4D}" WorkUnitID="{FFDDB849-0196-4EA1-AB43-0B400A594E4C}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="wooshSmall" ID="{C30848EC-651D-4DDB-BE06-6E7E2283DE9E}">
+					<ChildrenList>
+						<Action Name="Play" ID="{0B3A62D9-DD70-491A-B8D4-914699B51F00}" ShortID="137681793" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{AAA3A580-263B-4F2C-93D4-9FF8EC827453}" Global="false">
+									<ObjectRef Name="woosh_rumble_small" ID="{1C9F5CCA-8CC8-4ABA-B8BA-52BED2C9D7D2}" WorkUnitID="{FFDDB849-0196-4EA1-AB43-0B400A594E4C}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="wooshBig" ID="{F3124473-C4C5-430B-8C08-C615E2D607D5}">
+					<ChildrenList>
+						<Action Name="Play" ID="{747869D7-3DF0-4BD2-BA68-B5B8A6228281}" ShortID="94891140" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{AC29D86B-9CC9-446C-8511-BB111F1DFF53}" Global="false">
+									<ObjectRef Name="woosh_rumble_big" ID="{A8DD9A79-B590-4AA5-ACB5-B9B6CE5316E9}" WorkUnitID="{FFDDB849-0196-4EA1-AB43-0B400A594E4C}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

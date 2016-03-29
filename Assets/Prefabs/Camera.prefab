@@ -11,8 +11,8 @@ GameObject:
   - 20: {fileID: 2006618}
   - 124: {fileID: 12427000}
   - 92: {fileID: 9274170}
-  - 81: {fileID: 8110790}
   - 114: {fileID: 11426428}
+  - 114: {fileID: 11490282}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -57,7 +57,7 @@ Camera:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RenderingPath: 3
+  m_RenderingPath: 1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
@@ -66,13 +66,6 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
---- !u!81 &8110790
-AudioListener:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 165910}
-  m_Enabled: 1
 --- !u!92 &9274170
 Behaviour:
   m_ObjectHideFlags: 1
@@ -92,20 +85,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tiltLimit: 15
-  tiltSpeed: 4
+  tiltSpeed: 0.1
   hoverHeight: 14
   hoverHeightDeviation: 14
-  chaseDistance: 45
+  chaseDistance: 32.5
   moveSpeed: 100
-  moveAcceleration: 4
+  moveAcceleration: 0.1
   minFov: 50
   maxFov: 60
-  fovSmooth: 4
+  fovSmooth: 0.1
   duration: 0.1
   strength: 10
   vibrado: 100
   randomness: 100
   sort: 1
+--- !u!114 &11490282
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 165910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44e1fb2fdb1b34d7abbedf4f1b80131a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listenerId: 0
 --- !u!124 &12427000
 Behaviour:
   m_ObjectHideFlags: 1

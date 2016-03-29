@@ -136,6 +136,8 @@ public class GridMovement : MonoBehaviour
 
                     isMoving = true;
                     currentDestinationUpdate = destinationUpdatePeriod;
+
+					AkSoundEngine.PostEvent("TB_tireSkidShort", this.gameObject);
                 }
             }
         }

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="10" SoundbankVersion="113">
+	<RootPaths>
+		<ProjectRoot>/Users/soundtracks/Library/Application Support/Wwise/Bottles/wwise/dosdevices/z:/Volumes/Projects/Repositories/supersecret/Wwise/</ProjectRoot>
+		<SourceFilesRoot>/Users/soundtracks/Library/Application Support/Wwise/Bottles/wwise/dosdevices/z:/Volumes/Projects/Repositories/supersecret/Wwise/.cache/Mac/</SourceFilesRoot>
+		<SoundBanksRoot>/Users/soundtracks/Library/Application Support/Wwise/Bottles/wwise/dosdevices/z:/Volumes/Projects/Repositories/supersecret/Wwise/GeneratedSoundBanks/Mac/</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>/Users/soundtracks/Library/Application Support/Wwise/Bottles/wwise/dosdevices/z:/Volumes/Projects/Repositories/supersecret/Wwise/GeneratedSoundBanks/Mac/</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Language="SFX">
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="3161908922" Language="SFX">
+			<ShortName>MAIN</ShortName>
+			<Path>MAIN.bnk</Path>
+			<IncludedEvents>
+				<Event Id="789866735" Name="canyon_GeyserLoop"/>
+				<Event Id="1122283870" Name="musicStart"/>
+				<Event Id="832369107" Name="TB_collisionMetal"/>
+				<Event Id="3628795728" Name="TB_collisionRocks"/>
+				<Event Id="2710852396" Name="TB_engineStart"/>
+				<Event Id="3576966165" Name="TB_tireSkidShort"/>
+				<Event Id="300766571" Name="wooshBig"/>
+				<Event Id="1224784748" Name="wooshSmall"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="3956943" Language="SFX">
+					<ShortName>bigDog_collision_02.wav</ShortName>
+					<Path>SFX/bigDog_collision_02_FC2ED978.wem</Path>
+				</File>
+				<File Id="7722295" Language="SFX">
+					<ShortName>TB_collision_rocks_01.wav</ShortName>
+					<Path>SFX/TB_collision_rocks_01_9E69E797.wem</Path>
+				</File>
+				<File Id="54837830" Language="SFX">
+					<ShortName>tire_skid_dirt03.wav</ShortName>
+					<Path>SFX/tire_skid_dirt03_B1028579.wem</Path>
+				</File>
+				<File Id="241640635" Language="SFX">
+					<ShortName>tire_skid_dirt_detail_02.wav</ShortName>
+					<Path>SFX/tire_skid_dirt_detail_02_5950E099.wem</Path>
+				</File>
+				<File Id="246687455" Language="SFX">
+					<ShortName>TB_collision_rocks_02.wav</ShortName>
+					<Path>SFX/TB_collision_rocks_02_9E69E797.wem</Path>
+				</File>
+				<File Id="283517202" Language="SFX">
+					<ShortName>tire_skid_dirt03.wav</ShortName>
+					<Path>SFX/tire_skid_dirt03_957010B4.wem</Path>
+				</File>
+				<File Id="336171348" Language="SFX">
+					<ShortName>canyon_geyser_loop_01.wav</ShortName>
+					<Path>SFX/canyon_geyser_loop_01_4B8CC0C5.wem</Path>
+				</File>
+				<File Id="337733320" Language="SFX">
+					<ShortName>TB_collision_rocks_03.wav</ShortName>
+					<Path>SFX/TB_collision_rocks_03_9E69E797.wem</Path>
+				</File>
+				<File Id="508092721" Language="SFX">
+					<ShortName>IntroLullaby_chorus_v2.wav</ShortName>
+					<Path>SFX/IntroLullaby_chorus_v2_4B8CC0C5.wem</Path>
+				</File>
+				<File Id="754492438" Language="SFX">
+					<ShortName>woosh_rumble_01.wav</ShortName>
+					<Path>SFX/woosh_rumble_01_4B8CC0C5.wem</Path>
+				</File>
+				<File Id="771707133" Language="SFX">
+					<ShortName>tires_rolling_on_dirt_03_loop.wav</ShortName>
+					<Path>SFX/tires_rolling_on_dirt_03_loop_4B8CC0C5.wem</Path>
+				</File>
+				<File Id="796289240" Language="SFX">
+					<ShortName>tire_skid_dirt_detail_02.wav</ShortName>
+					<Path>SFX/tire_skid_dirt_detail_02_DCEB5BA2.wem</Path>
+				</File>
+				<File Id="828596493" Language="SFX">
+					<ShortName>bigDog_collision_01.wav</ShortName>
+					<Path>SFX/bigDog_collision_01_D4B252A9.wem</Path>
+				</File>
+				<File Id="840237749" Language="SFX">
+					<ShortName>TB_EngineLoop_v01.wav</ShortName>
+					<Path>SFX/TB_EngineLoop_v01_4B8CC0C5.wem</Path>
+				</File>
+				<File Id="854569473" Language="SFX">
+					<ShortName>tire_skid_dirt03.wav</ShortName>
+					<Path>SFX/tire_skid_dirt03_C14F4271.wem</Path>
+				</File>
+				<File Id="1020474679" Language="SFX">
+					<ShortName>tire_skid_dirt_detail_02.wav</ShortName>
+					<Path>SFX/tire_skid_dirt_detail_02_A5F51F88.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

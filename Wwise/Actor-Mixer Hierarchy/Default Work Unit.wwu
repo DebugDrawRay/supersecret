@@ -1,0 +1,2253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{FFDDB849-0196-4EA1-AB43-0B400A594E4C}" SchemaVersion="70">
+	<AudioObjects>
+		<WorkUnit Name="Default Work Unit" ID="{FFDDB849-0196-4EA1-AB43-0B400A594E4C}" PersistMode="Standalone">
+			<ChildrenList>
+				<Folder Name="TB" ID="{0CEA720B-284E-4912-B8D4-6DC2D00B48F7}" ShortID="84479888">
+					<ChildrenList>
+						<Sound Name="TB_death_01" ID="{C8C17D7E-759F-4CCB-B669-520A34B8DA9F}" ShortID="390108879" Type="SoundFX">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+								</Reference>
+							</ReferenceList>
+						</Sound>
+						<Sound Name="TB_engineStop_01" ID="{DA7763B3-0468-4C18-BE9C-90A5941A1931}" ShortID="1059126076" Type="SoundFX">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+								</Reference>
+							</ReferenceList>
+						</Sound>
+						<Sound Name="TB_engineLoop_01" ID="{A7068037-CE30-435F-9A75-F4DAD76D3933}" ShortID="824098953" Type="SoundFX">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Pitch" Type="int32">
+									<RTPCList>
+										<RTPC Name="" ID="{AA2B36EA-AB60-4B05-8646-8D2CCCE6B312}" ShortID="858396948">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<ObjectRef Name="TB_Speed" ID="{D150D977-91B4-4C5B-864A-FFB5F6F3DC5E}" WorkUnitID="{C2507867-FA30-457D-855B-6184727B5731}"/>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{F020CDBA-9151-4E16-9588-10E636DC31EC}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="65537"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>-173</YPos>
+														<Flags>5</Flags>
+													</Point>
+													<Point>
+														<XPos>0.09667</XPos>
+														<YPos>1847</YPos>
+														<Flags>0</Flags>
+													</Point>
+													<Point>
+														<XPos>0.6049766718507</XPos>
+														<YPos>2563</YPos>
+														<Flags>0</Flags>
+													</Point>
+													<Point>
+														<XPos>1</XPos>
+														<YPos>3895</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
+									</RTPCList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<RTPCList>
+										<RTPC Name="" ID="{87DFE547-FF91-44B5-AA04-5DC5D52933EB}" ShortID="626379300">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<ObjectRef Name="TB_Speed" ID="{D150D977-91B4-4C5B-864A-FFB5F6F3DC5E}" WorkUnitID="{C2507867-FA30-457D-855B-6184727B5731}"/>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{CA3275BD-D437-473A-B691-FC9C3CDB4406}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="3"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>-200</YPos>
+														<Flags>5</Flags>
+													</Point>
+													<Point>
+														<XPos>0.01519</XPos>
+														<YPos>200</YPos>
+														<Flags>0</Flags>
+													</Point>
+													<Point>
+														<XPos>0.0995334370139969</XPos>
+														<YPos>-0.0931137266976785</YPos>
+														<Flags>0</Flags>
+													</Point>
+													<Point>
+														<XPos>0.47656</XPos>
+														<YPos>0.16016</YPos>
+														<Flags>0</Flags>
+													</Point>
+													<Point>
+														<XPos>1</XPos>
+														<YPos>-8.81408</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
+									</RTPCList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="TB_HDR" ID="{74978DFD-AF83-4176-872B-7EE307C48D2A}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="TB_EngineLoop_v01" ID="{F9ECA0EF-11B0-4C4E-9BEE-839DD022D547}" ShortID="840237749">
+									<Language>SFX</Language>
+									<AudioFile>TB_EngineLoop_v01.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<StateInfo>
+								<StateGroupList>
+									<StateGroupInfo>
+										<StateGroupRef Name="Skid" ID="{6AF8762B-B5D6-4D0C-B6FD-E109A94CCB93}"/>
+									</StateGroupInfo>
+								</StateGroupList>
+								<CustomStateList>
+									<CustomState>
+										<StateRef Name="Off" ID="{02B33C46-BF0F-4A37-8670-578344187EFF}"/>
+										<State Name="Custom State" ID="{1628E6E9-8441-4F48-8D8F-33CF6542F147}" ShortID="845989542">
+											<PropertyList>
+												<Property Name="Pitch" Type="int32" Value="30"/>
+											</PropertyList>
+										</State>
+									</CustomState>
+									<CustomState>
+										<StateRef Name="On" ID="{C77A1EBD-D495-48D4-B55A-D0AB1D441AFD}"/>
+										<State Name="Custom State" ID="{0FC5E08D-D5BA-4A1A-97CC-61316A44EAFC}" ShortID="105157112">
+											<PropertyList>
+												<Property Name="Pitch" Type="int32" Value="70"/>
+											</PropertyList>
+										</State>
+									</CustomState>
+								</CustomStateList>
+							</StateInfo>
+							<ActiveSourceList>
+								<ActiveSource Name="TB_EngineLoop_v01" ID="{F9ECA0EF-11B0-4C4E-9BEE-839DD022D547}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<ActorMixer Name="Movement" ID="{DFE2DAF1-C90D-4F36-A04E-0CD9FD5CA47B}" ShortID="304020467">
+							<PropertyList>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>15</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>400</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-9</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="TB_Movement" ID="{CBB0A1C8-958F-471E-BC69-0C1EBC115624}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Folder Name="TireLoops" ID="{3E1C753D-8772-412D-A087-83DD9BF2E709}" ShortID="129050584">
+									<ChildrenList>
+										<SwitchContainer Name="tireLoopSwitch" ID="{775E10B0-70BD-42B2-ACF2-381DD95A5566}" ShortID="964954749">
+											<PropertyList>
+												<Property Name="Pitch" Type="int32">
+													<RTPCList>
+														<RTPC Name="" ID="{7F3B97A3-A852-4B76-8131-C001841BCAD8}" ShortID="503917392">
+															<ReferenceList>
+																<Reference Name="ControlInput">
+																	<ObjectRef Name="TB_Speed" ID="{D150D977-91B4-4C5B-864A-FFB5F6F3DC5E}" WorkUnitID="{C2507867-FA30-457D-855B-6184727B5731}"/>
+																</Reference>
+															</ReferenceList>
+															<Curve Name="" ID="{F99D1F1C-AD34-4E94-BE85-624922BD5901}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="65537"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>-778</YPos>
+																		<Flags>5</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>1</XPos>
+																		<YPos>831</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</RTPC>
+													</RTPCList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<RTPCList>
+														<RTPC Name="" ID="{B6BF535B-A85A-4FC8-9694-9EE1ED392822}" ShortID="822869064">
+															<ReferenceList>
+																<Reference Name="ControlInput">
+																	<ObjectRef Name="TB_Speed" ID="{D150D977-91B4-4C5B-864A-FFB5F6F3DC5E}" WorkUnitID="{C2507867-FA30-457D-855B-6184727B5731}"/>
+																</Reference>
+															</ReferenceList>
+															<Curve Name="" ID="{8F721FB0-0F50-4824-A90B-DAE3CAB5DBF2}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="3"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>-200</YPos>
+																		<Flags>5</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>0.11042</XPos>
+																		<YPos>-2.6668</YPos>
+																		<Flags>0</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>1</XPos>
+																		<YPos>0</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</RTPC>
+													</RTPCList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="TB_tireLoop_dirt_01" ID="{B70BC00E-F674-45AC-925F-D432DD2B76D1}" ShortID="123653257" Type="SoundFX">
+													<PropertyList>
+														<Property Name="Highpass" Type="int16">
+															<ValueList>
+																<Value>1</Value>
+															</ValueList>
+														</Property>
+														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+														<Property Name="Pitch" Type="int32">
+															<ValueList>
+																<Value>130</Value>
+															</ValueList>
+														</Property>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-3</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="tires_rolling_on_dirt_03_loop" ID="{7FD8FACE-776D-43D1-BBCF-BA576F0D1787}" ShortID="771707133">
+															<Language>SFX</Language>
+															<AudioFile>tires_rolling_on_dirt_03_loop.wav</AudioFile>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="tires_rolling_on_dirt_03_loop" ID="{7FD8FACE-776D-43D1-BBCF-BA576F0D1787}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+											<StateInfo>
+												<StateGroupList>
+													<StateGroupInfo>
+														<StateGroupRef Name="Skid" ID="{6AF8762B-B5D6-4D0C-B6FD-E109A94CCB93}"/>
+													</StateGroupInfo>
+												</StateGroupList>
+												<CustomStateList>
+													<CustomState>
+														<StateRef Name="Off" ID="{02B33C46-BF0F-4A37-8670-578344187EFF}"/>
+														<State Name="Custom State" ID="{64F2A078-EA86-4CC8-9116-6B2A398461A2}" ShortID="613032220">
+															<PropertyList>
+																<Property Name="Highpass" Type="int16" Value="10"/>
+															</PropertyList>
+														</State>
+													</CustomState>
+													<CustomState>
+														<StateRef Name="On" ID="{C77A1EBD-D495-48D4-B55A-D0AB1D441AFD}"/>
+														<State Name="Custom State" ID="{579995B0-0079-4D64-8FA2-20DEE2FB63A3}" ShortID="475088788">
+															<PropertyList>
+																<Property Name="Lowpass" Type="int16" Value="10"/>
+																<Property Name="Pitch" Type="int32" Value="-1160"/>
+																<Property Name="Volume" Type="Real64" Value="12"/>
+															</PropertyList>
+														</State>
+													</CustomState>
+												</CustomStateList>
+											</StateInfo>
+											<GroupingInfo>
+												<GroupRef Name="groundMaterial" ID="{745213E8-E940-4A94-896A-87FA92AD5C91}"/>
+												<DefaultSwitchRef Name="Dirt" ID="{BEE38B85-E46A-4981-9CB1-0F1E41BE4099}"/>
+												<GroupingBehaviorList>
+													<GroupingBehavior>
+														<ItemRef Name="TB_tireLoop_dirt_01" ID="{B70BC00E-F674-45AC-925F-D432DD2B76D1}"/>
+													</GroupingBehavior>
+												</GroupingBehaviorList>
+												<GroupingList>
+													<Grouping>
+														<SwitchRef Name="Dirt" ID="{BEE38B85-E46A-4981-9CB1-0F1E41BE4099}"/>
+														<ItemList>
+															<ItemRef Name="TB_tireLoop_dirt_01" ID="{B70BC00E-F674-45AC-925F-D432DD2B76D1}"/>
+														</ItemList>
+													</Grouping>
+												</GroupingList>
+											</GroupingInfo>
+										</SwitchContainer>
+									</ChildrenList>
+								</Folder>
+								<Folder Name="TireSkids" ID="{69B35305-D855-4D94-9560-A8C51782824A}" ShortID="651478862">
+									<ChildrenList>
+										<Sound Name="TB_skid_asphalt01" ID="{42DFE175-A4D2-4D52-B9CC-44E81C72336A}" ShortID="640438364" Type="SoundFX">
+											<PropertyList>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{BFCEDF75-BD3B-4598-B0E3-2A7D4DE371D0}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="200"/>
+																	<Property Name="Min" Type="Real64" Value="-200"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="tire_skid_asphalt01" ID="{0B512F85-FEFB-40FC-B792-AD07E02A555F}" ShortID="536564176">
+													<Language>SFX</Language>
+													<AudioFile>tire_skid_asphalt01.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="tire_skid_asphalt01" ID="{0B512F85-FEFB-40FC-B792-AD07E02A555F}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<RandomSequenceContainer Name="TB_skid_dirt_long" ID="{BC72F2FB-7442-44E2-9EC7-6B14C2D69264}" ShortID="233842983">
+											<PropertyList>
+												<Property Name="Highpass" Type="int16">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{3C7D844A-3A22-4466-8C0F-12823774B856}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="20"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="Lowpass" Type="int16">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{4ED03C93-1FED-4716-B335-45C2F2BD9C84}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="20"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{560C94CC-1DFC-4BF2-A95F-B132F1F831B2}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="100"/>
+																	<Property Name="Min" Type="Real64" Value="-100"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-4</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<BlendContainer Name="TB_skid_dirt_wDetail_01" ID="{5AACBFC6-01A8-4A12-B93A-C12ACEEF44DE}" ShortID="711894492">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="TB_skid_dirt01" ID="{86527D30-B6A4-492B-B514-65E9A14BC181}" ShortID="900505074" Type="SoundFX">
+															<PropertyList>
+																<Property Name="Highpass" Type="int16">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{7CAC317D-6108-49E3-B282-9AD76309A75A}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="40"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+																<Property Name="Lowpass" Type="int16">
+																	<ValueList>
+																		<Value>13</Value>
+																	</ValueList>
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{9770D5B9-FBC5-4F86-87A7-757FA8B81E9D}"/>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+																<Property Name="Pitch" Type="int32">
+																	<ValueList>
+																		<Value>-380</Value>
+																	</ValueList>
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{FEBCF81B-E8C2-4E02-B025-445996380110}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="500"/>
+																					<Property Name="Min" Type="Real64" Value="-200"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+																<Property Name="Volume" Type="Real64">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{95C36E44-C218-43B5-9477-41277E09C9F2}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Min" Type="Real64" Value="-5"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="tire_skid_dirt03" ID="{18ABA235-E754-471C-B62F-C42CE2380458}" ShortID="189355334">
+																	<PropertyList>
+																		<Property Name="FadeInDuration" Type="Real64" Value="0.230224326054273"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.464018021504736"/>
+																		<Property Name="TrimBegin" Type="Real64" Value="0.414046849958072"/>
+																		<Property Name="TrimEnd" Type="Real64" Value="1.2118009100066"/>
+																	</PropertyList>
+																	<Language>SFX</Language>
+																	<AudioFile>tire_skid_dirt03.wav</AudioFile>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="tire_skid_dirt03" ID="{18ABA235-E754-471C-B62F-C42CE2380458}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="TB_skid_dirt_detail_01" ID="{4DC41C44-C57B-408D-BD42-6F06A9A43466}" ShortID="211106308" Type="SoundFX">
+															<PropertyList>
+																<Property Name="Highpass" Type="int16">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{363BD023-EEDB-4BE2-872C-A0D87AAC608C}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="40"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+																<Property Name="Pitch" Type="int32">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{84367739-9E5D-44A4-9510-DCBD32C1F6AB}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="200"/>
+																					<Property Name="Min" Type="Real64" Value="-100"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+																<Property Name="Volume" Type="Real64">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{7F2F5EDF-7B4C-42A8-BFED-711765B7C94B}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Min" Type="Real64" Value="-2"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="tire_skid_dirt_detail_01" ID="{1C26395A-B7F0-4689-8653-1B50B85F021F}" ShortID="511240509">
+																	<PropertyList>
+																		<Property Name="FadeInDuration" Type="Real64" Value="0.0715398165101197"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.650361968273816"/>
+																		<Property Name="TrimEnd" Type="Real64" Value="0.757671693038996"/>
+																	</PropertyList>
+																	<Language>SFX</Language>
+																	<AudioFile>tire_skid_dirt_detail_01.wav</AudioFile>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="tire_skid_dirt_detail_01" ID="{1C26395A-B7F0-4689-8653-1B50B85F021F}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+												</BlendContainer>
+												<BlendContainer Name="TB_skid_dirt_wDetail_02" ID="{54B7E8FB-A67E-4F6F-8A30-3BED810E439D}" ShortID="892578463">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="TB_skid_dirt01" ID="{3F50B98E-21E4-4FDB-8F9F-951536E21772}" ShortID="1055270105" Type="SoundFX">
+															<PropertyList>
+																<Property Name="Highpass" Type="int16">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{33B0115F-F0D4-4D4B-96F0-4F89FC2B3BD7}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="40"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+																<Property Name="Lowpass" Type="int16">
+																	<ValueList>
+																		<Value>13</Value>
+																	</ValueList>
+																</Property>
+																<Property Name="Pitch" Type="int32">
+																	<ValueList>
+																		<Value>-380</Value>
+																	</ValueList>
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{475F237F-3D2B-4185-9A7A-5C9FC32049C8}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="500"/>
+																					<Property Name="Min" Type="Real64" Value="-200"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+																<Property Name="Volume" Type="Real64">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{1217D93D-9E44-46BC-BF37-9773E6F1BA6F}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Min" Type="Real64" Value="-5"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="tire_skid_dirt03" ID="{0C45B411-BED3-40B5-B9A3-8CBCDC41D52F}" ShortID="943461444">
+																	<PropertyList>
+																		<Property Name="FadeInDuration" Type="Real64" Value="0.230224326054273"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.464018021504736"/>
+																		<Property Name="TrimBegin" Type="Real64" Value="0.205238740280941"/>
+																		<Property Name="TrimEnd" Type="Real64" Value="0.979791899254231"/>
+																	</PropertyList>
+																	<Language>SFX</Language>
+																	<AudioFile>tire_skid_dirt03.wav</AudioFile>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="tire_skid_dirt03" ID="{0C45B411-BED3-40B5-B9A3-8CBCDC41D52F}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="TB_skid_dirt_detail_02" ID="{C6D8CFEC-EDEF-4EC2-9B36-DDFD346A7D05}" ShortID="727624371" Type="SoundFX">
+															<PropertyList>
+																<Property Name="Highpass" Type="int16">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{C90B3CDF-43A8-49D7-95BF-F40AEE61EA08}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="20"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+																<Property Name="Lowpass" Type="int16">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{9294788A-FBA1-4244-8C20-3D3AB11B5502}">
+																				<PropertyList>
+																					<Property Name="Max" Type="Real64" Value="20"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+																<Property Name="Pitch" Type="int32">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{207EDCD0-ABA9-4AAA-9A0B-E67829C3CBB7}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="100"/>
+																					<Property Name="Min" Type="Real64" Value="-100"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="tire_skid_dirt_detail" ID="{9C26EBD6-5D27-44BF-83D1-E115D4C0BAC8}" ShortID="697409659">
+																	<PropertyList>
+																		<Property Name="FadeInDuration" Type="Real64" Value="0.106626177823427"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.739719108650025"/>
+																		<Property Name="TrimBegin" Type="Real64" Value="0.173267538963069"/>
+																		<Property Name="TrimEnd" Type="Real64" Value="1.09958245880409"/>
+																	</PropertyList>
+																	<Language>SFX</Language>
+																	<AudioFile>tire_skid_dirt_detail.wav</AudioFile>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="tire_skid_dirt_detail" ID="{9C26EBD6-5D27-44BF-83D1-E115D4C0BAC8}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+												</BlendContainer>
+												<BlendContainer Name="TB_skid_dirt_wDetail_03" ID="{2CC6F4C2-511D-4D2D-8EF0-CBA0211CD067}" ShortID="386862887">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="TB_skid_dirt01" ID="{BD18E956-5AB0-4F29-9E59-48BDD0D390F0}" ShortID="141627311" Type="SoundFX">
+															<PropertyList>
+																<Property Name="Highpass" Type="int16">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{FB75527D-A906-4F69-982A-9BA852AAC6F7}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="40"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+																<Property Name="Lowpass" Type="int16">
+																	<ValueList>
+																		<Value>13</Value>
+																	</ValueList>
+																</Property>
+																<Property Name="Pitch" Type="int32">
+																	<ValueList>
+																		<Value>-380</Value>
+																	</ValueList>
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{30B465B8-AD37-4746-AA67-D2B50B1B9CF9}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="500"/>
+																					<Property Name="Min" Type="Real64" Value="-200"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+																<Property Name="Volume" Type="Real64">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{370C959C-CE61-4809-B8EF-C31C2037265E}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Min" Type="Real64" Value="-5"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="tire_skid_dirt03" ID="{D71DBECC-B0ED-4587-B83B-F64910983C96}" ShortID="901980060">
+																	<PropertyList>
+																		<Property Name="FadeInDuration" Type="Real64" Value="0.230224326054273"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.464018021504736"/>
+																		<Property Name="TrimEnd" Type="Real64" Value="0.749567573199958"/>
+																	</PropertyList>
+																	<Language>SFX</Language>
+																	<AudioFile>tire_skid_dirt03.wav</AudioFile>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="tire_skid_dirt03" ID="{D71DBECC-B0ED-4587-B83B-F64910983C96}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="TB_skid_dirt_detail_03" ID="{9F1431FD-F884-4235-AAC7-197C0585EAF3}" ShortID="512867223" Type="SoundFX">
+															<PropertyList>
+																<Property Name="Highpass" Type="int16">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{A8AE9CDD-4430-4D49-BEA8-DD86D9943C27}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="40"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+																<Property Name="Pitch" Type="int32">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{A92C32A2-0790-4CEC-8763-586480992F25}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="100"/>
+																					<Property Name="Min" Type="Real64" Value="-100"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="tire_skid_dirt_detail" ID="{47ED0E48-31B0-47BA-A747-1B45E94EF536}" ShortID="39581297">
+																	<PropertyList>
+																		<Property Name="FadeInDuration" Type="Real64" Value="0.106626177823427"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.739719108650025"/>
+																		<Property Name="TrimBegin" Type="Real64" Value="0.449829187692582"/>
+																		<Property Name="TrimEnd" Type="Real64" Value="1.489434421471"/>
+																	</PropertyList>
+																	<Language>SFX</Language>
+																	<AudioFile>tire_skid_dirt_detail.wav</AudioFile>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="tire_skid_dirt_detail" ID="{47ED0E48-31B0-47BA-A747-1B45E94EF536}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+												</BlendContainer>
+											</ChildrenList>
+										</RandomSequenceContainer>
+										<RandomSequenceContainer Name="TB_skid_dirt_short" ID="{52CE8AB5-323B-4363-BFD1-5F6A93D79106}" ShortID="189970885">
+											<PropertyList>
+												<Property Name="Highpass" Type="int16">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{E9B78F80-16B9-4C6D-80B5-0ED718C6DFF6}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="20"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="Lowpass" Type="int16">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{3C57D5B9-A0BB-4492-9884-71EDE95CD7D5}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="20"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{18E2BD64-8A42-4162-8116-8245BE577C98}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="200"/>
+																	<Property Name="Min" Type="Real64" Value="-200"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-4</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<BlendContainer Name="TB_skid_dirt_wDetail_01" ID="{0AC29E6E-2C36-4A4F-A5F4-500ECB54036D}" ShortID="216324192">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="TB_skid_dirt01" ID="{D1B3A729-9D7C-449F-A416-FED86FD24776}" ShortID="38063736" Type="SoundFX">
+															<PropertyList>
+																<Property Name="Highpass" Type="int16">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{40FE87B9-CA32-4ED6-9284-2914136F2016}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="40"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+																<Property Name="Lowpass" Type="int16">
+																	<ValueList>
+																		<Value>13</Value>
+																	</ValueList>
+																</Property>
+																<Property Name="Pitch" Type="int32">
+																	<ValueList>
+																		<Value>-380</Value>
+																	</ValueList>
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{7A8944B4-922E-42EA-AEF1-55307D573C07}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="500"/>
+																					<Property Name="Min" Type="Real64" Value="-200"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+																<Property Name="Volume" Type="Real64">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{200B1199-6115-44A5-8621-43E2888C49F2}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Min" Type="Real64" Value="-5"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="tire_skid_dirt03" ID="{F9025726-B41C-452D-9158-49A50B452B23}" ShortID="283517202">
+																	<PropertyList>
+																		<Property Name="FadeInDuration" Type="Real64" Value="0.0696027032257104"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.164190992224753"/>
+																		<Property Name="TrimBegin" Type="Real64" Value="0.335520723241886"/>
+																		<Property Name="TrimEnd" Type="Real64" Value="0.726366672124722"/>
+																	</PropertyList>
+																	<Language>SFX</Language>
+																	<AudioFile>tire_skid_dirt03.wav</AudioFile>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="tire_skid_dirt03" ID="{F9025726-B41C-452D-9158-49A50B452B23}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="TB_skid_dirt_detail_01" ID="{D4C4707C-236F-444B-850D-40427D48A25A}" ShortID="486404123" Type="SoundFX">
+															<PropertyList>
+																<Property Name="Highpass" Type="int16">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{A89C5183-09F6-4176-A89E-6015E84FA7CB}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="40"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+																<Property Name="Pitch" Type="int32">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{1F9E2DAD-0BF1-46E7-B678-DABD6358CCB7}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="200"/>
+																					<Property Name="Min" Type="Real64" Value="-200"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+																<Property Name="Volume" Type="Real64">
+																	<ValueList>
+																		<Value>-4</Value>
+																	</ValueList>
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{44BFA1B2-CEE9-4E91-A6C9-8D2D8797B1FB}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Min" Type="Real64" Value="-2"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="tire_skid_dirt_detail_02" ID="{CD50CD13-B486-4CEE-8B47-1B295AD308D9}" ShortID="241640635">
+																	<PropertyList>
+																		<Property Name="FadeInDuration" Type="Real64" Value="0.641383342450766"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.291537882932166"/>
+																		<Property Name="TrimBegin" Type="Real64" Value="4.11392345915391"/>
+																		<Property Name="TrimEnd" Type="Real64" Value="5.15050259846827"/>
+																	</PropertyList>
+																	<Language>SFX</Language>
+																	<AudioFile>tire_skid_dirt_detail_02.wav</AudioFile>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="tire_skid_dirt_detail_02" ID="{CD50CD13-B486-4CEE-8B47-1B295AD308D9}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+												</BlendContainer>
+												<BlendContainer Name="TB_skid_dirt_wDetail_02" ID="{F77DB858-5E23-43E6-840E-3F75E36E02BF}" ShortID="231574875">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="TB_skid_dirt01" ID="{77D697C7-0735-4585-AEEB-DF85ACBF2BEC}" ShortID="1054007191" Type="SoundFX">
+															<PropertyList>
+																<Property Name="Highpass" Type="int16">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{53A60859-08C9-4121-A69B-91EDF7D8C478}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="40"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+																<Property Name="Lowpass" Type="int16">
+																	<ValueList>
+																		<Value>13</Value>
+																	</ValueList>
+																</Property>
+																<Property Name="Pitch" Type="int32">
+																	<ValueList>
+																		<Value>-380</Value>
+																	</ValueList>
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{4D92F70F-DDE2-440D-AEFF-CABB11DBACBE}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="500"/>
+																					<Property Name="Min" Type="Real64" Value="-200"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+																<Property Name="Volume" Type="Real64">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{6035559F-FA39-49E8-859F-B15F0F072C0B}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Min" Type="Real64" Value="-5"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="tire_skid_dirt03" ID="{7CA598A0-3F33-4E66-A499-EC3A0559BEA2}" ShortID="54837830">
+																	<PropertyList>
+																		<Property Name="FadeInDuration" Type="Real64" Value="0.0945882889990423"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.281980182299033"/>
+																		<Property Name="TrimBegin" Type="Real64" Value="0.367645047807599"/>
+																		<Property Name="TrimEnd" Type="Real64" Value="0.785261267161861"/>
+																	</PropertyList>
+																	<Language>SFX</Language>
+																	<AudioFile>tire_skid_dirt03.wav</AudioFile>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="tire_skid_dirt03" ID="{7CA598A0-3F33-4E66-A499-EC3A0559BEA2}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="TB_skid_dirt_detail_02" ID="{F410037B-F3EA-4FEB-AF20-2EAF7421D323}" ShortID="425952507" Type="SoundFX">
+															<PropertyList>
+																<Property Name="Highpass" Type="int16">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{BE1E3C9D-D705-4825-973E-5CBAF5BFA074}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="40"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+																<Property Name="Pitch" Type="int32">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{3FD3B89B-B3C6-4830-91FC-997AB32EC199}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="200"/>
+																					<Property Name="Min" Type="Real64" Value="-200"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+																<Property Name="Volume" Type="Real64">
+																	<ValueList>
+																		<Value>-5</Value>
+																	</ValueList>
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{FA949FD2-E038-499C-BA8B-3F092BCCBCA0}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Min" Type="Real64" Value="-2"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="tire_skid_dirt_detail_02" ID="{260BC3A4-E36D-49BB-850F-9524890B071C}" ShortID="796289240">
+																	<PropertyList>
+																		<Property Name="FadeInDuration" Type="Real64" Value="0.323930981035741"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.291537882932166"/>
+																		<Property Name="TrimBegin" Type="Real64" Value="0.848699170313643"/>
+																		<Property Name="TrimEnd" Type="Real64" Value="1.60021904631656"/>
+																	</PropertyList>
+																	<Language>SFX</Language>
+																	<AudioFile>tire_skid_dirt_detail_02.wav</AudioFile>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="tire_skid_dirt_detail_02" ID="{260BC3A4-E36D-49BB-850F-9524890B071C}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+												</BlendContainer>
+												<BlendContainer Name="TB_skid_dirt_wDetail_03" ID="{B062A884-2EF5-45CB-B4F3-6CA3FEE032A9}" ShortID="504680478">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="TB_skid_dirt01" ID="{A1663FCC-9A0A-4D04-9B15-602E09D19E9B}" ShortID="33872632" Type="SoundFX">
+															<PropertyList>
+																<Property Name="Highpass" Type="int16">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{1F767B33-CC9E-48A2-9C2A-43660AD15A1E}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="40"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+																<Property Name="Lowpass" Type="int16">
+																	<ValueList>
+																		<Value>13</Value>
+																	</ValueList>
+																</Property>
+																<Property Name="Pitch" Type="int32">
+																	<ValueList>
+																		<Value>-380</Value>
+																	</ValueList>
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{8947EF43-8CFD-44E5-9304-395EEEA299FF}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="500"/>
+																					<Property Name="Min" Type="Real64" Value="-200"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+																<Property Name="Volume" Type="Real64">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{14932940-95B2-4824-8970-11330A756409}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Min" Type="Real64" Value="-5"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="tire_skid_dirt03" ID="{8952AE8F-3EB7-4E3C-898E-627BDA1C487F}" ShortID="854569473">
+																	<PropertyList>
+																		<Property Name="FadeInDuration" Type="Real64" Value="0.0928036043009473"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.269487389412366"/>
+																		<Property Name="TrimBegin" Type="Real64" Value="0.801323429444717"/>
+																		<Property Name="TrimEnd" Type="Real64" Value="1.27604955913802"/>
+																	</PropertyList>
+																	<Language>SFX</Language>
+																	<AudioFile>tire_skid_dirt03.wav</AudioFile>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="tire_skid_dirt03" ID="{8952AE8F-3EB7-4E3C-898E-627BDA1C487F}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="TB_skid_dirt_detail_03" ID="{C294567E-CFF0-4F4E-8E3A-A7D6444A9467}" ShortID="544858267" Type="SoundFX">
+															<PropertyList>
+																<Property Name="Highpass" Type="int16">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{C854D332-6649-4C29-BC9D-F7CD2A7AD500}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="40"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+																<Property Name="Pitch" Type="int32">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{DCA8BE25-486E-4AB0-BB0C-FA99A47736CF}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="200"/>
+																					<Property Name="Min" Type="Real64" Value="-100"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+																<Property Name="Volume" Type="Real64">
+																	<ValueList>
+																		<Value>-6</Value>
+																	</ValueList>
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{1626610A-6298-4368-B5A7-B2BE53901347}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Min" Type="Real64" Value="-2"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="tire_skid_dirt_detail_02" ID="{ED68381A-7DAA-4DD5-B876-504FCCDC5CD4}" ShortID="1020474679">
+																	<PropertyList>
+																		<Property Name="FadeInDuration" Type="Real64" Value="0.142529631655726"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.570118526622903"/>
+																		<Property Name="TrimBegin" Type="Real64" Value="2.71454162107951"/>
+																		<Property Name="TrimEnd" Type="Real64" Value="3.65394146608315"/>
+																	</PropertyList>
+																	<Language>SFX</Language>
+																	<AudioFile>tire_skid_dirt_detail_02.wav</AudioFile>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="tire_skid_dirt_detail_02" ID="{ED68381A-7DAA-4DD5-B876-504FCCDC5CD4}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+												</BlendContainer>
+											</ChildrenList>
+										</RandomSequenceContainer>
+									</ChildrenList>
+								</Folder>
+							</ChildrenList>
+						</ActorMixer>
+						<ActorMixer Name="Collisions" ID="{33179226-C09B-4943-84CF-A9D13A057345}" ShortID="495568257">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>10</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<Custom>
+										<Attenuation Name="Attenuation (Custom)" ID="{B2F3EC20-1B40-470A-802F-6B6C360BB8A6}" ShortID="212810047">
+											<CurveUsageInfoList>
+												<VolumeDryUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="Custom">
+														<Curve Name="VolumeDry" ID="{416600C5-190D-4D75-9F55-8EA2524B0565}">
+															<PropertyList>
+																<Property Name="Flags" Type="int32" Value="3"/>
+															</PropertyList>
+															<PointList>
+																<Point>
+																	<XPos>0</XPos>
+																	<YPos>0</YPos>
+																	<Flags>5</Flags>
+																</Point>
+																<Point>
+																	<XPos>100</XPos>
+																	<YPos>-200</YPos>
+																	<Flags>37</Flags>
+																</Point>
+															</PointList>
+														</Curve>
+													</CurveUsageInfo>
+												</VolumeDryUsage>
+												<VolumeWetGameUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
+												</VolumeWetGameUsage>
+												<VolumeWetUserUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
+												</VolumeWetUserUsage>
+												<LowPassFilterUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+												</LowPassFilterUsage>
+												<HighPassFilterUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+												</HighPassFilterUsage>
+												<SpreadUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+												</SpreadUsage>
+												<FocusUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+												</FocusUsage>
+											</CurveUsageInfoList>
+										</Attenuation>
+									</Custom>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="TB_HDR" ID="{74978DFD-AF83-4176-872B-7EE307C48D2A}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<RandomSequenceContainer Name="TB_collisionRocks" ID="{39AF6222-B3D5-4573-9B0C-F4E5B6E5F77E}" ShortID="414677988">
+									<PropertyList>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
+										<Property Name="PositioningType" Type="int16" Value="1"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-14</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="Obstacles" ID="{3A693E00-D804-4FCD-80CD-AE4E87DB935C}" WorkUnitID="{ED77F3DA-CCF1-4956-9E7B-FE83D3E5BB4C}"/>
+										</Reference>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="TB_collision_rocks_01" ID="{01355227-24F9-4BBF-9DE5-1DF01A325BEC}" ShortID="212025902" Type="SoundFX">
+											<PropertyList>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{01D35B69-5B99-492E-AE29-F57487B6980B}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="300"/>
+																	<Property Name="Min" Type="Real64" Value="-300"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="TB_collision_rocks_01" ID="{747F5EA5-C05F-4286-8BC9-DB1B1352DA5D}" ShortID="7722295">
+													<Language>SFX</Language>
+													<AudioFile>TB_collision_rocks_01.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="TB_collision_rocks_01" ID="{747F5EA5-C05F-4286-8BC9-DB1B1352DA5D}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="TB_collision_rocks_02" ID="{280C7641-9C40-4DA2-AC8B-99FBE7657CD0}" ShortID="979654445" Type="SoundFX">
+											<PropertyList>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{CBF6D1BA-E366-47E3-AF6E-17A03D4FF472}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="300"/>
+																	<Property Name="Min" Type="Real64" Value="-300"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="TB_collision_rocks_02" ID="{0B985141-F9A1-4AC8-A697-46190751E80C}" ShortID="246687455">
+													<Language>SFX</Language>
+													<AudioFile>TB_collision_rocks_02.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="TB_collision_rocks_02" ID="{0B985141-F9A1-4AC8-A697-46190751E80C}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="TB_collision_rocks_03" ID="{B146F0EB-6B96-4F1A-AE1E-1A915BA4CFA4}" ShortID="577931183" Type="SoundFX">
+											<PropertyList>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{5F47B9FC-FCCD-40AE-A9FD-736C98B92E5C}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="300"/>
+																	<Property Name="Min" Type="Real64" Value="-300"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="TB_collision_rocks_03" ID="{78260F4B-5312-4F52-B76D-5E0C2578FB68}" ShortID="337733320">
+													<Language>SFX</Language>
+													<AudioFile>TB_collision_rocks_03.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="TB_collision_rocks_03" ID="{78260F4B-5312-4F52-B76D-5E0C2578FB68}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+								<BlendContainer Name="TB_collisionMetal" ID="{6DAA812D-B6F3-4890-874A-F770270F2214}" ShortID="336210390">
+									<PropertyList>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
+										<Property Name="PositioningType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="Obstacles" ID="{3A693E00-D804-4FCD-80CD-AE4E87DB935C}" WorkUnitID="{ED77F3DA-CCF1-4956-9E7B-FE83D3E5BB4C}"/>
+										</Reference>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="TB_HDR" ID="{74978DFD-AF83-4176-872B-7EE307C48D2A}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="TB_collision_metal_01" ID="{6C3A4298-75C1-4523-9FCB-62537693C630}" ShortID="685252285" Type="SoundFX">
+											<PropertyList>
+												<Property Name="Highpass" Type="int16">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{AA8B47BE-C823-406A-A88C-600216554141}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="35"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="Lowpass" Type="int16">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{E7C7B31E-46EB-442E-8609-30B4F20F4050}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="20"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{07B2EF34-5C0D-4334-8287-8C8E60271927}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="300"/>
+																	<Property Name="Min" Type="Real64" Value="-400"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-11</Value>
+													</ValueList>
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{9FEA00D3-210E-400C-A69E-7C18E842FFBF}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Min" Type="Real64" Value="-2"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="TB_HDR" ID="{74978DFD-AF83-4176-872B-7EE307C48D2A}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="bigDog_collision_02" ID="{292DE340-EA7E-4A4D-855C-8E5D97C08642}" ShortID="3956943">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.0711280771334792"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>bigDog_collision_02.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="bigDog_collision_02" ID="{292DE340-EA7E-4A4D-855C-8E5D97C08642}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="TB_collision_metal_02" ID="{E7390C69-7B3E-4A74-AE99-2F77224860B7}" ShortID="680625528" Type="SoundFX">
+											<PropertyList>
+												<Property Name="Highpass" Type="int16">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{C47F265D-1C2F-4340-B740-FF6D4F58477B}">
+																<PropertyList>
+																	<Property Name="Max" Type="Real64" Value="35"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="Lowpass" Type="int16">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{D7CAB655-5A38-494A-A7A1-894C563ED857}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="20"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{6F4C5D9C-9BA7-47FA-A6CC-3D870550001A}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Min" Type="Real64" Value="-400"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-16</Value>
+													</ValueList>
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{7254F3C6-F840-4661-BEFA-DFA8ECBF6506}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Min" Type="Real64" Value="-2"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="TB_HDR" ID="{74978DFD-AF83-4176-872B-7EE307C48D2A}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="bigDog_collision_01" ID="{34188D72-A7EA-4F4F-A289-B11C3FD4CBA5}" ShortID="828596493">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.314338416301969"/>
+														<Property Name="TrimEnd" Type="Real64" Value="0.388300396608315"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>bigDog_collision_01.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="bigDog_collision_01" ID="{34188D72-A7EA-4F4F-A289-B11C3FD4CBA5}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</BlendContainer>
+							</ChildrenList>
+						</ActorMixer>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Ambience" ID="{F8C20090-E6D2-469D-AC72-511BF050EF04}" ShortID="194996149">
+					<ChildrenList>
+						<Sound Name="amb_canyon_01" ID="{9764E477-A211-43FD-8FD8-4F3CD4B04360}" ShortID="498478712" Type="SoundFX">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+								</Reference>
+							</ReferenceList>
+						</Sound>
+						<Sound Name="amb_swamp_01" ID="{4A12A61B-219B-42B3-AC24-FFCC22728461}" ShortID="591574767" Type="SoundFX">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+								</Reference>
+							</ReferenceList>
+						</Sound>
+						<Sound Name="amb_city_01" ID="{80483C84-9DDE-439E-9102-C440B2C2D144}" ShortID="998146062" Type="SoundFX">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+								</Reference>
+							</ReferenceList>
+						</Sound>
+						<Sound Name="amb_innerspace_01" ID="{DBF3AC8B-C0F8-49A9-B686-D69D891EEE42}" ShortID="335329658" Type="SoundFX">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+								</Reference>
+							</ReferenceList>
+						</Sound>
+						<Sound Name="amb_wifiworld_01" ID="{02337135-050E-4A4F-B95A-C1AF5ECFC032}" ShortID="858515548" Type="SoundFX">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+								</Reference>
+							</ReferenceList>
+						</Sound>
+						<Sound Name="amb_mountain_01" ID="{967E44E8-FDF1-40FE-8848-58269F941EA2}" ShortID="421378774" Type="SoundFX">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+								</Reference>
+							</ReferenceList>
+						</Sound>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Petman" ID="{C1C48070-A0BE-4C71-B233-A0F5EE10B941}" ShortID="738266618">
+					<ChildrenList>
+						<Sound Name="petman_attack_01" ID="{A74F77FE-E939-456C-917F-3537BEF121A3}" ShortID="884046172" Type="SoundFX">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+								</Reference>
+							</ReferenceList>
+						</Sound>
+						<Sound Name="petman_death_01" ID="{117E0E70-9452-4745-919C-39DFFD71E367}" ShortID="985804530" Type="SoundFX">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+								</Reference>
+							</ReferenceList>
+						</Sound>
+						<Folder Name="Movement" ID="{559CA78F-48DF-4165-AAA5-0EABA9226E32}" ShortID="69577670">
+							<ChildrenList>
+								<Sound Name="petman_movement_water_01" ID="{5A89F0B6-122D-4350-BA0F-EDF5F2D3FFA1}" ShortID="623850420" Type="SoundFX">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+								<Sound Name="petman_movement_mud_01" ID="{794BF079-0C58-41AB-81D9-B7165332C35C}" ShortID="444873058" Type="SoundFX">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+								<Sound Name="petman_movement_dirt_01" ID="{0F836C6A-02BF-45E4-9E1C-A414EC0B8ACF}" ShortID="281943952" Type="SoundFX">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+								<Sound Name="petman_movement_snow_01" ID="{4E559C6D-6805-4897-B6DF-7AA0834950A2}" ShortID="451586428" Type="SoundFX">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+								<Sound Name="petman_movement_asphalt_01" ID="{3A343339-1A4C-47C0-BF58-F2B89854C094}" ShortID="533565246" Type="SoundFX">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+								<Sound Name="petman_movement_gravel_01" ID="{2D9A4267-E20D-4174-BD1C-9B452055A252}" ShortID="584251055" Type="SoundFX">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+								<Sound Name="petman_movement_grass_01" ID="{47A18B77-2A69-464E-9442-066539CECAB0}" ShortID="1021888409" Type="SoundFX">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+							</ChildrenList>
+						</Folder>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Enemy" ID="{113432D6-3D5F-4A3B-BB9B-07AFA0A7F631}" ShortID="931223607">
+					<ChildrenList>
+						<Sound Name="enemy_engineLoop_01" ID="{9E6EA1AC-FF97-4115-96E9-B77C0FE3E8EE}" ShortID="411397588" Type="SoundFX">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Pitch" Type="int32">
+									<RTPCList>
+										<RTPC Name="" ID="{41152C59-197C-46F3-8810-7906AA815EDF}" ShortID="605137451">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<ObjectRef Name="TB_Speed" ID="{D150D977-91B4-4C5B-864A-FFB5F6F3DC5E}" WorkUnitID="{C2507867-FA30-457D-855B-6184727B5731}"/>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{40A12BF5-7FC6-468B-BA05-3487FECC517D}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="65537"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>-3296</YPos>
+														<Flags>5</Flags>
+													</Point>
+													<Point>
+														<XPos>0.02128</XPos>
+														<YPos>-1778</YPos>
+														<Flags>0</Flags>
+													</Point>
+													<Point>
+														<XPos>0.33978</XPos>
+														<YPos>-20</YPos>
+														<Flags>0</Flags>
+													</Point>
+													<Point>
+														<XPos>0.89599</XPos>
+														<YPos>1014</YPos>
+														<Flags>0</Flags>
+													</Point>
+													<Point>
+														<XPos>1</XPos>
+														<YPos>1364</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
+									</RTPCList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-15</Value>
+									</ValueList>
+									<RTPCList>
+										<RTPC Name="" ID="{23D23898-76CD-4404-ADDA-7BB44BF220E2}" ShortID="552383819">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<ObjectRef Name="TB_Speed" ID="{D150D977-91B4-4C5B-864A-FFB5F6F3DC5E}" WorkUnitID="{C2507867-FA30-457D-855B-6184727B5731}"/>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{E12F550D-9592-40EA-A946-2F325EDEF01F}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="3"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>-200</YPos>
+														<Flags>5</Flags>
+													</Point>
+													<Point>
+														<XPos>0.02244</XPos>
+														<YPos>-4.08308</YPos>
+														<Flags>0</Flags>
+													</Point>
+													<Point>
+														<XPos>0.8188482</XPos>
+														<YPos>-2.34251</YPos>
+														<Flags>0</Flags>
+													</Point>
+													<Point>
+														<XPos>1</XPos>
+														<YPos>0</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
+									</RTPCList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="TB_HDR" ID="{74978DFD-AF83-4176-872B-7EE307C48D2A}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="bigDog_engineLoop_02" ID="{3863D1A1-C7C4-4696-81C4-49BE1E688C4B}" ShortID="864809774">
+									<Language>SFX</Language>
+									<AudioFile>bigDog_engineLoop_02.wav</AudioFile>
+									<ConvertedFileIDList>
+										<File ID="760794695"/>
+									</ConvertedFileIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="bigDog_engineLoop_02" ID="{3863D1A1-C7C4-4696-81C4-49BE1E688C4B}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy_engineStop_01" ID="{8FD0CA98-2584-4C59-A46A-EC9821484F47}" ShortID="927112799" Type="SoundFX">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="bigDog_engineStop_01" ID="{88D241BD-25BB-426A-87BF-8C91D57A0C6D}" ShortID="401618812">
+									<Language>SFX</Language>
+									<AudioFile>bigDog_engineStop_01.wav</AudioFile>
+									<ConvertedFileIDList>
+										<File ID="456602285"/>
+									</ConvertedFileIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="bigDog_engineStop_01" ID="{88D241BD-25BB-426A-87BF-8C91D57A0C6D}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</Folder>
+				<Sound Name="canyon_geyser_loop_01" ID="{D8F1DE6D-814E-4BB4-A96A-C0E983025E4D}" ShortID="780964003" Type="SoundFX">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="PositioningType" Type="int16" Value="1"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Obstacles" ID="{3A693E00-D804-4FCD-80CD-AE4E87DB935C}" WorkUnitID="{ED77F3DA-CCF1-4956-9E7B-FE83D3E5BB4C}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Ambience" ID="{DD6BF400-5C0D-44A8-BAEC-4938921ACAFC}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+						</Reference>
+						<Reference Name="UserAuxSend0">
+							<ObjectRef Name="New_Auxiliary_Bus" ID="{AB311E90-C6E0-491A-AEA1-3F40EEF40EAA}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="canyon_geyser_loop_01" ID="{3666D171-A746-4EAB-97A4-EF856C3316AE}" ShortID="336171348">
+							<Language>SFX</Language>
+							<AudioFile>canyon_geyser_loop_01.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="canyon_geyser_loop_01" ID="{3666D171-A746-4EAB-97A4-EF856C3316AE}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="woosh_rumble_small" ID="{1C9F5CCA-8CC8-4ABA-B8BA-52BED2C9D7D2}" ShortID="220666715" Type="SoundFX">
+					<PropertyList>
+						<Property Name="Highpass" Type="int16">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{CF025CFE-E874-41F8-82FC-82C10C98871A}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="15"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="Lowpass" Type="int16">
+							<ValueList>
+								<Value>50</Value>
+							</ValueList>
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{5D32BD7A-6674-450B-AE06-8D90A55F6E90}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="40"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="OverridePositioning" Type="bool" Value="True"/>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>700</Value>
+							</ValueList>
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{3AB6D9EF-3D1C-4F9C-9CB6-F4F44E9731CD}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="500"/>
+											<Property Name="Min" Type="Real64" Value="-800"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="PositioningType" Type="int16" Value="1"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>7</Value>
+							</ValueList>
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{08C1DD8D-EB83-4268-97D8-E5C84C3A61D4}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="2"/>
+											<Property Name="Min" Type="Real64" Value="-4"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Woosh_Small" ID="{7F898209-081D-4EB8-9076-28C254942ED3}" WorkUnitID="{ED77F3DA-CCF1-4956-9E7B-FE83D3E5BB4C}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="TB_HDR" ID="{74978DFD-AF83-4176-872B-7EE307C48D2A}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="woosh_rumble_01" ID="{4E9CA708-493A-46C0-A801-9E8EDB512008}" ShortID="754492438">
+							<Language>SFX</Language>
+							<AudioFile>woosh_rumble_01.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="woosh_rumble_01" ID="{4E9CA708-493A-46C0-A801-9E8EDB512008}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="woosh_rumble_big" ID="{A8DD9A79-B590-4AA5-ACB5-B9B6CE5316E9}" ShortID="980487278" Type="SoundFX">
+					<PropertyList>
+						<Property Name="Highpass" Type="int16">
+							<ValueList>
+								<Value>6</Value>
+							</ValueList>
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{C26040A9-17AB-470A-97CF-D5A44CA91183}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="5"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="Lowpass" Type="int16">
+							<ValueList>
+								<Value>80</Value>
+							</ValueList>
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{0908BB86-B7FA-477D-880D-F8B3B7E2D4F0}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="15"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="OverridePositioning" Type="bool" Value="True"/>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>100</Value>
+							</ValueList>
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{D7D4D828-C60A-4615-9802-37F9DCDFCDAC}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="200"/>
+											<Property Name="Min" Type="Real64" Value="-500"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="PositioningType" Type="int16" Value="1"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>4</Value>
+							</ValueList>
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{756BBC2C-3AA3-4225-9F8C-2C88918CF610}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="2"/>
+											<Property Name="Min" Type="Real64" Value="-4"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Woosh_Big" ID="{BE63B69B-E3F5-4D4A-B7B4-1BFE702D5E7E}" WorkUnitID="{ED77F3DA-CCF1-4956-9E7B-FE83D3E5BB4C}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="TB_HDR" ID="{74978DFD-AF83-4176-872B-7EE307C48D2A}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="woosh_rumble_01" ID="{369BD504-0E92-4B72-8456-EF10A1C97AD2}" ShortID="469640492">
+							<Language>SFX</Language>
+							<AudioFile>woosh_rumble_01.wav</AudioFile>
+							<ConvertedFileIDList>
+								<File ID="754492438"/>
+							</ConvertedFileIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="woosh_rumble_01" ID="{369BD504-0E92-4B72-8456-EF10A1C97AD2}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

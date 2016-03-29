@@ -3,10 +3,15 @@ using System.Collections;
 
 public class EnvironmentalHazard : MonoBehaviour
 {
+	public string collisionSound;
+
     void OnTriggerEnter(Collider hit)
     {
         PlayerController isPlayer = hit.GetComponent<PlayerController>();
-        if(isPlayer)
+
+		AkSoundEngine.PostEvent(collisionSound, this.gameObject);
+        
+		if(isPlayer)
         {
             Destroy(gameObject);
         }

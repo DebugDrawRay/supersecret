@@ -94,7 +94,7 @@ public class QuadCam : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, tiltSpeed);
     }
 
-    void CameraShake()
+    public void CameraShake()
     {
         currentTween = transform.DOShakePosition(duration, strength, vibrado, randomness);
         maxFov = 60;

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{83251C01-4F26-487B-951A-065D71D49068}" SchemaVersion="70">
+	<MixingSessions>
+		<WorkUnit Name="Default Work Unit" ID="{83251C01-4F26-487B-951A-065D71D49068}" PersistMode="Standalone">
+			<ChildrenList>
+				<MixingSession Name="New Mixing Session" ID="{B0DF9012-FC3C-4648-B813-54310873E2FD}">
+					<ObjectList>
+						<ObjectRef Name="Ambience" ID="{DD6BF400-5C0D-44A8-BAEC-4938921ACAFC}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+						<ObjectRef Name="Music" ID="{CFF6FC16-89F0-41CC-97D5-A4407E0CDCE1}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+					</ObjectList>
+				</MixingSession>
+			</ChildrenList>
+		</WorkUnit>
+	</MixingSessions>
+</WwiseDocument>
