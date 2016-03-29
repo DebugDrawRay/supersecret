@@ -28,7 +28,15 @@
 						<Sound Name="TB_engineLoop_01" ID="{A7068037-CE30-435F-9A75-F4DAD76D3933}" ShortID="824098953" Type="SoundFX">
 							<PropertyList>
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>64</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>1090</Value>
+									</ValueList>
 									<RTPCList>
 										<RTPC Name="" ID="{AA2B36EA-AB60-4B05-8646-8D2CCCE6B312}" ShortID="858396948">
 											<ReferenceList>
@@ -43,7 +51,7 @@
 												<PointList>
 													<Point>
 														<XPos>0</XPos>
-														<YPos>-173</YPos>
+														<YPos>-1885</YPos>
 														<Flags>5</Flags>
 													</Point>
 													<Point>
@@ -85,8 +93,8 @@
 														<Flags>5</Flags>
 													</Point>
 													<Point>
-														<XPos>0.01519</XPos>
-														<YPos>200</YPos>
+														<XPos>0.02919</XPos>
+														<YPos>-0.23798</YPos>
 														<Flags>0</Flags>
 													</Point>
 													<Point>
@@ -101,7 +109,7 @@
 													</Point>
 													<Point>
 														<XPos>1</XPos>
-														<YPos>-8.81408</YPos>
+														<YPos>-1</YPos>
 														<Flags>37</Flags>
 													</Point>
 												</PointList>
@@ -119,9 +127,12 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<AudioFileSource Name="TB_EngineLoop_v01" ID="{F9ECA0EF-11B0-4C4E-9BEE-839DD022D547}" ShortID="840237749">
+								<AudioFileSource Name="TB_EngineLoop_v01" ID="{94C586AA-7F97-40D7-95A9-33610672EF93}" ShortID="1063152220">
 									<Language>SFX</Language>
 									<AudioFile>TB_EngineLoop_v01.wav</AudioFile>
+									<ConvertedFileIDList>
+										<File ID="840237749"/>
+									</ConvertedFileIDList>
 								</AudioFileSource>
 							</ChildrenList>
 							<StateInfo>
@@ -150,7 +161,7 @@
 								</CustomStateList>
 							</StateInfo>
 							<ActiveSourceList>
-								<ActiveSource Name="TB_EngineLoop_v01" ID="{F9ECA0EF-11B0-4C4E-9BEE-839DD022D547}" Platform="Linked"/>
+								<ActiveSource Name="TB_EngineLoop_v01" ID="{94C586AA-7F97-40D7-95A9-33610672EF93}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 						<ActorMixer Name="Movement" ID="{DFE2DAF1-C90D-4F36-A04E-0CD9FD5CA47B}" ShortID="304020467">
@@ -213,6 +224,9 @@
 													</RTPCList>
 												</Property>
 												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-11</Value>
+													</ValueList>
 													<RTPCList>
 														<RTPC Name="" ID="{B6BF535B-A85A-4FC8-9694-9EE1ED392822}" ShortID="822869064">
 															<ReferenceList>
@@ -1650,16 +1664,13 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="bigDog_collision_02" ID="{292DE340-EA7E-4A4D-855C-8E5D97C08642}" ShortID="3956943">
-													<PropertyList>
-														<Property Name="FadeInDuration" Type="Real64" Value="0.0711280771334792"/>
-													</PropertyList>
+												<AudioFileSource Name="TB_collision_metal_01" ID="{1FBC8327-5F2F-4A65-9163-AD1547C4EBFC}" ShortID="695008559">
 													<Language>SFX</Language>
-													<AudioFile>bigDog_collision_02.wav</AudioFile>
+													<AudioFile>TB_collision_metal_01.wav</AudioFile>
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="bigDog_collision_02" ID="{292DE340-EA7E-4A4D-855C-8E5D97C08642}" Platform="Linked"/>
+												<ActiveSource Name="TB_collision_metal_01" ID="{1FBC8327-5F2F-4A65-9163-AD1547C4EBFC}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
 										<Sound Name="TB_collision_metal_02" ID="{E7390C69-7B3E-4A74-AE99-2F77224860B7}" ShortID="680625528" Type="SoundFX">
@@ -1724,17 +1735,13 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="bigDog_collision_01" ID="{34188D72-A7EA-4F4F-A289-B11C3FD4CBA5}" ShortID="828596493">
-													<PropertyList>
-														<Property Name="FadeOutDuration" Type="Real64" Value="0.314338416301969"/>
-														<Property Name="TrimEnd" Type="Real64" Value="0.388300396608315"/>
-													</PropertyList>
+												<AudioFileSource Name="TB_collision_metal_02" ID="{BBF84AC2-0F23-4909-8587-C9ED7D2F9736}" ShortID="831793345">
 													<Language>SFX</Language>
-													<AudioFile>bigDog_collision_01.wav</AudioFile>
+													<AudioFile>TB_collision_metal_02.wav</AudioFile>
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="bigDog_collision_01" ID="{34188D72-A7EA-4F4F-A289-B11C3FD4CBA5}" Platform="Linked"/>
+												<ActiveSource Name="TB_collision_metal_02" ID="{BBF84AC2-0F23-4909-8587-C9ED7D2F9736}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
 									</ChildrenList>
@@ -2003,18 +2010,6 @@
 									<ObjectRef Name="TB_HDR" ID="{74978DFD-AF83-4176-872B-7EE307C48D2A}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
 								</Reference>
 							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="bigDog_engineLoop_02" ID="{3863D1A1-C7C4-4696-81C4-49BE1E688C4B}" ShortID="864809774">
-									<Language>SFX</Language>
-									<AudioFile>bigDog_engineLoop_02.wav</AudioFile>
-									<ConvertedFileIDList>
-										<File ID="760794695"/>
-									</ConvertedFileIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="bigDog_engineLoop_02" ID="{3863D1A1-C7C4-4696-81C4-49BE1E688C4B}" Platform="Linked"/>
-							</ActiveSourceList>
 						</Sound>
 						<Sound Name="enemy_engineStop_01" ID="{8FD0CA98-2584-4C59-A46A-EC9821484F47}" ShortID="927112799" Type="SoundFX">
 							<ReferenceList>
@@ -2025,18 +2020,6 @@
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
 								</Reference>
 							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="bigDog_engineStop_01" ID="{88D241BD-25BB-426A-87BF-8C91D57A0C6D}" ShortID="401618812">
-									<Language>SFX</Language>
-									<AudioFile>bigDog_engineStop_01.wav</AudioFile>
-									<ConvertedFileIDList>
-										<File ID="456602285"/>
-									</ConvertedFileIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="bigDog_engineStop_01" ID="{88D241BD-25BB-426A-87BF-8C91D57A0C6D}" Platform="Linked"/>
-							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>
 				</Folder>

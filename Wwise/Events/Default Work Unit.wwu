@@ -8,7 +8,7 @@
 						<Action Name="Play" ID="{4BED1968-34AC-4CCB-B3FD-2E971BF102BC}" ShortID="831155307" Type="Play" Scope="One" Global="false">
 							<ElementList>
 								<Element ID="{DAB065FB-3C66-4655-8F9F-506B05E0D2F0}" Global="false">
-									<ObjectRef Name="mus_IntroLullaby" ID="{8E4E8E77-6B95-40BA-B8BF-CD97C1929AB3}" WorkUnitID="{F4D6CB59-2D66-4956-9054-AA8F03BEA1E0}"/>
+									<ObjectRef Name="mus_Canyon" ID="{2650A760-95D9-4872-9C5B-C6C79FD16EE7}" WorkUnitID="{F4D6CB59-2D66-4956-9054-AA8F03BEA1E0}"/>
 								</Element>
 							</ElementList>
 						</Action>
