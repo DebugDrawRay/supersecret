@@ -7,7 +7,9 @@ public class ManeuveringEnemy : Enemy
     {
         Inactive,
         Maneuvering,
-        Chasing
+        Chasing,
+        Stunned,
+        Dead
     }
     [Header("States")]
     public state currentState;
@@ -33,11 +35,19 @@ public class ManeuveringEnemy : Enemy
     [Range(0, 1)]
     public float chanceToChase;
 
+    [Header("Collision")]
+    public float stunTime;
+    private float currentStunTime;
+
     void Start()
     {
         inactiveTime = Random.Range(minInactiveTime, maxInactiveTime);
         maneuverTime = Random.Range(minManeuverTime, maxManeuverTime);
         chaseTime = Random.Range(minChaseTime, maxChaseTime);
+
+        currentStunTime = stunTime;
+
+        Collision += TriggerStun;
     }
 
     void Update()
@@ -46,6 +56,10 @@ public class ManeuveringEnemy : Enemy
         if (initialized && enteredGrid)
         {
             RunStates();
+        }
+        if(stats.isDead)
+        {
+            Destroy(gameObject);
         }
     }
 
@@ -72,11 +86,19 @@ public class ManeuveringEnemy : Enemy
                 break;
             case state.Chasing:
                 chaseTime -= Time.deltaTime;
-                Vector2 targetPos = target.movement.targetGridPosition;
+                Vector2 targetPos = target.movement.currentGridPosition;
                 movement.MoveToDestination(targetPos);
                 if (chaseTime <= 0)
                 {
                     chaseTime = Random.Range(minChaseTime, maxChaseTime);
+                    currentState = SelectState();
+                }
+                break;
+            case state.Stunned:
+                currentStunTime -= Time.deltaTime;
+                if(currentStunTime <= 0)
+                {
+                    currentStunTime = stunTime;
                     currentState = SelectState();
                 }
                 break;
@@ -100,5 +122,16 @@ public class ManeuveringEnemy : Enemy
         {
             return state.Inactive;
         }
+    }
+    
+    void TriggerStun()
+    {
+        movement.StopAllCoroutines();
+
+        inactiveTime = Random.Range(minInactiveTime, maxInactiveTime);
+        maneuverTime = Random.Range(minManeuverTime, maxManeuverTime);
+        chaseTime = Random.Range(minChaseTime, maxChaseTime);
+        currentStunTime = stunTime;
+        currentState = state.Stunned;
     }
 }

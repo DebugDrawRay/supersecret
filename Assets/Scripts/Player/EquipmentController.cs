@@ -34,6 +34,7 @@ public class EquipmentController : MonoBehaviour
                 skin = "default";
             }
             headAttachment.GetComponent<SkeletonAnimation>().skeleton.SetSkin(skin);
+            headAttachment.GetComponent<InteractionSource>().interactions = equippedHead.interactions;
         }
         if (bodyAttachment)
         {
@@ -43,6 +44,7 @@ public class EquipmentController : MonoBehaviour
                 skin = "default";
             }
             bodyAttachment.GetComponent<SkeletonAnimation>().skeleton.SetSkin(skin);
+            bodyAttachment.GetComponent<InteractionSource>().interactions = equippedBody.interactions;
         }
         if (bikeAttachment)
         {
@@ -52,6 +54,7 @@ public class EquipmentController : MonoBehaviour
                 skin = "default";
             }
             bikeAttachment.GetComponent<SkeletonAnimation>().skeleton.SetSkin(skin);
+            bikeAttachment.GetComponent<InteractionSource>().interactions = equippedBike.interactions;
         }
         if (leftAttachment)
         {
@@ -61,6 +64,7 @@ public class EquipmentController : MonoBehaviour
                 skin = "default";
             }
             leftAttachment.GetComponent<SkeletonAnimation>().skeleton.SetSkin(skin);
+            leftAttachment.GetComponent<InteractionSource>().interactions = equippedLeft.interactions;
         }
         if (rightAttachment)
         {
@@ -70,7 +74,70 @@ public class EquipmentController : MonoBehaviour
                 skin = "default";
             }
             rightAttachment.GetComponent<SkeletonAnimation>().skeleton.SetSkin(skin);
+            rightAttachment.GetComponent<InteractionSource>().interactions = equippedRight.interactions;
         }
     }
 
+    void OnTriggerEnter(Collider hit)
+    {
+        Enemy isEnemy = hit.GetComponent<Enemy>();
+        
+        if(isEnemy)
+        {
+            Stats enemy = isEnemy.GetComponent<Stats>();
+
+            if (enemy)
+            {
+                Vector2 dirVect = isEnemy.transform.localPosition -transform.localPosition;
+                float y = dirVect.y;
+                float x = dirVect.x;
+
+                PlayerAttachment attach = null;
+                if (Mathf.Abs(y) > Mathf.Abs(x))
+                {
+                    if (y > 0)
+                    {
+                        attach = equippedHead;
+                    }
+                    else if (y < 0)
+                    {
+                        attach = equippedBody;
+                    }
+                }
+                else if (Mathf.Abs(x) > Mathf.Abs(y))
+                {
+                    if (x > 0)
+                    {
+                        attach = equippedRight;
+                    }
+                    else if (x < 0)
+                    {
+                        attach = equippedLeft;
+                    }
+                }
+
+                if(attach != null)
+                {
+                    Interact(enemy, attach.interactions);
+                }
+            }
+        }
+    }
+
+    void Interact(Stats target, InteractionProperty[] interactions)
+    {
+        for (int i = 0; i < interactions.Length; i++)
+        {
+            InteractionProperty inter = interactions[i];
+
+            if (inter.permanent)
+            {
+                target.ModStat(inter.statToAffect, inter.affectAmount);
+            }
+            else
+            {
+                target.ModStat(inter.statToAffect, inter.affectAmount, inter.modTime);
+            }
+        }
+    }
 }

@@ -11,9 +11,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4f906635e8a24644953f91f2ecffa6e, type: 3}
   m_Name: defaultBody
   m_EditorClassIdentifier: 
-  slotType: 0
-  spriteMaterials:
-  - {fileID: 2100000, guid: 23519bf5e772cc248835ec1422764cf7, type: 2}
-  - {fileID: 2100000, guid: c248cb268ab195e419411a9cd2fe7be3, type: 2}
-  - {fileID: 2100000, guid: 23519bf5e772cc248835ec1422764cf7, type: 2}
-  interactions: []
+  bikeSkin: 0
+  bodySkin: 0
+  headSkin: 0
+  leftSkin: 0
+  rightSkin: 0
+  interactions:
+  - statToAffect: 0
+    affectAmount: 0
+    permanent: 0
+    modTime: 0

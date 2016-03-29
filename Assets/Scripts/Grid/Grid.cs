@@ -98,20 +98,6 @@ public class Grid : MonoBehaviour
         visual.transform.localScale = scale;
         visual.transform.SetParent(transform);
         visual.transform.localPosition = new Vector3(0,0,-0.1f);
-
-
-
-       /* CombineInstance[] combine = new CombineInstance[units.Length];
-
-        for (int i = 0; i < units.Length; ++i)
-        {
-            Debug.Log(i);
-            MeshFilter mesh = units[i].GetComponentInChildren<MeshFilter>();
-            combine[i].mesh = mesh.sharedMesh;
-            units[i].SetActive(false);
-        }
-        transform.GetComponent<MeshFilter>().mesh = new Mesh();
-        transform.GetComponent<MeshFilter>().mesh.CombineMeshes(combine);*/
     }
 
     public Vector3 GridToWorldPosition(Vector2 position)
@@ -127,5 +113,30 @@ public class Grid : MonoBehaviour
         {
             return transform.localPosition;
         }
+    }
+
+    public Vector2 GetClosestUnit(Vector3 local)
+    {
+        int totalUnits = xUnits * yUnits;
+        Unit selected = gridUnits[0,0];
+        Vector2 selectedGridPos = Vector2.zero;
+        for(int i = 0; i < totalUnits; i++)
+        {
+            for(int j = 0; j < xUnits; j++)
+            {
+                Unit newUnit = gridUnits[j, i % yUnits];
+                Vector2 gridPos = new Vector2(j, i % yUnits);
+
+                float newDist = Vector3.Distance(local, newUnit.position);
+                float currentDist = Vector3.Distance(local, selected.position);
+
+                if (newDist < currentDist)
+                {
+                    selected = newUnit;
+                    selectedGridPos = gridPos;
+                }
+            }
+        }
+        return selectedGridPos;
     }
 }

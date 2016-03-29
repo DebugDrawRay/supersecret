@@ -1,0 +1,152 @@
+
+Safeman.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body
+  rotate: false
+  xy: 513, 388
+  size: 505, 627
+  orig: 505, 627
+  offset: 0, 0
+  index: -1
+door_open
+  rotate: true
+  xy: 2, 4
+  size: 377, 533
+  orig: 377, 533
+  offset: 0, 0
+  index: -1
+l_shin
+  rotate: false
+  xy: 677, 2
+  size: 110, 165
+  orig: 110, 165
+  offset: 0, 0
+  index: -1
+l_wires
+  rotate: true
+  xy: 677, 169
+  size: 217, 313
+  orig: 217, 313
+  offset: 0, 0
+  index: -1
+r_shin
+  rotate: false
+  xy: 789, 2
+  size: 110, 165
+  orig: 110, 165
+  offset: 0, 0
+  index: -1
+safe_perspective
+  rotate: false
+  xy: 2, 383
+  size: 509, 632
+  orig: 509, 632
+  offset: 0, 0
+  index: -1
+siren
+  rotate: false
+  xy: 901, 27
+  size: 110, 140
+  orig: 110, 140
+  offset: 0, 0
+  index: -1
+siren lines color
+  rotate: true
+  xy: 537, 13
+  size: 373, 138
+  orig: 373, 138
+  offset: 0, 0
+  index: -1
+
+Safeman2.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+cash
+  rotate: true
+  xy: 253, 310
+  size: 278, 144
+  orig: 278, 144
+  offset: 0, 0
+  index: -1
+cash_stack
+  rotate: false
+  xy: 422, 560
+  size: 197, 116
+  orig: 197, 116
+  offset: 0, 0
+  index: -1
+door_closed
+  rotate: false
+  xy: 2, 590
+  size: 418, 394
+  orig: 418, 394
+  offset: 0, 0
+  index: -1
+l_foot
+  rotate: false
+  xy: 633, 861
+  size: 288, 123
+  orig: 288, 123
+  offset: 0, 0
+  index: -1
+l_foot_up
+  rotate: true
+  xy: 2, 2
+  size: 304, 143
+  orig: 304, 143
+  offset: 0, 0
+  index: -1
+l_thigh
+  rotate: false
+  xy: 147, 103
+  size: 119, 203
+  orig: 119, 203
+  offset: 0, 0
+  index: -1
+r_foot
+  rotate: false
+  xy: 399, 436
+  size: 193, 122
+  orig: 193, 122
+  offset: 0, 0
+  index: -1
+r_foot_up
+  rotate: false
+  xy: 633, 712
+  size: 214, 147
+  orig: 214, 147
+  offset: 0, 0
+  index: -1
+r_thigh
+  rotate: false
+  xy: 268, 105
+  size: 118, 203
+  orig: 118, 203
+  offset: 0, 0
+  index: -1
+r_wires
+  rotate: false
+  xy: 422, 678
+  size: 209, 306
+  orig: 209, 306
+  offset: 0, 0
+  index: -1
+siren_glow
+  rotate: false
+  xy: 2, 308
+  size: 249, 280
+  orig: 249, 280
+  offset: 0, 0
+  index: -1
+siren_spinnybit
+  rotate: false
+  xy: 923, 921
+  size: 61, 63
+  orig: 61, 63
+  offset: 0, 0
+  index: -1

@@ -9,11 +9,13 @@ public class EnvironmentalHazard : MonoBehaviour
     {
         PlayerController isPlayer = hit.GetComponent<PlayerController>();
 
-		AkSoundEngine.PostEvent(collisionSound, this.gameObject);
-        
 		if(isPlayer)
         {
             Destroy(gameObject);
+        }
+        if(collisionSound != "")
+        {
+            AkSoundEngine.PostEvent(collisionSound, gameObject);
         }
     }
 }

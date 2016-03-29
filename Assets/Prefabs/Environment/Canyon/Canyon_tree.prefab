@@ -27,8 +27,8 @@ GameObject:
   - 114: {fileID: 11446054}
   - 65: {fileID: 6593684}
   - 114: {fileID: 11405598}
-  - 114: {fileID: 11415920}
-  - 114: {fileID: 11415778}
+  - 114: {fileID: 11476202}
+  - 114: {fileID: 11496550}
   m_Layer: 0
   m_Name: Canyon_tree
   m_TagString: Untagged
@@ -84,16 +84,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eb9a11abd1b67948984651b22c7bee0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetStat: 0
-  modValue: 0
-  modTime: 0
---- !u!114 &11415778
+  interactions: []
+--- !u!114 &11446054
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 151434}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6809c8a066ef97459479eea618cfbbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionSound: TB_collisionRocks
+--- !u!114 &11476202
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 151434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49bfc0719930d4455a1ad1c897b139d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_positionOffsetData:
+    positionOffset: {x: 0, y: 0, z: 0}
+    KeepMe: 0
+  isEnvironmentAware: 0
+  listenerMask: 1
+  isStaticObject: 0
+--- !u!114 &11496550
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 151434}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d70c79baf8a9447b2a16ad8afa1247f2, type: 3}
   m_Name: 
@@ -110,35 +137,6 @@ MonoBehaviour:
   m_callbackData: {fileID: 0}
   multiPositionTypeLabel: 0
   multiPositionArray: []
---- !u!114 &11415920
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 151434}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49bfc0719930d4455a1ad1c897b139d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_positionOffsetData:
-    positionOffset: {x: 0, y: 0, z: -10}
-    KeepMe: 1
-  isEnvironmentAware: 0
-  listenerMask: 1
-  isStaticObject: 0
---- !u!114 &11446054
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 151434}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6809c8a066ef97459479eea618cfbbc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  collisionSound: 
 --- !u!212 &21256028
 SpriteRenderer:
   m_ObjectHideFlags: 1

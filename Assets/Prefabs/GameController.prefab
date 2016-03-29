@@ -66,7 +66,7 @@ MonoBehaviour:
   endLevelBuffer: 0
   generateRoad: 1
   roadWidth: 115
-  roadWidthBuffer: 75
+  roadWidthBuffer: 100
   generateGround: 1
   generateWalls: 1
   wallPropSpacing: 25
@@ -80,12 +80,12 @@ MonoBehaviour:
   maxGroundPropOffset: 100
   generateObstacles: 1
   obstacleSpawnBuffer: 10
-  obstacleSpawnRate: 0.5
+  obstacleSpawnRate: 0.75
   maxObstaclesPerRow: 2
   generateEnemies: 1
   enemySpawnBuffer: 100
-  enemySpawnXOffset: 0
-  enemySpawnRate: 0.1
+  enemySpawnXOffset: -2
+  enemySpawnRate: 0.35
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

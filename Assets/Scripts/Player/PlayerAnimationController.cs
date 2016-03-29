@@ -4,6 +4,7 @@ using Spine;
 public class PlayerAnimationController : MonoBehaviour
 {
     [Header("Animation Components")]
+    public PlayerController player;
     private SkeletonAnimation[] allAnim;
     public SkeletonAnimation bodyAnim;
     public SkeletonAnimation bikeAnim;
@@ -26,9 +27,9 @@ public class PlayerAnimationController : MonoBehaviour
     public bool inTopSpeed;
     void Start()
     {
-        PlayerEventManager.CollisionReaction += CollisionAnim;
+        PlayerEventManager.StunReaction += CollisionAnim;
 
-        PlayerEventManager.TopSpeedEvent += TopSpeed;
+       // PlayerEventManager.TopSpeedEvent += TopSpeed;
     }
 
     public void Init()
@@ -54,9 +55,9 @@ public class PlayerAnimationController : MonoBehaviour
         }
     }
 
-    public void StartInvulAnim(float time)
+    public void StartInvulAnim()
     {
-        StartCoroutine(InvulAnim(time));
+        StartCoroutine(InvulAnim(player.invulTime));
     }
 
     IEnumerator InvulAnim(float time)

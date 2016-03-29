@@ -27,8 +27,8 @@ GameObject:
   - 65: {fileID: 6591200}
   - 114: {fileID: 11465232}
   - 114: {fileID: 11470770}
-  - 114: {fileID: 11444008}
-  - 114: {fileID: 11455932}
+  - 114: {fileID: 11485672}
+  - 114: {fileID: 11463044}
   m_Layer: 0
   m_Name: rock_stacks
   m_TagString: Untagged
@@ -73,30 +73,13 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.8, y: 6.94, z: 3}
   m_Center: {x: 0, y: 3.5, z: 0}
---- !u!114 &11444008
+--- !u!114 &11463044
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 164440}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49bfc0719930d4455a1ad1c897b139d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_positionOffsetData:
-    positionOffset: {x: 0, y: 0, z: -10}
-    KeepMe: 1
-  isEnvironmentAware: 0
-  listenerMask: 1
-  isStaticObject: 0
---- !u!114 &11455932
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 164440}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d70c79baf8a9447b2a16ad8afa1247f2, type: 3}
   m_Name: 
@@ -124,9 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eb9a11abd1b67948984651b22c7bee0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetStat: 0
-  modValue: 0
-  modTime: 0
+  interactions: []
 --- !u!114 &11470770
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -139,6 +120,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collisionSound: TB_collisionRocks
+--- !u!114 &11485672
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 164440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49bfc0719930d4455a1ad1c897b139d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_positionOffsetData:
+    positionOffset: {x: 0, y: 0, z: 0}
+    KeepMe: 0
+  isEnvironmentAware: 0
+  listenerMask: 1
+  isStaticObject: 0
 --- !u!212 &21240958
 SpriteRenderer:
   m_ObjectHideFlags: 1

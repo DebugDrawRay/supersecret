@@ -19,28 +19,31 @@ public class LevelMovement : MonoBehaviour
     void Start()
     {
         rigid = GetComponent<Rigidbody>();
-        PlayerEventManager.CollisionReaction += ResetSpeed;
-		AkSoundEngine.PostEvent("TB_engineStart", this.gameObject);
+        PlayerEventManager.StunReaction += ResetSpeed;
+        AkSoundEngine.PostEvent("TB_engineStart", gameObject);
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (isMoving)
         {
             rigid.velocity = movementDirection * CurrentSpeed();
-			AkSoundEngine.SetRTPCValue("TB_Speed", GetNormalizedSpeed());
+            AkSoundEngine.SetRTPCValue("TB_Speed", GetNormalizedSpeed());
         }
+    }
 
+    void Update()
+    {
         if (GetNormalizedSpeed() >= 1 && !topSpeed)
         {
-            PlayerEventManager.TopSpeed();
+            //PlayerEventManager.TopSpeed();
             topSpeed = true;
         }
     }
 
     float CurrentSpeed()
     {
-        accelTime += Time.deltaTime;
+        accelTime += Time.fixedDeltaTime;
         float time = accelerationCurve.Evaluate(accelTime / maxAccelTime);
         return maxSpeed * time;
         

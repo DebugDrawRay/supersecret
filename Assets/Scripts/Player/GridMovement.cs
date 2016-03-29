@@ -38,18 +38,20 @@ public class GridMovement : MonoBehaviour
     private bool isHit;
 
     //positioning control
-    public Vector2 targetGridPosition
+    public Vector2 currentGridPosition;
+    private Vector3 targetLocalPosition;
+
+    //Distance tracking
+    private bool startPositionSet;
+    private Vector3 distanceTrackStart;
+    public float distanceTraveled
     {
         get;
         private set;
     }
-    private Vector3 targetLocalPosition;
 
     //References
     private Grid targetGrid;
-
-    private float destinationDistance;
-    private Vector3 destinationDirection;
 
     //components
     private Stats stats;
@@ -59,12 +61,13 @@ public class GridMovement : MonoBehaviour
 
     public void Init(Stats statsComponent, Grid grid, PlayerAnimationController animationComponent)
     {
+        PlayerEventManager.CollisionReaction += CollisionMove;
+
         currentDestinationUpdate = destinationUpdatePeriod;
         stats = statsComponent;
         animation = animationComponent;
         targetGrid = grid;
-
-        targetGridPosition = startGridPosition;
+        currentGridPosition = startGridPosition;
         if (targetGrid)
         {
             transform.localPosition = targetGrid.GridToWorldPosition(startGridPosition);
@@ -83,11 +86,24 @@ public class GridMovement : MonoBehaviour
             currentDestinationUpdate -= Time.deltaTime;
         }
 
-        if(isMoving)
+        if (isMoving && !isHit)
         {
+            if(!startPositionSet)
+            {
+                distanceTrackStart = transform.localPosition;
+                startPositionSet = true;
+            }
+            distanceTraveled = Vector3.Distance(transform.localPosition, distanceTrackStart);
             MoveAction();
         }
+        else
+        {
+            distanceTraveled = 0;
+            startPositionSet = false;
+        }
+        stats.distanceTraveled = distanceTraveled;
     }
+
     float MoveTime(float stat)
     {
         float deltaTime = maxTimeToMove - minTimeToMove;
@@ -102,16 +118,16 @@ public class GridMovement : MonoBehaviour
             if (currentDestinationUpdate <= 0)
             {
                 Vector2 destinationGridPosition = Vector2.zero;
-                destinationGridPosition.x = targetGridPosition.x + x;
-                destinationGridPosition.y = targetGridPosition.y + y;
+                destinationGridPosition.x = currentGridPosition.x + x;
+                destinationGridPosition.y = currentGridPosition.y + y;
 
                 if (targetGrid.CheckIfValidUnit(destinationGridPosition))
                 {
-                    targetGridPosition = destinationGridPosition;
+                    currentGridPosition = destinationGridPosition;
 
                     startTime = Time.time;
                     lerpStartPostion = transform.localPosition;
-                    targetLocalPosition = targetGrid.GridToWorldPosition(targetGridPosition);
+                    targetLocalPosition = targetGrid.GridToWorldPosition(destinationGridPosition);
 
                     moveTime = 0;
                     xPercentageComplete = 0;
@@ -123,7 +139,6 @@ public class GridMovement : MonoBehaviour
 					AkSoundEngine.PostEvent("TB_tireSkidShort", this.gameObject);
                 }
             }
-
         }
     }
 
@@ -138,7 +153,6 @@ public class GridMovement : MonoBehaviour
         yPercentageComplete = moveTime / MoveTime(stats.speed);
 
         Vector3 newPosition = transform.localPosition;
-        Debug.Log(newPosition);
         newPosition.x = Mathf.Lerp(lerpStartPostion.x, targetLocalPosition.x, speedCurve.Evaluate(xPercentageComplete));
         newPosition.y = Mathf.Lerp(lerpStartPostion.y, targetLocalPosition.y, speedCurve.Evaluate(yPercentageComplete));
         transform.localPosition = newPosition;
@@ -152,35 +166,59 @@ public class GridMovement : MonoBehaviour
     public void CollisionMove(Vector3 from)
     {
         Vector3 direction = from - transform.localPosition;
-        float zDir = 1;
-        float xDir = -direction.normalized.x;
+        direction = direction.normalized;
+        direction.x = Mathf.Sign(direction.x) * Mathf.Ceil(Mathf.Abs(direction.x));
+        direction.y = Mathf.Sign(direction.y) * Mathf.Ceil(Mathf.Abs(direction.y));
 
-        if(targetGridPosition.x + Mathf.Sign(xDir) * Mathf.Abs(Mathf.Ceil(xDir)) < 0 ||
-           targetGridPosition.x + Mathf.Sign(xDir) * Mathf.Abs(Mathf.Ceil(xDir)) >= targetGrid.xUnits )
+        float xDir = 0;
+        float yDir = 0;
+
+        if (Mathf.Abs(direction.x) >= Mathf.Abs(direction.y))
         {
-            xDir = -xDir;
-            if (targetGridPosition.y + Mathf.Sign(zDir) * Mathf.Abs(Mathf.Ceil(zDir)) < 0 ||
-                targetGridPosition.y + Mathf.Sign(zDir) * Mathf.Abs(Mathf.Ceil(zDir)) >= targetGrid.yUnits)
+            xDir = -direction.x;
+            yDir = 0;
+
+            float newX = targetGrid.GetClosestUnit(transform.localPosition).x + xDir;
+            if (newX < 0 || newX >= targetGrid.xUnits)
             {
-                zDir = -zDir;
+                xDir = 0;
+                yDir = -direction.x;
+                float newY = targetGrid.GetClosestUnit(transform.localPosition).y + yDir;
+                if (newY < 0 || newY >= targetGrid.yUnits)
+                {
+                    yDir = -yDir;
+                }
             }
         }
-        else
+        else if (Mathf.Abs(direction.x) < Mathf.Abs(direction.y))
         {
-            zDir = 0;
-        }
 
-        StartCoroutine(ForceMove(xDir, zDir, .25f));
+            yDir = -direction.y;
+            xDir = 0;
+
+            float newY = targetGrid.GetClosestUnit(transform.localPosition).y + yDir;
+            if (newY < 0 || newY >= targetGrid.yUnits)
+            {
+                yDir = 0;
+                xDir = -direction.y;
+                float newX = targetGrid.GetClosestUnit(transform.localPosition).x + xDir;
+                if (newX < 0 || newX >= targetGrid.xUnits)
+                {
+                    xDir = -xDir;
+                }
+            }
+        }
+        Vector2 newDirection = new Vector2(xDir, yDir);
+        StartCoroutine(ForceMove(.1f, newDirection));
     }
 
-    IEnumerator ForceMove(float xDirection, float zDirection, float time)
+    IEnumerator ForceMove(float time, Vector2 direction)
     {
         isHit = true;
         lerpStartPostion = transform.localPosition;
 
-        Vector2 newPoint = targetGridPosition;
-        newPoint.x += Mathf.Sign(xDirection) * Mathf.Abs(Mathf.Ceil(xDirection));
-        newPoint.y += Mathf.Sign(zDirection) * Mathf.Abs(Mathf.Ceil(zDirection));
+        Vector2 newPoint = targetGrid.GetClosestUnit(transform.localPosition);
+        Debug.Log(newPoint);
         Vector3 newPosition = targetGrid.GridToWorldPosition(newPoint);
 
         for (float i = 0; i <= time; i += Time.deltaTime)
@@ -189,7 +227,7 @@ public class GridMovement : MonoBehaviour
             transform.localPosition = Vector3.Lerp(lerpStartPostion, newPosition, moveTime);
             yield return null;
         }
-        targetGridPosition = newPoint;
+        currentGridPosition = newPoint;
         targetLocalPosition = newPosition;
         isHit = false;
     }

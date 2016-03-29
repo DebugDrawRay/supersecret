@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
         Inactive,
         StartGame,
         InGame,
+        Stunned,
         Dead,
         LevelComplete
     }
@@ -20,13 +21,12 @@ public class PlayerController : MonoBehaviour
     [Header("Components")]
     public GridMovement movement;
     public Stats stats;
-    public PlayerAnimationController animation;
+    public PlayerAnimationController anim;
     public EquipmentController equipment;
 
     [Header("Collision Properties")]
     public float invulTime;
-    private bool invulnerable;
-
+    public float stunTime;
     //Health Control
     private float currentHealth;
 
@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
-        PlayerEventManager.CollisionReaction += InvulEvent;
+        PlayerEventManager.StunReaction += StunEvent;
         PlayerEventManager.DeathEvent += DeathEvent;
         InitializeInstance();
     }
@@ -66,20 +66,13 @@ public class PlayerController : MonoBehaviour
         transform.SetParent(gridSystem.transform);
         equipment.Init();
 
-        movement.Init(stats, grid, animation);
+        movement.Init(stats, grid, anim);
 
         SetupInput();
 
-        animation.Init();
-
-        SetupHealth();
+        anim.Init();
 
         initialized = true;
-    }
-
-    void SetupHealth()
-    {
-        currentHealth = stats.maxHealth;
     }
 
     void SetupInput()
@@ -92,6 +85,10 @@ public class PlayerController : MonoBehaviour
         if(initialized)
         {
             RunStates();
+        }
+        if(stats.isDead)
+        {
+            //PlayerEventManager.PlayerDeath();
         }
     }
 
@@ -109,6 +106,8 @@ public class PlayerController : MonoBehaviour
             case State.Dead:
                 Destroy(gameObject);
                 break;
+            case State.Stunned:
+                break;
             case State.LevelComplete:
                 break;
         }
@@ -119,19 +118,19 @@ public class PlayerController : MonoBehaviour
         {
             float x = input.Move.X;
             float y = input.Move.Y;
-            if (x > .2f)
+            if (x > .5f)
             {
                 movement.Move(1, 0);
             }
-            else if (x < -.2f)
+            else if (x < -.5f)
             {
                 movement.Move(-1, 0);
             }
-            else if (y > .2f)
+            else if (y > .5f)
             {
                 movement.Move(0, 1);
             }
-            else if (y < -.2f)
+            else if (y < -.5f)
             {
                 movement.Move(0, -1);
             }
@@ -144,32 +143,65 @@ public class PlayerController : MonoBehaviour
         currentState = State.Dead;
     }
 
-    void InvulEvent()
+    void StunEvent()
     {
-        animation.StartInvulAnim(invulTime);
-        StartCoroutine(Invul());
+        StartCoroutine(Stunned());
+    }
+
+    IEnumerator Stunned()
+    {
+        currentState = State.Stunned;
+        for (float i = 0; i <= stunTime; i += Time.deltaTime)
+        {
+            yield return null;
+        }
+        currentState = State.InGame;
     }
 
     IEnumerator Invul()
     {
-        invulnerable = true;
         stats.invulnerable = true;
         for(float i = 0; i <= invulTime; i += Time.deltaTime)
         {
             yield return null;
         }
-        invulnerable = false;
         stats.invulnerable = false;
     }
 
     void OnTriggerEnter(Collider hit)
     {
-        if (!invulnerable)
+        InteractionSource isInteraction = hit.GetComponent<InteractionSource>();
+
+        if(isInteraction)
         {
-            Enemy isEnemy = hit.GetComponent<Enemy>();
-            if (isEnemy)
+            PlayerEventManager.TriggerStun();
+            PlayerEventManager.TriggerCollision(hit.transform.localPosition);
+
+            Stats hasStats = isInteraction.GetComponent<Stats>();
+            if(hasStats)
             {
-                movement.CollisionMove(isEnemy.transform.localPosition);
+                ContestSpace(hasStats);
+            }
+        }
+    }
+
+    public void ContestSpace(Stats challenger)
+    {
+        float attack = stats.speed + stats.agility + stats.weight + stats.distanceTraveled;
+        float defense = challenger.speed + challenger.agility + challenger.weight + challenger.distanceTraveled;
+
+        if (attack < defense)
+        {
+            Debug.Log(name + " loses!");
+            if (challenger.distanceTraveled > challenger.minRequiredDistanceTraveled)
+            {
+            }
+        }
+        else
+        {
+            Debug.Log(name + " wins!");
+            if(stats.distanceTraveled < stats.minRequiredDistanceTraveled)
+            {
             }
         }
     }

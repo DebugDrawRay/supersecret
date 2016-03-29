@@ -16,4 +16,8 @@ MonoBehaviour:
   headSkin: 0
   leftSkin: 1
   rightSkin: 1
-  interactions: []
+  interactions:
+  - statToAffect: 0
+    affectAmount: -0.5
+    permanent: 1
+    modTime: 0

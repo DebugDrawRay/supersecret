@@ -1,5 +1,23 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &106834
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 408136}
+  - 33: {fileID: 3339188}
+  - 23: {fileID: 2335048}
+  - 114: {fileID: 11466178}
+  m_Layer: 0
+  m_Name: Spine GameObject (Safeman)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &161982
 GameObject:
   m_ObjectHideFlags: 0
@@ -13,31 +31,27 @@ GameObject:
   - 114: {fileID: 11497816}
   - 65: {fileID: 6538032}
   - 114: {fileID: 11452764}
+  - 114: {fileID: 11479708}
+  - 114: {fileID: 11444970}
   m_Layer: 0
-  m_Name: NewEnemy
+  m_Name: TrundlSafe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &170576
-GameObject:
-  m_ObjectHideFlags: 0
+--- !u!4 &408136
+Transform:
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 471750}
-  - 33: {fileID: 3310622}
-  - 23: {fileID: 2363020}
-  - 114: {fileID: 11422734}
-  m_Layer: 0
-  m_Name: Spine GameObject (BD_CENTER)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_GameObject: {fileID: 106834}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 429306}
+  m_RootOrder: 0
 --- !u!4 &429306
 Transform:
   m_ObjectHideFlags: 1
@@ -45,37 +59,32 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 161982}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.960712, y: 1.804419, z: 1386.5706}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
-  - {fileID: 471750}
+  - {fileID: 408136}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!4 &471750
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 170576}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 429306}
-  m_RootOrder: 0
---- !u!23 &2363020
+--- !u!23 &2335048
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 170576}
+  m_GameObject: {fileID: 106834}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: cbab7900162bd4c4994053c3e5a9e125, type: 2}
-  - {fileID: 2100000, guid: b2d1c0d5d360a5745bc5ab035a11bed5, type: 2}
-  - {fileID: 2100000, guid: cbab7900162bd4c4994053c3e5a9e125, type: 2}
+  - {fileID: 2100000, guid: 919343ec4de977e49bc748287131e63f, type: 2}
+  - {fileID: 2100000, guid: 40db84f8d9fee984280eea0cbcaefe28, type: 2}
+  - {fileID: 2100000, guid: 919343ec4de977e49bc748287131e63f, type: 2}
+  - {fileID: 2100000, guid: 40db84f8d9fee984280eea0cbcaefe28, type: 2}
+  - {fileID: 2100000, guid: 919343ec4de977e49bc748287131e63f, type: 2}
+  - {fileID: 2100000, guid: 40db84f8d9fee984280eea0cbcaefe28, type: 2}
+  - {fileID: 2100000, guid: 919343ec4de977e49bc748287131e63f, type: 2}
+  - {fileID: 2100000, guid: 40db84f8d9fee984280eea0cbcaefe28, type: 2}
+  - {fileID: 2100000, guid: 919343ec4de977e49bc748287131e63f, type: 2}
+  - {fileID: 2100000, guid: 40db84f8d9fee984280eea0cbcaefe28, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -91,12 +100,12 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1403347663
   m_SortingOrder: 0
---- !u!33 &3310622
+--- !u!33 &3339188
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 170576}
+  m_GameObject: {fileID: 106834}
   m_Mesh: {fileID: 0}
 --- !u!65 &6538032
 BoxCollider:
@@ -108,8 +117,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 20, z: 1}
-  m_Center: {x: 0, y: 10, z: 0}
+  m_Size: {x: 17, y: 30, z: 17}
+  m_Center: {x: 0.3, y: 15.17, z: 0}
 --- !u!114 &11416936
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -122,41 +131,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: {fileID: 11436308}
-  stat: {fileID: 11497816}
+  stats: {fileID: 11497816}
   currentState: 0
   minInactiveTime: 2
   maxInactiveTime: 4
-  chanceToInactive: 0.1
+  chanceToInactive: 0.2
   minManeuverTime: 2
   maxManeuverTime: 4
   chanceToManeuver: 0.6
   minChaseTime: 2
   maxChaseTime: 3
-  chanceToChase: 0.3
---- !u!114 &11422734
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 170576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skeletonDataAsset: {fileID: 11400000, guid: e8c8f9fdb390b4446a36d859bc580b71, type: 2}
-  initialSkinName: default
-  calculateNormals: 0
-  calculateTangents: 0
-  zSpacing: 0
-  renderMeshes: 1
-  immutableTriangles: 0
-  frontFacing: 0
-  logErrors: 0
-  submeshSeparators: []
-  _animationName: 
-  loop: 0
-  timeScale: 1
+  chanceToChase: 0.2
+  stunTime: 3
 --- !u!114 &11436308
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -193,6 +179,23 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &11444970
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 161982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49bfc0719930d4455a1ad1c897b139d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_positionOffsetData:
+    positionOffset: {x: 0, y: 0, z: 0}
+    KeepMe: 0
+  isEnvironmentAware: 0
+  listenerMask: 1
+  isStaticObject: 0
 --- !u!114 &11452764
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -204,9 +207,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eb9a11abd1b67948984651b22c7bee0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetStat: 0
-  modValue: -0.25
-  modTime: 0
+  interactions:
+  - statToAffect: 0
+    affectAmount: -0.1
+    permanent: 1
+    modTime: 0
+  collisionSound: TB_collisionMetal
+--- !u!114 &11466178
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 106834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skeletonDataAsset: {fileID: 11400000, guid: 867d687c1adb94142965d063a470261d, type: 2}
+  initialSkinName: default
+  calculateNormals: 0
+  calculateTangents: 0
+  zSpacing: 0
+  renderMeshes: 1
+  immutableTriangles: 0
+  frontFacing: 0
+  logErrors: 0
+  submeshSeparators: []
+  _animationName: idle_open
+  loop: 1
+  timeScale: 1
+--- !u!114 &11479708
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 161982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46bb615027bea6a4186b4dfc3946f64d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 11466178}
+  idleAnim: idle_open
+  collisionAnimLeft: hit_left_open
+  collisionAnimRight: hit_right_open
+  universalTimeScale: 2
 --- !u!114 &11497816
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -218,12 +264,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7140fc7618b13594f85ac59fea32df55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 0
+  maxHealth: 1
   speed: 0.25
-  agility: 0
+  agility: 0.75
   power: 0
   luck: 0
-  weight: 0
+  weight: 1
+  distanceTraveled: 0
+  minRequiredDistanceTraveled: 6
   invulnerable: 0
 --- !u!1001 &100100000
 Prefab:

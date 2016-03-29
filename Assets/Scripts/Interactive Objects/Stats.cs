@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Stats : MonoBehaviour
 {
-    public enum stats
+    public enum stat
     {
         health = 0,
         maxHealth,
@@ -39,10 +39,17 @@ public class Stats : MonoBehaviour
     public float weight;
     private float defaultWeight;
 
+    public float distanceTraveled;
+    public float minRequiredDistanceTraveled;
+
     private Timer currentTimer;
 
     public bool invulnerable;
-
+    public bool isDead
+    {
+        get;
+        private set;
+    }
     public class Timer
     {
         float currentTime;
@@ -89,68 +96,66 @@ public class Stats : MonoBehaviour
         }
     }
 
-    public void ModStat(string stat, float value)
+    public void ModStat(stat stat, float value)
     {
         if (!invulnerable)
         {
             value = Mathf.Clamp(value, -1, 1);
             switch (stat)
             {
-                case "health":
+                case stat.health:
                     currentHealth += value;
                     break;
-                case "maxhealth":
+                case stat.maxHealth:
                     maxHealth = defaultMaxHealth + value;
                     break;
-                case "speed":
+                case stat.speed:
                     speed = defaultSpeed + value;
                     break;
-                case "agility":
+                case stat.agility:
                     agility = defaultAgility + value;
                     break;
-                case "power":
+                case stat.power:
                     power = defaultPower + value;
                     break;
-                case "luck":
+                case stat.luck:
                     luck = defaultLuck + value;
                     break;
                 default:
-                    Debug.LogError("No stat of name " + stat + " found, check spelling?");
                     break;
             }
             CheckStats();
         }
     }
 
-    public void ModStat(string stat, float value, float time)
+    public void ModStat(stat stat, float value, float time)
     {
         if (!invulnerable)
         {
             value = Mathf.Clamp(value, -1, 1);
             switch (stat)
             {
-                case "maxhealth":
+                case stat.maxHealth:
                     maxHealth = defaultMaxHealth + value;
                     currentTimer = new Timer(time);
                     break;
-                case "speed":
+                case stat.speed:
                     speed = defaultSpeed + value;
                     currentTimer = new Timer(time);
                     break;
-                case "agility":
+                case stat.agility:
                     agility = defaultAgility + value;
                     currentTimer = new Timer(time);
                     break;
-                case "power":
+                case stat.power:
                     power = defaultPower + value;
                     currentTimer = new Timer(time);
                     break;
-                case "luck":
+                case stat.luck:
                     luck = defaultLuck + value;
                     currentTimer = new Timer(time);
                     break;
                 default:
-                    Debug.LogError("No stat of name " + stat + " found, check spelling?");
                     break;
             }
             CheckStats();
@@ -159,16 +164,9 @@ public class Stats : MonoBehaviour
 
     void CheckStats()
     {
-        PlayerController isPlayer = GetComponent<PlayerController>();
-        Enemy isEnemy = GetComponent<Enemy>();
-        if (isPlayer)
+        if (currentHealth <= 0)
         {
-            PlayerEventManager.TriggerCollision();
-
-            if (currentHealth <= 0)
-            {
-                PlayerEventManager.PlayerDeath();
-            }
+            isDead = true;
         }
     }
 
@@ -180,5 +178,4 @@ public class Stats : MonoBehaviour
         power = defaultPower;
         luck = defaultLuck;
     }
-
 }
