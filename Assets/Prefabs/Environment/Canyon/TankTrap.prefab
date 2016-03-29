@@ -117,7 +117,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6809c8a066ef97459479eea618cfbbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisionSound: 
 --- !u!114 &11442184
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -129,7 +128,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6809c8a066ef97459479eea618cfbbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisionSound: TB_collisionMetal
 --- !u!114 &11478066
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -141,7 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eb9a11abd1b67948984651b22c7bee0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetStat: 0
+  targetStat: agility
   modValue: 0
   modTime: 0
 --- !u!1001 &100100000
