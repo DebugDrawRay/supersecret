@@ -502,6 +502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactions: []
+  collisionSound: 
 --- !u!114 &11415406
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -514,6 +515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactions: []
+  collisionSound: 
 --- !u!114 &11425336
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -526,7 +528,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   headAttachment: {fileID: 108926}
-  equippedHead: {fileID: 11400000, guid: 6d573dc9cfa1c9c4eafe7bed9ec461aa, type: 2}
+  equippedHead: {fileID: 11400000, guid: e80ca519ae7f1214ba36e6ae7db9432c, type: 2}
   bodyAttachment: {fileID: 116864}
   equippedBody: {fileID: 11400000, guid: 23f01a0e5fdbdf5459948e4fd21f958d, type: 2}
   bikeAttachment: {fileID: 168054}
@@ -534,7 +536,7 @@ MonoBehaviour:
   leftAttachment: {fileID: 141062}
   equippedLeft: {fileID: 11400000, guid: 6bf40cb129d5c1d42ba2189988bf0625, type: 2}
   rightAttachment: {fileID: 193692}
-  equippedRight: {fileID: 11400000, guid: dbc919aec4b09d043818c3caab0255d0, type: 2}
+  equippedRight: {fileID: 11400000, guid: 6bf40cb129d5c1d42ba2189988bf0625, type: 2}
 --- !u!114 &11426106
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -610,6 +612,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactions: []
+  collisionSound: 
 --- !u!114 &11452834
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -699,7 +702,7 @@ MonoBehaviour:
   anim: {fileID: 11426106}
   equipment: {fileID: 11425336}
   invulTime: 2
-  stunTime: 1
+  stunTime: 0.5
 --- !u!114 &11485652
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -712,6 +715,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactions: []
+  collisionSound: 
 --- !u!114 &11487600
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -724,6 +728,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactions: []
+  collisionSound: 
 --- !u!114 &11493630
 MonoBehaviour:
   m_ObjectHideFlags: 1

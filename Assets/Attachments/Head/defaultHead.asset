@@ -18,6 +18,6 @@ MonoBehaviour:
   rightSkin: 0
   interactions:
   - statToAffect: 0
-    affectAmount: 0
-    permanent: 0
+    affectAmount: -0.5
+    permanent: 1
     modTime: 0

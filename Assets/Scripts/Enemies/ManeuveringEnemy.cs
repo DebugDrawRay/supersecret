@@ -57,6 +57,10 @@ public class ManeuveringEnemy : Enemy
         {
             RunStates();
         }
+        if(stats.isDead)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void RunStates()

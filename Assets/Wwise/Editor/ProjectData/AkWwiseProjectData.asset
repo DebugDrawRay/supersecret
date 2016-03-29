@@ -13,14 +13,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentPluginConfig: Profile
   EventWwu:
-  - PhysicalPath: Events/Default Work Unit.wwu
+  - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{B8A46AB6-2F4D-4D8E-9966-0D58756EA65B}'
-    m_lastTimePsrt1: -2145916288
-    m_lastTimePart2: -1999416621
+    m_lastTimePsrt1: -541052278
+    m_lastTimePart2: -1999415446
     List:
     - Name: canyon_GeyserLoop
-      Path: Default Work Unit/canyon_GeyserLoop
+      Path: Default Work Unit\canyon_GeyserLoop
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
@@ -30,7 +30,7 @@ MonoBehaviour:
       Guid: 46a6d142f9e1604b80f3449ac8ba651f
       maxAttenuation: 0
     - Name: musicStart
-      Path: Default Work Unit/musicStart
+      Path: Default Work Unit\musicStart
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
@@ -40,7 +40,7 @@ MonoBehaviour:
       Guid: 30e6e018374f49478712a2c05703bbb4
       maxAttenuation: 0
     - Name: TB_collisionMetal
-      Path: Default Work Unit/TB_collisionMetal
+      Path: Default Work Unit\TB_collisionMetal
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
@@ -50,7 +50,7 @@ MonoBehaviour:
       Guid: 9c4ef367c6ea9046b76a74078f3974f6
       maxAttenuation: 0
     - Name: TB_collisionRocks
-      Path: Default Work Unit/TB_collisionRocks
+      Path: Default Work Unit\TB_collisionRocks
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
@@ -60,7 +60,7 @@ MonoBehaviour:
       Guid: e98824295a414948be8168d8c2650c49
       maxAttenuation: 0
     - Name: TB_engineStart
-      Path: Default Work Unit/TB_engineStart
+      Path: Default Work Unit\TB_engineStart
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
@@ -70,7 +70,7 @@ MonoBehaviour:
       Guid: c19d04e968631b468ee3608afa527dfe
       maxAttenuation: 0
     - Name: TB_tireSkidLong
-      Path: Default Work Unit/_OLD/TB_tireSkidLong
+      Path: Default Work Unit\_OLD\TB_tireSkidLong
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
@@ -82,7 +82,7 @@ MonoBehaviour:
       Guid: 96eade96de4b3f4dbe179f735ab6155a
       maxAttenuation: 0
     - Name: TB_tireSkidShort
-      Path: Default Work Unit/TB_tireSkidShort
+      Path: Default Work Unit\TB_tireSkidShort
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
@@ -92,7 +92,7 @@ MonoBehaviour:
       Guid: 335685f3fb0ff047bd401930d02fe602
       maxAttenuation: 0
     - Name: wooshBig
-      Path: Default Work Unit/wooshBig
+      Path: Default Work Unit\wooshBig
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
@@ -102,7 +102,7 @@ MonoBehaviour:
       Guid: 734412f3c5c40b438c08c615e2d607d5
       maxAttenuation: 0
     - Name: wooshSmall
-      Path: Default Work Unit/wooshSmall
+      Path: Default Work Unit\wooshSmall
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
@@ -112,14 +112,14 @@ MonoBehaviour:
       Guid: ec4808c31d65db4dbe066e7e2283de9e
       maxAttenuation: 0
   AuxBusWwu:
-  - PhysicalPath: Master-Mixer Hierarchy/Default Work Unit.wwu
+  - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{F69B6880-7A98-480E-A1F8-155013E2E0EB}'
-    m_lastTimePsrt1: -391472256
-    m_lastTimePart2: -1999416638
+    m_lastTimePsrt1: -538647645
+    m_lastTimePart2: -1999415446
     List:
     - Name: New_Auxiliary_Bus
-      Path: Default Work Unit/Master Audio Bus/Ambience/New_Auxiliary_Bus
+      Path: Default Work Unit\Master Audio Bus\Ambience\New_Auxiliary_Bus
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
@@ -132,14 +132,14 @@ MonoBehaviour:
       ID: 373392551
       Guid: 901e31abe0c61a49aea13f40eef40eaa
   StateWwu:
-  - PhysicalPath: States/Default Work Unit.wwu
+  - PhysicalPath: States\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{207383B9-622B-4140-AD2D-542630167912}'
-    m_lastTimePsrt1: -391472256
-    m_lastTimePart2: -1999416638
+    m_lastTimePsrt1: -538458553
+    m_lastTimePart2: -1999415446
     List:
     - Name: Skid
-      Path: Default Work Unit/Skid
+      Path: Default Work Unit\Skid
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
@@ -164,14 +164,14 @@ MonoBehaviour:
       - bytes: 463cb3020fbf374a8670578344187eff
       - bytes: bd1e7ac795d4d448b55ad0ab1d441afd
   SwitchWwu:
-  - PhysicalPath: Switches/Default Work Unit.wwu
+  - PhysicalPath: Switches\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{7D1A0EA3-5FDF-444B-8119-D47D21C29E57}'
-    m_lastTimePsrt1: -391472256
-    m_lastTimePart2: -1999416638
+    m_lastTimePsrt1: -538428485
+    m_lastTimePart2: -1999415446
     List:
     - Name: groundMaterial
-      Path: Default Work Unit/groundMaterial
+      Path: Default Work Unit\groundMaterial
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
@@ -192,14 +192,14 @@ MonoBehaviour:
       - bytes: 858be3be6ae481499cb10f1e41be4099
       - bytes: 262e7d1d65c45144a22e443b642f0097
   BankWwu:
-  - PhysicalPath: SoundBanks/Default Work Unit.wwu
+  - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{DE2F07D6-4163-45D8-ACD9-5B43F8C99311}'
-    m_lastTimePsrt1: 1039051008
-    m_lastTimePart2: -1999416621
+    m_lastTimePsrt1: -538497237
+    m_lastTimePart2: -1999415446
     List:
     - Name: MAIN
-      Path: Default Work Unit/MAIN
+      Path: Default Work Unit\MAIN
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12

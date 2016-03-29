@@ -29,7 +29,7 @@ public class PlayerAnimationController : MonoBehaviour
     {
         PlayerEventManager.StunReaction += CollisionAnim;
 
-        PlayerEventManager.TopSpeedEvent += TopSpeed;
+       // PlayerEventManager.TopSpeedEvent += TopSpeed;
     }
 
     public void Init()

@@ -72,14 +72,7 @@ public class PlayerController : MonoBehaviour
 
         anim.Init();
 
-        SetupHealth();
-
         initialized = true;
-    }
-
-    void SetupHealth()
-    {
-        currentHealth = stats.maxHealth;
     }
 
     void SetupInput()
@@ -92,6 +85,10 @@ public class PlayerController : MonoBehaviour
         if(initialized)
         {
             RunStates();
+        }
+        if(stats.isDead)
+        {
+            //PlayerEventManager.PlayerDeath();
         }
     }
 
@@ -121,19 +118,19 @@ public class PlayerController : MonoBehaviour
         {
             float x = input.Move.X;
             float y = input.Move.Y;
-            if (x > .2f)
+            if (x > .5f)
             {
                 movement.Move(1, 0);
             }
-            else if (x < -.2f)
+            else if (x < -.5f)
             {
                 movement.Move(-1, 0);
             }
-            else if (y > .2f)
+            else if (y > .5f)
             {
                 movement.Move(0, 1);
             }
-            else if (y < -.2f)
+            else if (y < -.5f)
             {
                 movement.Move(0, -1);
             }

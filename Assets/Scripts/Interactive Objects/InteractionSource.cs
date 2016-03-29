@@ -5,6 +5,7 @@ public class InteractionSource : MonoBehaviour
     [SerializeField]
     public InteractionProperty[] interactions;
 
+    public string collisionSound;
     void OnTriggerEnter(Collider hit)
     {
         Stats hasStats = hit.GetComponent<Stats>();
@@ -23,6 +24,11 @@ public class InteractionSource : MonoBehaviour
                 {
                     hasStats.ModStat(inter.statToAffect, inter.affectAmount, inter.modTime);
                 }
+            }
+
+            if (collisionSound != "")
+            {
+                AkSoundEngine.PostEvent(collisionSound, gameObject);
             }
         }
     }

@@ -32,6 +32,7 @@ GameObject:
   - 65: {fileID: 6538032}
   - 114: {fileID: 11452764}
   - 114: {fileID: 11479708}
+  - 114: {fileID: 11444970}
   m_Layer: 0
   m_Name: TrundlSafe
   m_TagString: Untagged
@@ -178,6 +179,23 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &11444970
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 161982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49bfc0719930d4455a1ad1c897b139d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_positionOffsetData:
+    positionOffset: {x: 0, y: 0, z: 0}
+    KeepMe: 0
+  isEnvironmentAware: 0
+  listenerMask: 1
+  isStaticObject: 0
 --- !u!114 &11452764
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -194,6 +212,7 @@ MonoBehaviour:
     affectAmount: -0.1
     permanent: 1
     modTime: 0
+  collisionSound: TB_collisionMetal
 --- !u!114 &11466178
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -245,7 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7140fc7618b13594f85ac59fea32df55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 0
+  maxHealth: 1
   speed: 0.25
   agility: 0.75
   power: 0
