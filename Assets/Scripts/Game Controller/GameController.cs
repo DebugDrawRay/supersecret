@@ -32,9 +32,26 @@ public class GameController : MonoBehaviour
     public LevelBuilder builder;
 
     private PlayerActions input;
+
+    public static GameController instance
+    {
+        get;
+        private set;
+    }
+
     void Awake()
     {
+        InitializeInstance();
         Setup();
+    }
+
+    void InitializeInstance()
+    {
+        if(instance != null)
+        {
+            Destroy(gameObject);
+        }
+        instance = this;
     }
 
     void Setup()
