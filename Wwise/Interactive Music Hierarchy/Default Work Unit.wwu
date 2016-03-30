@@ -108,7 +108,7 @@
 				</Folder>
 				<Folder Name="Canyon" ID="{572F714D-D792-4FCE-BADF-A83FDB0736CA}" ShortID="1030097253">
 					<ChildrenList>
-						<MusicPlaylistContainer Name="mus_Canyon" ID="{2650A760-95D9-4872-9C5B-C6C79FD16EE7}" ShortID="957764263">
+						<MusicSwitchContainer Name="mus_CanyonSwitch" ID="{35BE0291-1069-4D9C-AA22-81754261F564}" ShortID="68399303">
 							<PropertyList>
 								<Property Name="Tempo" Type="Real64" Value="130"/>
 							</PropertyList>
@@ -121,918 +121,996 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<MusicSegment Name="mus_canyon_cicadas_01" ID="{C6560AA8-C348-45C5-942B-A8EF4898E8C4}" ShortID="862338096">
+								<MusicPlaylistContainer Name="mus_Canyon" ID="{2650A760-95D9-4872-9C5B-C6C79FD16EE7}" ShortID="957764263">
 									<PropertyList>
-										<Property Name="EndPosition" Type="Real64" Value="17583.7188208617"/>
+										<Property Name="Tempo" Type="Real64" Value="130"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
 										</Reference>
 										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+											<ObjectRef Name="Music" ID="{CFF6FC16-89F0-41CC-97D5-A4407E0CDCE1}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<MusicTrack Name="mus_canyon_cicadas_01" ID="{16DE2287-BCC9-4989-91C3-3A82CFDBB3E7}" ShortID="1016568879">
+										<MusicSegment Name="mus_canyon_cicadas_01" ID="{C6560AA8-C348-45C5-942B-A8EF4898E8C4}" ShortID="862338096">
+											<PropertyList>
+												<Property Name="EndPosition" Type="Real64" Value="17583.7188208617"/>
+											</PropertyList>
 											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+												</Reference>
 												<Reference Name="OutputBus">
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="mus_canyon_cicadas_01" ID="{BA01F51D-B717-4F10-91AB-F8ED5CC2B0EC}" ShortID="909115126">
-													<Language>SFX</Language>
-													<AudioFile>mus_canyon_cicadas_01.wav</AudioFile>
-												</AudioFileSource>
+												<MusicTrack Name="mus_canyon_cicadas_01" ID="{16DE2287-BCC9-4989-91C3-3A82CFDBB3E7}" ShortID="1016568879">
+													<ReferenceList>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="mus_canyon_cicadas_01" ID="{BA01F51D-B717-4F10-91AB-F8ED5CC2B0EC}" ShortID="909115126">
+															<Language>SFX</Language>
+															<AudioFile>mus_canyon_cicadas_01.wav</AudioFile>
+														</AudioFileSource>
+													</ChildrenList>
+													<TransitionList>
+														<MusicTransition Name="Root" ID="{9BB664E8-EB9C-4E77-84DE-552DD50B2661}">
+															<PropertyList>
+																<Property Name="IsFolder" Type="bool" Value="True"/>
+															</PropertyList>
+															<TransitionInfo/>
+														</MusicTransition>
+													</TransitionList>
+													<SequenceList>
+														<MusicTrackSequence Name="" ID="{8DA5E41E-732E-4191-AA01-06B784F48B8B}">
+															<ClipList>
+																<MusicClip Name="mus_canyon_cicadas_01" ID="{3ED9E64D-7D72-4ED2-9B54-CEAD49C9935F}">
+																	<PropertyList>
+																		<Property Name="EndTrimOffset" Type="Real64" Value="17583.7188208617"/>
+																		<Property Name="FadeInMode" Type="int16" Value="0"/>
+																		<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																	</PropertyList>
+																	<AudioSourceRef Name="mus_canyon_cicadas_01" ID="{BA01F51D-B717-4F10-91AB-F8ED5CC2B0EC}"/>
+																</MusicClip>
+															</ClipList>
+														</MusicTrackSequence>
+													</SequenceList>
+												</MusicTrack>
 											</ChildrenList>
-											<TransitionList>
-												<MusicTransition Name="Root" ID="{9BB664E8-EB9C-4E77-84DE-552DD50B2661}">
+											<CueList>
+												<MusicCue Name="Entry Cue" ID="{C31F37FE-0D8F-4EC4-AD44-219744044116}"/>
+												<MusicCue Name="Exit Cue" ID="{3D35B195-168B-40FE-892F-E4A147ECFF69}">
 													<PropertyList>
-														<Property Name="IsFolder" Type="bool" Value="True"/>
+														<Property Name="CueType" Type="int16" Value="1"/>
+														<Property Name="TimeMs" Type="Real64" Value="14769.2307692308"/>
 													</PropertyList>
+												</MusicCue>
+											</CueList>
+										</MusicSegment>
+										<MusicSegment Name="mus_canyon_cicadas_02" ID="{5D5A8CF8-30AB-40AB-8559-71AD72115742}" ShortID="1048129953">
+											<PropertyList>
+												<Property Name="EndPosition" Type="Real64" Value="17583.7188208617"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<MusicTrack Name="mus_canyon_cicadas_02" ID="{7A4B1526-AA19-4CCD-BCDC-7CBF6A9CA3D2}" ShortID="205242056">
+													<ReferenceList>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="mus_canyon_cicadas_02" ID="{F0A7A498-67BF-4C66-AB4B-21A3A85BEF6B}" ShortID="715826064">
+															<Language>SFX</Language>
+															<AudioFile>mus_canyon_cicadas_02.wav</AudioFile>
+														</AudioFileSource>
+													</ChildrenList>
+													<TransitionList>
+														<MusicTransition Name="Root" ID="{97026850-B27C-4BDF-A664-5DD725F90D1B}">
+															<PropertyList>
+																<Property Name="IsFolder" Type="bool" Value="True"/>
+															</PropertyList>
+															<TransitionInfo/>
+														</MusicTransition>
+													</TransitionList>
+													<SequenceList>
+														<MusicTrackSequence Name="" ID="{85011940-D778-4707-8603-B077E93AFC7D}">
+															<ClipList>
+																<MusicClip Name="mus_canyon_cicadas_02" ID="{67006FEF-F93B-48DD-8C4F-A04007054271}">
+																	<PropertyList>
+																		<Property Name="EndTrimOffset" Type="Real64" Value="17583.7188208617"/>
+																		<Property Name="FadeInMode" Type="int16" Value="0"/>
+																		<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																	</PropertyList>
+																	<AudioSourceRef Name="mus_canyon_cicadas_02" ID="{F0A7A498-67BF-4C66-AB4B-21A3A85BEF6B}"/>
+																</MusicClip>
+															</ClipList>
+														</MusicTrackSequence>
+													</SequenceList>
+												</MusicTrack>
+											</ChildrenList>
+											<CueList>
+												<MusicCue Name="Entry Cue" ID="{5C8EFE8A-CF1C-45D4-A471-62EAF3B0204B}"/>
+												<MusicCue Name="Exit Cue" ID="{BD5852A6-59B9-490E-9DEE-073CB70A3D67}">
+													<PropertyList>
+														<Property Name="CueType" Type="int16" Value="1"/>
+														<Property Name="TimeMs" Type="Real64" Value="14769.2307692308"/>
+													</PropertyList>
+												</MusicCue>
+											</CueList>
+										</MusicSegment>
+										<MusicSegment Name="mus_canyon_cicadas_03" ID="{74F12C4E-0528-42B7-9B7E-5077EF0C43EF}" ShortID="489269787">
+											<PropertyList>
+												<Property Name="EndPosition" Type="Real64" Value="17583.7188208617"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<MusicTrack Name="mus_canyon_cicadas_03" ID="{1EB4D1CB-B6DD-49ED-BBDA-6C3C67F282CE}" ShortID="103542758">
+													<ReferenceList>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="mus_canyon_cicadas_03" ID="{B492CA2F-12AE-4727-8F4E-D8B508B6B510}" ShortID="952276965">
+															<Language>SFX</Language>
+															<AudioFile>mus_canyon_cicadas_03.wav</AudioFile>
+														</AudioFileSource>
+													</ChildrenList>
+													<TransitionList>
+														<MusicTransition Name="Root" ID="{2760821F-0E8A-4008-A40D-E29B61DFAE6A}">
+															<PropertyList>
+																<Property Name="IsFolder" Type="bool" Value="True"/>
+															</PropertyList>
+															<TransitionInfo/>
+														</MusicTransition>
+													</TransitionList>
+													<SequenceList>
+														<MusicTrackSequence Name="" ID="{86818A79-13CB-43C0-8BD9-C6FDAAEAA721}">
+															<ClipList>
+																<MusicClip Name="mus_canyon_cicadas_03" ID="{81907D6C-F197-4484-833A-0DCED937E9B7}">
+																	<PropertyList>
+																		<Property Name="EndTrimOffset" Type="Real64" Value="17583.7188208617"/>
+																		<Property Name="FadeInMode" Type="int16" Value="0"/>
+																		<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																	</PropertyList>
+																	<AudioSourceRef Name="mus_canyon_cicadas_03" ID="{B492CA2F-12AE-4727-8F4E-D8B508B6B510}"/>
+																</MusicClip>
+															</ClipList>
+														</MusicTrackSequence>
+													</SequenceList>
+												</MusicTrack>
+											</ChildrenList>
+											<CueList>
+												<MusicCue Name="Entry Cue" ID="{5CCCA2F1-5AC8-476B-9286-C8A3E9F79CA5}"/>
+												<MusicCue Name="Exit Cue" ID="{6DBB2FFF-1E11-49EA-8EA4-1B3FB61C8193}">
+													<PropertyList>
+														<Property Name="CueType" Type="int16" Value="1"/>
+														<Property Name="TimeMs" Type="Real64" Value="14769.2307692308"/>
+													</PropertyList>
+												</MusicCue>
+											</CueList>
+										</MusicSegment>
+										<MusicSegment Name="mus_canyon_guitar_01" ID="{5CF7A7E5-B2FC-438F-B21F-50F96A4E1D2D}" ShortID="639929966">
+											<PropertyList>
+												<Property Name="EndPosition" Type="Real64" Value="17583.7188208617"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<MusicTrack Name="mus_canyon_guitar_01" ID="{86E04E1D-6EC2-49FA-9B02-A8DA7DA37694}" ShortID="437454290">
+													<ReferenceList>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="mus_canyon_guitar_01" ID="{522CD204-4D9D-4D1C-BF36-EEBF17DEF9C8}" ShortID="729143796">
+															<Language>SFX</Language>
+															<AudioFile>mus_canyon_guitar_01.wav</AudioFile>
+														</AudioFileSource>
+													</ChildrenList>
+													<TransitionList>
+														<MusicTransition Name="Root" ID="{E10FE8FD-5456-4E5E-B153-760E8D983C8B}">
+															<PropertyList>
+																<Property Name="IsFolder" Type="bool" Value="True"/>
+															</PropertyList>
+															<TransitionInfo/>
+														</MusicTransition>
+													</TransitionList>
+													<SequenceList>
+														<MusicTrackSequence Name="" ID="{CF48E2C6-6861-4EDA-800B-A32417A461CD}">
+															<ClipList>
+																<MusicClip Name="mus_canyon_guitar_01" ID="{30FE0F90-5E9C-4247-9D73-022DF130AB9B}">
+																	<PropertyList>
+																		<Property Name="EndTrimOffset" Type="Real64" Value="17583.7188208617"/>
+																		<Property Name="FadeInMode" Type="int16" Value="0"/>
+																		<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																	</PropertyList>
+																	<AudioSourceRef Name="mus_canyon_guitar_01" ID="{522CD204-4D9D-4D1C-BF36-EEBF17DEF9C8}"/>
+																</MusicClip>
+															</ClipList>
+														</MusicTrackSequence>
+													</SequenceList>
+												</MusicTrack>
+											</ChildrenList>
+											<CueList>
+												<MusicCue Name="Entry Cue" ID="{2619EC63-00E8-4903-815A-9A3938BDC617}"/>
+												<MusicCue Name="Exit Cue" ID="{55C208CE-05D8-484F-B33A-675EF3CCA77A}">
+													<PropertyList>
+														<Property Name="CueType" Type="int16" Value="1"/>
+														<Property Name="TimeMs" Type="Real64" Value="14769.2307692308"/>
+													</PropertyList>
+												</MusicCue>
+											</CueList>
+										</MusicSegment>
+										<MusicSegment Name="mus_canyon_guitar_02" ID="{940286C8-7BBF-43ED-BCCD-09EBE91F0AB1}" ShortID="441205629">
+											<PropertyList>
+												<Property Name="EndPosition" Type="Real64" Value="17583.7188208617"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<MusicTrack Name="mus_canyon_guitar_02" ID="{F40CCCBE-5D66-4A31-8601-C54104690D50}" ShortID="1045133374">
+													<ReferenceList>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="mus_canyon_guitar_02" ID="{CB313FAF-2936-40F8-9F74-0F0A84202B6F}" ShortID="275407545">
+															<Language>SFX</Language>
+															<AudioFile>mus_canyon_guitar_02.wav</AudioFile>
+														</AudioFileSource>
+													</ChildrenList>
+													<TransitionList>
+														<MusicTransition Name="Root" ID="{A0100D32-559B-4E24-B587-2C0F10C9683C}">
+															<PropertyList>
+																<Property Name="IsFolder" Type="bool" Value="True"/>
+															</PropertyList>
+															<TransitionInfo/>
+														</MusicTransition>
+													</TransitionList>
+													<SequenceList>
+														<MusicTrackSequence Name="" ID="{A7F3073D-47BF-4E77-90C0-D6CB927495DD}">
+															<ClipList>
+																<MusicClip Name="mus_canyon_guitar_02" ID="{1830BE9A-4E58-4DC7-B26E-6FE6FE9725FE}">
+																	<PropertyList>
+																		<Property Name="EndTrimOffset" Type="Real64" Value="17583.7188208617"/>
+																		<Property Name="FadeInMode" Type="int16" Value="0"/>
+																		<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																	</PropertyList>
+																	<AudioSourceRef Name="mus_canyon_guitar_02" ID="{CB313FAF-2936-40F8-9F74-0F0A84202B6F}"/>
+																</MusicClip>
+															</ClipList>
+														</MusicTrackSequence>
+													</SequenceList>
+												</MusicTrack>
+											</ChildrenList>
+											<CueList>
+												<MusicCue Name="Entry Cue" ID="{34CA16BA-7977-4048-A0A4-B487C95EE18E}"/>
+												<MusicCue Name="Exit Cue" ID="{4CB06C06-6FB5-4244-9771-22AB0FAFBCAB}">
+													<PropertyList>
+														<Property Name="CueType" Type="int16" Value="1"/>
+														<Property Name="TimeMs" Type="Real64" Value="14769.2307692308"/>
+													</PropertyList>
+												</MusicCue>
+											</CueList>
+										</MusicSegment>
+										<MusicSegment Name="mus_canyon_intro_01" ID="{30C9EB99-D02B-47CD-970B-4805F3BF2EAF}" ShortID="517772279">
+											<PropertyList>
+												<Property Name="EndPosition" Type="Real64" Value="10153.8461538462"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<MusicTrack Name="mus_canyon_intro_01" ID="{94845FEB-8F53-4579-A0C5-DDCDC7D76CAA}" ShortID="105748772">
+													<ReferenceList>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="mus_canyon_intro_01" ID="{C4B34D8A-AF9C-4204-92AD-0A0590A210EA}" ShortID="536109339">
+															<Language>SFX</Language>
+															<AudioFile>mus_canyon_intro_01.wav</AudioFile>
+														</AudioFileSource>
+													</ChildrenList>
+													<TransitionList>
+														<MusicTransition Name="Root" ID="{A990639C-5EA7-4B60-AB9D-6CEBDDE1D333}">
+															<PropertyList>
+																<Property Name="IsFolder" Type="bool" Value="True"/>
+															</PropertyList>
+															<TransitionInfo/>
+														</MusicTransition>
+													</TransitionList>
+													<SequenceList>
+														<MusicTrackSequence Name="" ID="{C28302C1-DE5E-41DE-B695-1B05063F3383}">
+															<ClipList>
+																<MusicClip Name="mus_canyon_intro_01" ID="{3192A30A-95D1-4BA9-A642-D86947DF0BF2}">
+																	<PropertyList>
+																		<Property Name="EndTrimOffset" Type="Real64" Value="10153.3333333333"/>
+																		<Property Name="FadeInMode" Type="int16" Value="0"/>
+																		<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																	</PropertyList>
+																	<AudioSourceRef Name="mus_canyon_intro_01" ID="{C4B34D8A-AF9C-4204-92AD-0A0590A210EA}"/>
+																</MusicClip>
+															</ClipList>
+														</MusicTrackSequence>
+													</SequenceList>
+												</MusicTrack>
+											</ChildrenList>
+											<CueList>
+												<MusicCue Name="Entry Cue" ID="{6FEEF505-D772-4850-B70B-4E4BB20F7AF7}"/>
+												<MusicCue Name="Exit Cue" ID="{58736C1B-42A4-4BAD-9972-15D912ED472F}">
+													<PropertyList>
+														<Property Name="CueType" Type="int16" Value="1"/>
+														<Property Name="TimeMs" Type="Real64" Value="7384.61538461538"/>
+													</PropertyList>
+												</MusicCue>
+											</CueList>
+										</MusicSegment>
+									</ChildrenList>
+									<TransitionList>
+										<MusicTransition Name="Root" ID="{92C12E13-8998-485E-AF77-21D2D6901FFF}">
+											<PropertyList>
+												<Property Name="IsFolder" Type="bool" Value="True"/>
+											</PropertyList>
+											<ChildrenList>
+												<MusicTransition Name="Transition" ID="{4BE0F9AC-A82F-4C9F-9FA0-07ED0E8F9152}">
 													<TransitionInfo/>
 												</MusicTransition>
-											</TransitionList>
-											<SequenceList>
-												<MusicTrackSequence Name="" ID="{8DA5E41E-732E-4191-AA01-06B784F48B8B}">
-													<ClipList>
-														<MusicClip Name="mus_canyon_cicadas_01" ID="{3ED9E64D-7D72-4ED2-9B54-CEAD49C9935F}">
+											</ChildrenList>
+											<TransitionInfo/>
+										</MusicTransition>
+									</TransitionList>
+									<Playlist>
+										<MusicPlaylistItem Name="" ID="{0FBD292A-7AA1-4B08-B360-C6782613E925}" ShortID="154770486">
+											<ChildrenList>
+												<MusicPlaylistItem Name="" ID="{FE7D7B6C-63A9-40F6-AEB5-42229D9C6E0E}" ShortID="528598466">
+													<PropertyList>
+														<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+													</PropertyList>
+													<SegmentRef Name="mus_canyon_intro_01" ID="{30C9EB99-D02B-47CD-970B-4805F3BF2EAF}"/>
+												</MusicPlaylistItem>
+												<MusicPlaylistItem Name="" ID="{07CEED0D-95B8-4C7A-B282-22C0EAFCBB58}" ShortID="163449924">
+													<ChildrenList>
+														<MusicPlaylistItem Name="" ID="{0C0453F8-C637-475F-8A90-C06D3072F2BE}" ShortID="262793124">
 															<PropertyList>
-																<Property Name="EndTrimOffset" Type="Real64" Value="17583.7188208617"/>
-																<Property Name="FadeInMode" Type="int16" Value="0"/>
-																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="PlaylistItemType" Type="int16" Value="1"/>
 															</PropertyList>
-															<AudioSourceRef Name="mus_canyon_cicadas_01" ID="{BA01F51D-B717-4F10-91AB-F8ED5CC2B0EC}"/>
-														</MusicClip>
-													</ClipList>
-												</MusicTrackSequence>
-											</SequenceList>
-										</MusicTrack>
-									</ChildrenList>
-									<CueList>
-										<MusicCue Name="Entry Cue" ID="{C31F37FE-0D8F-4EC4-AD44-219744044116}"/>
-										<MusicCue Name="Exit Cue" ID="{3D35B195-168B-40FE-892F-E4A147ECFF69}">
-											<PropertyList>
-												<Property Name="CueType" Type="int16" Value="1"/>
-												<Property Name="TimeMs" Type="Real64" Value="14769.2307692308"/>
-											</PropertyList>
-										</MusicCue>
-									</CueList>
-								</MusicSegment>
-								<MusicSegment Name="mus_canyon_cicadas_02" ID="{5D5A8CF8-30AB-40AB-8559-71AD72115742}" ShortID="1048129953">
+															<SegmentRef Name="mus_canyon_cicadas_01" ID="{C6560AA8-C348-45C5-942B-A8EF4898E8C4}"/>
+														</MusicPlaylistItem>
+														<MusicPlaylistItem Name="" ID="{E586A14B-4799-4C78-A298-BDA8D61828B7}" ShortID="356955178">
+															<PropertyList>
+																<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+															</PropertyList>
+															<SegmentRef Name="mus_canyon_cicadas_02" ID="{5D5A8CF8-30AB-40AB-8559-71AD72115742}"/>
+														</MusicPlaylistItem>
+													</ChildrenList>
+												</MusicPlaylistItem>
+												<MusicPlaylistItem Name="" ID="{737CF336-783D-44EC-9717-7A0115B8ECCF}" ShortID="525904879">
+													<PropertyList>
+														<Property Name="LoopCount" Type="int16" Value="0">
+															<ModifierList>
+																<ModifierInfo>
+																	<Modifier Name="" ID="{24E9019D-B9C3-461A-B30E-84E7F5151435}"/>
+																</ModifierInfo>
+															</ModifierList>
+														</Property>
+													</PropertyList>
+													<ChildrenList>
+														<MusicPlaylistItem Name="" ID="{50F1DFB6-7A1C-4F8C-B6ED-93AE6D6D1AA2}" ShortID="970301850">
+															<ChildrenList>
+																<MusicPlaylistItem Name="" ID="{E996D5B5-0FBA-431D-9653-87BF8C4AE880}" ShortID="130984559">
+																	<PropertyList>
+																		<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+																	</PropertyList>
+																	<SegmentRef Name="mus_canyon_guitar_01" ID="{5CF7A7E5-B2FC-438F-B21F-50F96A4E1D2D}"/>
+																</MusicPlaylistItem>
+																<MusicPlaylistItem Name="" ID="{A82CE876-2D04-4E93-B8E0-883FE70AE2DB}" ShortID="194737161">
+																	<PropertyList>
+																		<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+																	</PropertyList>
+																	<SegmentRef Name="mus_canyon_guitar_02" ID="{940286C8-7BBF-43ED-BCCD-09EBE91F0AB1}"/>
+																</MusicPlaylistItem>
+															</ChildrenList>
+														</MusicPlaylistItem>
+														<MusicPlaylistItem Name="" ID="{CA417271-3DCB-4CB8-9385-A0AD835738B3}" ShortID="1025723967">
+															<PropertyList>
+																<Property Name="PlayMode" Type="int16" Value="3"/>
+															</PropertyList>
+															<ChildrenList>
+																<MusicPlaylistItem Name="" ID="{251481CB-782A-4A3D-84F6-F93139142B1E}" ShortID="173103565">
+																	<ChildrenList>
+																		<MusicPlaylistItem Name="" ID="{01F8AC36-A477-4336-B113-79379F36A47A}" ShortID="699706544">
+																			<PropertyList>
+																				<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+																			</PropertyList>
+																			<SegmentRef Name="mus_canyon_cicadas_01" ID="{C6560AA8-C348-45C5-942B-A8EF4898E8C4}"/>
+																		</MusicPlaylistItem>
+																		<MusicPlaylistItem Name="" ID="{3C7A8151-1B4B-404B-8B90-8BCCA8D0B5F0}" ShortID="1046996239">
+																			<PropertyList>
+																				<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+																			</PropertyList>
+																			<SegmentRef Name="mus_canyon_cicadas_02" ID="{5D5A8CF8-30AB-40AB-8559-71AD72115742}"/>
+																		</MusicPlaylistItem>
+																	</ChildrenList>
+																</MusicPlaylistItem>
+																<MusicPlaylistItem Name="" ID="{8325C2F0-3967-4966-96D7-41DAD9809B6D}" ShortID="346561732">
+																	<ChildrenList>
+																		<MusicPlaylistItem Name="" ID="{89243B15-FBF3-4619-8F43-C7CDE09F0C1E}" ShortID="394118246">
+																			<PropertyList>
+																				<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+																			</PropertyList>
+																			<SegmentRef Name="mus_canyon_cicadas_03" ID="{74F12C4E-0528-42B7-9B7E-5077EF0C43EF}"/>
+																		</MusicPlaylistItem>
+																	</ChildrenList>
+																</MusicPlaylistItem>
+															</ChildrenList>
+														</MusicPlaylistItem>
+													</ChildrenList>
+												</MusicPlaylistItem>
+											</ChildrenList>
+										</MusicPlaylistItem>
+									</Playlist>
+								</MusicPlaylistContainer>
+								<MusicPlaylistContainer Name="mus_CanyonBoss" ID="{4B4D3035-AF26-42B4-B544-FCE1FA9E5BD5}" ShortID="159433128">
 									<PropertyList>
-										<Property Name="EndPosition" Type="Real64" Value="17583.7188208617"/>
+										<Property Name="Tempo" Type="Real64" Value="130"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
 										</Reference>
 										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+											<ObjectRef Name="Music" ID="{CFF6FC16-89F0-41CC-97D5-A4407E0CDCE1}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<MusicTrack Name="mus_canyon_cicadas_02" ID="{7A4B1526-AA19-4CCD-BCDC-7CBF6A9CA3D2}" ShortID="205242056">
+										<MusicSegment Name="mus_canyon_bass_01" ID="{B4E86860-71C4-4BEC-8D72-1AC6905E1E47}" ShortID="967853438">
+											<PropertyList>
+												<Property Name="EndPosition" Type="Real64" Value="17583.7188208617"/>
+											</PropertyList>
 											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+												</Reference>
 												<Reference Name="OutputBus">
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="mus_canyon_cicadas_02" ID="{F0A7A498-67BF-4C66-AB4B-21A3A85BEF6B}" ShortID="715826064">
-													<Language>SFX</Language>
-													<AudioFile>mus_canyon_cicadas_02.wav</AudioFile>
-												</AudioFileSource>
-											</ChildrenList>
-											<TransitionList>
-												<MusicTransition Name="Root" ID="{97026850-B27C-4BDF-A664-5DD725F90D1B}">
-													<PropertyList>
-														<Property Name="IsFolder" Type="bool" Value="True"/>
-													</PropertyList>
-													<TransitionInfo/>
-												</MusicTransition>
-											</TransitionList>
-											<SequenceList>
-												<MusicTrackSequence Name="" ID="{85011940-D778-4707-8603-B077E93AFC7D}">
-													<ClipList>
-														<MusicClip Name="mus_canyon_cicadas_02" ID="{67006FEF-F93B-48DD-8C4F-A04007054271}">
+												<MusicTrack Name="mus_canyon_bass_01" ID="{8C71EEFD-6A13-45E1-8A00-55E0F79AC0D7}" ShortID="249701985">
+													<ReferenceList>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="mus_canyon_bass_01" ID="{2DF1320B-B8F3-4A37-9FA9-9ED14A3283BF}" ShortID="795458599">
+															<Language>SFX</Language>
+															<AudioFile>mus_canyon_bass_01.wav</AudioFile>
+															<ConvertedFileIDList>
+																<File ID="482305505"/>
+															</ConvertedFileIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<TransitionList>
+														<MusicTransition Name="Root" ID="{22F95F95-88B1-461C-8638-73B495CCC9DF}">
 															<PropertyList>
-																<Property Name="EndTrimOffset" Type="Real64" Value="17583.7188208617"/>
-																<Property Name="FadeInMode" Type="int16" Value="0"/>
-																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="IsFolder" Type="bool" Value="True"/>
 															</PropertyList>
-															<AudioSourceRef Name="mus_canyon_cicadas_02" ID="{F0A7A498-67BF-4C66-AB4B-21A3A85BEF6B}"/>
-														</MusicClip>
-													</ClipList>
-												</MusicTrackSequence>
-											</SequenceList>
-										</MusicTrack>
-									</ChildrenList>
-									<CueList>
-										<MusicCue Name="Entry Cue" ID="{5C8EFE8A-CF1C-45D4-A471-62EAF3B0204B}"/>
-										<MusicCue Name="Exit Cue" ID="{BD5852A6-59B9-490E-9DEE-073CB70A3D67}">
+															<TransitionInfo/>
+														</MusicTransition>
+													</TransitionList>
+													<SequenceList>
+														<MusicTrackSequence Name="" ID="{E958AAA8-DFA9-478B-8387-C0D7B2A2E704}">
+															<ClipList>
+																<MusicClip Name="mus_canyon_bass_01" ID="{834E8B59-F972-4AAF-8595-8E61BA6F02BC}">
+																	<PropertyList>
+																		<Property Name="EndTrimOffset" Type="Real64" Value="17583.7188208617"/>
+																		<Property Name="FadeInMode" Type="int16" Value="0"/>
+																		<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																	</PropertyList>
+																	<AudioSourceRef Name="mus_canyon_bass_01" ID="{2DF1320B-B8F3-4A37-9FA9-9ED14A3283BF}"/>
+																</MusicClip>
+															</ClipList>
+														</MusicTrackSequence>
+													</SequenceList>
+												</MusicTrack>
+											</ChildrenList>
+											<CueList>
+												<MusicCue Name="Entry Cue" ID="{03926791-16C9-4E57-98B4-DD211E6093C9}"/>
+												<MusicCue Name="Exit Cue" ID="{65F70F83-DCBB-401D-9609-91E9FF0EC17A}">
+													<PropertyList>
+														<Property Name="CueType" Type="int16" Value="1"/>
+														<Property Name="TimeMs" Type="Real64" Value="14769.2307692308"/>
+													</PropertyList>
+												</MusicCue>
+											</CueList>
+										</MusicSegment>
+										<MusicSegment Name="mus_canyon_bass_02" ID="{952D5CFD-32DA-4C1C-9ED9-11A009A4ED6D}" ShortID="819945767">
 											<PropertyList>
-												<Property Name="CueType" Type="int16" Value="1"/>
-												<Property Name="TimeMs" Type="Real64" Value="14769.2307692308"/>
+												<Property Name="EndPosition" Type="Real64" Value="17583.7188208617"/>
 											</PropertyList>
-										</MusicCue>
-									</CueList>
-								</MusicSegment>
-								<MusicSegment Name="mus_canyon_cicadas_03" ID="{74F12C4E-0528-42B7-9B7E-5077EF0C43EF}" ShortID="489269787">
-									<PropertyList>
-										<Property Name="EndPosition" Type="Real64" Value="17583.7188208617"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<MusicTrack Name="mus_canyon_cicadas_03" ID="{1EB4D1CB-B6DD-49ED-BBDA-6C3C67F282CE}" ShortID="103542758">
 											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+												</Reference>
 												<Reference Name="OutputBus">
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="mus_canyon_cicadas_03" ID="{B492CA2F-12AE-4727-8F4E-D8B508B6B510}" ShortID="952276965">
-													<Language>SFX</Language>
-													<AudioFile>mus_canyon_cicadas_03.wav</AudioFile>
-												</AudioFileSource>
-											</ChildrenList>
-											<TransitionList>
-												<MusicTransition Name="Root" ID="{2760821F-0E8A-4008-A40D-E29B61DFAE6A}">
-													<PropertyList>
-														<Property Name="IsFolder" Type="bool" Value="True"/>
-													</PropertyList>
-													<TransitionInfo/>
-												</MusicTransition>
-											</TransitionList>
-											<SequenceList>
-												<MusicTrackSequence Name="" ID="{86818A79-13CB-43C0-8BD9-C6FDAAEAA721}">
-													<ClipList>
-														<MusicClip Name="mus_canyon_cicadas_03" ID="{81907D6C-F197-4484-833A-0DCED937E9B7}">
+												<MusicTrack Name="mus_canyon_bass_02" ID="{6D5BD191-A747-469F-B311-21A3A3D5AC2B}" ShortID="45329162">
+													<ReferenceList>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="mus_canyon_bass_02" ID="{763E719D-D11F-492B-B51F-247E72819BA5}" ShortID="615898328">
+															<Language>SFX</Language>
+															<AudioFile>mus_canyon_bass_02.wav</AudioFile>
+															<ConvertedFileIDList>
+																<File ID="181000042"/>
+															</ConvertedFileIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<TransitionList>
+														<MusicTransition Name="Root" ID="{675C3488-AF24-444C-A214-4836A47C836D}">
 															<PropertyList>
-																<Property Name="EndTrimOffset" Type="Real64" Value="17583.7188208617"/>
-																<Property Name="FadeInMode" Type="int16" Value="0"/>
-																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="IsFolder" Type="bool" Value="True"/>
 															</PropertyList>
-															<AudioSourceRef Name="mus_canyon_cicadas_03" ID="{B492CA2F-12AE-4727-8F4E-D8B508B6B510}"/>
-														</MusicClip>
-													</ClipList>
-												</MusicTrackSequence>
-											</SequenceList>
-										</MusicTrack>
-									</ChildrenList>
-									<CueList>
-										<MusicCue Name="Entry Cue" ID="{5CCCA2F1-5AC8-476B-9286-C8A3E9F79CA5}"/>
-										<MusicCue Name="Exit Cue" ID="{6DBB2FFF-1E11-49EA-8EA4-1B3FB61C8193}">
+															<TransitionInfo/>
+														</MusicTransition>
+													</TransitionList>
+													<SequenceList>
+														<MusicTrackSequence Name="" ID="{8CCD17A1-C698-4D8A-A07B-1B81E0CE3AAC}">
+															<ClipList>
+																<MusicClip Name="mus_canyon_bass_02" ID="{D91BF0F7-0C67-443D-801C-2ED43001B7B2}">
+																	<PropertyList>
+																		<Property Name="EndTrimOffset" Type="Real64" Value="17583.7188208617"/>
+																		<Property Name="FadeInMode" Type="int16" Value="0"/>
+																		<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																	</PropertyList>
+																	<AudioSourceRef Name="mus_canyon_bass_02" ID="{763E719D-D11F-492B-B51F-247E72819BA5}"/>
+																</MusicClip>
+															</ClipList>
+														</MusicTrackSequence>
+													</SequenceList>
+												</MusicTrack>
+											</ChildrenList>
+											<CueList>
+												<MusicCue Name="Entry Cue" ID="{1CEDD980-A332-4899-9292-C1D869138163}"/>
+												<MusicCue Name="Exit Cue" ID="{215504A2-1186-4C7D-AA1C-E4297752A29B}">
+													<PropertyList>
+														<Property Name="CueType" Type="int16" Value="1"/>
+														<Property Name="TimeMs" Type="Real64" Value="14769.2307692308"/>
+													</PropertyList>
+												</MusicCue>
+											</CueList>
+										</MusicSegment>
+										<MusicSegment Name="mus_canyon_cicadas_04" ID="{C226C56C-CC57-4198-B689-F10C6648B2CE}" ShortID="957454755">
 											<PropertyList>
-												<Property Name="CueType" Type="int16" Value="1"/>
-												<Property Name="TimeMs" Type="Real64" Value="14769.2307692308"/>
+												<Property Name="EndPosition" Type="Real64" Value="17583.7188208617"/>
 											</PropertyList>
-										</MusicCue>
-									</CueList>
-								</MusicSegment>
-								<MusicSegment Name="mus_canyon_guitar_01" ID="{5CF7A7E5-B2FC-438F-B21F-50F96A4E1D2D}" ShortID="639929966">
-									<PropertyList>
-										<Property Name="EndPosition" Type="Real64" Value="17583.7188208617"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<MusicTrack Name="mus_canyon_guitar_01" ID="{86E04E1D-6EC2-49FA-9B02-A8DA7DA37694}" ShortID="437454290">
 											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+												</Reference>
 												<Reference Name="OutputBus">
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="mus_canyon_guitar_01" ID="{522CD204-4D9D-4D1C-BF36-EEBF17DEF9C8}" ShortID="729143796">
-													<Language>SFX</Language>
-													<AudioFile>mus_canyon_guitar_01.wav</AudioFile>
-												</AudioFileSource>
-											</ChildrenList>
-											<TransitionList>
-												<MusicTransition Name="Root" ID="{E10FE8FD-5456-4E5E-B153-760E8D983C8B}">
-													<PropertyList>
-														<Property Name="IsFolder" Type="bool" Value="True"/>
-													</PropertyList>
-													<TransitionInfo/>
-												</MusicTransition>
-											</TransitionList>
-											<SequenceList>
-												<MusicTrackSequence Name="" ID="{CF48E2C6-6861-4EDA-800B-A32417A461CD}">
-													<ClipList>
-														<MusicClip Name="mus_canyon_guitar_01" ID="{30FE0F90-5E9C-4247-9D73-022DF130AB9B}">
+												<MusicTrack Name="mus_canyon_cicadas_04" ID="{E14EF39C-0838-4BF0-A7DC-B4859EB0B253}" ShortID="494076248">
+													<ReferenceList>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="mus_canyon_cicadas_04" ID="{5D2BDE41-F365-41BE-AE1D-879EDD41E46C}" ShortID="83479360">
+															<Language>SFX</Language>
+															<AudioFile>mus_canyon_cicadas_04.wav</AudioFile>
+															<ConvertedFileIDList>
+																<File ID="981017885"/>
+															</ConvertedFileIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<TransitionList>
+														<MusicTransition Name="Root" ID="{8AF5F45D-D9F2-4B69-9CB7-19FBF81A038F}">
 															<PropertyList>
-																<Property Name="EndTrimOffset" Type="Real64" Value="17583.7188208617"/>
-																<Property Name="FadeInMode" Type="int16" Value="0"/>
-																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="IsFolder" Type="bool" Value="True"/>
 															</PropertyList>
-															<AudioSourceRef Name="mus_canyon_guitar_01" ID="{522CD204-4D9D-4D1C-BF36-EEBF17DEF9C8}"/>
-														</MusicClip>
-													</ClipList>
-												</MusicTrackSequence>
-											</SequenceList>
-										</MusicTrack>
-									</ChildrenList>
-									<CueList>
-										<MusicCue Name="Entry Cue" ID="{2619EC63-00E8-4903-815A-9A3938BDC617}"/>
-										<MusicCue Name="Exit Cue" ID="{55C208CE-05D8-484F-B33A-675EF3CCA77A}">
+															<TransitionInfo/>
+														</MusicTransition>
+													</TransitionList>
+													<SequenceList>
+														<MusicTrackSequence Name="" ID="{F18A0C37-BE01-4E63-9C86-4EE8587B28AB}">
+															<ClipList>
+																<MusicClip Name="mus_canyon_cicadas_04" ID="{98F1EE99-8D50-4BF3-81B3-22223D719B8B}">
+																	<PropertyList>
+																		<Property Name="EndTrimOffset" Type="Real64" Value="17583.7188208617"/>
+																		<Property Name="FadeInMode" Type="int16" Value="0"/>
+																		<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																	</PropertyList>
+																	<AudioSourceRef Name="mus_canyon_cicadas_04" ID="{5D2BDE41-F365-41BE-AE1D-879EDD41E46C}"/>
+																</MusicClip>
+															</ClipList>
+														</MusicTrackSequence>
+													</SequenceList>
+												</MusicTrack>
+											</ChildrenList>
+											<CueList>
+												<MusicCue Name="Entry Cue" ID="{3842EA8B-6BA8-474C-8991-3DCEB0330692}"/>
+												<MusicCue Name="Exit Cue" ID="{BF502D66-F815-4910-A763-F0D51C0A194F}">
+													<PropertyList>
+														<Property Name="CueType" Type="int16" Value="1"/>
+														<Property Name="TimeMs" Type="Real64" Value="14769.2307692308"/>
+													</PropertyList>
+												</MusicCue>
+											</CueList>
+										</MusicSegment>
+										<MusicSegment Name="mus_canyon_cicadas_05" ID="{F1014FF0-0162-4342-BA29-1D5387191426}" ShortID="401622851">
 											<PropertyList>
-												<Property Name="CueType" Type="int16" Value="1"/>
-												<Property Name="TimeMs" Type="Real64" Value="14769.2307692308"/>
+												<Property Name="EndPosition" Type="Real64" Value="17583.7188208617"/>
 											</PropertyList>
-										</MusicCue>
-									</CueList>
-								</MusicSegment>
-								<MusicSegment Name="mus_canyon_guitar_02" ID="{940286C8-7BBF-43ED-BCCD-09EBE91F0AB1}" ShortID="441205629">
-									<PropertyList>
-										<Property Name="EndPosition" Type="Real64" Value="17583.7188208617"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<MusicTrack Name="mus_canyon_guitar_02" ID="{F40CCCBE-5D66-4A31-8601-C54104690D50}" ShortID="1045133374">
 											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+												</Reference>
 												<Reference Name="OutputBus">
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="mus_canyon_guitar_02" ID="{CB313FAF-2936-40F8-9F74-0F0A84202B6F}" ShortID="275407545">
-													<Language>SFX</Language>
-													<AudioFile>mus_canyon_guitar_02.wav</AudioFile>
-												</AudioFileSource>
-											</ChildrenList>
-											<TransitionList>
-												<MusicTransition Name="Root" ID="{A0100D32-559B-4E24-B587-2C0F10C9683C}">
-													<PropertyList>
-														<Property Name="IsFolder" Type="bool" Value="True"/>
-													</PropertyList>
-													<TransitionInfo/>
-												</MusicTransition>
-											</TransitionList>
-											<SequenceList>
-												<MusicTrackSequence Name="" ID="{A7F3073D-47BF-4E77-90C0-D6CB927495DD}">
-													<ClipList>
-														<MusicClip Name="mus_canyon_guitar_02" ID="{1830BE9A-4E58-4DC7-B26E-6FE6FE9725FE}">
+												<MusicTrack Name="mus_canyon_cicadas_05" ID="{9AC82E31-CCF8-4BD5-9B38-E03772DF6EF8}" ShortID="264480550">
+													<ReferenceList>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="mus_canyon_cicadas_05" ID="{7C64C5AF-E644-414E-ABE9-71300A83BB8A}" ShortID="726797285">
+															<Language>SFX</Language>
+															<AudioFile>mus_canyon_cicadas_05.wav</AudioFile>
+															<ConvertedFileIDList>
+																<File ID="389710525"/>
+															</ConvertedFileIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<TransitionList>
+														<MusicTransition Name="Root" ID="{CED5901B-B5D4-4B23-8BE4-000DDB32079F}">
 															<PropertyList>
-																<Property Name="EndTrimOffset" Type="Real64" Value="17583.7188208617"/>
-																<Property Name="FadeInMode" Type="int16" Value="0"/>
-																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="IsFolder" Type="bool" Value="True"/>
 															</PropertyList>
-															<AudioSourceRef Name="mus_canyon_guitar_02" ID="{CB313FAF-2936-40F8-9F74-0F0A84202B6F}"/>
-														</MusicClip>
-													</ClipList>
-												</MusicTrackSequence>
-											</SequenceList>
-										</MusicTrack>
-									</ChildrenList>
-									<CueList>
-										<MusicCue Name="Entry Cue" ID="{34CA16BA-7977-4048-A0A4-B487C95EE18E}"/>
-										<MusicCue Name="Exit Cue" ID="{4CB06C06-6FB5-4244-9771-22AB0FAFBCAB}">
+															<TransitionInfo/>
+														</MusicTransition>
+													</TransitionList>
+													<SequenceList>
+														<MusicTrackSequence Name="" ID="{68C98D9A-6B30-493B-9F6D-751A7D6B137F}">
+															<ClipList>
+																<MusicClip Name="mus_canyon_cicadas_05" ID="{9C0A8095-2AD3-484B-8AEB-09A403E29782}">
+																	<PropertyList>
+																		<Property Name="EndTrimOffset" Type="Real64" Value="17583.7188208617"/>
+																		<Property Name="FadeInMode" Type="int16" Value="0"/>
+																		<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																	</PropertyList>
+																	<AudioSourceRef Name="mus_canyon_cicadas_05" ID="{7C64C5AF-E644-414E-ABE9-71300A83BB8A}"/>
+																</MusicClip>
+															</ClipList>
+														</MusicTrackSequence>
+													</SequenceList>
+												</MusicTrack>
+											</ChildrenList>
+											<CueList>
+												<MusicCue Name="Entry Cue" ID="{1F1D6001-8A97-45F8-BE7F-6BCD84A2F896}"/>
+												<MusicCue Name="Exit Cue" ID="{31F06926-BEAA-4C8C-9906-12D7DB3E103B}">
+													<PropertyList>
+														<Property Name="CueType" Type="int16" Value="1"/>
+														<Property Name="TimeMs" Type="Real64" Value="14769.2307692308"/>
+													</PropertyList>
+												</MusicCue>
+											</CueList>
+										</MusicSegment>
+										<MusicSegment Name="mus_canyon_dulcimer_01" ID="{E19E7277-9151-40E3-B1E6-04EA70C7A79D}" ShortID="802347388">
 											<PropertyList>
-												<Property Name="CueType" Type="int16" Value="1"/>
-												<Property Name="TimeMs" Type="Real64" Value="14769.2307692308"/>
+												<Property Name="EndPosition" Type="Real64" Value="17583.7188208617"/>
 											</PropertyList>
-										</MusicCue>
-									</CueList>
-								</MusicSegment>
-								<MusicSegment Name="mus_canyon_intro_01" ID="{30C9EB99-D02B-47CD-970B-4805F3BF2EAF}" ShortID="517772279">
-									<PropertyList>
-										<Property Name="EndPosition" Type="Real64" Value="10153.8461538462"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<MusicTrack Name="mus_canyon_intro_01" ID="{94845FEB-8F53-4579-A0C5-DDCDC7D76CAA}" ShortID="105748772">
 											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+												</Reference>
 												<Reference Name="OutputBus">
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="mus_canyon_intro_01" ID="{C4B34D8A-AF9C-4204-92AD-0A0590A210EA}" ShortID="536109339">
-													<Language>SFX</Language>
-													<AudioFile>mus_canyon_intro_01.wav</AudioFile>
-												</AudioFileSource>
+												<MusicTrack Name="mus_canyon_dulcimer_01" ID="{5295554C-ECA1-46B4-BE28-8241F35897F6}" ShortID="824266863">
+													<ReferenceList>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="mus_canyon_dulcimer_01" ID="{00ABA7F3-A14F-4025-88E6-E382DE56A586}" ShortID="861506691">
+															<Language>SFX</Language>
+															<AudioFile>mus_canyon_dulcimer_01.wav</AudioFile>
+															<ConvertedFileIDList>
+																<File ID="169023072"/>
+															</ConvertedFileIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<TransitionList>
+														<MusicTransition Name="Root" ID="{F4B79EC1-3542-4981-94FF-9319F9FCE2C3}">
+															<PropertyList>
+																<Property Name="IsFolder" Type="bool" Value="True"/>
+															</PropertyList>
+															<TransitionInfo/>
+														</MusicTransition>
+													</TransitionList>
+													<SequenceList>
+														<MusicTrackSequence Name="" ID="{F00E1136-F9E8-465C-8E42-A81A832F031F}">
+															<ClipList>
+																<MusicClip Name="mus_canyon_dulcimer_01" ID="{A0393E74-50D2-4CDA-8403-F7B327A2A22E}">
+																	<PropertyList>
+																		<Property Name="EndTrimOffset" Type="Real64" Value="17583.7188208617"/>
+																		<Property Name="FadeInMode" Type="int16" Value="0"/>
+																		<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																	</PropertyList>
+																	<AudioSourceRef Name="mus_canyon_dulcimer_01" ID="{00ABA7F3-A14F-4025-88E6-E382DE56A586}"/>
+																</MusicClip>
+															</ClipList>
+														</MusicTrackSequence>
+													</SequenceList>
+												</MusicTrack>
 											</ChildrenList>
-											<TransitionList>
-												<MusicTransition Name="Root" ID="{A990639C-5EA7-4B60-AB9D-6CEBDDE1D333}">
+											<CueList>
+												<MusicCue Name="Entry Cue" ID="{456B9C9F-C3DD-444D-AFB0-1FCFAC35B15C}"/>
+												<MusicCue Name="Exit Cue" ID="{98C41148-C3BC-4B1F-9D7F-7C304FA0FBF0}">
 													<PropertyList>
-														<Property Name="IsFolder" Type="bool" Value="True"/>
+														<Property Name="CueType" Type="int16" Value="1"/>
+														<Property Name="TimeMs" Type="Real64" Value="14769.2307692308"/>
 													</PropertyList>
+												</MusicCue>
+											</CueList>
+										</MusicSegment>
+										<MusicSegment Name="mus_canyon_dulcimer_02" ID="{5DD7F375-8BBF-483F-9B1A-85047B2D32A6}" ShortID="599500760">
+											<PropertyList>
+												<Property Name="EndPosition" Type="Real64" Value="17583.7188208617"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<MusicTrack Name="mus_canyon_dulcimer_02" ID="{8E23343F-4FD6-431C-B748-EA426499E31D}" ShortID="716631950">
+													<ReferenceList>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="mus_canyon_dulcimer_02" ID="{3A64483C-22A9-47B2-8CDF-22717D8325ED}" ShortID="474160948">
+															<Language>SFX</Language>
+															<AudioFile>mus_canyon_dulcimer_02.wav</AudioFile>
+															<ConvertedFileIDList>
+																<File ID="941752323"/>
+															</ConvertedFileIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<TransitionList>
+														<MusicTransition Name="Root" ID="{826BB453-0362-45B9-8C56-08151A4A167D}">
+															<PropertyList>
+																<Property Name="IsFolder" Type="bool" Value="True"/>
+															</PropertyList>
+															<TransitionInfo/>
+														</MusicTransition>
+													</TransitionList>
+													<SequenceList>
+														<MusicTrackSequence Name="" ID="{2425CECB-A5E1-456A-AB97-BAEAF0764B6D}">
+															<ClipList>
+																<MusicClip Name="mus_canyon_dulcimer_02" ID="{9A38EF63-93B6-4B21-B03E-5533C029C479}">
+																	<PropertyList>
+																		<Property Name="EndTrimOffset" Type="Real64" Value="17583.7188208617"/>
+																		<Property Name="FadeInMode" Type="int16" Value="0"/>
+																		<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																	</PropertyList>
+																	<AudioSourceRef Name="mus_canyon_dulcimer_02" ID="{3A64483C-22A9-47B2-8CDF-22717D8325ED}"/>
+																</MusicClip>
+															</ClipList>
+														</MusicTrackSequence>
+													</SequenceList>
+												</MusicTrack>
+											</ChildrenList>
+											<CueList>
+												<MusicCue Name="Entry Cue" ID="{43D0FE28-FB08-4B6C-8BCC-3347FC1B6842}"/>
+												<MusicCue Name="Exit Cue" ID="{6A77199A-4D19-432D-AA45-D09804CD4A7A}">
+													<PropertyList>
+														<Property Name="CueType" Type="int16" Value="1"/>
+														<Property Name="TimeMs" Type="Real64" Value="14769.2307692308"/>
+													</PropertyList>
+												</MusicCue>
+											</CueList>
+										</MusicSegment>
+									</ChildrenList>
+									<TransitionList>
+										<MusicTransition Name="Root" ID="{52059382-831B-4317-891F-3ED1671613A2}">
+											<PropertyList>
+												<Property Name="IsFolder" Type="bool" Value="True"/>
+											</PropertyList>
+											<ChildrenList>
+												<MusicTransition Name="Transition" ID="{491636A3-3625-4F21-95A2-899A642AF6FE}">
 													<TransitionInfo/>
 												</MusicTransition>
-											</TransitionList>
-											<SequenceList>
-												<MusicTrackSequence Name="" ID="{C28302C1-DE5E-41DE-B695-1B05063F3383}">
-													<ClipList>
-														<MusicClip Name="mus_canyon_intro_01" ID="{3192A30A-95D1-4BA9-A642-D86947DF0BF2}">
+											</ChildrenList>
+											<TransitionInfo/>
+										</MusicTransition>
+									</TransitionList>
+									<Playlist>
+										<MusicPlaylistItem Name="" ID="{78B2B18B-8706-41A4-BCFA-36DB12B805A4}" ShortID="429459265">
+											<ChildrenList>
+												<MusicPlaylistItem Name="" ID="{DE66A6F4-62C9-4369-9B2C-91DCE7EF3FEF}" ShortID="571582665">
+													<ChildrenList>
+														<MusicPlaylistItem Name="" ID="{2756AE63-81AD-49AF-95AF-29F153F117FD}" ShortID="110426516">
 															<PropertyList>
-																<Property Name="EndTrimOffset" Type="Real64" Value="10153.3333333333"/>
-																<Property Name="FadeInMode" Type="int16" Value="0"/>
-																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="PlaylistItemType" Type="int16" Value="1"/>
 															</PropertyList>
-															<AudioSourceRef Name="mus_canyon_intro_01" ID="{C4B34D8A-AF9C-4204-92AD-0A0590A210EA}"/>
-														</MusicClip>
-													</ClipList>
-												</MusicTrackSequence>
-											</SequenceList>
-										</MusicTrack>
-									</ChildrenList>
-									<CueList>
-										<MusicCue Name="Entry Cue" ID="{6FEEF505-D772-4850-B70B-4E4BB20F7AF7}"/>
-										<MusicCue Name="Exit Cue" ID="{58736C1B-42A4-4BAD-9972-15D912ED472F}">
-											<PropertyList>
-												<Property Name="CueType" Type="int16" Value="1"/>
-												<Property Name="TimeMs" Type="Real64" Value="7384.61538461538"/>
-											</PropertyList>
-										</MusicCue>
-									</CueList>
-								</MusicSegment>
+															<SegmentRef Name="mus_canyon_cicadas_04" ID="{C226C56C-CC57-4198-B689-F10C6648B2CE}"/>
+														</MusicPlaylistItem>
+														<MusicPlaylistItem Name="" ID="{5FFF4AC3-07F7-4A6B-BA2E-3DE5597F7C2D}" ShortID="5842730">
+															<PropertyList>
+																<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+															</PropertyList>
+															<SegmentRef Name="mus_canyon_cicadas_05" ID="{F1014FF0-0162-4342-BA29-1D5387191426}"/>
+														</MusicPlaylistItem>
+													</ChildrenList>
+												</MusicPlaylistItem>
+												<MusicPlaylistItem Name="" ID="{02FBE828-274C-4514-995D-F294FAF35B68}" ShortID="1060175052">
+													<PropertyList>
+														<Property Name="LoopCount" Type="int16" Value="0"/>
+													</PropertyList>
+													<ChildrenList>
+														<MusicPlaylistItem Name="" ID="{D49C47DB-EE30-43A6-8579-64E8D0357BCF}" ShortID="711098724">
+															<PropertyList>
+																<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+															</PropertyList>
+															<SegmentRef Name="mus_canyon_dulcimer_01" ID="{E19E7277-9151-40E3-B1E6-04EA70C7A79D}"/>
+														</MusicPlaylistItem>
+														<MusicPlaylistItem Name="" ID="{D3DA5CA8-BFDA-424C-8C32-27D91913F4DD}" ShortID="523441065">
+															<PropertyList>
+																<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+															</PropertyList>
+															<SegmentRef Name="mus_canyon_dulcimer_02" ID="{5DD7F375-8BBF-483F-9B1A-85047B2D32A6}"/>
+														</MusicPlaylistItem>
+														<MusicPlaylistItem Name="" ID="{FD6BB981-BAA9-41DE-A897-E6D616EB6045}" ShortID="919348342">
+															<PropertyList>
+																<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+															</PropertyList>
+															<SegmentRef Name="mus_canyon_bass_01" ID="{B4E86860-71C4-4BEC-8D72-1AC6905E1E47}"/>
+														</MusicPlaylistItem>
+														<MusicPlaylistItem Name="" ID="{9B78135F-D35F-4882-8ACB-7DBBDD2E034B}" ShortID="484703434">
+															<PropertyList>
+																<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+															</PropertyList>
+															<SegmentRef Name="mus_canyon_bass_02" ID="{952D5CFD-32DA-4C1C-9ED9-11A009A4ED6D}"/>
+														</MusicPlaylistItem>
+													</ChildrenList>
+												</MusicPlaylistItem>
+											</ChildrenList>
+										</MusicPlaylistItem>
+									</Playlist>
+								</MusicPlaylistContainer>
 							</ChildrenList>
 							<TransitionList>
-								<MusicTransition Name="Root" ID="{92C12E13-8998-485E-AF77-21D2D6901FFF}">
+								<MusicTransition Name="Root" ID="{248E1515-F439-4711-9328-13A4BC5657C1}">
 									<PropertyList>
 										<Property Name="IsFolder" Type="bool" Value="True"/>
 									</PropertyList>
 									<ChildrenList>
-										<MusicTransition Name="Transition" ID="{4BE0F9AC-A82F-4C9F-9FA0-07ED0E8F9152}">
+										<MusicTransition Name="Transition" ID="{1FD7C1DC-A5F2-44D0-ADD5-954B188D1DC5}">
+											<PropertyList>
+												<Property Name="DestinationJumpPositionPreset" Type="int16" Value="1"/>
+											</PropertyList>
 											<TransitionInfo/>
+										</MusicTransition>
+										<MusicTransition Name="Transition" ID="{56C3A62E-8144-424F-95D7-C0B9BFEB85C7}">
+											<PropertyList>
+												<Property Name="DestinationContextType" Type="int16" Value="2"/>
+												<Property Name="DestinationJumpPositionPreset" Type="int16" Value="1"/>
+												<Property Name="SourceContextType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="DestinationContextObject">
+													<ObjectRef Name="mus_Canyon" ID="{2650A760-95D9-4872-9C5B-C6C79FD16EE7}" WorkUnitID="{F4D6CB59-2D66-4956-9054-AA8F03BEA1E0}"/>
+												</Reference>
+												<Reference Name="SourceContextObject">
+													<ObjectRef Name="mus_CanyonBoss" ID="{4B4D3035-AF26-42B4-B544-FCE1FA9E5BD5}" WorkUnitID="{F4D6CB59-2D66-4956-9054-AA8F03BEA1E0}"/>
+												</Reference>
+											</ReferenceList>
+											<TransitionInfo>
+												<JumpToPlaylistItemRef Name="" ID="{E996D5B5-0FBA-431D-9653-87BF8C4AE880}"/>
+											</TransitionInfo>
 										</MusicTransition>
 									</ChildrenList>
 									<TransitionInfo/>
 								</MusicTransition>
 							</TransitionList>
-							<Playlist>
-								<MusicPlaylistItem Name="" ID="{0FBD292A-7AA1-4B08-B360-C6782613E925}" ShortID="154770486">
-									<ChildrenList>
-										<MusicPlaylistItem Name="" ID="{FE7D7B6C-63A9-40F6-AEB5-42229D9C6E0E}" ShortID="528598466">
-											<PropertyList>
-												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
-											</PropertyList>
-											<SegmentRef Name="mus_canyon_intro_01" ID="{30C9EB99-D02B-47CD-970B-4805F3BF2EAF}"/>
-										</MusicPlaylistItem>
-										<MusicPlaylistItem Name="" ID="{07CEED0D-95B8-4C7A-B282-22C0EAFCBB58}" ShortID="163449924">
-											<ChildrenList>
-												<MusicPlaylistItem Name="" ID="{0C0453F8-C637-475F-8A90-C06D3072F2BE}" ShortID="262793124">
-													<PropertyList>
-														<Property Name="PlaylistItemType" Type="int16" Value="1"/>
-													</PropertyList>
-													<SegmentRef Name="mus_canyon_cicadas_01" ID="{C6560AA8-C348-45C5-942B-A8EF4898E8C4}"/>
-												</MusicPlaylistItem>
-												<MusicPlaylistItem Name="" ID="{E586A14B-4799-4C78-A298-BDA8D61828B7}" ShortID="356955178">
-													<PropertyList>
-														<Property Name="PlaylistItemType" Type="int16" Value="1"/>
-													</PropertyList>
-													<SegmentRef Name="mus_canyon_cicadas_02" ID="{5D5A8CF8-30AB-40AB-8559-71AD72115742}"/>
-												</MusicPlaylistItem>
-											</ChildrenList>
-										</MusicPlaylistItem>
-										<MusicPlaylistItem Name="" ID="{737CF336-783D-44EC-9717-7A0115B8ECCF}" ShortID="525904879">
-											<PropertyList>
-												<Property Name="LoopCount" Type="int16" Value="0">
-													<ModifierList>
-														<ModifierInfo>
-															<Modifier Name="" ID="{24E9019D-B9C3-461A-B30E-84E7F5151435}"/>
-														</ModifierInfo>
-													</ModifierList>
-												</Property>
-											</PropertyList>
-											<ChildrenList>
-												<MusicPlaylistItem Name="" ID="{50F1DFB6-7A1C-4F8C-B6ED-93AE6D6D1AA2}" ShortID="970301850">
-													<ChildrenList>
-														<MusicPlaylistItem Name="" ID="{E996D5B5-0FBA-431D-9653-87BF8C4AE880}" ShortID="130984559">
-															<PropertyList>
-																<Property Name="PlaylistItemType" Type="int16" Value="1"/>
-															</PropertyList>
-															<SegmentRef Name="mus_canyon_guitar_01" ID="{5CF7A7E5-B2FC-438F-B21F-50F96A4E1D2D}"/>
-														</MusicPlaylistItem>
-														<MusicPlaylistItem Name="" ID="{A82CE876-2D04-4E93-B8E0-883FE70AE2DB}" ShortID="194737161">
-															<PropertyList>
-																<Property Name="PlaylistItemType" Type="int16" Value="1"/>
-															</PropertyList>
-															<SegmentRef Name="mus_canyon_guitar_02" ID="{940286C8-7BBF-43ED-BCCD-09EBE91F0AB1}"/>
-														</MusicPlaylistItem>
-													</ChildrenList>
-												</MusicPlaylistItem>
-												<MusicPlaylistItem Name="" ID="{CA417271-3DCB-4CB8-9385-A0AD835738B3}" ShortID="1025723967">
-													<PropertyList>
-														<Property Name="PlayMode" Type="int16" Value="3"/>
-													</PropertyList>
-													<ChildrenList>
-														<MusicPlaylistItem Name="" ID="{251481CB-782A-4A3D-84F6-F93139142B1E}" ShortID="173103565">
-															<ChildrenList>
-																<MusicPlaylistItem Name="" ID="{01F8AC36-A477-4336-B113-79379F36A47A}" ShortID="699706544">
-																	<PropertyList>
-																		<Property Name="PlaylistItemType" Type="int16" Value="1"/>
-																	</PropertyList>
-																	<SegmentRef Name="mus_canyon_cicadas_01" ID="{C6560AA8-C348-45C5-942B-A8EF4898E8C4}"/>
-																</MusicPlaylistItem>
-																<MusicPlaylistItem Name="" ID="{3C7A8151-1B4B-404B-8B90-8BCCA8D0B5F0}" ShortID="1046996239">
-																	<PropertyList>
-																		<Property Name="PlaylistItemType" Type="int16" Value="1"/>
-																	</PropertyList>
-																	<SegmentRef Name="mus_canyon_cicadas_02" ID="{5D5A8CF8-30AB-40AB-8559-71AD72115742}"/>
-																</MusicPlaylistItem>
-															</ChildrenList>
-														</MusicPlaylistItem>
-														<MusicPlaylistItem Name="" ID="{8325C2F0-3967-4966-96D7-41DAD9809B6D}" ShortID="346561732">
-															<ChildrenList>
-																<MusicPlaylistItem Name="" ID="{89243B15-FBF3-4619-8F43-C7CDE09F0C1E}" ShortID="394118246">
-																	<PropertyList>
-																		<Property Name="PlaylistItemType" Type="int16" Value="1"/>
-																	</PropertyList>
-																	<SegmentRef Name="mus_canyon_cicadas_03" ID="{74F12C4E-0528-42B7-9B7E-5077EF0C43EF}"/>
-																</MusicPlaylistItem>
-															</ChildrenList>
-														</MusicPlaylistItem>
-													</ChildrenList>
-												</MusicPlaylistItem>
-											</ChildrenList>
-										</MusicPlaylistItem>
-									</ChildrenList>
-								</MusicPlaylistItem>
-							</Playlist>
-						</MusicPlaylistContainer>
-						<MusicPlaylistContainer Name="mus_CanyonBoss" ID="{4B4D3035-AF26-42B4-B544-FCE1FA9E5BD5}" ShortID="159433128">
-							<PropertyList>
-								<Property Name="Tempo" Type="Real64" Value="130"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Music" ID="{CFF6FC16-89F0-41CC-97D5-A4407E0CDCE1}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<MusicSegment Name="mus_canyon_bass_01" ID="{B4E86860-71C4-4BEC-8D72-1AC6905E1E47}" ShortID="967853438">
-									<PropertyList>
-										<Property Name="EndPosition" Type="Real64" Value="17583.7188208617"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<MusicTrack Name="mus_canyon_bass_01" ID="{8C71EEFD-6A13-45E1-8A00-55E0F79AC0D7}" ShortID="249701985">
-											<ReferenceList>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="mus_canyon_bass_01" ID="{2DF1320B-B8F3-4A37-9FA9-9ED14A3283BF}" ShortID="795458599">
-													<Language>SFX</Language>
-													<AudioFile>mus_canyon_bass_01.wav</AudioFile>
-													<ConvertedFileIDList>
-														<File ID="482305505"/>
-													</ConvertedFileIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<TransitionList>
-												<MusicTransition Name="Root" ID="{22F95F95-88B1-461C-8638-73B495CCC9DF}">
-													<PropertyList>
-														<Property Name="IsFolder" Type="bool" Value="True"/>
-													</PropertyList>
-													<TransitionInfo/>
-												</MusicTransition>
-											</TransitionList>
-											<SequenceList>
-												<MusicTrackSequence Name="" ID="{E958AAA8-DFA9-478B-8387-C0D7B2A2E704}">
-													<ClipList>
-														<MusicClip Name="mus_canyon_bass_01" ID="{834E8B59-F972-4AAF-8595-8E61BA6F02BC}">
-															<PropertyList>
-																<Property Name="EndTrimOffset" Type="Real64" Value="17583.7188208617"/>
-																<Property Name="FadeInMode" Type="int16" Value="0"/>
-																<Property Name="FadeOutMode" Type="int16" Value="0"/>
-															</PropertyList>
-															<AudioSourceRef Name="mus_canyon_bass_01" ID="{2DF1320B-B8F3-4A37-9FA9-9ED14A3283BF}"/>
-														</MusicClip>
-													</ClipList>
-												</MusicTrackSequence>
-											</SequenceList>
-										</MusicTrack>
-									</ChildrenList>
-									<CueList>
-										<MusicCue Name="Entry Cue" ID="{03926791-16C9-4E57-98B4-DD211E6093C9}"/>
-										<MusicCue Name="Exit Cue" ID="{65F70F83-DCBB-401D-9609-91E9FF0EC17A}">
-											<PropertyList>
-												<Property Name="CueType" Type="int16" Value="1"/>
-												<Property Name="TimeMs" Type="Real64" Value="14769.2307692308"/>
-											</PropertyList>
-										</MusicCue>
-									</CueList>
-								</MusicSegment>
-								<MusicSegment Name="mus_canyon_bass_02" ID="{952D5CFD-32DA-4C1C-9ED9-11A009A4ED6D}" ShortID="819945767">
-									<PropertyList>
-										<Property Name="EndPosition" Type="Real64" Value="17583.7188208617"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<MusicTrack Name="mus_canyon_bass_02" ID="{6D5BD191-A747-469F-B311-21A3A3D5AC2B}" ShortID="45329162">
-											<ReferenceList>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="mus_canyon_bass_02" ID="{763E719D-D11F-492B-B51F-247E72819BA5}" ShortID="615898328">
-													<Language>SFX</Language>
-													<AudioFile>mus_canyon_bass_02.wav</AudioFile>
-													<ConvertedFileIDList>
-														<File ID="181000042"/>
-													</ConvertedFileIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<TransitionList>
-												<MusicTransition Name="Root" ID="{675C3488-AF24-444C-A214-4836A47C836D}">
-													<PropertyList>
-														<Property Name="IsFolder" Type="bool" Value="True"/>
-													</PropertyList>
-													<TransitionInfo/>
-												</MusicTransition>
-											</TransitionList>
-											<SequenceList>
-												<MusicTrackSequence Name="" ID="{8CCD17A1-C698-4D8A-A07B-1B81E0CE3AAC}">
-													<ClipList>
-														<MusicClip Name="mus_canyon_bass_02" ID="{D91BF0F7-0C67-443D-801C-2ED43001B7B2}">
-															<PropertyList>
-																<Property Name="EndTrimOffset" Type="Real64" Value="17583.7188208617"/>
-																<Property Name="FadeInMode" Type="int16" Value="0"/>
-																<Property Name="FadeOutMode" Type="int16" Value="0"/>
-															</PropertyList>
-															<AudioSourceRef Name="mus_canyon_bass_02" ID="{763E719D-D11F-492B-B51F-247E72819BA5}"/>
-														</MusicClip>
-													</ClipList>
-												</MusicTrackSequence>
-											</SequenceList>
-										</MusicTrack>
-									</ChildrenList>
-									<CueList>
-										<MusicCue Name="Entry Cue" ID="{1CEDD980-A332-4899-9292-C1D869138163}"/>
-										<MusicCue Name="Exit Cue" ID="{215504A2-1186-4C7D-AA1C-E4297752A29B}">
-											<PropertyList>
-												<Property Name="CueType" Type="int16" Value="1"/>
-												<Property Name="TimeMs" Type="Real64" Value="14769.2307692308"/>
-											</PropertyList>
-										</MusicCue>
-									</CueList>
-								</MusicSegment>
-								<MusicSegment Name="mus_canyon_cicadas_04" ID="{C226C56C-CC57-4198-B689-F10C6648B2CE}" ShortID="957454755">
-									<PropertyList>
-										<Property Name="EndPosition" Type="Real64" Value="17583.7188208617"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<MusicTrack Name="mus_canyon_cicadas_04" ID="{E14EF39C-0838-4BF0-A7DC-B4859EB0B253}" ShortID="494076248">
-											<ReferenceList>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="mus_canyon_cicadas_04" ID="{5D2BDE41-F365-41BE-AE1D-879EDD41E46C}" ShortID="83479360">
-													<Language>SFX</Language>
-													<AudioFile>mus_canyon_cicadas_04.wav</AudioFile>
-													<ConvertedFileIDList>
-														<File ID="981017885"/>
-													</ConvertedFileIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<TransitionList>
-												<MusicTransition Name="Root" ID="{8AF5F45D-D9F2-4B69-9CB7-19FBF81A038F}">
-													<PropertyList>
-														<Property Name="IsFolder" Type="bool" Value="True"/>
-													</PropertyList>
-													<TransitionInfo/>
-												</MusicTransition>
-											</TransitionList>
-											<SequenceList>
-												<MusicTrackSequence Name="" ID="{F18A0C37-BE01-4E63-9C86-4EE8587B28AB}">
-													<ClipList>
-														<MusicClip Name="mus_canyon_cicadas_04" ID="{98F1EE99-8D50-4BF3-81B3-22223D719B8B}">
-															<PropertyList>
-																<Property Name="EndTrimOffset" Type="Real64" Value="17583.7188208617"/>
-																<Property Name="FadeInMode" Type="int16" Value="0"/>
-																<Property Name="FadeOutMode" Type="int16" Value="0"/>
-															</PropertyList>
-															<AudioSourceRef Name="mus_canyon_cicadas_04" ID="{5D2BDE41-F365-41BE-AE1D-879EDD41E46C}"/>
-														</MusicClip>
-													</ClipList>
-												</MusicTrackSequence>
-											</SequenceList>
-										</MusicTrack>
-									</ChildrenList>
-									<CueList>
-										<MusicCue Name="Entry Cue" ID="{3842EA8B-6BA8-474C-8991-3DCEB0330692}"/>
-										<MusicCue Name="Exit Cue" ID="{BF502D66-F815-4910-A763-F0D51C0A194F}">
-											<PropertyList>
-												<Property Name="CueType" Type="int16" Value="1"/>
-												<Property Name="TimeMs" Type="Real64" Value="14769.2307692308"/>
-											</PropertyList>
-										</MusicCue>
-									</CueList>
-								</MusicSegment>
-								<MusicSegment Name="mus_canyon_cicadas_05" ID="{F1014FF0-0162-4342-BA29-1D5387191426}" ShortID="401622851">
-									<PropertyList>
-										<Property Name="EndPosition" Type="Real64" Value="17583.7188208617"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<MusicTrack Name="mus_canyon_cicadas_05" ID="{9AC82E31-CCF8-4BD5-9B38-E03772DF6EF8}" ShortID="264480550">
-											<ReferenceList>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="mus_canyon_cicadas_05" ID="{7C64C5AF-E644-414E-ABE9-71300A83BB8A}" ShortID="726797285">
-													<Language>SFX</Language>
-													<AudioFile>mus_canyon_cicadas_05.wav</AudioFile>
-													<ConvertedFileIDList>
-														<File ID="389710525"/>
-													</ConvertedFileIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<TransitionList>
-												<MusicTransition Name="Root" ID="{CED5901B-B5D4-4B23-8BE4-000DDB32079F}">
-													<PropertyList>
-														<Property Name="IsFolder" Type="bool" Value="True"/>
-													</PropertyList>
-													<TransitionInfo/>
-												</MusicTransition>
-											</TransitionList>
-											<SequenceList>
-												<MusicTrackSequence Name="" ID="{68C98D9A-6B30-493B-9F6D-751A7D6B137F}">
-													<ClipList>
-														<MusicClip Name="mus_canyon_cicadas_05" ID="{9C0A8095-2AD3-484B-8AEB-09A403E29782}">
-															<PropertyList>
-																<Property Name="EndTrimOffset" Type="Real64" Value="17583.7188208617"/>
-																<Property Name="FadeInMode" Type="int16" Value="0"/>
-																<Property Name="FadeOutMode" Type="int16" Value="0"/>
-															</PropertyList>
-															<AudioSourceRef Name="mus_canyon_cicadas_05" ID="{7C64C5AF-E644-414E-ABE9-71300A83BB8A}"/>
-														</MusicClip>
-													</ClipList>
-												</MusicTrackSequence>
-											</SequenceList>
-										</MusicTrack>
-									</ChildrenList>
-									<CueList>
-										<MusicCue Name="Entry Cue" ID="{1F1D6001-8A97-45F8-BE7F-6BCD84A2F896}"/>
-										<MusicCue Name="Exit Cue" ID="{31F06926-BEAA-4C8C-9906-12D7DB3E103B}">
-											<PropertyList>
-												<Property Name="CueType" Type="int16" Value="1"/>
-												<Property Name="TimeMs" Type="Real64" Value="14769.2307692308"/>
-											</PropertyList>
-										</MusicCue>
-									</CueList>
-								</MusicSegment>
-								<MusicSegment Name="mus_canyon_dulcimer_01" ID="{E19E7277-9151-40E3-B1E6-04EA70C7A79D}" ShortID="802347388">
-									<PropertyList>
-										<Property Name="EndPosition" Type="Real64" Value="17583.7188208617"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<MusicTrack Name="mus_canyon_dulcimer_01" ID="{5295554C-ECA1-46B4-BE28-8241F35897F6}" ShortID="824266863">
-											<ReferenceList>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="mus_canyon_dulcimer_01" ID="{00ABA7F3-A14F-4025-88E6-E382DE56A586}" ShortID="861506691">
-													<Language>SFX</Language>
-													<AudioFile>mus_canyon_dulcimer_01.wav</AudioFile>
-													<ConvertedFileIDList>
-														<File ID="169023072"/>
-													</ConvertedFileIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<TransitionList>
-												<MusicTransition Name="Root" ID="{F4B79EC1-3542-4981-94FF-9319F9FCE2C3}">
-													<PropertyList>
-														<Property Name="IsFolder" Type="bool" Value="True"/>
-													</PropertyList>
-													<TransitionInfo/>
-												</MusicTransition>
-											</TransitionList>
-											<SequenceList>
-												<MusicTrackSequence Name="" ID="{F00E1136-F9E8-465C-8E42-A81A832F031F}">
-													<ClipList>
-														<MusicClip Name="mus_canyon_dulcimer_01" ID="{A0393E74-50D2-4CDA-8403-F7B327A2A22E}">
-															<PropertyList>
-																<Property Name="EndTrimOffset" Type="Real64" Value="17583.7188208617"/>
-																<Property Name="FadeInMode" Type="int16" Value="0"/>
-																<Property Name="FadeOutMode" Type="int16" Value="0"/>
-															</PropertyList>
-															<AudioSourceRef Name="mus_canyon_dulcimer_01" ID="{00ABA7F3-A14F-4025-88E6-E382DE56A586}"/>
-														</MusicClip>
-													</ClipList>
-												</MusicTrackSequence>
-											</SequenceList>
-										</MusicTrack>
-									</ChildrenList>
-									<CueList>
-										<MusicCue Name="Entry Cue" ID="{456B9C9F-C3DD-444D-AFB0-1FCFAC35B15C}"/>
-										<MusicCue Name="Exit Cue" ID="{98C41148-C3BC-4B1F-9D7F-7C304FA0FBF0}">
-											<PropertyList>
-												<Property Name="CueType" Type="int16" Value="1"/>
-												<Property Name="TimeMs" Type="Real64" Value="14769.2307692308"/>
-											</PropertyList>
-										</MusicCue>
-									</CueList>
-								</MusicSegment>
-								<MusicSegment Name="mus_canyon_dulcimer_02" ID="{5DD7F375-8BBF-483F-9B1A-85047B2D32A6}" ShortID="599500760">
-									<PropertyList>
-										<Property Name="EndPosition" Type="Real64" Value="17583.7188208617"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{040DC171-0215-433F-9B41-A4758B80BAF8}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<MusicTrack Name="mus_canyon_dulcimer_02" ID="{8E23343F-4FD6-431C-B748-EA426499E31D}" ShortID="716631950">
-											<ReferenceList>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F69B6880-7A98-480E-A1F8-155013E2E0EB}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="mus_canyon_dulcimer_02" ID="{3A64483C-22A9-47B2-8CDF-22717D8325ED}" ShortID="474160948">
-													<Language>SFX</Language>
-													<AudioFile>mus_canyon_dulcimer_02.wav</AudioFile>
-													<ConvertedFileIDList>
-														<File ID="941752323"/>
-													</ConvertedFileIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<TransitionList>
-												<MusicTransition Name="Root" ID="{826BB453-0362-45B9-8C56-08151A4A167D}">
-													<PropertyList>
-														<Property Name="IsFolder" Type="bool" Value="True"/>
-													</PropertyList>
-													<TransitionInfo/>
-												</MusicTransition>
-											</TransitionList>
-											<SequenceList>
-												<MusicTrackSequence Name="" ID="{2425CECB-A5E1-456A-AB97-BAEAF0764B6D}">
-													<ClipList>
-														<MusicClip Name="mus_canyon_dulcimer_02" ID="{9A38EF63-93B6-4B21-B03E-5533C029C479}">
-															<PropertyList>
-																<Property Name="EndTrimOffset" Type="Real64" Value="17583.7188208617"/>
-																<Property Name="FadeInMode" Type="int16" Value="0"/>
-																<Property Name="FadeOutMode" Type="int16" Value="0"/>
-															</PropertyList>
-															<AudioSourceRef Name="mus_canyon_dulcimer_02" ID="{3A64483C-22A9-47B2-8CDF-22717D8325ED}"/>
-														</MusicClip>
-													</ClipList>
-												</MusicTrackSequence>
-											</SequenceList>
-										</MusicTrack>
-									</ChildrenList>
-									<CueList>
-										<MusicCue Name="Entry Cue" ID="{43D0FE28-FB08-4B6C-8BCC-3347FC1B6842}"/>
-										<MusicCue Name="Exit Cue" ID="{6A77199A-4D19-432D-AA45-D09804CD4A7A}">
-											<PropertyList>
-												<Property Name="CueType" Type="int16" Value="1"/>
-												<Property Name="TimeMs" Type="Real64" Value="14769.2307692308"/>
-											</PropertyList>
-										</MusicCue>
-									</CueList>
-								</MusicSegment>
-							</ChildrenList>
-							<TransitionList>
-								<MusicTransition Name="Root" ID="{52059382-831B-4317-891F-3ED1671613A2}">
-									<PropertyList>
-										<Property Name="IsFolder" Type="bool" Value="True"/>
-									</PropertyList>
-									<ChildrenList>
-										<MusicTransition Name="Transition" ID="{491636A3-3625-4F21-95A2-899A642AF6FE}">
-											<TransitionInfo/>
-										</MusicTransition>
-									</ChildrenList>
-									<TransitionInfo/>
-								</MusicTransition>
-							</TransitionList>
-							<Playlist>
-								<MusicPlaylistItem Name="" ID="{78B2B18B-8706-41A4-BCFA-36DB12B805A4}" ShortID="429459265">
-									<ChildrenList>
-										<MusicPlaylistItem Name="" ID="{DE66A6F4-62C9-4369-9B2C-91DCE7EF3FEF}" ShortID="571582665">
-											<ChildrenList>
-												<MusicPlaylistItem Name="" ID="{2756AE63-81AD-49AF-95AF-29F153F117FD}" ShortID="110426516">
-													<PropertyList>
-														<Property Name="PlaylistItemType" Type="int16" Value="1"/>
-													</PropertyList>
-													<SegmentRef Name="mus_canyon_cicadas_04" ID="{C226C56C-CC57-4198-B689-F10C6648B2CE}"/>
-												</MusicPlaylistItem>
-												<MusicPlaylistItem Name="" ID="{5FFF4AC3-07F7-4A6B-BA2E-3DE5597F7C2D}" ShortID="5842730">
-													<PropertyList>
-														<Property Name="PlaylistItemType" Type="int16" Value="1"/>
-													</PropertyList>
-													<SegmentRef Name="mus_canyon_cicadas_05" ID="{F1014FF0-0162-4342-BA29-1D5387191426}"/>
-												</MusicPlaylistItem>
-											</ChildrenList>
-										</MusicPlaylistItem>
-										<MusicPlaylistItem Name="" ID="{02FBE828-274C-4514-995D-F294FAF35B68}" ShortID="1060175052">
-											<PropertyList>
-												<Property Name="LoopCount" Type="int16" Value="0"/>
-											</PropertyList>
-											<ChildrenList>
-												<MusicPlaylistItem Name="" ID="{D49C47DB-EE30-43A6-8579-64E8D0357BCF}" ShortID="711098724">
-													<PropertyList>
-														<Property Name="PlaylistItemType" Type="int16" Value="1"/>
-													</PropertyList>
-													<SegmentRef Name="mus_canyon_dulcimer_01" ID="{E19E7277-9151-40E3-B1E6-04EA70C7A79D}"/>
-												</MusicPlaylistItem>
-												<MusicPlaylistItem Name="" ID="{D3DA5CA8-BFDA-424C-8C32-27D91913F4DD}" ShortID="523441065">
-													<PropertyList>
-														<Property Name="PlaylistItemType" Type="int16" Value="1"/>
-													</PropertyList>
-													<SegmentRef Name="mus_canyon_dulcimer_02" ID="{5DD7F375-8BBF-483F-9B1A-85047B2D32A6}"/>
-												</MusicPlaylistItem>
-												<MusicPlaylistItem Name="" ID="{FD6BB981-BAA9-41DE-A897-E6D616EB6045}" ShortID="919348342">
-													<PropertyList>
-														<Property Name="PlaylistItemType" Type="int16" Value="1"/>
-													</PropertyList>
-													<SegmentRef Name="mus_canyon_bass_01" ID="{B4E86860-71C4-4BEC-8D72-1AC6905E1E47}"/>
-												</MusicPlaylistItem>
-												<MusicPlaylistItem Name="" ID="{9B78135F-D35F-4882-8ACB-7DBBDD2E034B}" ShortID="484703434">
-													<PropertyList>
-														<Property Name="PlaylistItemType" Type="int16" Value="1"/>
-													</PropertyList>
-													<SegmentRef Name="mus_canyon_bass_02" ID="{952D5CFD-32DA-4C1C-9ED9-11A009A4ED6D}"/>
-												</MusicPlaylistItem>
-											</ChildrenList>
-										</MusicPlaylistItem>
-									</ChildrenList>
-								</MusicPlaylistItem>
-							</Playlist>
-						</MusicPlaylistContainer>
+							<ArgumentList>
+								<ArgumentRef Name="Music" ID="{C54116D0-FE6A-4B7B-B8D4-9D3D720A8670}"/>
+							</ArgumentList>
+							<EntryList>
+								<Entry>
+									<Path>
+										<PathElementRef Name="Music" ID="{C54116D0-FE6A-4B7B-B8D4-9D3D720A8670}"/>
+									</Path>
+									<AudioNodeInfo>
+										<NoObject Platform="Linked"/>
+									</AudioNodeInfo>
+								</Entry>
+								<Entry>
+									<Path>
+										<PathElementRef Name="canyon" ID="{DEC86831-52F9-4D70-AB00-72D9B28C79DD}"/>
+									</Path>
+									<AudioNodeInfo>
+										<AudioNodeRef Name="mus_Canyon" ID="{2650A760-95D9-4872-9C5B-C6C79FD16EE7}" WorkUnitID="{F4D6CB59-2D66-4956-9054-AA8F03BEA1E0}" Platform="Linked"/>
+									</AudioNodeInfo>
+								</Entry>
+								<Entry>
+									<Path>
+										<PathElementRef Name="canyonBoss" ID="{497904BB-1AA3-47F6-9AF2-B117D98AC37E}"/>
+									</Path>
+									<AudioNodeInfo>
+										<AudioNodeRef Name="mus_CanyonBoss" ID="{4B4D3035-AF26-42B4-B544-FCE1FA9E5BD5}" WorkUnitID="{F4D6CB59-2D66-4956-9054-AA8F03BEA1E0}" Platform="Linked"/>
+									</AudioNodeInfo>
+								</Entry>
+							</EntryList>
+						</MusicSwitchContainer>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

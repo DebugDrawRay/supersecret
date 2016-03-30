@@ -68,6 +68,7 @@
 						<CurrentStateRef Name="Off" ID="{02B33C46-BF0F-4A37-8670-578344187EFF}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true">
+						<CurrentSwitchRef Name="canyonBoss" ID="{497904BB-1AA3-47F6-9AF2-B117D98AC37E}"/>
 						<CurrentSwitchRef Name="Dirt" ID="{BEE38B85-E46A-4981-9CB1-0F1E41BE4099}"/>
 					</CurrentSwitchList>
 				</SoundcasterSession>
