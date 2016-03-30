@@ -29,6 +29,12 @@ public class InteractionSource : MonoBehaviour
             if (collisionSound != "")
             {
                 AkSoundEngine.PostEvent(collisionSound, gameObject);
+
+				if (gameObject.name == "Canyon_tree(Clone)")
+				{
+					Debug.Log("TREE!");
+					AkSoundEngine.SetSwitch("Music", "canyonBoss", this.gameObject);
+				}
             }
         }
     }

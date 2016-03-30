@@ -18,6 +18,12 @@
 								</Element>
 							</ElementList>
 						</Action>
+						<Action Name="Set Switch" ID="{303EC3D2-F227-449C-88FF-CF14318571AA}" ShortID="150719126" Type="SetSwitch" Scope="All" Global="false">
+							<SetItemParam>
+								<Group Name="Weapon" ID="{03E7AB4E-5734-42BE-8B67-DC8488A3E780}"/>
+								<GroupItem Name="Off" ID="{DA881EBC-98B3-44B7-8C4D-905638C421A8}"/>
+							</SetItemParam>
+						</Action>
 						<Action Name="Play" ID="{72377EFD-3910-4D28-96D9-D0AC47346CB2}" ShortID="960688031" Type="Play" Scope="One" Global="false">
 							<ElementList>
 								<Element ID="{F89D35F8-241B-425D-B855-14EA79B3D333}" Global="false">
