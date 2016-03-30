@@ -16,8 +16,8 @@ MonoBehaviour:
   - PhysicalPath: Events/Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{B8A46AB6-2F4D-4D8E-9966-0D58756EA65B}'
-    m_lastTimePsrt1: -476079104
-    m_lastTimePart2: -1999415250
+    m_lastTimePsrt1: -1570915584
+    m_lastTimePart2: -1999415245
     List:
     - Name: canyon_GeyserLoop
       Path: Default Work Unit/canyon_GeyserLoop
@@ -39,6 +39,16 @@ MonoBehaviour:
       ID: 1122283870
       Guid: 30e6e018374f49478712a2c05703bbb4
       maxAttenuation: 0
+    - Name: TB_collisionGeyser
+      Path: Default Work Unit/TB_collisionGeyser
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: TB_collisionGeyser
+        ObjectType: 3
+      ID: -883712553
+      Guid: 12e75d3e189b45428a3948b49b2190a4
+      maxAttenuation: 0
     - Name: TB_collisionMetal
       Path: Default Work Unit/TB_collisionMetal
       PathAndIcons:
@@ -58,6 +68,16 @@ MonoBehaviour:
         ObjectType: 3
       ID: -666171568
       Guid: e98824295a414948be8168d8c2650c49
+      maxAttenuation: 0
+    - Name: TB_collisionTree
+      Path: Default Work Unit/TB_collisionTree
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: TB_collisionTree
+        ObjectType: 3
+      ID: -749044550
+      Guid: 8a2b1cdba2c9b941a64e6d5c2a54675a
       maxAttenuation: 0
     - Name: TB_engineStart
       Path: Default Work Unit/TB_engineStart
@@ -115,8 +135,8 @@ MonoBehaviour:
   - PhysicalPath: Master-Mixer Hierarchy/Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{F69B6880-7A98-480E-A1F8-155013E2E0EB}'
-    m_lastTimePsrt1: -1391242624
-    m_lastTimePart2: -1999415255
+    m_lastTimePsrt1: -1570915584
+    m_lastTimePart2: -1999415245
     List:
     - Name: New_Auxiliary_Bus
       Path: Default Work Unit/Master Audio Bus/Ambience/New_Auxiliary_Bus
@@ -167,8 +187,8 @@ MonoBehaviour:
   - PhysicalPath: Switches/Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{7D1A0EA3-5FDF-444B-8119-D47D21C29E57}'
-    m_lastTimePsrt1: -476079104
-    m_lastTimePart2: -1999415250
+    m_lastTimePsrt1: -1631046400
+    m_lastTimePart2: -1999415249
     List:
     - Name: groundMaterial
       Path: Default Work Unit/groundMaterial
@@ -216,8 +236,8 @@ MonoBehaviour:
   - PhysicalPath: SoundBanks/Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{DE2F07D6-4163-45D8-ACD9-5B43F8C99311}'
-    m_lastTimePsrt1: 1818495744
-    m_lastTimePart2: -1999415262
+    m_lastTimePsrt1: -1310915584
+    m_lastTimePart2: -1999415245
     List:
     - Name: MAIN
       Path: Default Work Unit/MAIN

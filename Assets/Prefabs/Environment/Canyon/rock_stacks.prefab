@@ -94,7 +94,7 @@ MonoBehaviour:
   curveInterpolation: 4
   transitionDuration: 0
   m_callbackData: {fileID: 0}
-  multiPositionTypeLabel: 0
+  multiPositionTypeLabel: 2
   multiPositionArray: []
 --- !u!114 &11465232
 MonoBehaviour:
@@ -108,6 +108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactions: []
+  collisionSound: 
 --- !u!114 &11470770
 MonoBehaviour:
   m_ObjectHideFlags: 1
