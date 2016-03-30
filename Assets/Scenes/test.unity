@@ -140,6 +140,10 @@ Prefab:
       propertyPath: triggerList.Array.data[1]
       value: 1281810935
       objectReference: {fileID: 0}
+    - target: {fileID: 174072, guid: f43319601bb9e4438ac4be075ca6b0f0, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f43319601bb9e4438ac4be075ca6b0f0, type: 2}
   m_IsPrefabParent: 0
