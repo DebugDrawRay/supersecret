@@ -28,3 +28,4 @@ sysinfo.txt
 *.cache
 *.akd
 *.prof
+Assets/Wwise/Editor/ProjectData/AkWwiseProjectData.asset
