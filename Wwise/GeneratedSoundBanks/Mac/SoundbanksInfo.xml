@@ -29,10 +29,6 @@
 				<Event Id="1224784748" Name="wooshSmall"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
-				<File Id="3956943" Language="SFX">
-					<ShortName>bigDog_collision_02.wav</ShortName>
-					<Path>SFX/bigDog_collision_02_FC2ED978.wem</Path>
-				</File>
 				<File Id="7722295" Language="SFX">
 					<ShortName>TB_collision_rocks_01.wav</ShortName>
 					<Path>SFX/TB_collision_rocks_01_9E69E797.wem</Path>
@@ -41,6 +37,14 @@
 					<ShortName>tire_skid_dirt03.wav</ShortName>
 					<Path>SFX/tire_skid_dirt03_B1028579.wem</Path>
 				</File>
+				<File Id="169023072" Language="SFX">
+					<ShortName>mus_canyon_dulcimer_01.wav</ShortName>
+					<Path>SFX/mus_canyon_dulcimer_01_4B8CC0C5.wem</Path>
+				</File>
+				<File Id="181000042" Language="SFX">
+					<ShortName>mus_canyon_bass_02.wav</ShortName>
+					<Path>SFX/mus_canyon_bass_02_4B8CC0C5.wem</Path>
+				</File>
 				<File Id="241640635" Language="SFX">
 					<ShortName>tire_skid_dirt_detail_02.wav</ShortName>
 					<Path>SFX/tire_skid_dirt_detail_02_5950E099.wem</Path>
@@ -48,6 +52,10 @@
 				<File Id="246687455" Language="SFX">
 					<ShortName>TB_collision_rocks_02.wav</ShortName>
 					<Path>SFX/TB_collision_rocks_02_9E69E797.wem</Path>
+				</File>
+				<File Id="275407545" Language="SFX">
+					<ShortName>mus_canyon_guitar_02.wav</ShortName>
+					<Path>SFX/mus_canyon_guitar_02_4B8CC0C5.wem</Path>
 				</File>
 				<File Id="283517202" Language="SFX">
 					<ShortName>tire_skid_dirt03.wav</ShortName>
@@ -61,9 +69,29 @@
 					<ShortName>TB_collision_rocks_03.wav</ShortName>
 					<Path>SFX/TB_collision_rocks_03_9E69E797.wem</Path>
 				</File>
-				<File Id="508092721" Language="SFX">
-					<ShortName>IntroLullaby_chorus_v2.wav</ShortName>
-					<Path>SFX/IntroLullaby_chorus_v2_4B8CC0C5.wem</Path>
+				<File Id="389710525" Language="SFX">
+					<ShortName>mus_canyon_cicadas_05.wav</ShortName>
+					<Path>SFX/mus_canyon_cicadas_05_4B8CC0C5.wem</Path>
+				</File>
+				<File Id="482305505" Language="SFX">
+					<ShortName>mus_canyon_bass_01.wav</ShortName>
+					<Path>SFX/mus_canyon_bass_01_4B8CC0C5.wem</Path>
+				</File>
+				<File Id="536109339" Language="SFX">
+					<ShortName>mus_canyon_intro_01.wav</ShortName>
+					<Path>SFX/mus_canyon_intro_01_4B8CC0C5.wem</Path>
+				</File>
+				<File Id="695008559" Language="SFX">
+					<ShortName>TB_collision_metal_01.wav</ShortName>
+					<Path>SFX/TB_collision_metal_01_9E69E797.wem</Path>
+				</File>
+				<File Id="715826064" Language="SFX">
+					<ShortName>mus_canyon_cicadas_02.wav</ShortName>
+					<Path>SFX/mus_canyon_cicadas_02_4B8CC0C5.wem</Path>
+				</File>
+				<File Id="729143796" Language="SFX">
+					<ShortName>mus_canyon_guitar_01.wav</ShortName>
+					<Path>SFX/mus_canyon_guitar_01_4B8CC0C5.wem</Path>
 				</File>
 				<File Id="754492438" Language="SFX">
 					<ShortName>woosh_rumble_01.wav</ShortName>
@@ -77,9 +105,9 @@
 					<ShortName>tire_skid_dirt_detail_02.wav</ShortName>
 					<Path>SFX/tire_skid_dirt_detail_02_DCEB5BA2.wem</Path>
 				</File>
-				<File Id="828596493" Language="SFX">
-					<ShortName>bigDog_collision_01.wav</ShortName>
-					<Path>SFX/bigDog_collision_01_D4B252A9.wem</Path>
+				<File Id="831793345" Language="SFX">
+					<ShortName>TB_collision_metal_02.wav</ShortName>
+					<Path>SFX/TB_collision_metal_02_9E69E797.wem</Path>
 				</File>
 				<File Id="840237749" Language="SFX">
 					<ShortName>TB_EngineLoop_v01.wav</ShortName>
@@ -88,6 +116,22 @@
 				<File Id="854569473" Language="SFX">
 					<ShortName>tire_skid_dirt03.wav</ShortName>
 					<Path>SFX/tire_skid_dirt03_C14F4271.wem</Path>
+				</File>
+				<File Id="909115126" Language="SFX">
+					<ShortName>mus_canyon_cicadas_01.wav</ShortName>
+					<Path>SFX/mus_canyon_cicadas_01_4B8CC0C5.wem</Path>
+				</File>
+				<File Id="941752323" Language="SFX">
+					<ShortName>mus_canyon_dulcimer_02.wav</ShortName>
+					<Path>SFX/mus_canyon_dulcimer_02_4B8CC0C5.wem</Path>
+				</File>
+				<File Id="952276965" Language="SFX">
+					<ShortName>mus_canyon_cicadas_03.wav</ShortName>
+					<Path>SFX/mus_canyon_cicadas_03_4B8CC0C5.wem</Path>
+				</File>
+				<File Id="981017885" Language="SFX">
+					<ShortName>mus_canyon_cicadas_04.wav</ShortName>
+					<Path>SFX/mus_canyon_cicadas_04_4B8CC0C5.wem</Path>
 				</File>
 				<File Id="1020474679" Language="SFX">
 					<ShortName>tire_skid_dirt_detail_02.wav</ShortName>

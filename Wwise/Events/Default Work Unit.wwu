@@ -5,10 +5,16 @@
 			<ChildrenList>
 				<Event Name="musicStart" ID="{18E0E630-4F37-4749-8712-A2C05703BBB4}">
 					<ChildrenList>
+						<Action Name="Set Switch" ID="{3B579787-7DB0-4857-82A3-941AB89E68D8}" ShortID="336792703" Type="SetSwitch" Scope="All" Global="false">
+							<SetItemParam>
+								<Group Name="Music" ID="{C54116D0-FE6A-4B7B-B8D4-9D3D720A8670}"/>
+								<GroupItem Name="canyon" ID="{DEC86831-52F9-4D70-AB00-72D9B28C79DD}"/>
+							</SetItemParam>
+						</Action>
 						<Action Name="Play" ID="{4BED1968-34AC-4CCB-B3FD-2E971BF102BC}" ShortID="831155307" Type="Play" Scope="One" Global="false">
 							<ElementList>
 								<Element ID="{DAB065FB-3C66-4655-8F9F-506B05E0D2F0}" Global="false">
-									<ObjectRef Name="mus_IntroLullaby" ID="{8E4E8E77-6B95-40BA-B8BF-CD97C1929AB3}" WorkUnitID="{F4D6CB59-2D66-4956-9054-AA8F03BEA1E0}"/>
+									<ObjectRef Name="mus_CanyonSwitch" ID="{35BE0291-1069-4D9C-AA22-81754261F564}" WorkUnitID="{F4D6CB59-2D66-4956-9054-AA8F03BEA1E0}"/>
 								</Element>
 							</ElementList>
 						</Action>

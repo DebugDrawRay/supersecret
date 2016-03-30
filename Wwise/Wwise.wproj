@@ -26,6 +26,7 @@
 						<Value Platform="Mac">256</Value>
 					</ValueList>
 				</Property>
+				<Property Name="LicenseKey" Type="string" Value="PHByb2plY3QgaWQ9IjI5MjciIG1hc2s9IllVV0o3NDQxIiBlbmM9IjAiPjxsaWNlbnNlIGlkPSI0MSIgbmFtZT0iV3dpc2UgKExpbWl0ZWQgQ29tbWVyY2lhbCBMaWNlbnNlKSAoTGltaXRlZCB0byAyMDAgYXNzZXRzKSIgdHlwZT0iMiIgcGxhdGZvcm1zPSIyLDMsNCwxMCwxMywxNCIgZXhwaXJlcz0iMjAxNy0wMy0yNiIgYXNzZXRzPSIyMDAiIC8+PC9wcm9qZWN0Pg==|mG2wvgrvQlzm1m3N16lf8Dff4a3HlQvPqfyyTcyXmYxOBkOFPoGFOCEgT8FiWh4VZzBzfx/k1+w3rharF9opHhMQLAxueaxePgUX+RQTCJ/kcqvakO6BW3nved0JQQQmRE/C0276xSyxCJAg5P8RVZsh1/NOBhUuIhB1de0oE3xjzZSM690rEGtUlqr/Cw2lwMFkgUSOLOZFcq5eh/UPqmnvzmEYBpn6ySs2NcseIi4Tao3KATAlS4Z+Z1ofOAShQzqkXjCzz9G6G0qgJtN7dkAYP524B2QQLcnmXT8NAXwdJkLuZOeAj6dpC+o4o2zYb+rlpQL+Mav/63sblheUug=="/>
 				<Property Name="SoundBankHeaderFilePath" Type="string" Value="GeneratedSoundBanks\"/>
 				<Property Name="SoundBankPaths" Type="string">
 					<ValueList>
