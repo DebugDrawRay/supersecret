@@ -18,6 +18,13 @@
 								</Element>
 							</ElementList>
 						</Action>
+						<Action Name="Play" ID="{72377EFD-3910-4D28-96D9-D0AC47346CB2}" ShortID="960688031" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{F89D35F8-241B-425D-B855-14EA79B3D333}" Global="false">
+									<ObjectRef Name="mus_weaponSwitch" ID="{543A76C7-8C09-4C04-A6BB-2194D6D39DC3}" WorkUnitID="{F4D6CB59-2D66-4956-9054-AA8F03BEA1E0}"/>
+								</Element>
+							</ElementList>
+						</Action>
 					</ChildrenList>
 				</Event>
 				<Event Name="TB_engineStart" ID="{E9049DC1-6368-461B-8EE3-608AFA527DFE}">

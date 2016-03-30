@@ -47,6 +47,10 @@
 					<ShortName>mus_canyon_bass_02.wav</ShortName>
 					<Path>SFX/mus_canyon_bass_02_4B8CC0C5.wem</Path>
 				</File>
+				<File Id="190248738" Language="SFX">
+					<ShortName>Laser_v01.wav</ShortName>
+					<Path>SFX/Laser_v01_4B8CC0C5.wem</Path>
+				</File>
 				<File Id="241640635" Language="SFX">
 					<ShortName>tire_skid_dirt_detail_02.wav</ShortName>
 					<Path>SFX/tire_skid_dirt_detail_02_5950E099.wem</Path>
@@ -54,6 +58,10 @@
 				<File Id="246687455" Language="SFX">
 					<ShortName>TB_collision_rocks_02.wav</ShortName>
 					<Path>SFX/TB_collision_rocks_02_9E69E797.wem</Path>
+				</File>
+				<File Id="257618091" Language="SFX">
+					<ShortName>LaserCharge_v01.wav</ShortName>
+					<Path>SFX/LaserCharge_v01_4B8CC0C5.wem</Path>
 				</File>
 				<File Id="275407545" Language="SFX">
 					<ShortName>mus_canyon_guitar_02.wav</ShortName>
