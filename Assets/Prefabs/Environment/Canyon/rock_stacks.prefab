@@ -110,7 +110,7 @@ MonoBehaviour:
   curveInterpolation: 4
   transitionDuration: 0
   m_callbackData: {fileID: 0}
-  multiPositionTypeLabel: 0
+  multiPositionTypeLabel: 2
   multiPositionArray: []
 --- !u!114 &11465232
 MonoBehaviour:

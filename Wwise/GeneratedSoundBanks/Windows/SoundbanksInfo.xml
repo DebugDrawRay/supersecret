@@ -21,8 +21,10 @@
 			<IncludedEvents>
 				<Event Id="789866735" Name="canyon_GeyserLoop"/>
 				<Event Id="1122283870" Name="musicStart"/>
+				<Event Id="3411254743" Name="TB_collisionGeyser"/>
 				<Event Id="832369107" Name="TB_collisionMetal"/>
 				<Event Id="3628795728" Name="TB_collisionRocks"/>
+				<Event Id="3545922746" Name="TB_collisionTree"/>
 				<Event Id="2710852396" Name="TB_engineStart"/>
 				<Event Id="3576966165" Name="TB_tireSkidShort"/>
 				<Event Id="300766571" Name="wooshBig"/>
@@ -77,6 +79,10 @@
 					<ShortName>mus_canyon_bass_01.wav</ShortName>
 					<Path>SFX/mus_canyon_bass_01_4B8CC0C5.wem</Path>
 				</File>
+				<File Id="516258319" Language="SFX">
+					<ShortName>TB_collision_tree_01.wav</ShortName>
+					<Path>SFX/TB_collision_tree_01_9E69E797.wem</Path>
+				</File>
 				<File Id="536109339" Language="SFX">
 					<ShortName>mus_canyon_intro_01.wav</ShortName>
 					<Path>SFX/mus_canyon_intro_01_4B8CC0C5.wem</Path>
@@ -85,9 +91,17 @@
 					<ShortName>TB_collision_metal_01.wav</ShortName>
 					<Path>SFX/TB_collision_metal_01_9E69E797.wem</Path>
 				</File>
+				<File Id="697218627" Language="SFX">
+					<ShortName>TB_collision_geyser_02.wav</ShortName>
+					<Path>SFX/TB_collision_geyser_02_9E69E797.wem</Path>
+				</File>
 				<File Id="715826064" Language="SFX">
 					<ShortName>mus_canyon_cicadas_02.wav</ShortName>
 					<Path>SFX/mus_canyon_cicadas_02_4B8CC0C5.wem</Path>
+				</File>
+				<File Id="718989279" Language="SFX">
+					<ShortName>TB_collision_geyser_01.wav</ShortName>
+					<Path>SFX/TB_collision_geyser_01_9E69E797.wem</Path>
 				</File>
 				<File Id="729143796" Language="SFX">
 					<ShortName>mus_canyon_guitar_01.wav</ShortName>

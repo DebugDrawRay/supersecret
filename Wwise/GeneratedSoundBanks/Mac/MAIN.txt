@@ -5,6 +5,8 @@ Event	ID	Name			Wwise Object Path	Notes
 	1122283870	musicStart			\Default Work Unit\musicStart	
 	1224784748	wooshSmall			\Default Work Unit\wooshSmall	
 	2710852396	TB_engineStart			\Default Work Unit\TB_engineStart	
+	3411254743	TB_collisionGeyser			\Default Work Unit\TB_collisionGeyser	
+	3545922746	TB_collisionTree			\Default Work Unit\TB_collisionTree	
 	3576966165	TB_tireSkidShort			\Default Work Unit\TB_tireSkidShort	
 	3628795728	TB_collisionRocks			\Default Work Unit\TB_collisionRocks	
 
@@ -45,9 +47,12 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	337733320	TB_collision_rocks_03	Z:\Volumes\Projects\Repositories\supersecret\Wwise\.cache\Mac\SFX\TB_collision_rocks_03_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\TB\Collisions\TB_collisionRocks\TB_collision_rocks_03		408192
 	389710525	mus_canyon_cicadas_05	Z:\Volumes\Projects\Repositories\supersecret\Wwise\.cache\Mac\SFX\mus_canyon_cicadas_05_4B8CC0C5.wem		\Interactive Music Hierarchy\Default Work Unit\Canyon\mus_CanyonSwitch\mus_CanyonBoss\mus_canyon_cicadas_05\mus_canyon_cicadas_05		3101912
 	482305505	mus_canyon_bass_01	Z:\Volumes\Projects\Repositories\supersecret\Wwise\.cache\Mac\SFX\mus_canyon_bass_01_4B8CC0C5.wem		\Interactive Music Hierarchy\Default Work Unit\Canyon\mus_CanyonSwitch\mus_CanyonBoss\mus_canyon_bass_01\mus_canyon_bass_01		3101912
+	516258319	TB_collision_tree_01	Z:\Volumes\Projects\Repositories\supersecret\Wwise\.cache\Mac\SFX\TB_collision_tree_01_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\TB\Collisions\TB_collision_tree_01		170312
 	536109339	mus_canyon_intro_01	Z:\Volumes\Projects\Repositories\supersecret\Wwise\.cache\Mac\SFX\mus_canyon_intro_01_4B8CC0C5.wem		\Interactive Music Hierarchy\Default Work Unit\Canyon\mus_CanyonSwitch\mus_Canyon\mus_canyon_intro_01\mus_canyon_intro_01		1791192
 	695008559	TB_collision_metal_01	Z:\Volumes\Projects\Repositories\supersecret\Wwise\.cache\Mac\SFX\TB_collision_metal_01_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\TB\Collisions\TB_collisionMetal\TB_collision_metal_01		171048
+	697218627	TB_collision_geyser_02	Z:\Volumes\Projects\Repositories\supersecret\Wwise\.cache\Mac\SFX\TB_collision_geyser_02_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\TB\Collisions\TB_collisionGeyser\TB_collision_geyser_02		269844
 	715826064	mus_canyon_cicadas_02	Z:\Volumes\Projects\Repositories\supersecret\Wwise\.cache\Mac\SFX\mus_canyon_cicadas_02_4B8CC0C5.wem		\Interactive Music Hierarchy\Default Work Unit\Canyon\mus_CanyonSwitch\mus_Canyon\mus_canyon_cicadas_02\mus_canyon_cicadas_02		3101960
+	718989279	TB_collision_geyser_01	Z:\Volumes\Projects\Repositories\supersecret\Wwise\.cache\Mac\SFX\TB_collision_geyser_01_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\TB\Collisions\TB_collisionGeyser\TB_collision_geyser_01		230116
 	729143796	mus_canyon_guitar_01	Z:\Volumes\Projects\Repositories\supersecret\Wwise\.cache\Mac\SFX\mus_canyon_guitar_01_4B8CC0C5.wem		\Interactive Music Hierarchy\Default Work Unit\Canyon\mus_CanyonSwitch\mus_Canyon\mus_canyon_guitar_01\mus_canyon_guitar_01		3101960
 	754492438	woosh_rumble_big	Z:\Volumes\Projects\Repositories\supersecret\Wwise\.cache\Mac\SFX\woosh_rumble_01_4B8CC0C5.wem		\Actor-Mixer Hierarchy\Default Work Unit\woosh_rumble_big		1469932
 	771707133	TB_tireLoop_dirt_01	Z:\Volumes\Projects\Repositories\supersecret\Wwise\.cache\Mac\SFX\tires_rolling_on_dirt_03_loop_4B8CC0C5.wem		\Actor-Mixer Hierarchy\Default Work Unit\TB\Movement\TireLoops\tireLoopSwitch\TB_tireLoop_dirt_01		312332
