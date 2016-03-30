@@ -92,7 +92,7 @@ public class LevelBuilder : MonoBehaviour
     {
         BuildRoad(levelLength + startLevelBuffer + endLevelBuffer, roadWidth);
         BuildGround(levelLength + startLevelBuffer + endLevelBuffer);
-        SpawnWallProps(levelLength + startLevelBuffer + endLevelBuffer, roadWidth + roadWidthBuffer);
+        BuildWalls(levelLength + startLevelBuffer + endLevelBuffer, roadWidth + roadWidthBuffer);
         SpawnGroundProps(levelLength, roadWidth + roadWidthBuffer);
         SpawnHorizonObject(levelLength, targetGrid);
         SpawnObstacles(levelLength, targetGrid);
@@ -116,6 +116,10 @@ public class LevelBuilder : MonoBehaviour
             newRoadMat.mainTextureScale = texScale;
 
             newRoad.GetComponent<MeshRenderer>().material = newRoadMat;
+
+            Vector3 adjPos = newRoad.transform.position;
+            adjPos.z += length / 2;
+            newRoad.transform.position = adjPos;
         }
         else
         {
@@ -129,7 +133,7 @@ public class LevelBuilder : MonoBehaviour
         {
             GameObject newGround = Instantiate(blankPlane);
 
-            Vector3 scale = new Vector3(length, length, length);
+            Vector3 scale = new Vector3(length * 2, length * 2, length * 2);
             newGround.transform.localScale = scale;
             newGround.transform.position = new Vector3(0, -0.5f, 0);
             newGround.transform.rotation = Quaternion.Euler(90, 0, 0);
@@ -166,7 +170,15 @@ public class LevelBuilder : MonoBehaviour
             leftWall.GetComponent<MeshRenderer>().material = newWallMat;
             rightWall.GetComponent<MeshRenderer>().material = newWallMat;
 
+            Vector3 adjPos = leftWall.transform.position;
+            adjPos.z += length / 2;
+            leftWall.transform.position = adjPos;
+
+            adjPos = rightWall.transform.position;
+            adjPos.z += length / 2;
+            rightWall.transform.position = adjPos;
         }
+        SpawnWallProps(length, roadWidth);
     }
     void SpawnHorizonObject(float length, Grid grid)
     {
@@ -181,7 +193,7 @@ public class LevelBuilder : MonoBehaviour
     {
         if (wallProps.Length > 0 && generateWalls)
         {
-            int total = Mathf.RoundToInt(levelLength / wallPropSpacing);
+            int total = Mathf.RoundToInt(length / wallPropSpacing);
 
             for (int i = 0; i <= total; ++i)
             {
@@ -230,7 +242,6 @@ public class LevelBuilder : MonoBehaviour
                 }
 
             }
-            BuildWalls(length, roadWidth);
         }
     }
     void SpawnGroundProps(float length, float width)

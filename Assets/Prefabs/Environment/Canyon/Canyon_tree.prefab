@@ -29,6 +29,7 @@ GameObject:
   - 114: {fileID: 11405598}
   - 114: {fileID: 11476202}
   - 114: {fileID: 11496550}
+  - 114: {fileID: 11470980}
   m_Layer: 0
   m_Name: Canyon_tree
   m_TagString: Untagged
@@ -85,6 +86,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactions: []
+  collisionSound: 
 --- !u!114 &11446054
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -97,13 +99,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collisionSound: TB_collisionRocks
---- !u!114 &11476202
+--- !u!114 &11470980
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 151434}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 364480d3f6a116d4e992b736967b43d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  components:
+  - {fileID: 11476202}
+  - {fileID: 11496550}
+  render: {fileID: 21256028}
+--- !u!114 &11476202
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 151434}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 49bfc0719930d4455a1ad1c897b139d9, type: 3}
   m_Name: 
@@ -135,7 +152,7 @@ MonoBehaviour:
   curveInterpolation: 4
   transitionDuration: 0
   m_callbackData: {fileID: 0}
-  multiPositionTypeLabel: 0
+  multiPositionTypeLabel: 2
   multiPositionArray: []
 --- !u!212 &21256028
 SpriteRenderer:

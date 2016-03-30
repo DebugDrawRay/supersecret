@@ -25,6 +25,7 @@ MonoBehaviour:
   - {fileID: 198964, guid: fc9da535f62954545a5593d5cfff4e6e, type: 2}
   archProps:
   - {fileID: 101948, guid: 2350a860ab04c6b4d87446bef796a604, type: 2}
+  - {fileID: 101948, guid: 72e092c01e92979439e02e19a8834227, type: 2}
   groundProps: []
   obstacles:
   - {fileID: 137750, guid: 9ed4ef8c4a7b9c1499a6e3f2e75c39c4, type: 2}

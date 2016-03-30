@@ -63,7 +63,7 @@ MonoBehaviour:
   blankPlane: {fileID: 179626, guid: 728af7f3c33c70340aa7c4c7b7ea3c61, type: 2}
   levelLength: 100000
   startLevelBuffer: 1500
-  endLevelBuffer: 0
+  endLevelBuffer: 1500
   generateRoad: 1
   roadWidth: 115
   roadWidthBuffer: 100

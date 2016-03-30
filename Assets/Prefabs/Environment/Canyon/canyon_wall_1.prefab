@@ -25,6 +25,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 429924}
+  - 114: {fileID: 11481568}
   m_Layer: 0
   m_Name: canyon_wall_1
   m_TagString: Untagged
@@ -90,6 +91,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 196044}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &11481568
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 198964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 364480d3f6a116d4e992b736967b43d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  components: []
+  render: {fileID: 2390338}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
