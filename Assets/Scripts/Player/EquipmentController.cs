@@ -35,6 +35,7 @@ public class EquipmentController : MonoBehaviour
             }
             headAttachment.GetComponent<SkeletonAnimation>().skeleton.SetSkin(skin);
             headAttachment.GetComponent<InteractionSource>().interactions = equippedHead.interactions;
+            headAttachment.GetComponent<Stats>().collection = equippedHead.collection;
         }
         if (bodyAttachment)
         {
@@ -45,6 +46,7 @@ public class EquipmentController : MonoBehaviour
             }
             bodyAttachment.GetComponent<SkeletonAnimation>().skeleton.SetSkin(skin);
             bodyAttachment.GetComponent<InteractionSource>().interactions = equippedBody.interactions;
+            bodyAttachment.GetComponent<Stats>().collection = equippedBody.collection;
         }
         if (bikeAttachment)
         {
@@ -55,6 +57,7 @@ public class EquipmentController : MonoBehaviour
             }
             bikeAttachment.GetComponent<SkeletonAnimation>().skeleton.SetSkin(skin);
             bikeAttachment.GetComponent<InteractionSource>().interactions = equippedBike.interactions;
+            bikeAttachment.GetComponent<Stats>().collection = equippedBike.collection;
         }
         if (leftAttachment)
         {
@@ -65,6 +68,7 @@ public class EquipmentController : MonoBehaviour
             }
             leftAttachment.GetComponent<SkeletonAnimation>().skeleton.SetSkin(skin);
             leftAttachment.GetComponent<InteractionSource>().interactions = equippedLeft.interactions;
+            leftAttachment.GetComponent<Stats>().collection = equippedLeft.collection;
         }
         if (rightAttachment)
         {
@@ -75,6 +79,7 @@ public class EquipmentController : MonoBehaviour
             }
             rightAttachment.GetComponent<SkeletonAnimation>().skeleton.SetSkin(skin);
             rightAttachment.GetComponent<InteractionSource>().interactions = equippedRight.interactions;
+            rightAttachment.GetComponent<Stats>().collection = equippedRight.collection;
         }
     }
 
@@ -93,15 +98,18 @@ public class EquipmentController : MonoBehaviour
                 float x = dirVect.x;
 
                 PlayerAttachment attach = null;
+                Stats stats = null;
                 if (Mathf.Abs(y) > Mathf.Abs(x))
                 {
                     if (y > 0)
                     {
                         attach = equippedHead;
+                        stats = headAttachment.GetComponent<Stats>();
                     }
                     else if (y < 0)
                     {
                         attach = equippedBody;
+                        stats = bodyAttachment.GetComponent<Stats>();
                     }
                 }
                 else if (Mathf.Abs(x) > Mathf.Abs(y))
@@ -109,16 +117,21 @@ public class EquipmentController : MonoBehaviour
                     if (x > 0)
                     {
                         attach = equippedRight;
+                        stats = rightAttachment.GetComponent<Stats>();
                     }
                     else if (x < 0)
                     {
                         attach = equippedLeft;
+                        stats = leftAttachment.GetComponent<Stats>();
                     }
                 }
 
                 if(attach != null)
                 {
+                    Debug.Log(stats.gameObject.name);
+
                     Interact(enemy, attach.interactions);
+                    Interact(stats, enemy.GetComponent<InteractionSource>().interactions);
                 }
             }
         }

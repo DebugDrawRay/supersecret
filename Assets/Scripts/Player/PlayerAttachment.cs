@@ -12,4 +12,7 @@ public class PlayerAttachment : ScriptableObject
 
     [SerializeField]
     public InteractionProperty[] interactions;
+
+    [SerializeField]
+    public StatsCollection collection;
 }

@@ -12,38 +12,13 @@ public class Stats : MonoBehaviour
         power,
         luck
     }
-
-    [Range(0,1)]
-    public float maxHealth;
-    private float defaultMaxHealth;
-
-    private float currentHealth;
-
-    [Range(0,1)]
-    public float speed;
-    private float defaultSpeed;
-
-    [Range(0,1)]
-    public float agility;
-    private float defaultAgility;
-
-    [Range(0,1)]
-    public float power;
-    private float defaultPower;
-
-    [Range(0,1)]
-    public float luck;
-    private float defaultLuck;
-
-    [Range(0,1)]
-    public float weight;
-    private float defaultWeight;
-
-    public float distanceTraveled;
-    public float minRequiredDistanceTraveled;
+    [SerializeField]
+    public StatsCollection collection;
 
     private Timer currentTimer;
 
+    public float distanceTraveled;
+    public float minRequiredDistanceTraveled;
     public bool invulnerable;
     public bool isDead
     {
@@ -73,17 +48,10 @@ public class Stats : MonoBehaviour
         }
     }
 
-    void Awake()
+    void Start()
     {
-        currentHealth = maxHealth;
-        defaultMaxHealth = maxHealth;
-        defaultSpeed = speed;
-        defaultAgility = agility;
-        defaultPower = power;
-        defaultLuck = luck;
-        defaultWeight = weight;
+        collection.Init();
     }
-
     void Update()
     {
         if (currentTimer != null)
@@ -104,22 +72,22 @@ public class Stats : MonoBehaviour
             switch (stat)
             {
                 case stat.health:
-                    currentHealth += value;
+                    collection.currentHealth += value;
                     break;
                 case stat.maxHealth:
-                    maxHealth = defaultMaxHealth + value;
+                    collection.maxHealth = collection.defaultMaxHealth + value;
                     break;
                 case stat.speed:
-                    speed = defaultSpeed + value;
+                    collection.speed = collection.defaultSpeed + value;
                     break;
                 case stat.agility:
-                    agility = defaultAgility + value;
+                    collection.agility = collection.defaultAgility + value;
                     break;
                 case stat.power:
-                    power = defaultPower + value;
+                    collection.power = collection.defaultPower + value;
                     break;
                 case stat.luck:
-                    luck = defaultLuck + value;
+                    collection.luck = collection.defaultLuck + value;
                     break;
                 default:
                     break;
@@ -136,23 +104,23 @@ public class Stats : MonoBehaviour
             switch (stat)
             {
                 case stat.maxHealth:
-                    maxHealth = defaultMaxHealth + value;
+                    collection.maxHealth = collection.defaultMaxHealth + value;
                     currentTimer = new Timer(time);
                     break;
                 case stat.speed:
-                    speed = defaultSpeed + value;
+                    collection.speed = collection.defaultSpeed + value;
                     currentTimer = new Timer(time);
                     break;
                 case stat.agility:
-                    agility = defaultAgility + value;
+                    collection.agility = collection.defaultAgility + value;
                     currentTimer = new Timer(time);
                     break;
                 case stat.power:
-                    power = defaultPower + value;
+                    collection.power = collection.defaultPower + value;
                     currentTimer = new Timer(time);
                     break;
                 case stat.luck:
-                    luck = defaultLuck + value;
+                    collection.luck = collection.defaultLuck + value;
                     currentTimer = new Timer(time);
                     break;
                 default:
@@ -164,7 +132,7 @@ public class Stats : MonoBehaviour
 
     void CheckStats()
     {
-        if (currentHealth <= 0)
+        if (collection.currentHealth <= 0)
         {
             isDead = true;
         }
@@ -172,10 +140,10 @@ public class Stats : MonoBehaviour
 
     void ResetStats()
     {
-        maxHealth = defaultMaxHealth;
-        speed = defaultSpeed;
-        agility = defaultAgility;
-        power = defaultPower;
-        luck = defaultLuck;
+        collection.maxHealth = collection.defaultMaxHealth;
+        collection.speed = collection.defaultSpeed;
+        collection.agility = collection.defaultAgility;
+        collection.power = collection.defaultPower;
+        collection.luck = collection.defaultLuck;
     }
 }

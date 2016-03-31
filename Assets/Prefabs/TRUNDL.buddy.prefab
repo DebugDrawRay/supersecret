@@ -13,6 +13,8 @@ GameObject:
   - 114: {fileID: 11438272}
   - 114: {fileID: 11439678}
   - 54: {fileID: 5422646}
+  - 114: {fileID: 11485922}
+  - 114: {fileID: 11479052}
   m_Layer: 9
   m_Name: head
   m_TagString: Untagged
@@ -33,6 +35,8 @@ GameObject:
   - 114: {fileID: 11456010}
   - 114: {fileID: 11485652}
   - 54: {fileID: 5478204}
+  - 114: {fileID: 11440308}
+  - 114: {fileID: 11485768}
   m_Layer: 9
   m_Name: body
   m_TagString: Untagged
@@ -53,6 +57,8 @@ GameObject:
   - 114: {fileID: 11402354}
   - 114: {fileID: 11412906}
   - 54: {fileID: 5408636}
+  - 114: {fileID: 11486364}
+  - 114: {fileID: 11484052}
   m_Layer: 9
   m_Name: left
   m_TagString: Untagged
@@ -73,6 +79,9 @@ GameObject:
   - 114: {fileID: 11454574}
   - 114: {fileID: 11415406}
   - 54: {fileID: 5460868}
+  - 114: {fileID: 11401534}
+  - 114: {fileID: 11473708}
+  - 114: {fileID: 11430556}
   m_Layer: 9
   m_Name: bike
   m_TagString: Untagged
@@ -93,6 +102,8 @@ GameObject:
   - 114: {fileID: 11452834}
   - 114: {fileID: 11487600}
   - 54: {fileID: 5414566}
+  - 114: {fileID: 11408636}
+  - 114: {fileID: 11436026}
   m_Layer: 9
   m_Name: right
   m_TagString: Untagged
@@ -110,7 +121,6 @@ GameObject:
   - 4: {fileID: 418456}
   - 114: {fileID: 11493630}
   - 114: {fileID: 11464754}
-  - 114: {fileID: 11434282}
   - 65: {fileID: 6532716}
   - 114: {fileID: 11426106}
   - 54: {fileID: 5479054}
@@ -466,6 +476,34 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 17, y: 21, z: 17}
   m_Center: {x: 0, y: 10, z: 1.25}
+--- !u!114 &11401534
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 168054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7140fc7618b13594f85ac59fea32df55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collection:
+    maxHealth: 0
+    defaultMaxHealth: 0
+    currentHealth: 0
+    speed: 0
+    defaultSpeed: 0
+    agility: 0
+    defaultAgility: 0
+    power: 0
+    defaultPower: 0
+    luck: 0
+    defaultLuck: 0
+    weight: 0
+    defaultWeight: 0
+  distanceTraveled: 0
+  minRequiredDistanceTraveled: 0
+  invulnerable: 0
 --- !u!114 &11402354
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -490,6 +528,34 @@ MonoBehaviour:
   _animationName: idle
   loop: 0
   timeScale: 1
+--- !u!114 &11408636
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 193692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7140fc7618b13594f85ac59fea32df55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collection:
+    maxHealth: 0
+    defaultMaxHealth: 0
+    currentHealth: 0
+    speed: 0
+    defaultSpeed: 0
+    agility: 0
+    defaultAgility: 0
+    power: 0
+    defaultPower: 0
+    luck: 0
+    defaultLuck: 0
+    weight: 0
+    defaultWeight: 0
+  distanceTraveled: 0
+  minRequiredDistanceTraveled: 0
+  invulnerable: 0
 --- !u!114 &11412906
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -556,26 +622,32 @@ MonoBehaviour:
   rightAnim: {fileID: 11452834}
   lean: 0.57
   inTopSpeed: 0
---- !u!114 &11434282
+--- !u!114 &11430556
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 193790}
+  m_GameObject: {fileID: 168054}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7140fc7618b13594f85ac59fea32df55, type: 3}
+  m_Script: {fileID: 11500000, guid: 60babf6c707b926418f1adf101c6fdc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1
-  speed: 1
-  agility: 0
-  power: 0
-  luck: 0
-  weight: 0
-  distanceTraveled: 0
-  minRequiredDistanceTraveled: 15
-  invulnerable: 0
+  anim: {fileID: 0}
+  stat: {fileID: 0}
+--- !u!114 &11436026
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 193692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60babf6c707b926418f1adf101c6fdc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 11452834}
+  stat: {fileID: 11408636}
 --- !u!114 &11438272
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -613,6 +685,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactions: []
   collisionSound: 
+--- !u!114 &11440308
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 116864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7140fc7618b13594f85ac59fea32df55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collection:
+    maxHealth: 0
+    defaultMaxHealth: 0
+    currentHealth: 0
+    speed: 0
+    defaultSpeed: 0
+    agility: 0
+    defaultAgility: 0
+    power: 0
+    defaultPower: 0
+    luck: 0
+    defaultLuck: 0
+    weight: 0
+    defaultWeight: 0
+  distanceTraveled: 0
+  minRequiredDistanceTraveled: 0
+  invulnerable: 0
 --- !u!114 &11452834
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -698,11 +798,65 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 2
   movement: {fileID: 11493630}
-  stats: {fileID: 11434282}
+  stats: {fileID: 0}
   anim: {fileID: 11426106}
   equipment: {fileID: 11425336}
   invulTime: 2
   stunTime: 0.5
+--- !u!114 &11473708
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 168054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7140fc7618b13594f85ac59fea32df55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collection:
+    maxHealth: 0
+    defaultMaxHealth: 0
+    currentHealth: 0
+    speed: 0
+    defaultSpeed: 0
+    agility: 0
+    defaultAgility: 0
+    power: 0
+    defaultPower: 0
+    luck: 0
+    defaultLuck: 0
+    weight: 0
+    defaultWeight: 0
+  distanceTraveled: 0
+  minRequiredDistanceTraveled: 0
+  invulnerable: 0
+--- !u!114 &11479052
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 108926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60babf6c707b926418f1adf101c6fdc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  stat: {fileID: 0}
+--- !u!114 &11484052
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 141062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60babf6c707b926418f1adf101c6fdc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 11402354}
+  stat: {fileID: 11486364}
 --- !u!114 &11485652
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -716,6 +870,75 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactions: []
   collisionSound: 
+--- !u!114 &11485768
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 116864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60babf6c707b926418f1adf101c6fdc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  stat: {fileID: 0}
+--- !u!114 &11485922
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 108926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7140fc7618b13594f85ac59fea32df55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collection:
+    maxHealth: 0
+    defaultMaxHealth: 0
+    currentHealth: 0
+    speed: 0
+    defaultSpeed: 0
+    agility: 0
+    defaultAgility: 0
+    power: 0
+    defaultPower: 0
+    luck: 0
+    defaultLuck: 0
+    weight: 0
+    defaultWeight: 0
+  distanceTraveled: 0
+  minRequiredDistanceTraveled: 0
+  invulnerable: 0
+--- !u!114 &11486364
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 141062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7140fc7618b13594f85ac59fea32df55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collection:
+    maxHealth: 0
+    defaultMaxHealth: 0
+    currentHealth: 0
+    speed: 0
+    defaultSpeed: 0
+    agility: 0
+    defaultAgility: 0
+    power: 0
+    defaultPower: 0
+    luck: 0
+    defaultLuck: 0
+    weight: 0
+    defaultWeight: 0
+  distanceTraveled: 0
+  minRequiredDistanceTraveled: 0
+  invulnerable: 0
 --- !u!114 &11487600
 MonoBehaviour:
   m_ObjectHideFlags: 1

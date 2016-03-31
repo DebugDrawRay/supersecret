@@ -8,7 +8,12 @@ public class PlayerEventManager
     public static event Trigger TopSpeedEvent;
     public static event Trigger DeathEvent;
     public static event Trigger StunReaction;
+    public static event Trigger HitReaction;
 
+    public static void TriggerHit()
+    {
+        HitReaction();
+    }
     public static void TriggerCollision(Vector3 from)
     {
         CollisionReaction(from);

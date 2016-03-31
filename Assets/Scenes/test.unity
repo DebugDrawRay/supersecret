@@ -476,6 +476,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 11422248, guid: ae402ccce10e3834e95d01b4c71c598c, type: 2}
+      propertyPath: generateObstacles
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11422248, guid: ae402ccce10e3834e95d01b4c71c598c, type: 2}
+      propertyPath: enemySpawnRate
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ae402ccce10e3834e95d01b4c71c598c, type: 2}
   m_IsPrefabParent: 0
@@ -540,7 +548,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 193790, guid: 175175dc273078e479955695d18f512a, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 175175dc273078e479955695d18f512a, type: 2}
@@ -639,6 +647,10 @@ Prefab:
     - target: {fileID: 11456808, guid: c2f01ef66dfc06e4db30fa0dea3a1c5b, type: 2}
       propertyPath: m_ReferenceResolution.y
       value: 1080
+      objectReference: {fileID: 0}
+    - target: {fileID: 128576, guid: c2f01ef66dfc06e4db30fa0dea3a1c5b, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c2f01ef66dfc06e4db30fa0dea3a1c5b, type: 2}

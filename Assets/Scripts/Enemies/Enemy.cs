@@ -38,14 +38,14 @@ public class Enemy : MonoBehaviour
         if(isPlayer)
         {
             Collision();
-            ContestSpace(isPlayer.GetComponent<Stats>());
+            //ContestSpace(isPlayer.GetComponent<Stats>());
         }
     }
 
     public void ContestSpace(Stats challenger)
     {
-        float attack = stats.speed + stats.agility + stats.weight + stats.distanceTraveled;
-        float defense = challenger.speed + challenger.agility + challenger.weight + challenger.distanceTraveled;
+        float attack = stats.collection.speed + stats.collection.agility + stats.collection.weight + stats.distanceTraveled;
+        float defense = challenger.collection.speed + challenger.collection.agility + challenger.collection.weight + challenger.distanceTraveled;
 
         if (attack < defense)
         {
