@@ -10,6 +10,7 @@ public class PlayerActions : PlayerActionSet
     public PlayerTwoAxisAction Move;
 
     public PlayerAction Pause;
+	public PlayerAction Debug_MusicWeapon;
 
     public PlayerActions()
     {
@@ -20,6 +21,7 @@ public class PlayerActions : PlayerActionSet
         Move = CreateTwoAxisPlayerAction(Left, Right, Down, Up);
 
         Pause = CreatePlayerAction("Pause");
+		Debug_MusicWeapon = CreatePlayerAction("Debug_MusicWeapon");
     }
 
     public static PlayerActions BindActionsWithJoystick()
@@ -45,6 +47,7 @@ public class PlayerActions : PlayerActionSet
         newActions.Right.AddDefaultBinding(Key.D);
 
         newActions.Pause.AddDefaultBinding(Key.Escape);
+		newActions.Debug_MusicWeapon.AddDefaultBinding(Key.M);
 
         return newActions;
     }
@@ -65,6 +68,7 @@ public class PlayerActions : PlayerActionSet
         newActions.Pause.AddDefaultBinding(Key.Escape);
         newActions.Pause.AddDefaultBinding(InputControlType.Start);
 
+		newActions.Debug_MusicWeapon.AddDefaultBinding(Key.M);
         return newActions;
     }
 }

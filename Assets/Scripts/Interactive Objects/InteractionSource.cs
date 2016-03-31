@@ -33,7 +33,7 @@ public class InteractionSource : MonoBehaviour
 				if (gameObject.name == "Canyon_tree(Clone)")
 				{
 					Debug.Log("TREE!");
-					AkSoundEngine.SetSwitch("Music", "canyonBoss", this.gameObject);
+					AkSoundEngine.SetSwitch("Music", "canyonBoss", GameController.instance.gameObject);
 				}
             }
         }
