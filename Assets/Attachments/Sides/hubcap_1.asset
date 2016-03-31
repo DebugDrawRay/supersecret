@@ -21,3 +21,17 @@ MonoBehaviour:
     affectAmount: -0.5
     permanent: 1
     modTime: 0
+  collection:
+    maxHealth: 1
+    defaultMaxHealth: 1
+    currentHealth: 0.5999999
+    speed: 0
+    defaultSpeed: 0
+    agility: 0
+    defaultAgility: 0
+    power: 0
+    defaultPower: 0
+    luck: 0
+    defaultLuck: 0
+    weight: 0
+    defaultWeight: 0

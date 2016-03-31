@@ -39,8 +39,8 @@ public class AutoGridMovement : MonoBehaviour
         stats = status;
         initialized = true;
 
-        speed = baseSpeed + (speedRange - (speedRange * stats.speed));
-        agility = baseAgility + (agilityRange - (agilityRange * stats.agility));
+        speed = baseSpeed + (speedRange - (speedRange * stats.collection.speed));
+        agility = baseAgility + (agilityRange - (agilityRange * stats.collection.agility));
     }
 
     void Update()
@@ -59,7 +59,6 @@ public class AutoGridMovement : MonoBehaviour
             distanceTraveled = 0;
             startPositionSet = false;
         }
-        stats.distanceTraveled = distanceTraveled;
     }
 
     public void MoveToDestination(Vector2 goal)

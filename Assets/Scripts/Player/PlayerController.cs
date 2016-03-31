@@ -66,7 +66,7 @@ public class PlayerController : MonoBehaviour
         transform.SetParent(gridSystem.transform);
         equipment.Init();
 
-        movement.Init(stats, grid, anim);
+        movement.Init(equipment.bikeAttachment.GetComponent<Stats>(), grid, anim);
 
         SetupInput();
 
@@ -85,10 +85,6 @@ public class PlayerController : MonoBehaviour
         if(initialized)
         {
             RunStates();
-        }
-        if(stats.isDead)
-        {
-            //PlayerEventManager.PlayerDeath();
         }
     }
 
@@ -171,24 +167,30 @@ public class PlayerController : MonoBehaviour
     void OnTriggerEnter(Collider hit)
     {
         InteractionSource isInteraction = hit.GetComponent<InteractionSource>();
+        Enemy isEnemy = hit.GetComponent<Enemy>();
+
+        if(isEnemy)
+        {
+            PlayerEventManager.TriggerStun();
+        }
 
         if(isInteraction)
         {
-            PlayerEventManager.TriggerStun();
+            PlayerEventManager.TriggerHit();
             PlayerEventManager.TriggerCollision(hit.transform.localPosition);
 
             Stats hasStats = isInteraction.GetComponent<Stats>();
             if(hasStats)
             {
-                ContestSpace(hasStats);
+                //ContestSpace(hasStats);
             }
         }
     }
 
     public void ContestSpace(Stats challenger)
     {
-        float attack = stats.speed + stats.agility + stats.weight + stats.distanceTraveled;
-        float defense = challenger.speed + challenger.agility + challenger.weight + challenger.distanceTraveled;
+        float attack = stats.collection.speed + stats.collection.agility + stats.collection.weight + stats.distanceTraveled;
+        float defense = challenger.collection.speed + challenger.collection.agility + challenger.collection.weight + challenger.distanceTraveled;
 
         if (attack < defense)
         {

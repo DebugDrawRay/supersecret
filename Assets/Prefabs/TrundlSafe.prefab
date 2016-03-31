@@ -264,12 +264,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7140fc7618b13594f85ac59fea32df55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1
-  speed: 0.25
-  agility: 0.75
-  power: 0
-  luck: 0
-  weight: 1
+  collection:
+    maxHealth: 1
+    defaultMaxHealth: 0
+    currentHealth: 0
+    speed: 0.5
+    defaultSpeed: 0
+    agility: 0.5
+    defaultAgility: 0
+    power: 0
+    defaultPower: 0
+    luck: 0
+    defaultLuck: 0
+    weight: 0
+    defaultWeight: 0
   distanceTraveled: 0
   minRequiredDistanceTraveled: 6
   invulnerable: 0

@@ -135,7 +135,7 @@ public class LevelBuilder : MonoBehaviour
 
             Vector3 scale = new Vector3(length * 2, length * 2, length * 2);
             newGround.transform.localScale = scale;
-            newGround.transform.position = new Vector3(0, -0.5f, 0);
+            newGround.transform.position = new Vector3(0, -1.5f, 0);
             newGround.transform.rotation = Quaternion.Euler(90, 0, 0);
 
             Material newGroundMat = new Material(groundMat);

@@ -37,7 +37,7 @@ public class QuadCam : MonoBehaviour
     public TransparencySortMode sort;
     void Awake()
     {
-        PlayerEventManager.StunReaction += CameraShake;
+        PlayerEventManager.HitReaction += CameraShake;
         PlayerEventManager.TopSpeedEvent += MaxFov;
         cam = GetComponent<Camera>();
         cam.transparencySortMode = sort;
@@ -90,7 +90,7 @@ public class QuadCam : MonoBehaviour
         direction.x = deltaX;
         direction.z = deltaZ;
         direction = direction.normalized;
-        Quaternion targetRot = Quaternion.Euler(tiltLimit * direction.z, 0, tiltLimit * -direction.x);
+        Quaternion targetRot = Quaternion.Euler(tiltLimit/2 * direction.z, 0, tiltLimit * -direction.x);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, tiltSpeed);
     }
 
