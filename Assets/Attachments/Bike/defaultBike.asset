@@ -25,9 +25,9 @@ MonoBehaviour:
     maxHealth: 1
     defaultMaxHealth: 1
     currentHealth: 1
-    speed: 0
+    speed: 1
     defaultSpeed: 0
-    agility: 0
+    agility: 1
     defaultAgility: 0
     power: 0
     defaultPower: 0

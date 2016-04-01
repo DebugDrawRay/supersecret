@@ -10,13 +10,19 @@ public class GridMovement : MonoBehaviour
         InControl,
         InForcedMove
     }
-
     private State currentState = State.InControl;
 
-    private float na;
+    public enum MovementType
+    {
+        Free,
+        Fixed
+    }
+    public MovementType currentMovementType;
+
     [Header("Movement Properties")]
     public Vector2 startGridPosition;
-    public AnimationCurve speedCurve;
+    public AnimationCurve freeSpeedCurve;
+    public AnimationCurve fixedSpeedCurve;
     public float minTimeToMove;
     public float maxTimeToMove;
 
@@ -82,27 +88,32 @@ public class GridMovement : MonoBehaviour
 
     void Update()
     {
+        switch (currentMovementType)
+        {
+            case MovementType.Fixed:
+                FixedMoveUpdate();
+                break;
+            case MovementType.Free:
+                FreeMoveUpdate();
+                break;
+        }
+    }
+
+    void FixedMoveUpdate()
+    {
+
+    }
+    void FreeMoveUpdate()
+    {
         if (currentDestinationUpdate > 0)
         {
             currentDestinationUpdate -= Time.deltaTime;
         }
-
         if (isMoving && !isHit)
         {
-            if(!startPositionSet)
-            {
-                distanceTrackStart = transform.localPosition;
-                startPositionSet = true;
-            }
             distanceTraveled = Vector3.Distance(transform.localPosition, distanceTrackStart);
-            MoveAction();
-        }
-        else
-        {
-            distanceTraveled = 0;
-            startPositionSet = false;
-        }
-        stats.distanceTraveled = distanceTraveled;
+            FreeMoveAction();
+        }   
     }
 
     float MoveTime(float stat)
@@ -114,6 +125,53 @@ public class GridMovement : MonoBehaviour
 
     public void Move(float x, float y)
     {
+        switch (currentMovementType)
+        {
+            case MovementType.Fixed:
+                FixedMove(x, y);
+                break;
+            case MovementType.Free:
+                FreeMove(x, y);
+                break;
+        }
+    }
+
+    //Fixed Movement
+    void FixedMove(float x, float y)
+    {
+        if(!isMoving)
+        {
+            Vector2 destinationGridPosition = Vector2.zero;
+            destinationGridPosition.x = currentGridPosition.x + x;
+            destinationGridPosition.y = currentGridPosition.y + y;
+            if (targetGrid.CheckIfValidUnit(destinationGridPosition))
+            {
+                currentGridPosition = destinationGridPosition;
+                targetLocalPosition = targetGrid.GridToWorldPosition(currentGridPosition);
+                StartCoroutine(FixedMoveAction(MoveTime(stats.collection.speed), targetLocalPosition));
+            }
+        }
+    }
+
+    IEnumerator FixedMoveAction(float time, Vector3 toPosition)
+    {
+        isMoving = true;
+        lerpStartPostion = transform.localPosition;
+        targetLocalPosition = toPosition;
+        AkSoundEngine.PostEvent("TB_tireSkidShort", this.gameObject);
+
+        for (float i = 0; i <= time; i += Time.deltaTime)
+        {
+            float moveTime = i / time;
+            transform.localPosition = Vector3.Lerp(lerpStartPostion, targetLocalPosition, freeSpeedCurve.Evaluate(moveTime));
+            yield return null;
+        }
+        isMoving = false;
+    }
+
+    //Free Movement
+    void FreeMove(float x, float y)
+    { 
         if (initialized && !isHit)
         {
             if (currentDestinationUpdate <= 0)
@@ -143,7 +201,7 @@ public class GridMovement : MonoBehaviour
         }
     }
 
-    void MoveAction()
+    void FreeMoveAction()
     {
         Vector3 direction = targetLocalPosition - transform.localPosition;
         animation.AnimateLean(direction);
@@ -154,8 +212,8 @@ public class GridMovement : MonoBehaviour
         yPercentageComplete = moveTime / MoveTime(stats.collection.speed);
 
         Vector3 newPosition = transform.localPosition;
-        newPosition.x = Mathf.Lerp(lerpStartPostion.x, targetLocalPosition.x, speedCurve.Evaluate(xPercentageComplete));
-        newPosition.y = Mathf.Lerp(lerpStartPostion.y, targetLocalPosition.y, speedCurve.Evaluate(yPercentageComplete));
+        newPosition.x = Mathf.Lerp(lerpStartPostion.x, targetLocalPosition.x, freeSpeedCurve.Evaluate(xPercentageComplete));
+        newPosition.y = Mathf.Lerp(lerpStartPostion.y, targetLocalPosition.y, freeSpeedCurve.Evaluate(yPercentageComplete));
         transform.localPosition = newPosition;
 
         if (xPercentageComplete >= 1 && yPercentageComplete >= 1)

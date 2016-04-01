@@ -963,8 +963,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caaae11ac5024d94793b79358ead1e69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentMovementType: 1
   startGridPosition: {x: 2, y: 2}
-  speedCurve:
+  freeSpeedCurve:
     serializedVersion: 2
     m_Curve:
     - time: 0
@@ -980,7 +981,28 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
-  minTimeToMove: 0.5
+  fixedSpeedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 0.5
+      value: 0.5
+      inSlope: 3.1907945
+      outSlope: 3.1907945
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  minTimeToMove: 0.25
   maxTimeToMove: 1
   destinationUpdatePeriod: 0.1
   currentGridPosition: {x: 0, y: 0}
