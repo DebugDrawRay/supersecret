@@ -30,8 +30,33 @@ public class StatsCollection
     public float weight;
     public float defaultWeight;
 
-    public void Init()
+    public StatsCollection(StatsCollection collection)
     {
+        maxHealth = collection.maxHealth;
+        speed = collection.speed;
+        agility = collection.agility;
+        power = collection.power;
+        luck = collection.luck;
+        weight = collection.weight;
+
+        currentHealth = maxHealth;
+        defaultMaxHealth = maxHealth;
+        defaultSpeed = speed;
+        defaultAgility = agility;
+        defaultPower = power;
+        defaultLuck = luck;
+        defaultWeight = weight;
+    }
+
+    public StatsCollection(float healthValue, float speedValue, float agilityValue, float powerValue, float luckValue, float weightValue)
+    {
+        maxHealth = healthValue;
+        speed = speedValue;
+        agility = agilityValue;
+        power = powerValue;
+        luck = luckValue;
+        weight = weightValue;
+
         currentHealth = maxHealth;
         defaultMaxHealth = maxHealth;
         defaultSpeed = speed;

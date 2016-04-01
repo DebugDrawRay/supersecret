@@ -79,7 +79,7 @@ public class EquipmentController : MonoBehaviour
             }
             rightAttachment.GetComponent<SkeletonAnimation>().skeleton.SetSkin(skin);
             rightAttachment.GetComponent<InteractionSource>().interactions = equippedRight.interactions;
-            rightAttachment.GetComponent<Stats>().collection = equippedRight.collection;
+            rightAttachment.GetComponent<Stats>().collection = new StatsCollection(equippedRight.collection);
         }
     }
 
@@ -97,41 +97,39 @@ public class EquipmentController : MonoBehaviour
                 float y = dirVect.y;
                 float x = dirVect.x;
 
-                PlayerAttachment attach = null;
-                Stats stats = null;
                 if (Mathf.Abs(y) > Mathf.Abs(x))
                 {
                     if (y > 0)
                     {
-                        attach = equippedHead;
-                        stats = headAttachment.GetComponent<Stats>();
+                        PlayerAttachment attach = equippedHead;
+                        Stats stats = headAttachment.GetComponent<Stats>();
+                        Interact(enemy, attach.interactions);
+                        Interact(stats, enemy.GetComponent<InteractionSource>().interactions);
                     }
                     else if (y < 0)
                     {
-                        attach = equippedBody;
-                        stats = bodyAttachment.GetComponent<Stats>();
+                        PlayerAttachment attach = equippedBody;
+                        Stats stats = bodyAttachment.GetComponent<Stats>();
+                        Interact(enemy, attach.interactions);
+                        Interact(stats, enemy.GetComponent<InteractionSource>().interactions);
                     }
                 }
                 else if (Mathf.Abs(x) > Mathf.Abs(y))
                 {
                     if (x > 0)
                     {
-                        attach = equippedRight;
-                        stats = rightAttachment.GetComponent<Stats>();
+                        PlayerAttachment attach = equippedRight;
+                        Stats stats = rightAttachment.GetComponent<Stats>();
+                        Interact(enemy, attach.interactions);
+                        Interact(stats, enemy.GetComponent<InteractionSource>().interactions);
                     }
                     else if (x < 0)
                     {
-                        attach = equippedLeft;
-                        stats = leftAttachment.GetComponent<Stats>();
+                        PlayerAttachment attach = equippedLeft;
+                        Stats stats = leftAttachment.GetComponent<Stats>();
+                        Interact(enemy, attach.interactions);
+                        Interact(stats, enemy.GetComponent<InteractionSource>().interactions);
                     }
-                }
-
-                if(attach != null)
-                {
-                    Debug.Log(stats.gameObject.name);
-
-                    Interact(enemy, attach.interactions);
-                    Interact(stats, enemy.GetComponent<InteractionSource>().interactions);
                 }
             }
         }
@@ -151,6 +149,14 @@ public class EquipmentController : MonoBehaviour
             {
                 target.ModStat(inter.statToAffect, inter.affectAmount, inter.modTime);
             }
+        }
+    }
+
+    void Update()
+    {
+        if(rightAttachment.GetComponent<Stats>().isDead)
+        {
+            Destroy(rightAttachment);
         }
     }
 }

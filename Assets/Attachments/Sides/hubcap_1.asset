@@ -18,13 +18,13 @@ MonoBehaviour:
   rightSkin: 1
   interactions:
   - statToAffect: 0
-    affectAmount: -0.5
+    affectAmount: -0.017
     permanent: 1
     modTime: 0
   collection:
     maxHealth: 1
-    defaultMaxHealth: 1
-    currentHealth: 0.5999999
+    defaultMaxHealth: 0
+    currentHealth: 0
     speed: 0
     defaultSpeed: 0
     agility: 0

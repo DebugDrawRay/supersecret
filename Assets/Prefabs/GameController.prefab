@@ -49,7 +49,7 @@ MonoBehaviour:
   gridSystem: {fileID: 175890, guid: 8c2ce00b53dd6f2469cca5f00e527104, type: 2}
   startPosition: {x: 0, y: 0, z: 0}
   playerCharacter: {fileID: 193790, guid: 175175dc273078e479955695d18f512a, type: 2}
-  mainCamera: {fileID: 165910, guid: 880d436596e2a4b49aead0cf214d9390, type: 2}
+  mainCamera: {fileID: 124526, guid: 880d436596e2a4b49aead0cf214d9390, type: 2}
   builder: {fileID: 11422248}
 --- !u!114 &11422248
 MonoBehaviour:
@@ -87,10 +87,10 @@ MonoBehaviour:
   obstacleSpawnBuffer: 10
   obstacleSpawnRate: 0.75
   maxObstaclesPerRow: 2
-  generateEnemies: 1
+  generateEnemies: 0
   enemySpawnBuffer: 100
   enemySpawnXOffset: -2
-  enemySpawnRate: 0.35
+  enemySpawnRate: 1
 --- !u!114 &11425052
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4b052e53b8604929b4f1e5988657c99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  basePath: Audio/GeneratedSoundBanks
+  basePath: Audio\GeneratedSoundBanks
   language: English(US)
   defaultPoolSize: 4096
   lowerPoolSize: 2048

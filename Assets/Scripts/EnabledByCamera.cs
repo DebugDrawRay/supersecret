@@ -12,7 +12,9 @@ public class EnabledByCamera : MonoBehaviour
     {
         ChangeComponentState(false);
         trueColor = render.material.color;
-        render.material.color = Color.clear;
+        Color clearColor = trueColor;
+        clearColor.a = 0;
+        render.material.color = clearColor;
     }
     void ChangeComponentState(bool active)
     {
@@ -27,7 +29,9 @@ public class EnabledByCamera : MonoBehaviour
         if(render.isVisible)
         {
             ChangeComponentState(true);
-            render.material.color = trueColor;
-        }   
+            Color newColor = Color.Lerp(render.material.color, trueColor, .01f);
+            render.material.color = newColor;
+
+        }
     }
 }
