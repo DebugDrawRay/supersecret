@@ -13,6 +13,7 @@ public class GridMovement : MonoBehaviour
 
     private State currentState = State.InControl;
 
+    private float na;
     [Header("Movement Properties")]
     public Vector2 startGridPosition;
     public AnimationCurve speedCurve;
