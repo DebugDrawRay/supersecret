@@ -68,7 +68,7 @@ public class GridMovement : MonoBehaviour
 
     public void Init(Stats statsComponent, Grid grid, PlayerAnimationController animationComponent)
     {
-        PlayerEventManager.CollisionReaction += CollisionMove;
+        PlayerEventManager.EnemyCollision += CollisionMove;
 
         currentDestinationUpdate = destinationUpdatePeriod;
         stats = statsComponent;

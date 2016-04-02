@@ -10,18 +10,18 @@ public class PlayerEventManager
     public static event Trigger StunReaction;
     public static event Trigger HitReaction;
 
-    public static void TriggerHit()
-    {
-        HitReaction();
-    }
-    public static void TriggerCollision(Vector3 from)
-    {
-        CollisionReaction(from);
-    }
+    public static event Trigger ObjectCollision;
+    public static event Trigger EnemyHit;
+    public static event Collision EnemyCollision;
 
-    public static void TriggerStun()
+    public static void TriggerObjectCollision()
     {
-        StunReaction();
+        ObjectCollision();
+    }
+    public static void TriggerEnemyCollision(Vector3 from)
+    {
+        EnemyCollision(from);
+        EnemyHit();
     }
 
     public static void TopSpeed()

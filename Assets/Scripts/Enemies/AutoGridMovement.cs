@@ -222,18 +222,18 @@ public class AutoGridMovement : MonoBehaviour
 
     IEnumerator ForcedMove(float time, Vector2 direction)
     {
-            isForcedMoving = true;
-            isMoving = true;
-            Vector3 startPosition = transform.localPosition;
-            Vector3 nextPosition = targetGrid.GetClosestUnit(transform.localPosition);
-            currentPoint = targetGrid.GetClosestUnit(transform.localPosition);
-            for (float t = 0; t <= time; t += Time.deltaTime)
-            {
-                float moveTime = t / time;
-                transform.localPosition = Vector3.Lerp(startPosition, nextPosition, movementSmoothing.Evaluate(moveTime));
-                yield return null;
-            }
-            isMoving = false;
-            isForcedMoving = false;
+        isForcedMoving = true;
+        isMoving = true;
+        Vector3 startPosition = transform.localPosition;
+        Vector3 nextPosition = targetGrid.GridToWorldPosition(targetGrid.GetClosestUnit(transform.localPosition));
+        currentPoint = targetGrid.GetClosestUnit(transform.localPosition);
+        for (float t = 0; t <= time; t += Time.deltaTime)
+        {
+            float moveTime = t / time;
+            transform.localPosition = Vector3.Lerp(startPosition, nextPosition, movementSmoothing.Evaluate(moveTime));
+            yield return null;
+        }
+        isMoving = false;
+        isForcedMoving = false;
     }
 }

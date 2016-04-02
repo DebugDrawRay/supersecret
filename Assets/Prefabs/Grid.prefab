@@ -73,7 +73,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minSpeed: 2
-  maxSpeed: 200
+  maxSpeed: 250
   maxAccelTime: 10
   movementDirection: {x: 0, y: 0, z: 1}
   accelerationCurve:

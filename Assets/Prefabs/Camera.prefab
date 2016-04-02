@@ -14,6 +14,7 @@ GameObject:
   - 81: {fileID: 8133276}
   - 114: {fileID: 11432188}
   - 114: {fileID: 11413870}
+  - 114: {fileID: 11472702}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -119,6 +120,37 @@ MonoBehaviour:
   vibrado: 100
   randomness: 100
   sort: 1
+--- !u!114 &11472702
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 124526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 390397f02bff7644ab045efd81d0d720, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  QualityLevel: 1
+  QualitySteps: 1
+  MotionScale: 3
+  CameraMotionMult: 1
+  MinVelocity: 1
+  MaxVelocity: 10
+  DepthThreshold: 0.001
+  Noise: 0
+  OverlayCameras:
+  - {fileID: 2059210}
+  CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  AutoRegisterObjs: 1
+  MinResetDeltaDist: 1000
+  ResetFrameDelay: 1
+  WorkerThreads: 0
+  SystemThreadPool: 0
+  ForceCPUOnly: 0
+  DebugMode: 0
 --- !u!124 &12495684
 Behaviour:
   m_ObjectHideFlags: 1

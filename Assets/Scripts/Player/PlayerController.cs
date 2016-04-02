@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
-        PlayerEventManager.StunReaction += StunEvent;
+        PlayerEventManager.EnemyHit += StunEvent;
         PlayerEventManager.DeathEvent += DeathEvent;
         InitializeInstance();
     }
@@ -167,17 +167,17 @@ public class PlayerController : MonoBehaviour
     void OnTriggerEnter(Collider hit)
     {
         InteractionSource isInteraction = hit.GetComponent<InteractionSource>();
+        EnvironmentalHazard isEnviromental = hit.GetComponent<EnvironmentalHazard>();
         Enemy isEnemy = hit.GetComponent<Enemy>();
 
         if(isEnemy)
         {
-            PlayerEventManager.TriggerStun();
+            PlayerEventManager.TriggerEnemyCollision(isEnemy.transform.localPosition);
         }
 
-        if(isInteraction)
+        if(isEnviromental)
         {
-            PlayerEventManager.TriggerHit();
-            PlayerEventManager.TriggerCollision(hit.transform.localPosition);
+            PlayerEventManager.TriggerObjectCollision();
 
             Stats hasStats = isInteraction.GetComponent<Stats>();
             if(hasStats)

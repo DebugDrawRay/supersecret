@@ -24,7 +24,8 @@ public class UiPortraitController : MonoBehaviour
 
     void AddEvents()
     {
-        PlayerEventManager.StunReaction += CollisionAnim;
+        PlayerEventManager.EnemyHit += CollisionAnim;
+        PlayerEventManager.ObjectCollision += CollisionAnim;
     }
 
     void Update()

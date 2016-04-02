@@ -19,7 +19,7 @@ public class LevelMovement : MonoBehaviour
     void Start()
     {
         rigid = GetComponent<Rigidbody>();
-        PlayerEventManager.HitReaction += ResetSpeed;
+        PlayerEventManager.ObjectCollision += ResetSpeed;
         AkSoundEngine.PostEvent("TB_engineStart", gameObject);
     }
 

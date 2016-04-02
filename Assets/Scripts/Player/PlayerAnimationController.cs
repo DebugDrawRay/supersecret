@@ -27,9 +27,10 @@ public class PlayerAnimationController : MonoBehaviour
     public bool inTopSpeed;
     void Start()
     {
-        PlayerEventManager.HitReaction += CollisionAnim;
+        PlayerEventManager.EnemyHit += CollisionAnim;
+        PlayerEventManager.ObjectCollision += CollisionAnim;
 
-       // PlayerEventManager.TopSpeedEvent += TopSpeed;
+        // PlayerEventManager.TopSpeedEvent += TopSpeed;
     }
 
     public void Init()
