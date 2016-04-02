@@ -209,7 +209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactions:
   - statToAffect: 0
-    affectAmount: -0.1
+    affectAmount: 0
     permanent: 1
     modTime: 0
   collisionSound: TB_collisionMetal

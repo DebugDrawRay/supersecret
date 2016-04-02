@@ -18,7 +18,7 @@ MonoBehaviour:
   rightSkin: 0
   interactions:
   - statToAffect: 0
-    affectAmount: -0.5
+    affectAmount: 0
     permanent: 1
     modTime: 0
   collection:

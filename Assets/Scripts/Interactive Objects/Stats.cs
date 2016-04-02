@@ -50,7 +50,7 @@ public class Stats : MonoBehaviour
 
     void Start()
     {
-        //collection.Init();
+        collection = new StatsCollection(collection);
     }
     void Update()
     {

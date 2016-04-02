@@ -35,7 +35,7 @@ public class EquipmentController : MonoBehaviour
             }
             headAttachment.GetComponent<SkeletonAnimation>().skeleton.SetSkin(skin);
             headAttachment.GetComponent<InteractionSource>().interactions = equippedHead.interactions;
-            headAttachment.GetComponent<Stats>().collection = equippedHead.collection;
+            headAttachment.GetComponent<Stats>().collection = new StatsCollection(equippedHead.collection);
         }
         if (bodyAttachment)
         {
@@ -46,7 +46,7 @@ public class EquipmentController : MonoBehaviour
             }
             bodyAttachment.GetComponent<SkeletonAnimation>().skeleton.SetSkin(skin);
             bodyAttachment.GetComponent<InteractionSource>().interactions = equippedBody.interactions;
-            bodyAttachment.GetComponent<Stats>().collection = equippedBody.collection;
+            bodyAttachment.GetComponent<Stats>().collection = new StatsCollection(equippedBody.collection);
         }
         if (bikeAttachment)
         {
@@ -57,7 +57,7 @@ public class EquipmentController : MonoBehaviour
             }
             bikeAttachment.GetComponent<SkeletonAnimation>().skeleton.SetSkin(skin);
             bikeAttachment.GetComponent<InteractionSource>().interactions = equippedBike.interactions;
-            bikeAttachment.GetComponent<Stats>().collection = equippedBike.collection;
+            bikeAttachment.GetComponent<Stats>().collection = new StatsCollection(equippedBike.collection);
         }
         if (leftAttachment)
         {
@@ -68,7 +68,7 @@ public class EquipmentController : MonoBehaviour
             }
             leftAttachment.GetComponent<SkeletonAnimation>().skeleton.SetSkin(skin);
             leftAttachment.GetComponent<InteractionSource>().interactions = equippedLeft.interactions;
-            leftAttachment.GetComponent<Stats>().collection = equippedLeft.collection;
+            leftAttachment.GetComponent<Stats>().collection = new StatsCollection(equippedLeft.collection);
         }
         if (rightAttachment)
         {
@@ -154,9 +154,25 @@ public class EquipmentController : MonoBehaviour
 
     void Update()
     {
-        if(rightAttachment.GetComponent<Stats>().isDead)
+        if (rightAttachment.GetComponent<Stats>().isDead)
         {
             Destroy(rightAttachment);
+        }
+        if (leftAttachment.GetComponent<Stats>().isDead)
+        {
+            Destroy(leftAttachment);
+        }
+        if (headAttachment.GetComponent<Stats>().isDead)
+        {
+            Destroy(headAttachment);
+        }
+        if (bodyAttachment.GetComponent<Stats>().isDead)
+        {
+            Destroy(bodyAttachment);
+        }
+        if (bikeAttachment.GetComponent<Stats>().isDead)
+        {
+            Destroy(bikeAttachment);
         }
     }
 }

@@ -38,7 +38,7 @@ public class Enemy : MonoBehaviour
         if(isPlayer)
         {
             Collision();
-            //ContestSpace(isPlayer.GetComponent<Stats>());
+            movement.ForcedMove(isPlayer.transform.localPosition);
         }
     }
 

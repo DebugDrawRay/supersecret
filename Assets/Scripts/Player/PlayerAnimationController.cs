@@ -46,12 +46,9 @@ public class PlayerAnimationController : MonoBehaviour
     {
         for (int i = 0; i < allAnim.Length; ++i)
         {
-            allAnim[i].state.ClearTrack(2);
             allAnim[i].skeleton.SetToSetupPose();
+            allAnim[i].state.ClearTracks();
             allAnim[i].state.SetAnimation(1, "collide_front", false);
-
-            leanLeft = false;
-            leanRight = false;
         }
     }
 
@@ -110,6 +107,7 @@ public class PlayerAnimationController : MonoBehaviour
                     leanLeft = true;
                     leanRight = false;
                     allAnim[i].state.SetAnimation(2, left, false);
+                    allAnim[i].state.GetCurrent(2).timeScale = 0;
                 }
             }
         }
@@ -122,6 +120,7 @@ public class PlayerAnimationController : MonoBehaviour
                     leanLeft = false;
                     leanRight = true;
                     allAnim[i].state.SetAnimation(2, right, false);
+                    allAnim[i].state.GetCurrent(2).timeScale = 0;
                 }
             }
         }

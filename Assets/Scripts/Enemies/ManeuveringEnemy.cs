@@ -126,8 +126,6 @@ public class ManeuveringEnemy : Enemy
     
     void TriggerStun()
     {
-        movement.StopAllCoroutines();
-
         inactiveTime = Random.Range(minInactiveTime, maxInactiveTime);
         maneuverTime = Random.Range(minManeuverTime, maxManeuverTime);
         chaseTime = Random.Range(minChaseTime, maxChaseTime);
