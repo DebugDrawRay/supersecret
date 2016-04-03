@@ -3,13 +3,10 @@
 [System.Serializable]
 public class BiomeSet : ScriptableObject
 {
-    public string name = "New Biome Set";
-    public Material roadMaterial;
-    public Material wallMaterial;
-    public Material groundMaterial;
-
+    public GameObject roadObject;
+    public GameObject wallObject;
+    public GameObject groundObject;
     public GameObject horizonObject;
-
     public GameObject[] wallProps;
     public GameObject[] archProps;
     public GameObject[] groundProps;
